@@ -21,11 +21,11 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-app.listen(1337, 'localhost', function(err) {
+app.listen(9001, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:1337');
+  console.log('Listening at http://localhost:9001');
 });
