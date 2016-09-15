@@ -1,4 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Battle from './components/battle/Battle.js';
 
-render(<p>Hello</p>, document.getElementById('root'));
+render(<Battle/>, document.getElementById('root'));
