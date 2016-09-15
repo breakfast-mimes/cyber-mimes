@@ -1,20 +1,24 @@
 var path = require('path');
+var bodyParser = require('body-parser');
+var cors = require("cors");
 var express = require('express');
 var webpack = require('webpack');
-var config = require('../webpack.config');
+var config = require('../../webpack.config');
 
 var app = express();
-var compiler = webpack(config);
 
+var compiler = webpack(config);
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
 }));
-
 app.use(require('webpack-hot-middleware')(compiler));
 
+app.use(cors());
+app.use(bodyParser.json());
+
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/index.html'));
+  res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 app.listen(1337, 'localhost', function(err) {
