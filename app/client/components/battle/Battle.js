@@ -10,7 +10,7 @@ export default class Battle extends React.Component {
       <div>
         <progress id="enemyHealth" value={this.props.enemy.status.health} max="100">Enemy bar</progress>
         <div style= {style}>
-          This scroll box has had a border added to it. You can add borders to anything in HTML - including scroll boxes.
+          orders to anything in HTML - including scroll boxes.
         </div>
         <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
         <div onClick = {this.props.attack.bind(null,10,this.props.hero, this.props.enemy)}>
