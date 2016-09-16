@@ -5,9 +5,11 @@ import { browserHistory } from 'react-router';
 import rootReducer from './reducers/rootReducer';
 
 import hero from './data/hero';
+import enemy from './data/enemy';
 
 const defaultState = {
-  hero
+  hero,
+  enemy
 }
 
 const store = createStore(rootReducer, defaultState);
