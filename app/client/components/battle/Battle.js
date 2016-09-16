@@ -4,13 +4,15 @@ import { render } from 'react-dom';
 export default class Battle extends React.Component {
 
   render(){
-    console.log(this.props.enemy.status, "ENEMY status")
-    var style = {height:"100px",width:"140px",overflow:"auto",border:"8px solid red",padding:"2%"}
+    // var logStyle = {height:"100px",width:"300px",overflow:"auto",border:"8px solid red",padding:"2%"}
+    var itemsListStyle = {display:"none"}
+    // var itemsStyle = 
     return(
       <div>
-        <progress id="enemyHealth" value={this.props.enemy.status.health} max="100">Enemy bar</progress>
-        <div style= {style}>
-          orders to anything in HTML - including scroll boxes.
+        <link href="./style.css" rel="stylesheet" type="text/css"></link>
+        <progress id="enemyHealth" value={this.props.enemy[0].status.health} max="100">Enemy bar</progress>
+        <div id="log" >
+          {this.props.hero.log.map((line)=> <p>{line}</p>)}
         </div>
         <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
         <div onClick = {this.props.attack.bind(null,10,this.props.hero, this.props.enemy)}>
@@ -19,10 +21,13 @@ export default class Battle extends React.Component {
         <div>
           Defend!
         </div>
-        <div>
+        <a>
+          Items
+        </a>
+        <div style = {itemsListStyle}>
           Items
         </div>
-        <div>
+        <div onClick = {this.props.cry.bind(null)}>
           Cry
         </div>
         <div>

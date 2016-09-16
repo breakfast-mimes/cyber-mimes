@@ -1,4 +1,4 @@
-const enemy = {
+const enemy = [{
   name: "laser enemy",
   stats: {
     str: 1,
@@ -15,7 +15,8 @@ const enemy = {
   status: {
     health:100,
     mana:100
-  }
-}
+  },
+  log:[]
+}]
 
 export default enemy;
