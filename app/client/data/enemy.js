@@ -1,9 +1,9 @@
-const hero = {
-  name: "laser hero",
+const enemy = {
+  name: "laser enemy",
   stats: {
-    str: 5,
-    dex: 4,
-    int: 5
+    str: 1,
+    dex: 1,
+    int: 1
   },
   skills: {
     fighting: 0,
@@ -13,9 +13,9 @@ const hero = {
   },
 
   status: {
-    health:50,
+    health:100,
     mana:100
   }
 }
 
-export default hero;
+export default enemy;
