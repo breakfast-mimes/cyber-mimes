@@ -4,16 +4,16 @@ import { render } from 'react-dom';
 export default class Battle extends React.Component {
 
   render(){
-
+    console.log(this.props.enemy.status, "ENEMY status")
     var style = {height:"100px",width:"140px",overflow:"auto",border:"8px solid red",padding:"2%"}
     return(
       <div>
-        <progress id="enemyHealth" value={this.props.hero.status.health} max="100">Enemy bar</progress>
+        <progress id="enemyHealth" value={this.props.enemy.status.health} max="100">Enemy bar</progress>
         <div style= {style}>
           This scroll box has had a border added to it. You can add borders to anything in HTML - including scroll boxes.
         </div>
-        <progress id="heroHealth" value="100" max="100"></progress>
-        <div onClick = {this.props.attackEnemy.bind(null,10)}>
+        <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
+        <div onClick = {this.props.attack.bind(null,10,this.props.hero, this.props.enemy)}>
           Attack!
         </div>
         <div>

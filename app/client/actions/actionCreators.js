@@ -5,9 +5,11 @@ export function incrementStat(index) {
   }
 }
 
-export function attackEnemy(amount) {
+export function attack(amount, attacker, target) {
   return {
-    type: 'ATTACK_ENEMY',
-    amount
+    type: 'ATTACK',
+    amount,
+    attacker,
+    target
   }
 }
