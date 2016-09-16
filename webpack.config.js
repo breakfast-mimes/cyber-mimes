@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  devtool: debug ? "source-map" : null,
+  devtool: debug ? "eval" : null,
   entry: [
     "webpack-hot-middleware/client",
     "./app/client/index.js"

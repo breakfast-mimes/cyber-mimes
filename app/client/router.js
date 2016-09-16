@@ -5,12 +5,13 @@ import store, { history } from './store';
 
 import Test from './components/Test';
 import Test2 from './components/Test2';
+import Form from './components/form';
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Test}>
-        <IndexRoute component={Test2}></IndexRoute>
+        <IndexRoute component={Form}></IndexRoute>
         <Route path="/test" component={Test}></Route>
       </Route>
     </Router>
