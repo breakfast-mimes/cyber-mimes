@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router'; //router needs to be setup
 
-const Form = React.createClass({
+const CreationForm = React.createClass({
 
 	getInitialState: function() {
     return {value: 'Hello!'};
@@ -20,4 +20,4 @@ const Form = React.createClass({
 
 });
 
-export default Form;
+export default CreationForm;

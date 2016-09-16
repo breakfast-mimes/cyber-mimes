@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Test = React.createClass({
+const App = React.createClass({
   render() {
     return (
       <div>
         <h1>
-          <Link to='/'>HAHAHAHAH</Link>
+          <Link to='#'>Cyber Mimes</Link>
         </h1>
         {React.cloneElement(this.props.children, this.props)}
       </div>
@@ -14,4 +14,4 @@ const Test = React.createClass({
   }
 });
 
-export default Test;
+export default App;
