@@ -7,12 +7,14 @@ import Test2 from './components/Test2';
 import App from './components/App';
 import CreationForm from './components/CreationForm';
 
+import Battle from './components/battle/Battle.js';
+
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={CreationForm}></IndexRoute>
-        <Route path="/test" component={Test2}></Route>
+        <Route path="/test" component={Battle}></Route>
       </Route>
     </Router>
   </Provider>
