@@ -15,7 +15,9 @@ const hero = {
   status: {
     health:50,
     mana:100
-  }
+  },
+
+  performAction: null
 }
 
 export default hero;
