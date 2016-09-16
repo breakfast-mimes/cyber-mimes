@@ -15,7 +15,9 @@ const enemy = {
   status: {
     health:100,
     mana:100
-  }
+  },
+
+  performAction: function() {console.log('attacking hero')}
 }
 
 export default enemy;

@@ -1,7 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import Game from './game';
+
 export default class Battle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      game: new Game(this.props.hero, this.props.enemy)
+    }
+  }
 
   render(){
     console.log(this.props.enemy.status, "ENEMY status")
@@ -13,7 +21,7 @@ export default class Battle extends React.Component {
           orders to anything in HTML - including scroll boxes.
         </div>
         <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
-        <div onClick = {this.props.attack.bind(null,10,this.props.hero, this.props.enemy)}>
+        <div onClick = {attack.bind(this)}>
           Attack!
         </div>
         <div>
@@ -31,4 +39,10 @@ export default class Battle extends React.Component {
     </div>
     )
   }
+}
+
+function attack() {
+  this.props.hero.performAction =
+    this.props.attack.bind(null,10,this.props.hero, this.props.enemy);
+  this.state.game.nextTurn();
 }
