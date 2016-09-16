@@ -16,7 +16,9 @@ const hero = {
     health:50,
     mana:100
   },
-  log:[]
+  log:[],
+
+  performAction: null
 }
 
 export default hero;
