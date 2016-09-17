@@ -1,4 +1,4 @@
-const enemy = {
+const enemy = [{
   name: "laser enemy",
   stats: {
     str: 1,
@@ -17,7 +17,9 @@ const enemy = {
     mana:100
   },
 
+
   performAction: function() {console.log('attacking hero')}
-}
+}]
+
 
 export default enemy;

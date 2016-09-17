@@ -16,6 +16,7 @@ const hero = {
     health:50,
     mana:100
   },
+  log:[],
 
   performAction: null
 }

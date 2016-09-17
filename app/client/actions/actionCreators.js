@@ -13,3 +13,9 @@ export function attack(amount, attacker, target) {
     target
   }
 }
+
+export function cry() {
+  return {
+    type: 'CRY'
+  }
+}
