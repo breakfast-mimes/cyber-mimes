@@ -1,3 +1,4 @@
+require("../../styles/stylesheet.css");
 import React from 'react';
 import { render } from 'react-dom';
 
@@ -14,10 +15,9 @@ export default class Battle extends React.Component {
   render(){
     // var logStyle = {height:"100px",width:"300px",overflow:"auto",border:"8px solid red",padding:"2%"}
     var itemsListStyle = {display:"none"}
-    // var itemsStyle = 
+    // var itemsStyle =
     return(
       <div>
-        <link href="./style.css" rel="stylesheet" type="text/css"></link>
         <progress id="enemyHealth" value={this.props.enemy[0].status.health} max="100">Enemy bar</progress>
         <div id="log" >
           {this.props.hero.log.map((line)=> <p>{line}</p>)}
