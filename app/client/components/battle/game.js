@@ -13,4 +13,8 @@ Game.prototype.nextTurn = function() {
   this.enemy.performAction ? this.enemy.performAction() : null;
 }
 
+Game.prototype.setHeroAction = function(action) {
+  this.hero.performAction = action;
+}
+
 export default Game;
