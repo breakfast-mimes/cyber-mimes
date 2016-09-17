@@ -33,14 +33,14 @@ const CreationForm = React.createClass({
 						<button type = 'button' onClick={this.props.updateCharacter.bind(null,'stats', 'int', 1)}>+</button>
 						<div id = 'intelligence'>{this.props.hero.stats.int} </div>
 						<button type = 'button' onClick={this.props.updateCharacter.bind(null,'stats', 'int', -1)}>-</button>
-						
 
-						<h2>Dexterity</h2> 
+						<h2>Dexterity</h2>
 						<button type="button" onClick={this.props.updateCharacter.bind(null,'stats','dex',1)}>+</button>
+
 						<div>{this.props.hero.stats.dex} </div>
 						<button type="button" onClick={this.props.updateCharacter.bind(null,'stats','dex', -1)}>-</button>
 
-						<h2>Strength</h2> 
+						<h2>Strength</h2>
 
 						<button type="button" onClick={this.props.updateCharacter.bind(null, 'stats', 'str', 1)}>+</button>
 						<div>{this.props.hero.stats.str} </div>
