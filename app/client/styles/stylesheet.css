@@ -1,15 +1,42 @@
 #log {
   height: 100px;
   width: 300px;
-  overflow: auto;
+  overflow-y: auto;
   border: 8px solid red;
   padding: 2%;
 }
 
+#outLog {
+  overflow:hidden;
+}
 /*#itemAnchor:hover #items {
   display:block;
 }*/
 #items {
+  position: absolute;
+  top: 1;
+  /*right: 0;*/
+  /*bottom: 0;*/
+  left: 0;
+  margin: 50px 50px 50px 50px;
+  padding : 3px;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border: 1px solid black;
+  z-index: 1;
+  display: none;
+}
+
+#enemyHealth {
+  background-color: red;
+}
+
+#heroHealth {
+  background-color: red;
+}
+
+#magics {
   position: absolute;
   top: 1;
   /*right: 0;*/

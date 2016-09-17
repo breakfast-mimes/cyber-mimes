@@ -16,8 +16,37 @@ export function attack(amount, attacker, target) {
   }
 }
 
+export function fireball(amount, attacker, target) {
+  return {
+    type: 'FIREBALL',
+    amount,
+    attacker,
+    target
+  }
+}
+
 export function cry() {
   return {
     type: 'CRY'
+  }
+}
+
+export function enemyCry() {
+  return {
+    type: 'ENEMY_CRY'
+  }
+}
+
+export function enemyAttack(attacker,target) {
+  return {
+    type: 'ENEMY_ATTACK',
+    attacker,
+    target
+  }
+}
+
+export function enemyMurder() {
+  return {
+    type: 'ENEMY_MURDER'
   }
 }
