@@ -15,10 +15,9 @@ export function attack(attacker, target) {
   }
 }
 
-export function fireball(amount, attacker, target) {
+export function fireball(attacker, target) {
   return {
     type: 'FIREBALL',
-    amount,
     attacker,
     target
   }

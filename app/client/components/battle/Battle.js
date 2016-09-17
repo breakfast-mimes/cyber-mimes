@@ -66,16 +66,14 @@ function showMenu(menu) {
     document.getElementById(menu).style.display = "none"
     menuArr[0] = false;
     menuArr[1] = 'none';
+    return
   } else if (menuArr[0]){
     document.getElementById(menuArr[1]).style.display = "none"
-    document.getElementById(menu).style.display = "block"
-    menuArr[0] = true;
-    menuArr[1] = menu;
-  } else {
-    document.getElementById(menu).style.display = "block"
-    menuArr[0] = true;
-    menuArr[1] = menu;
   }
+  document.getElementById(menu).style.display = "block"
+  menuArr[0] = true;
+  menuArr[1] = menu;
+
 }
 
 function cry() {
@@ -86,12 +84,11 @@ function cry() {
 
 function attack() {
   this.state.game.updateLog(["you attack","the enemy attacks!"])
-  this.state.game.setHeroAction(this.props.attack.bind(null, 10, this.props.hero, this.props.enemy));
-  console.log(this.props.enemy, "ENEMY IN ATTACK")
-  this.state.game.setEnemyAction(this.props.enemyAttack.bind(null,this.props.enemy[0],this.props.hero));
+  this.state.game.setHeroAction(this.props.attack.bind(null, this.props.hero, this.props.enemy[0]));
+  this.state.game.setEnemyAction(this.props.attack.bind(null,this.props.enemy[0],this.props.hero));
 }
 
 function fireball() {
   this.state.game.updateLog(["you throw a giant fireball","the enemy cowers!"])
-  this.state.game.setHeroAction(this.props.fireball.bind(null,10, this.props.hero, this.props.enemy));
+  this.state.game.setHeroAction(this.props.fireball.bind(null, this.props.hero, this.props.enemy));
 }
