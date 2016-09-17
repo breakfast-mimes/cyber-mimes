@@ -9,13 +9,19 @@ Game.prototype.setEnemy = function(enemy) {
 };
 
 Game.prototype.nextTurn = function() {
-  console.log (this.hero.performAction)
   this.hero.performAction();
   this.enemy.performAction ? this.enemy.performAction() : null;
 }
 
 Game.prototype.setHeroAction = function(action) {
   this.hero.performAction = action;
+  // this.setEnemyAction();
+
+}
+
+Game.prototype.setEnemyAction = function(action) {
+  this.enemy.performAction = action
+
 }
 
 Game.prototype.updateLog = function(message) {

@@ -1,11 +1,14 @@
 #log {
   height: 100px;
   width: 300px;
-  overflow: auto;
+  overflow-y: auto;
   border: 8px solid red;
   padding: 2%;
 }
 
+#outLog {
+  overflow:hidden;
+}
 /*#itemAnchor:hover #items {
   display:block;
 }*/
@@ -23,6 +26,14 @@
   border: 1px solid black;
   z-index: 1;
   display: none;
+}
+
+#enemyHealth {
+  background-color: red;
+}
+
+#heroHealth {
+  background-color: red;
 }
 
 #magics {
