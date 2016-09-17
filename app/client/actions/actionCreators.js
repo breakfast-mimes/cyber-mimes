@@ -1,14 +1,9 @@
-export function incrementStat(prop) {
+export function updateCharacter(group, prop , amount) {
   return {
-    type: 'INCREMENT_STAT',
-    prop
-  }
-}
-
-export function decrementStat(prop) {
-  return {
-    type: 'DECREMENT_STAT',
-    prop
+    type: 'UPDATE_CHARACTER',
+    group,
+    prop,
+    amount
   }
 }
 

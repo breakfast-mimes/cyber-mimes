@@ -19,7 +19,7 @@ export default class Battle extends React.Component {
       <div>
         <progress id="enemyHealth" value={this.props.enemy[0].status.health} max="100">Enemy bar</progress>
         <div id="log" >
-          {this.props.hero.log.map((line)=> <p>{line}</p>)}
+          {this.props.hero.log.map((line ,i)=> <p key={i}>{line}</p>)}
         </div>
         <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
         <div onClick = {attack.bind(this)}>
@@ -28,13 +28,14 @@ export default class Battle extends React.Component {
         <div>
           Defend!
         </div>
-        <a>
+        <a className="itemAnchor">
           Items
+          <div className="items">
+            Itemss
+          </div>
         </a>
-        <div style = {itemsListStyle}>
-          Items
-        </div>
-        <div onClick = {this.props.cry.bind(null)}>
+
+        <div onClick = {cry.bind(this)}>
           Cry
         </div>
         <div>
@@ -45,8 +46,12 @@ export default class Battle extends React.Component {
   }
 }
 
+function cry() {
+  this.state.game.setHeroAction(this.props.cry);
+  this.state.game.nextTurn();
+}
+
 function attack() {
-  this.props.hero.performAction =
-    this.props.attack.bind(null,10,this.props.hero, this.props.enemy);
+  this.state.game.setHeroAction(this.props.attack.bind(null, 10, this.props.hero, this.props.enemy));
   this.state.game.nextTurn();
 }
