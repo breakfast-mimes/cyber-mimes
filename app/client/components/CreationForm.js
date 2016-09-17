@@ -13,20 +13,6 @@ const CreationForm = React.createClass({
     console.log('HANDLE CHANGE',event.target.count);
   },
 
-  incrementCount: function(){
-
-    this.setState({
-      count: this.state.count + 1
-    });
-  },
-
-  decrementCount: function(){
-
-    this.setState({
-      count: this.state.count - 1
-    });
-  },
-
 	render() {
 
 		return (
@@ -44,22 +30,20 @@ const CreationForm = React.createClass({
 
 		          <h2>Intelligence</h2>
 
-						<button type = 'button' onClick={this.incrementCount}>+</button>
+						<button type = 'button' onClick={this.props.incrementStat.bind(null, 'int')}>+</button>
 						<div id = 'intelligence'>{this.props.hero.stats.int} </div>
-						<button type="button" onClick={this.decrementCount}>-</button>
-
+						<button type="button" onClick={this.props.decrementStat.bind(null , 'int')}>-</button>
 
 						<h2>Dexterity</h2> 
-						<button type="button" onClick={this.incrementCount}>+</button>
-						<div>{this.state.count} </div>
-						<button type="button" onClick={this.decrementCount}>-</button>
+						<button type="button" onClick={this.props.incrementStat.bind(null, 'dex')}>+</button>
+						<div>{this.props.hero.stats.dex} </div>
+						<button type="button" onClick={this.props.decrementStat.bind(null , 'dex')}>-</button>
 
 						<h2>Strength</h2> 
 
-						<button type="button" onClick={this.incrementCount}>+</button>
-						<div>{this.state.count} </div>
-						<button type="button" onClick={this.decrementCount}>-</button>
-
+						<button type="button" onClick={this.props.incrementStat.bind(null, 'str')}>+</button>
+						<div>{this.props.hero.stats.int} </div>
+						<button type="button" onClick={this.props.decrementStat.bind(null, 'str')}>-</button>
 
 					</div>
 
@@ -68,7 +52,7 @@ const CreationForm = React.createClass({
 				 	<h1>SKILLS</h1>
 
 		          <h2>Fighting</h2>
-		        <button type="button" onClick={this.incrementCount}>+</button>
+		        		<button type="button" onClick={this.incrementCount}>+</button>
 						<div>{this.state.count} </div>
 						<button type="button" onClick={this.decrementCount}>-</button>
 
