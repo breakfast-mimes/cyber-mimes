@@ -21,11 +21,12 @@ Game.prototype.setHeroAction = function(action) {
 
 Game.prototype.setEnemyAction = function(action) {
   this.enemy.performAction = action
+  this.nextTurn();
 
 }
 
-Game.prototype.updateLog = function(message) {
-  this.log.push(message);
+Game.prototype.updateLog = function(messageArr) {
+  messageArr.forEach((message)=>this.log.push(message))
 }
 
 export default Game;

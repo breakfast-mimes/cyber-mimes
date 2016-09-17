@@ -7,10 +7,9 @@ export function updateCharacter(group, prop , amount) {
   }
 }
 
-export function attack(amount, attacker, target) {
+export function attack(attacker, target) {
   return {
     type: 'ATTACK',
-    amount,
     attacker,
     target
   }
