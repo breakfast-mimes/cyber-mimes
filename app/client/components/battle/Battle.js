@@ -28,12 +28,12 @@ export default class Battle extends React.Component {
         <div>
           Defend!
         </div>
-        <a className="itemAnchor">
+        <div onClick={showItems}>
           Items
-          <div className="items">
+          <div id="items">
             Itemss
           </div>
-        </a>
+        </div>
 
         <div onClick = {cry.bind(this)}>
           Cry
@@ -43,6 +43,16 @@ export default class Battle extends React.Component {
         </div>
     </div>
     )
+  }
+}
+
+function showItems() {
+  var displayString = document.getElementById('items').style.display
+  console.log("test", displayString)
+  if (displayString === "block"){
+    document.getElementById('items').style.display = "none"
+  } else {
+    document.getElementById('items').style.display = "block"
   }
 }
 
