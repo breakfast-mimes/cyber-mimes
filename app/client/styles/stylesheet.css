@@ -6,10 +6,10 @@
   padding: 2%;
 }
 
-.itemAnchor:hover .items {
+/*#itemAnchor:hover #items {
   display:block;
-}
-.items {
+}*/
+#items {
   position: absolute;
   top: 1;
   /*right: 0;*/
