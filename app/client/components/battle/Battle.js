@@ -28,7 +28,7 @@ export default class Battle extends React.Component {
         <div>
           Defend!
         </div>
-        <div onClick={showItems}>
+        <div onClick={showMenu.bind(null,'items')}>
           Items
           <div id="items">
             Itemss
@@ -38,21 +38,25 @@ export default class Battle extends React.Component {
         <div onClick = {cry.bind(this)}>
           Cry
         </div>
-        <div>
-          MAGIC?!
+
+        <div onClick={showMenu.bind(null,'magics')}>
+          MAGIC
+          <div id="magics">
+            MAGIC?!
+          </div>
         </div>
     </div>
     )
   }
 }
 
-function showItems() {
-  var displayString = document.getElementById('items').style.display
+function showMenu(menu) {
+  var displayString = document.getElementById(menu).style.display
   console.log("test", displayString)
   if (displayString === "block"){
-    document.getElementById('items').style.display = "none"
+    document.getElementById(menu).style.display = "none"
   } else {
-    document.getElementById('items').style.display = "block"
+    document.getElementById(menu).style.display = "block"
   }
 }
 
