@@ -2,8 +2,8 @@ const hero = {
   name: "laser hero",
   stats: {
     str: 5,
-    dex: 4,
-    int: 0
+    dex: 5,
+    int: 5
   },
   skills: {
     fighting: 0,
