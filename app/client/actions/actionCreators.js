@@ -1,4 +1,4 @@
-export function updateCharacter(group, prop , amount) {
+export function updateCharacter(group, prop, amount) {
   return {
     type: 'UPDATE_CHARACTER',
     group,
