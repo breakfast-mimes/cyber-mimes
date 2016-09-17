@@ -3,7 +3,9 @@ const hero = {
   stats: {
     str: 5,
     dex: 5,
-    int: 5
+    int: 5,
+    luck: 5,
+    def: 5
   },
   skills: {
     fighting: 0,
