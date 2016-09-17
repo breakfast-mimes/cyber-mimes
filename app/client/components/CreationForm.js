@@ -1,17 +1,11 @@
 import React from 'react';
-// import { Link } from 'react-router'; //router needs to be setup
+import { Link } from 'react-router';
 
 const CreationForm = React.createClass({
-	// getInitialState: function() {
- //    return {
- //    	value: 'test',
- //    	count: 0};
- //  },
 
- // 	handleChange: function(event) {
- //    this.setState({value: event.target.count});
- //    console.log('HANDLE CHANGE',event.target.count);
- //  },
+ 	handleChange: function(event) {
+    console.log("hello")
+  },
 
 	render() {
 
@@ -21,8 +15,7 @@ const CreationForm = React.createClass({
 
 		      <h2>Character Name</h2>
 
-					<input type="text" value={this.props.hero.name}
-					onChange={this.handleChange}/>
+					<input type="text" value={this.props.hero.name} onChange={this.handleChange}/>
 				</div>
 
 					<div id = 'stats'>
