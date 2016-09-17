@@ -32,7 +32,9 @@ const CreationForm = React.createClass({
 		return (
 			<div>
 				<div id = 'character'>
+
 		      Insert Character Name
+
 					<input type="text" value={this.state.value}
 					onChange={this.handleChange}/>
 				</div>
@@ -41,11 +43,11 @@ const CreationForm = React.createClass({
 		         <h1>STATS</h1>
 
 		          <h2>Intelligence</h2>
-		          
+
 						<button type = 'button' onClick={this.incrementCount}>+</button>
 						<div id = 'intelligence'>{this.props.hero.stats.int} </div>
 						<button type="button" onClick={this.decrementCount}>-</button>
-						
+
 
 						<h2>Dexterity</h2> 
 						<button type="button" onClick={this.incrementCount}>+</button>
@@ -58,16 +60,18 @@ const CreationForm = React.createClass({
 						<div>{this.state.count} </div>
 						<button type="button" onClick={this.decrementCount}>-</button>
 
+
 					</div>
 
 				<div id ='skills'>
+
 				 	<h1>SKILLS</h1>
 
-		          <h2>Fighting</h2> 
+		          <h2>Fighting</h2>
 		        <button type="button" onClick={this.incrementCount}>+</button>
 						<div>{this.state.count} </div>
 						<button type="button" onClick={this.decrementCount}>-</button>
-							
+
 							<h2>Shooting</h2>
 						<button type="button" onClick={this.incrementCount}>+</button>
 						<div>{this.state.count} </div>
@@ -78,6 +82,7 @@ const CreationForm = React.createClass({
 						<div>{this.state.count} </div>
 						<button type="button" onClick={this.decrementCount}>-</button>
 
+
 				</div>
 			</div>
 
@@ -86,3 +91,4 @@ const CreationForm = React.createClass({
 })
 
 export default CreationForm; //use connect here? no, its already connected in the parent component
+
