@@ -3,12 +3,9 @@ function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   switch (action.type) {
     case "ATTACK":
-
-      state.log.push("you attacked!")
       return state;
     case "CRY":
       console.log("crying?")
-      state.log.push("you cried!")
       return state;
 
     case "INCREMENT_STAT":
