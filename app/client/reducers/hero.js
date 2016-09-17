@@ -3,6 +3,11 @@ function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   switch (action.type) {
     case "ATTACK":
+      if (action.target.name === state.name) {
+        console.log("ATTACKING THE USER")
+        var amount = action.attacker.stats.str
+        state.status.health -= amount;
+      }
       return state;
     case "FIREBALL":
       return state;

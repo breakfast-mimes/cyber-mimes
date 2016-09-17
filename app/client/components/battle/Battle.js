@@ -12,9 +12,7 @@ export default class Battle extends React.Component {
   }
 
   render(){
-    // var logStyle = {height:"100px",width:"300px",overflow:"auto",border:"8px solid red",padding:"2%"}
     var itemsListStyle = {display:"none"}
-    // var itemsStyle =
     return(
       <div onClick = {scroll}>
         <progress id="enemyHealth" value={this.props.enemy[0].status.health} max="100">Enemy bar</progress>
@@ -57,7 +55,7 @@ export default class Battle extends React.Component {
   }
 }
 function scroll(){
-  document.getElementById('log').scrollTop = document.getElementById('log').scrollHeight;
+  setTimeout(() => {document.getElementById('log').scrollTop = document.getElementById('log').scrollHeight} , 100)
 }
 
 var menuArr = [false,'none']
@@ -68,38 +66,29 @@ function showMenu(menu) {
     document.getElementById(menu).style.display = "none"
     menuArr[0] = false;
     menuArr[1] = 'none';
+    return
   } else if (menuArr[0]){
     document.getElementById(menuArr[1]).style.display = "none"
-    document.getElementById(menu).style.display = "block"
-    menuArr[0] = true;
-    menuArr[1] = menu;
-  } else {
-    document.getElementById(menu).style.display = "block"
-    menuArr[0] = true;
-    menuArr[1] = menu;
   }
+  document.getElementById(menu).style.display = "block"
+  menuArr[0] = true;
+  menuArr[1] = menu;
+
 }
 
 function cry() {
-  this.state.game.updateLog("you cry and cower in the corner as you beg whatever god that exists to smite the demon creature")
   this.state.game.setHeroAction(this.props.cry);
-  this.state.game.updateLog("they murder you dead")
+  this.state.game.updateLog(["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"])
   this.state.game.setEnemyAction(this.props.enemyMurder);
-  this.state.game.nextTurn();
 }
 
 function attack() {
-  this.state.game.updateLog("you attack")
-  this.state.game.setHeroAction(this.props.attack.bind(null, 10, this.props.hero, this.props.enemy));
-  this.state.game.updateLog("the enemy attacks!")
-  console.log(this.props.enemy, "ENEMY IN ATTACK")
-  this.state.game.setEnemyAction(this.props.enemyAttack.bind(null,this.props.enemy[0],this.props.hero));
-  this.state.game.nextTurn();
+  this.state.game.updateLog(["you attack","the enemy attacks!"])
+  this.state.game.setHeroAction(this.props.attack.bind(null, this.props.hero, this.props.enemy[0]));
+  this.state.game.setEnemyAction(this.props.attack.bind(null,this.props.enemy[0],this.props.hero));
 }
 
 function fireball() {
-  this.state.game.updateLog("you throw a giant fireball")
-  this.state.game.setHeroAction(this.props.fireball.bind(null,10, this.props.hero, this.props.enemy));
-  this.state.game.updateLog("the enemy cowers!")
-  this.state.game.nextTurn();
+  this.state.game.updateLog(["you throw a giant fireball","the enemy cowers!"])
+  this.state.game.setHeroAction(this.props.fireball.bind(null, this.props.hero, this.props.enemy));
 }
