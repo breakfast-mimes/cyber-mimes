@@ -1,11 +1,14 @@
 function enemy(state = [], action) {
   console.log(state, action);
 
+  state = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "ATTACK":
-      var amount = action.attacker.stats.str
-      state = JSON.parse(JSON.stringify(state));
-      state[0].status.health -= amount;
+
+      if (action.target.name === state[0].name) {
+        var amount = action.attacker.stats.str
+        state[0].status.health -= amount;
+      }
       return state;
     case "ENEMY_MURDER":
       return state;
