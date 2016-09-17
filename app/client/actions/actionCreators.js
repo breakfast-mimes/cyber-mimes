@@ -1,7 +1,14 @@
-export function incrementStat(index) {
+export function incrementStat(prop) {
   return {
     type: 'INCREMENT_STAT',
-    amount: 2
+    prop
+  }
+}
+
+export function decrementStat(prop) {
+  return {
+    type: 'DECREMENT_STAT',
+    prop
   }
 }
 
