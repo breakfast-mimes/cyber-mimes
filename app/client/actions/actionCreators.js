@@ -19,3 +19,11 @@ export function cry() {
     type: 'CRY'
   }
 }
+
+
+export function setHeroAction(action) {
+  return {
+    type: 'SET_HERO_ACTION',
+    action
+  }
+}
