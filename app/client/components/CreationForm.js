@@ -34,12 +34,12 @@ const CreationForm = React.createClass({
 						<div id = 'intelligence'>{this.props.hero.stats.int} </div>
 						<button type="button" onClick={this.props.decrementStat.bind(null , 'int')}>-</button>
 
-						<h2>Dexterity</h2> 
+						<h2>Dexterity</h2>
 						<button type="button" onClick={this.props.incrementStat.bind(null, 'dex')}>+</button>
 						<div>{this.props.hero.stats.dex} </div>
 						<button type="button" onClick={this.props.decrementStat.bind(null , 'dex')}>-</button>
 
-						<h2>Strength</h2> 
+						<h2>Strength</h2>
 
 						<button type="button" onClick={this.props.incrementStat.bind(null, 'str')}>+</button>
 						<div>{this.props.hero.stats.int} </div>
