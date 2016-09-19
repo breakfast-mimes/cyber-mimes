@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import HealthBar from './HealthBar';
+
 export default class Battle extends React.Component {
   constructor(props) {
     super(props);
@@ -8,11 +10,10 @@ export default class Battle extends React.Component {
       log: [],
       hero:{},
       enemy:{},
-      enemyId:null,
-
+      enemyId:0,
     }
-    setEnemy.call(this,0);
   }
+
   render(){
     let enemy = this.props.enemy[this.state.enemyId];
     let hero = this.props.hero;
@@ -21,15 +22,17 @@ export default class Battle extends React.Component {
         <button type="button" onClick = {setEnemy.bind(this,0)}>Click Me to fight a weak laZer enemy!</button>
         <button type="button" onClick = {setEnemy.bind(this,1)}>Click Me to fight a normal laZer enemy!</button>
         <button type="button" onClick = {setEnemy.bind(this,2)}>Click Me to fight a super laZer enemy</button>
-        <progress id="enemyHealth" value={enemy.status.health} max="100">Enemy bar</progress>
+
+        <HealthBar health={enemy.status.health}/>
+
         <div id="outLog">
           <div id="log">
-            {
-              this.state.log.map((line ,i)=> <p key={i}>{line}</p>)
-            }
+            {this.state.log.map((line ,i)=> <div className="logMessage" key={i}>{line}</div>)}
           </div>
         </div>
-        <progress id="heroHealth" value={hero.status.health} max="100"></progress>
+
+       <HealthBar health={hero.status.health}/>
+
         <div onClick = {attack.bind(this)}>
           Attack!
         </div>
