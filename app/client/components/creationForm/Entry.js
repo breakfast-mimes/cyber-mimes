@@ -2,6 +2,7 @@ import React from 'react';
 import statMap from './statMap'
 
 let timeoutId;
+const holdRefreshRate = 100;
 
 const statLowCap = 3;
 const statHighCap = 10;
@@ -29,7 +30,7 @@ const Entry = React.createClass({
 
   holdListener(func) {
     func();
-    timeoutId = setInterval(func, 100);
+    timeoutId = setInterval(func, holdRefreshRate);
   },
 
   leaveListener() {
@@ -41,7 +42,7 @@ const Entry = React.createClass({
   },
 
   render() {
-  const {group, stat, updateCharacter, hero} = this.props;
+    const {group, stat, updateCharacter, hero} = this.props;
     return (
       <div className='creationEntry'>
         <div className='statTitle noSelect'>{statMap[this.props.stat]}</div>
