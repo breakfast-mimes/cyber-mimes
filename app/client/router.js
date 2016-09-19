@@ -13,7 +13,7 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={CreationForm}></IndexRoute>
-        <Route path="/test" component={Battle}></Route>
+        <Route path="/battle" component={Battle}></Route>
         <Route path="/map" component={Map}></Route>
       </Route>
     </Router>

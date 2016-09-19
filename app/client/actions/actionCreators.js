@@ -7,6 +7,12 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
+export function submitCharacter(name) {
+  return {
+    type: 'SUBMIT_CHARACTER',
+    name
+  }
+}
 export function attack(attacker, target) {
   return {
     type: 'ATTACK',
