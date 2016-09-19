@@ -26,7 +26,6 @@ const CreationForm = React.createClass({
 		const {hero} = this.props;
 		return (
 			<div>
-
 				<div id = 'character'>
 		      <h2>Character Name</h2>
 					<input type="text" value={this.props.hero.name} onChange={this.handleChange}/>
