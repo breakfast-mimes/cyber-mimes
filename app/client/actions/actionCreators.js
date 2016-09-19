@@ -48,3 +48,10 @@ export function enemyMurder() {
     type: 'ENEMY_MURDER'
   }
 }
+
+//function to call if you just want the thing to re render
+export function render() {
+  return {
+    type: 'render'
+  }
+}

@@ -5,7 +5,9 @@
   "main": "app/web/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "babel-node server.js"
+    "server": "babel-node server.js",
+    "start": "node app/web/server.js"
+
   },
   "repository": {
     "type": "git",

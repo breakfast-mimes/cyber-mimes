@@ -15,7 +15,7 @@ const hero = {
   },
 
   status: {
-    health:50,
+    health:100,
     mana:100
   },
   performAction: null

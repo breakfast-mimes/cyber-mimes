@@ -1,29 +1,35 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Game from './game';
-
 export default class Battle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      game: new Game(this.props.hero, this.props.enemy)
-    }
-  }
+      log: [],
+      hero:{},
+      enemy:{},
+      enemyId:null,
 
+    }
+    setEnemy.call(this,0);
+  }
   render(){
-    var itemsListStyle = {display:"none"}
+    let enemy = this.props.enemy[this.state.enemyId];
+    let hero = this.props.hero;
     return(
       <div onClick = {scroll}>
-        <progress id="enemyHealth" value={this.props.enemy[0].status.health} max="100">Enemy bar</progress>
+        <button type="button" onClick = {setEnemy.bind(this,0)}>Click Me to fight a weak laZer enemy!</button>
+        <button type="button" onClick = {setEnemy.bind(this,1)}>Click Me to fight a normal laZer enemy!</button>
+        <button type="button" onClick = {setEnemy.bind(this,2)}>Click Me to fight a super laZer enemy</button>
+        <progress id="enemyHealth" value={enemy.status.health} max="100">Enemy bar</progress>
         <div id="outLog">
           <div id="log">
             {
-              this.state.game.log.map((line ,i)=> <p key={i}>{line}</p>)
+              this.state.log.map((line ,i)=> <p key={i}>{line}</p>)
             }
           </div>
         </div>
-        <progress id="heroHealth" value={this.props.hero.status.health} max="100"></progress>
+        <progress id="heroHealth" value={hero.status.health} max="100"></progress>
         <div onClick = {attack.bind(this)}>
           Attack!
         </div>
@@ -61,7 +67,6 @@ function scroll(){
 var menuArr = [false,'none']
 function showMenu(menu) {
   var displayString = document.getElementById(menu).style.display
-  console.log("test", menuArr)
   if (displayString === "block"){
     document.getElementById(menu).style.display = "none"
     menuArr[0] = false;
@@ -76,19 +81,60 @@ function showMenu(menu) {
 
 }
 
+/*
+Each action needs 3 things
+udate log to say what happened, in an array,
+set hero action, to set the hero's action,
+set enemy action to set enemies action
+TURNS WILL ONLY PROGRESS IF ENEMY ACTION IS SET, AND IT NEEDS TO BE SET LAST
+if you want the enemy or hero to do nothing, set it to null
+*/
 function cry() {
-  this.state.game.setHeroAction(this.props.cry);
-  this.state.game.updateLog(["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"])
-  this.state.game.setEnemyAction(this.props.enemyMurder);
+  setHeroAction.call(this,this.props.cry);
+  updateLog.call(this,["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"])
+  setEnemyAction.call(this,this.props.enemyMurder);
 }
 
 function attack() {
-  this.state.game.updateLog(["you attack","the enemy attacks!"])
-  this.state.game.setHeroAction(this.props.attack.bind(null, this.props.hero, this.props.enemy[0]));
-  this.state.game.setEnemyAction(this.props.attack.bind(null,this.props.enemy[0],this.props.hero));
+  updateLog.call(this,["you attack","the enemy attacks!"])
+  setHeroAction.call(this,this.props.attack.bind(null, this.props.hero, this.props.enemy[this.state.enemyId]));
+  setEnemyAction.call(this,this.props.attack.bind(null,this.props.enemy[this.state.enemyId],this.props.hero));
 }
 
 function fireball() {
-  this.state.game.updateLog(["you throw a giant fireball","the enemy cowers!"])
-  this.state.game.setHeroAction(this.props.fireball.bind(null, this.props.hero, this.props.enemy));
+  updateLog.call(this,["you throw a giant fireball","the enemy cowers!"])
+  setHeroAction.call(this,this.props.fireball.bind(null, this.props.hero, this.props.enemy[this.state.enemyId]));
+  setEnemyAction.call(this,null)
+
+}
+
+
+/*
+  non character functions, so they don't need to progress the turn system
+*/
+
+function setEnemy(id) {
+  updateLog.call(this,["your fightin a " + this.props.enemy[id].name])
+  this.state.enemyId = id;
+  this.props.render();
+}
+
+function nextTurn() {
+  this.state.hero.performAction();
+  this.state.enemy.performAction ? this.state.enemy.performAction() : null;
+}
+
+function setHeroAction(action) {
+  this.state.hero.performAction = action;
+}
+
+function setEnemyAction(action) {
+  this.state.enemy.performAction = action
+  nextTurn.call(this);
+
+}
+
+function updateLog(messageArr) {
+  messageArr.forEach((message)=>this.state.log.push(message))
+  console.log("log",this.state.log)
 }
