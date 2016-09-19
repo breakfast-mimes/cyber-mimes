@@ -59,7 +59,6 @@ const CreationForm = React.createClass({
 				 		  allocation={this.state.skillAllocation}
 				 		  key={i}/>)}
 				</div>
-
 			</div>
 		)
 	}

@@ -29,7 +29,7 @@ const Entry = React.createClass({
 
   holdListener(func) {
     func();
-    timeoutId = setInterval(func, 200);
+    timeoutId = setInterval(func, 100);
   },
 
   leaveListener() {
