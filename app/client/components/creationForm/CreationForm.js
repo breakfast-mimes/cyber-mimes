@@ -18,9 +18,21 @@ const CreationForm = React.createClass({
   	this.state.skillAllocation += amount;
   },
 
- 	handleChange: function(event) {
-    console.log("hello")
+ getInitialState: function() {
+    return {name: ''};
   },
+
+  handleChange: function(event) {
+    this.setState({name: event.target.value});
+    //console.log('HANDLECHANGE',event.target.value);
+
+   },
+
+  onSubmit(evt) {
+   	evt.preventDefault()
+   	this.props.submitForm({name:evt.target.value});
+   	console.log('ONSBUMIT',evt.target.value)
+   },
 
 	render() {
 		const {hero} = this.props;
@@ -28,7 +40,10 @@ const CreationForm = React.createClass({
 			<div>
 				<div id = 'character'>
 		      <h2>Character Name</h2>
+		      	<form onSubmit={this.onSubmit}>
 					<input type="text" value={this.props.hero.name} onChange={this.handleChange}/>
+					<button type="submit" className = "submitButton">SUBMIT</button>
+				</form>
 				</div>
 
 				<div className='stats'>
@@ -58,7 +73,15 @@ const CreationForm = React.createClass({
 				 		  allocation={this.state.skillAllocation}
 				 		  key={i}/>)}
 				</div>
-			</div>
+			
+
+				<div>
+			        <h1>
+			          <Link to='/battle'>Create Character</Link>
+			        </h1>
+
+			    </div>
+		    </div>
 		)
 	}
 });
