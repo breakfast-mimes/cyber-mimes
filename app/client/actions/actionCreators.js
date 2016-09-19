@@ -55,11 +55,9 @@ export function enemyMurder() {
   }
 }
 
-
-
-
-
-
-
-
-
+//function to call if you just want the thing to re render
+export function render() {
+  return {
+    type: 'render'
+  }
+}

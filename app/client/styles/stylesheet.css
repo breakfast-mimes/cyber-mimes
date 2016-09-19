@@ -1,3 +1,10 @@
+progress {
+  text-align: center;
+}
+progress:after {
+  content: attr(value)'%';
+}
+
 #log {
   height: 100px;
   width: 300px;
@@ -30,6 +37,7 @@
 
 #enemyHealth {
   background-color: red;
+  display: block;
 }
 
 #heroHealth {
