@@ -26,6 +26,12 @@ function hero(state = [], action) {
       state = JSON.parse(JSON.stringify(state));
       state.status.health -= amount;
       return state;
+    case "SUBMIT_FORM":
+      return Object.assign({},state, {
+        name: action.name
+      })
+      return state;
+
 
     default:
     	return state;  //if none of the switch statements are used return the default state
