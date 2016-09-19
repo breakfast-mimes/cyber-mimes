@@ -1,29 +1,19 @@
-progress {
-  text-align: center;
-}
-progress:after {
-  content: attr(value)'%';
-}
-
 #log {
   height: 100px;
   width: 300px;
   overflow-y: auto;
-  border: 8px solid red;
-  padding: 2%;
+  border: 3px solid black;
+  padding: 8px;
+  font-size: 14px;
 }
 
 #outLog {
   overflow:hidden;
 }
-/*#itemAnchor:hover #items {
-  display:block;
-}*/
+
 #items {
   position: absolute;
   top: 1;
-  /*right: 0;*/
-  /*bottom: 0;*/
   left: 0;
   margin: 50px 50px 50px 50px;
   padding : 3px;
@@ -35,20 +25,39 @@ progress:after {
   display: none;
 }
 
-#enemyHealth {
-  background-color: red;
-  display: block;
+.logMessage {
+  padding-top: 2px;
 }
 
-#heroHealth {
-  background-color: red;
+.healthBar {
+  position: relative;
+  background: #CCC;
+  width: 200px;
+  height: 25px;
+  display: block;
+  margin: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.bar {
+  background:green;
+  height:inherit;
+}
+
+.healthPercent {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  vertical-align: middle;
+  text-align: middle;
+  top: 0;
+  left: 0;
 }
 
 #magics {
   position: absolute;
   top: 1;
-  /*right: 0;*/
-  /*bottom: 0;*/
   left: 0;
   margin: 50px 50px 50px 50px;
   padding : 3px;
