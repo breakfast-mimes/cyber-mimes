@@ -21,9 +21,9 @@ export default class Battle extends React.Component {
     return(
       <div onClick = {scroll}>
 
-        <button type="button" onClick = {setEnemy.bind(this,0)}>Click Me to fight a weak laZer enemy!</button>
-        <button type="button" onClick = {setEnemy.bind(this,1)}>Click Me to fight a normal laZer enemy!</button>
-        <button type="button" onClick = {setEnemy.bind(this,2)}>Click Me to fight a super laZer enemy</button>
+        <button type="button" onClick = {setEnemyId.bind(this,0)}>Click Me to fight a weak laZer enemy!</button>
+        <button type="button" onClick = {setEnemyId.bind(this,1)}>Click Me to fight a normal laZer enemy!</button>
+        <button type="button" onClick = {setEnemyId.bind(this,2)}>Click Me to fight a super laZer enemy</button>
 
         <HealthBar health={enemy.status.health}/>
 
