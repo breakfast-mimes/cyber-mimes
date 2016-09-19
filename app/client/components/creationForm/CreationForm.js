@@ -7,43 +7,31 @@ const CreationForm = React.createClass({
   getInitialState () {
     return {
       statAllocation: 10,
-      skillAllocation: 40
+      skillAllocation: 40,
+      name: ''
     };
   },
 
   changeStat(amount) {
   	this.state.statAllocation += amount;
   },
+
   changeSkill(amount) {
   	this.state.skillAllocation += amount;
   },
 
- getInitialState: function() {
-    return {name: ''};
-  },
-
-  handleChange: function(event) {
+  handleChange(event) {
     this.setState({name: event.target.value});
-    //console.log('HANDLECHANGE',event.target.value);
-
-   },
-
-  onSubmit(evt) {
-   	evt.preventDefault()
-   	this.props.submitForm({name:evt.target.value});
-   	console.log('ONSBUMIT',evt.target.value)
-   },
+  },
 
 	render() {
 		const {hero} = this.props;
 		return (
 			<div>
-				<div id = 'character'>
-		      <h2>Character Name</h2>
-		      	<form onSubmit={this.onSubmit}>
-					<input type="text" value={this.props.hero.name} onChange={this.handleChange}/>
-					<button type="submit" className = "submitButton">SUBMIT</button>
-				</form>
+
+				<div className='stats'>
+		      <div className='statTitle'>Character Name</div>
+					<input type="text" placeholder="Character Name" onChange={this.handleChange} className="statTitle"/>
 				</div>
 
 				<div className='stats'>
@@ -73,15 +61,11 @@ const CreationForm = React.createClass({
 				 		  allocation={this.state.skillAllocation}
 				 		  key={i}/>)}
 				</div>
-			
 
 				<div>
-			        <h1>
-			          <Link to='/battle'>Create Character</Link>
-			        </h1>
-
-			    </div>
-		    </div>
+          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Create Character</Link>
+			  </div>
+		  </div>
 		)
 	}
 });

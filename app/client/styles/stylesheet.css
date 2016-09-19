@@ -83,12 +83,13 @@
 
 .creationEntry {
   width: 230px;
-  background-color: #DDD;
 }
 
 .stats {
   width: 230px;
   border: 1px solid #999;
+  padding-bottom: 5px;
+  background-color: #DDD;
 }
 
 .noSelect {
