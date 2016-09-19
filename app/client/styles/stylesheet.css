@@ -51,3 +51,50 @@
   z-index: 1;
   display: none;
 }
+
+.createInput {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.statTitle {
+  width: 140px;
+  height: 20px;
+  margin: 2px;
+  padding-left: 8px;
+  font-weight: bold;
+  display: inline-block
+}
+
+.allocation {
+  width: 50px;
+  text-align: center;
+}
+
+.allocationHeader {
+  width: 230px;
+  background-color: #999;
+}
+
+.creationEntry {
+  width: 230px;
+  background-color: #DDD;
+}
+
+.stats {
+  width: 230px;
+  border: 1px solid #999;
+}
+
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none
+}

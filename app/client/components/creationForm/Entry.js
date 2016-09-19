@@ -3,17 +3,16 @@ import statMap from './statMap'
 
 const Entry = React.createClass({
   render() {
-  const {group, stat, updateCharacter, hero} = this.props;
+  const {group, stat, updateCharacter, hero, allocation} = this.props;
     return (
-      <div>
-        <h2>{statMap[this.props.stat]}</h2>
-        <button type = 'button' onClick={updateCharacter.bind(null, group, stat, 1)}>+</button>
-        <div>{hero[group][stat]} </div>
-        <button type = 'button' onClick={updateCharacter.bind(null, group, stat, -1)}>-</button>
+      <div className='creationEntry'>
+        <div className='statTitle noSelect'>{statMap[this.props.stat]}</div>
+        <div onClick={updateCharacter.bind(null, group, stat, -1)} className='createInput noSelect'>-</div>
+        <div className='createInput noSelect'>{hero[group][stat]} </div>
+        <div onClick={updateCharacter.bind(null, group, stat, 1)} className='createInput noSelect'>+</div>
       </div>
     )
   }
 })
 
 export default Entry;
-
