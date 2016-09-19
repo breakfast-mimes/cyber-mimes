@@ -1,5 +1,4 @@
 function hero(state = [], action) {
-  console.log('STATE',state, action);
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   switch (action.type) {
     case "ATTACK":

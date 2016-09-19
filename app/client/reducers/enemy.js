@@ -1,6 +1,4 @@
 function enemy(state = [], action) {
-  console.log(state, action);
-
   state = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "ATTACK":

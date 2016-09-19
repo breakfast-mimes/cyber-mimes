@@ -1,6 +1,8 @@
 import React from 'react';
 import statMap from './statMap'
 
+let timeoutId;
+
 const statLowCap = 3;
 const statHighCap = 10;
 const skillLowCap = 0;
@@ -25,14 +27,27 @@ const Entry = React.createClass({
     }
   },
 
+  holdListener(func) {
+    func();
+    timeoutId = setInterval(func, 200);
+  },
+
+  leaveListener() {
+    clearTimeout(timeoutId);
+  },
+
+  mouseUpListener() {
+    clearTimeout(timeoutId);
+  },
+
   render() {
   const {group, stat, updateCharacter, hero} = this.props;
     return (
       <div className='creationEntry'>
         <div className='statTitle noSelect'>{statMap[this.props.stat]}</div>
-        <div onClick={this.decrement.bind(null, group, stat, -1)} className='createInput noSelect'>-</div>
+        <div onMouseDown={this.holdListener.bind(this, this.decrement.bind(null, group, stat, -1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>-</div>
         <div className='createInput noSelect'>{hero[group][stat]} </div>
-        <div onClick={this.increment.bind(null, group, stat, 1)} className='createInput noSelect'>+</div>
+        <div onMouseDown={this.holdListener.bind(this, this.increment.bind(null, group, stat, 1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>+</div>
       </div>
     )
   }
