@@ -8,19 +8,20 @@ export default class Battle extends React.Component {
       log: [],
       hero:{},
       enemy:{},
-      enemyId:null,
+      enemyId:0,
+      inProgress:true
 
     }
-    setEnemy.call(this,0);
+
   }
   render(){
     let enemy = this.props.enemy[this.state.enemyId];
     let hero = this.props.hero;
     return(
       <div onClick = {scroll}>
-        <button type="button" onClick = {setEnemy.bind(this,0)}>Click Me to fight a weak laZer enemy!</button>
-        <button type="button" onClick = {setEnemy.bind(this,1)}>Click Me to fight a normal laZer enemy!</button>
-        <button type="button" onClick = {setEnemy.bind(this,2)}>Click Me to fight a super laZer enemy</button>
+        <button type="button" onClick = {setEnemyId.bind(this,0)}>Click me to fight a weak laZer enemy</button>
+        <button type="button" onClick = {setEnemyId.bind(this,1)}>Click me to fight a normal laZer enemy!</button>
+        <button type="button" onClick = {setEnemyId.bind(this,2)}>Click me to fight a super laZer enemy</button>
         <progress id="enemyHealth" value={enemy.status.health} max="100">Enemy bar</progress>
         <div id="outLog">
           <div id="log">
@@ -30,7 +31,7 @@ export default class Battle extends React.Component {
           </div>
         </div>
         <progress id="heroHealth" value={hero.status.health} max="100"></progress>
-        <div onClick = {attack.bind(this)}>
+        <div onClick = {loop.bind(this,'attack')}>
           Attack!
         </div>
         <div>
@@ -40,7 +41,7 @@ export default class Battle extends React.Component {
           Items
         </div>
 
-        <div onClick = {cry.bind(this)}>
+        <div onClick = {loop.bind(this,'cry')}>
           Cry
         </div>
 
@@ -52,7 +53,7 @@ export default class Battle extends React.Component {
         </div>
         <div id="magics">
           MAGIC?!
-          <div onClick={fireball.bind(this)} id="fireball">
+          <div onClick={loop.bind(this,'fireball')} id="fireball">
             fireball
           </div>
         </div>
@@ -81,60 +82,44 @@ function showMenu(menu) {
 
 }
 
-/*
-Each action needs 3 things
-udate log to say what happened, in an array,
-set hero action, to set the hero's action,
-set enemy action to set enemies action
-TURNS WILL ONLY PROGRESS IF ENEMY ACTION IS SET, AND IT NEEDS TO BE SET LAST
-if you want the enemy or hero to do nothing, set it to null
-*/
-function cry() {
-  setHeroAction.call(this,this.props.cry);
-  updateLog.call(this,["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"])
-  setEnemyAction.call(this,this.props.enemyMurder);
+function loop(f){
+  if(this.props.enemy[this.state.enemyId].status.health > 0) {
+
+    if (f === 'cry') {
+      updateLog.call(this,["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"])
+      this.props.cry()
+      this.props.enemyMurder();
+    } else if (f === 'attack') {
+      updateLog.call(this,["you attack","the enemy attacks!"])
+      this.props.attack(this.props.hero, this.props.enemy[this.state.enemyId])
+      this.props.attack(this.props.enemy[this.state.enemyId],this.props.hero)
+    } else if(f === 'fireball') {
+      updateLog.call(this,["you throw a giant fireball","the enemy cowers!"])
+      this.props.fireball(this.props.hero, this.props.enemy[this.state.enemyId])
+    }
+
+    setTimeout(() => {
+      if (this.props.enemy[this.state.enemyId].status.health <= 0) {
+        console.log("he dead")
+        updateLog.call(this,["Congrats! you have slain the beast, pick another enemy"])
+      }
+
+      if (this.props.hero.status.health <= 0) {
+        updateLog.call(this,["oh no! You've taken fatal damage!", "But wait, your guardian angel came and save you", "...and took half your gold"])
+        this.props.heal(100, this.props.hero)
+      }
+    }, 0)
+  }
+
 }
 
-function attack() {
-  updateLog.call(this,["you attack","the enemy attacks!"])
-  setHeroAction.call(this,this.props.attack.bind(null, this.props.hero, this.props.enemy[this.state.enemyId]));
-  setEnemyAction.call(this,this.props.attack.bind(null,this.props.enemy[this.state.enemyId],this.props.hero));
-}
-
-function fireball() {
-  updateLog.call(this,["you throw a giant fireball","the enemy cowers!"])
-  setHeroAction.call(this,this.props.fireball.bind(null, this.props.hero, this.props.enemy[this.state.enemyId]));
-  setEnemyAction.call(this,null)
-
-}
-
-
-/*
-  non character functions, so they don't need to progress the turn system
-*/
-
-function setEnemy(id) {
+function setEnemyId(id) {
   updateLog.call(this,["your fightin a " + this.props.enemy[id].name])
   this.state.enemyId = id;
   this.props.render();
 }
 
-function nextTurn() {
-  this.state.hero.performAction();
-  this.state.enemy.performAction ? this.state.enemy.performAction() : null;
-}
-
-function setHeroAction(action) {
-  this.state.hero.performAction = action;
-}
-
-function setEnemyAction(action) {
-  this.state.enemy.performAction = action
-  nextTurn.call(this);
-
-}
-
 function updateLog(messageArr) {
   messageArr.forEach((message)=>this.state.log.push(message))
-  console.log("log",this.state.log)
+  this.props.render();
 }
