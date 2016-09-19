@@ -11,7 +11,7 @@ const CreationForm = React.createClass({
 
   handleChange: function(event) {
     this.setState({name: event.target.value});
-    console.log('HANDLECHANGE',event.target.value);
+    //console.log('HANDLECHANGE',event.target.value);
 
    },
 
@@ -28,7 +28,7 @@ const CreationForm = React.createClass({
 				<div id = 'character'>
 		      <h2>Character Name</h2>
 		      	<form onSubmit={this.onSubmit}>
-					<input type="text" value={this.props.name}/>
+					<input type="text" value={this.props.hero.name} onChange={this.handleChange}/>
 					<button type="submit" className = "submitButton">SUBMIT</button>
 				</form>
 				</div>
