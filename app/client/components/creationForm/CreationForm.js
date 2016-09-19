@@ -11,6 +11,13 @@ const CreationForm = React.createClass({
     };
   },
 
+  changeStat(amount) {
+  	this.state.statAllocation += amount;
+  },
+  changeSkill(amount) {
+  	this.state.skillAllocation += amount;
+  },
+
  	handleChange: function(event) {
     console.log("hello")
   },
@@ -30,7 +37,13 @@ const CreationForm = React.createClass({
 	        	<div className='statTitle noSelect'>STATS</div>
 	        	<div className='statTitle allocation noSelect'>{this.state.statAllocation}</div>
 	        </div>
-	    		{Object.keys(hero.stats).map((k, i) => <Entry {...this.props} group='stats' stat={k} allocation={this.state.statAllocation} key={i}/>)}
+	    		{Object.keys(hero.stats).map((k, i) =>
+	    			<Entry {...this.props}
+    					group='stats'
+    					stat={k}
+    					updateAllocation={this.changeStat}
+    					allocation={this.state.statAllocation}
+    					key={i}/>)}
 				</div>
 
 				<div className='stats'>
@@ -38,7 +51,13 @@ const CreationForm = React.createClass({
 	        	<div className='statTitle noSelect'>SKILLS</div>
 	        	<div className='statTitle allocation noSelect'>{this.state.skillAllocation}</div>
 		      </div>
-				 	{Object.keys(hero.skills).map((k, i) => <Entry {...this.props} group='skills' stat={k} allocation={this.state.skillAllocation} key={i}/>)}
+				 	{Object.keys(hero.skills).map((k, i) =>
+				 		<Entry {...this.props}
+				 		  group='skills'
+				 		  stat={k}
+				 		  updateAllocation={this.changeSkill}
+				 		  allocation={this.state.skillAllocation}
+				 		  key={i}/>)}
 				</div>
 
 			</div>
