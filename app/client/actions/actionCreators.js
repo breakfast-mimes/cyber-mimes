@@ -7,9 +7,9 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
-export function submitForm(name) {
+export function submitCharacter(name) {
   return {
-    type: 'SUBMIT_FORM',
+    type: 'SUBMIT_CHARACTER',
     name
   }
 }
