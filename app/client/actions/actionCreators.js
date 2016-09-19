@@ -7,6 +7,12 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
+export function submitForm(name) {
+  return {
+    type: 'SUBMIT_FORM',
+    name
+  }
+}
 export function attack(attacker, target) {
   return {
     type: 'ATTACK',
@@ -48,3 +54,12 @@ export function enemyMurder() {
     type: 'ENEMY_MURDER'
   }
 }
+
+
+
+
+
+
+
+
+
