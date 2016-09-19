@@ -9,6 +9,11 @@ function hero(state = [], action) {
       return state;
     case "FIREBALL":
       return state;
+    case "HEAL":
+      if(action.target.name === state.name) {
+        state.status.health += action.amount;
+      }
+      return state;
     case "CRY":
       return state;
     case "UPDATE_CHARACTER":

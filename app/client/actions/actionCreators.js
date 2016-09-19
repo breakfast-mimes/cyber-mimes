@@ -49,6 +49,15 @@ export function enemyAttack(attacker,target) {
   }
 }
 
+export function heal(amount,target) {
+  console.log("healing")
+  return {
+    type: 'HEAL',
+    amount,
+    target
+  }
+}
+
 export function enemyMurder() {
   return {
     type: 'ENEMY_MURDER'
