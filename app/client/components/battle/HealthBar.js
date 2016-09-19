@@ -6,11 +6,12 @@ const HealthBar = React.createClass({
     return (
       <div className="healthBar noSelect">
         <span className="healthPercent">{health + "%"}</span>
-        <div className="bar"  style={
-            {
-              width: health * 2 + "px",
-              background: "hsl(" + 1.2 * health + ",100% ,20%)"
-            }
+        <div style={
+          {
+            width: health * 3 + "px",
+            background: "hsl(" + 1.2 * health + ",100% ,20%)",
+            height: 25 + "px"
+          }
         }></div>
       </div>
     )
