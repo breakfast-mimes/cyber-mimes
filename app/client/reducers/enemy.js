@@ -9,8 +9,7 @@ function enemy(state = [], action) {
       return state;
 
     case "FIREBALL":
-      var amount = action.attacker.stats.int + 1
-      state[action.target.id].status.health -= amount;
+      state[action.id].status.health -= action.amount;
       return state;
     default:
       return state;

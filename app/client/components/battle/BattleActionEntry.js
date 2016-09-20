@@ -6,7 +6,7 @@ const BattleActionEntry = React.createClass({
     const {action, hero, enemy, id} = this.props
     return (
       <div className="battleActionEntry noSelect">
-        <div onClick={() => {this.props[action](hero, enemy, id)}}>
+        <div onClick={() => this.props[action](hero, enemy, id)}>
           {actions[action].name}
         </div>
       </div>

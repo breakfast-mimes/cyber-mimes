@@ -3,10 +3,10 @@ import spells from './spells'
 
 const SpellEntry = React.createClass({
   render() {
-    const {spell, loop} = this.props
+    const {spell, hero, enemy, id} = this.props
     return (
       <div className="spellEntry noSelect">
-        <div onClick={() => loop(spell)}>
+        <div onClick={() => this.props[spell](hero, enemy, id)}>
           {spells[spell].name}
         </div>
       </div>

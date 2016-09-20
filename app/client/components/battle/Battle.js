@@ -53,7 +53,7 @@ export default class Battle extends React.Component {
             MAGIC
             <div id="magics">
               MAGIC?!
-              {Object.keys(spells).map((k, i) => <SpellEntry spell={k} loop={loop.bind(this)} key={i}/>)}
+              {Object.keys(spells).map((k, i) => <SpellEntry spell={k} {...this.props} action={k} id={this.state.enemyId} key={i}/>)}
             </div>
           </div>
 

@@ -15,26 +15,31 @@ export function submitCharacter(name) {
 }
 
 
-export function fireball(attacker, target) {
+export function fireball(hero, enemy, id) {
+  let amount = hero.stats.int + 1
   return {
     type: 'FIREBALL',
-    attacker,
-    target
+    amount,
+    id,
+    message: ["you throw a giant fireball for " + amount + " damage","the enemy cowers!"]
   }
 }
 
 export function enemyAttack(attacker) {
+  let amount = attacker.stats.str
   return {
     type: 'ENEMY_ATTACK',
-    attacker
+    amount,
+    message: "the enemy attacks for " + amount + " damage!"
   }
 }
 
-export function heal(amount,target) {
+export function heal(hero, enemy, id) {
+  let amount = hero.stats.int
   return {
     type: 'HEAL',
     amount,
-    target
+    message: "You heal yourself for " + amount + " health."
   }
 }
 
