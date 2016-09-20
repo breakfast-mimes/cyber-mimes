@@ -16,10 +16,6 @@ const enemy = [{
     health:100,
     mana:100
   },
-
-
-
-  performAction: function() {console.log('attacking hero')},
   id:0
 },
 
@@ -42,8 +38,6 @@ const enemy = [{
     health:100,
     mana:100
   },
-
-  performAction: function() {console.log('attacking hero')},
   id:1
 },
 {
@@ -59,14 +53,10 @@ const enemy = [{
     magic: 0,
     healing: 0
   },
-
   status: {
     health:100,
     mana:100
   },
-
-
-  performAction: function() {console.log('attacking hero')},
   id:2
 }
 

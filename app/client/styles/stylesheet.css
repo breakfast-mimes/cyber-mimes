@@ -1,37 +1,33 @@
-.title {
-  font-family: 'Sigmar One', cursive;
+a {
+  text-decoration: none;
+}
+
+title {
+
 }
 
 #log {
   height: 200px;
-  width: 300px;
+  width: 500px;
   overflow-y: auto;
   border: 3px solid black;
-  border-radius: 15px;
   padding: 8px;
   font-size: 14px;
-  font-family: 'Sigmar One', cursive;
 }
 
 #outLog {
   overflow:hidden;
 }
 
-#items {
-  position: absolute;
-  top: 1;
-  left: 0;
-  margin: 50px 50px 50px 50px;
-  padding : 3px;
-  width: 150px;
-  height: 160px;
-  background-color: #39CCCC;
-  border: 1px solid black;
-  border-radius: 20px;
-  z-index: 1;
-  display: none;
-  font-family: 'Play', cursive;
-}
+/*.logMessage {
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #DDD;
+  margin-bottom: 1px;
+  vertical-align: middle;
+  height: 20px;
+  padding-left: 8px;
+}*/
 
 .logMessage {
   padding-top: 2px;
@@ -59,18 +55,21 @@
   left: 0;
 }
 
-#magics {
+#magics, #items {
   position: absolute;
-  top: 1;
-  left: 0;
-  margin: 50px 50px 50px 50px;
-  padding : 3px;
+  top: -0px;
+  left: 70px;
+  padding : 5px;
   width: 100px;
   height: 100px;
-  background-color: green;
+  background-color: #B5651D;
   border: 1px solid black;
-  z-index: 1;
   display: none;
+}
+
+.battleActions {
+  position: relative; 
+  width: 60px;
 }
 
 .createInput {
