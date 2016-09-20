@@ -13,13 +13,7 @@ export function submitCharacter(name) {
     name
   }
 }
-export function attack(attacker, target) {
-  return {
-    type: 'ATTACK',
-    attacker,
-    target
-  }
-}
+
 
 export function fireball(attacker, target) {
   return {
@@ -29,23 +23,10 @@ export function fireball(attacker, target) {
   }
 }
 
-export function cry() {
-  return {
-    type: 'CRY'
-  }
-}
-
-export function enemyCry() {
-  return {
-    type: 'ENEMY_CRY'
-  }
-}
-
-export function enemyAttack(attacker,target) {
+export function enemyAttack(attacker) {
   return {
     type: 'ENEMY_ATTACK',
-    attacker,
-    target
+    attacker
   }
 }
 

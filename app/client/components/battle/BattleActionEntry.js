@@ -3,10 +3,10 @@ import actions from './battleActions'
 
 const BattleActionEntry = React.createClass({
   render() {
-    const {action, loop} = this.props
+    const {action, hero, enemy, id} = this.props
     return (
       <div className="battleActionEntry noSelect">
-        <div onClick={() => loop(action)}>
+        <div onClick={() => {this.props[action](hero, enemy, id)}}>
           {actions[action].name}
         </div>
       </div>

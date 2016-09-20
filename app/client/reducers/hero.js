@@ -1,22 +1,15 @@
+import util from './util';
+
 function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   switch (action.type) {
-
-    case "ATTACK":
-      if (action.target.name === state.name) {
-        var amount = action.attacker.stats.str
-        state.status.health -= amount;
-      }
-      return state;
 
     case "FIREBALL":
       return state;
 
     case "HEAL":
       if(action.target.name === state.name) {
-        state.status.health += action.amount;
-        if(state.status.health > 100)
-          state.status.health = 100;
+        state.status.health = util.clip(0, 100, state.status.health + action.amount);
       }
       return state;
 

@@ -26,6 +26,8 @@ export default class Battle extends React.Component {
     let enemy = this.props.enemy[this.state.enemyId];
     let hero = this.props.hero;
 
+    if(this.props.game.enemyTurn) this.props.enemyAttack(this.props.enemy[this.state.enemyId]);
+
     return(
       <div className="battleScreen" onClick = {scroll}>
 
@@ -34,11 +36,11 @@ export default class Battle extends React.Component {
         <button type="button" onClick = {setEnemyId.bind(this,2)}>Click Me to fight a super laZer enemy</button>
 
         <HealthBar health={enemy.status.health}/>
-        <Log log={this.state.log}/>
+        <Log log={this.props.game.log}/>
         <HealthBar health={hero.status.health}/>
 
         <div className="battleActions">
-          {Object.keys(battleActions).map((k, i) => <BattleActionEntry action={k} loop={loop.bind(this)} key={i}/>)}
+          {Object.keys(battleActions).map((k, i) => <BattleActionEntry {...this.props} action={k} id={this.state.enemyId} key={i}/>)}
 
           <div onClick={showMenu.bind(null,'items')}>
             Items
@@ -94,7 +96,7 @@ function loop(act){
 
     if(act === 'attack') {
       this.props.attack(this.props.hero, this.props.enemy[this.state.enemyId])
-      this.props.attack(this.props.enemy[this.state.enemyId],this.props.hero)
+      this.props.enemyAttack(this.props.enemy[this.state.enemyId])
     }
 
     if(act === 'fireball') {
