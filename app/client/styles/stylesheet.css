@@ -1,10 +1,16 @@
+.title {
+  font-family: 'Sigmar One', cursive;
+}
+
 #log {
-  height: 100px;
+  height: 200px;
   width: 300px;
   overflow-y: auto;
   border: 3px solid black;
+  border-radius: 15px;
   padding: 8px;
   font-size: 14px;
+  font-family: 'Sigmar One', cursive;
 }
 
 #outLog {
@@ -17,12 +23,14 @@
   left: 0;
   margin: 50px 50px 50px 50px;
   padding : 3px;
-  width: 100px;
-  height: 100px;
-  background-color: green;
+  width: 150px;
+  height: 160px;
+  background-color: #39CCCC;
   border: 1px solid black;
+  border-radius: 20px;
   z-index: 1;
   display: none;
+  font-family: 'Play', cursive;
 }
 
 .logMessage {
@@ -112,3 +120,23 @@
   -webkit-user-select: none;
   -o-user-select: none
 }
+
+button {font-size: 12px;
+  font-family: 'Play', cursive;
+  size: 10px;
+  padding: 10px 30px;
+  border-radius: 8px;
+  background-color: white;
+    
+    border: 2px solid rgb(0, 172, 237)}
+
+
+
+
+
+
+
+
+
+
+
