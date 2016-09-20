@@ -13,48 +13,33 @@ export function submitCharacter(name) {
     name
   }
 }
-export function attack(attacker, target) {
-  return {
-    type: 'ATTACK',
-    attacker,
-    target
-  }
-}
 
-export function fireball(attacker, target) {
+
+export function fireball(hero, enemy, id) {
+  let amount = hero.stats.int + 1
   return {
     type: 'FIREBALL',
-    attacker,
-    target
+    amount,
+    id,
+    message: ["you throw a giant fireball for " + amount + " damage","the enemy cowers!"]
   }
 }
 
-export function cry() {
-  return {
-    type: 'CRY'
-  }
-}
-
-export function enemyCry() {
-  return {
-    type: 'ENEMY_CRY'
-  }
-}
-
-export function enemyAttack(attacker,target) {
+export function enemyAttack(attacker) {
+  let amount = attacker.stats.str
   return {
     type: 'ENEMY_ATTACK',
-    attacker,
-    target
+    amount,
+    message: "the enemy attacks for " + amount + " damage!"
   }
 }
 
-export function heal(amount,target) {
-  console.log("healing")
+export function heal(hero, enemy, id) {
+  let amount = hero.stats.int
   return {
     type: 'HEAL',
     amount,
-    target
+    message: "You heal yourself for " + amount + " health."
   }
 }
 

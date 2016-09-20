@@ -5,7 +5,7 @@ const Main = React.createClass({
   render() {
     return (
       <div>
-        <h1 class ='title'>
+        <h1 className ='title'>
           <Link to='#'>Cyber Mimes</Link>
         </h1>
         {React.cloneElement(this.props.children, this.props)}
