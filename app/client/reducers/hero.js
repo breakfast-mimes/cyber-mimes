@@ -36,10 +36,6 @@ function hero(state = [], action) {
     default:
     	return state;  //if none of the switch statements are used return the default state
   }
-
-
-
-
 }
 
 export default hero;

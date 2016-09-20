@@ -14,9 +14,15 @@ export default class South extends React.Component {
     return(
       <div>
         Southz
-        <img src={imgs[3]} />
+        <img src={imgs[3]} onClick={goNorth.bind(this)}/>
       </div>
     )
   }
 }
 
+
+function goNorth (){
+  console.log(this)
+  this.props.switchPage('north')
+  this.props.render()
+}
