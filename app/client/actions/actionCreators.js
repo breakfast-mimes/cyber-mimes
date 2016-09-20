@@ -50,7 +50,6 @@ export function enemyAttack(attacker,target) {
 }
 
 export function heal(amount,target) {
-  console.log("healing")
   return {
     type: 'HEAL',
     amount,
