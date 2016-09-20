@@ -68,8 +68,9 @@ title {
 }
 
 .battleActions {
-  position: relative; 
+  position: relative;
   width: 60px;
+  cursor: pointer;
 }
 
 .createInput {

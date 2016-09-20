@@ -19,6 +19,6 @@ export function defend(hero, enemy, id) {
 export function cry(hero, enemy, id) {
   return {
     type: 'CRY',
-    message: ["you cry and cower in the corner as you beg whatever god that exists to smite the demon creature","they murder you dead"]
+    message: "you cry and cower in the corner as you beg whatever god that exists to smite the demon creature"
   }
 }
