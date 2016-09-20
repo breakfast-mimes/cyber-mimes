@@ -64,6 +64,13 @@ export function enemyMurder() {
   }
 }
 
+export function changeMap(location) {
+  return {
+    type: 'CHANGE_MAP',
+    location
+  }
+}
+
 //function to call if you just want the thing to re render
 export function render() {
   return {
