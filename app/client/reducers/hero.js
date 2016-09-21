@@ -27,10 +27,6 @@ function hero(state = [], action) {
     default:
     	return state;
   }
-
-
-
-
 }
 
 export default hero;
