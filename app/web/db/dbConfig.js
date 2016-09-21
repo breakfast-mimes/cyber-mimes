@@ -22,7 +22,11 @@
 // });
 
 
+// import hero from '../../client/data/hero.js';
+
+var Hero = require('../../client/data/hero.js')
 var neo4j = require('neo4j');
+console.log('HERO',Hero)
 
 //database instance
 var db = new neo4j.GraphDatabase({
@@ -34,27 +38,49 @@ console.log('DB',db)
 
 //cypher query language
 db.cypher({
-    query: 'CREATE (p:TEST { title: "MKS",released:2016}) RETURN p',
+    query: 'CREATE (p:CHARACTER { name: "Harp",strength:10, fighting:20}) RETURN p',
     // params: {
     //     email: 'alice@example.com',
     // },
     
 }, callback);
+
+db.cypher({
+    query: 'MATCH (p:CHARACTER {name: {name}}) RETURN p',
+    params: {
+        name: 'Harp',
+    },
+    
+}, callback1);
+
+
 //console.log('DB CYPHER',db.cypher)
 
 
 function callback(err, results) {
-  console.log('RESULT!!!',results)
+  console.log('RESULT_first!!!',results)
     if (err) throw err;
     var result = results[0];
     if (!result) {
         console.log('No result.');
     } else {
         var node = result['p'];
-        console.log('NODE!!!',node.properties.title);
+        console.log('NODE!!!',node.properties);
     }
 }
 
+
+function callback1(err, results) {
+  console.log('MATCH RESULT',results)
+    if (err) throw err;
+    var result = results[0];
+    if (!result) {
+        console.log('No result.');
+    } else {
+        var node = result['p'];
+        console.log('MATCH RESULT!!!',node.properties);
+    }
+}
 // db.cypher({
 //     queries: [{
 //         query: 'MATCH (user:User {email: {email}}) RETURN user',
@@ -101,6 +127,10 @@ function callback(err, results) {
 //     // Delete results (shouldn’t have returned any):
 //     //assert.equal(deleteResults.length, 0);
 // };
+
+
+
+
 
 
 
