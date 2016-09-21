@@ -9,7 +9,6 @@ export function attack(hero, enemy, id) {
 }
 
 export function defend(hero, enemy, id) {
-  console.log("DEFENDING")
   return {
     type: 'DEFEND',
     message: "you defend"
