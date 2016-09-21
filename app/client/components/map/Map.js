@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import GoSouth from './goSouth';
 import GoNorth from './goNorth';
-// import GoEast from './goEast';
+import GoEast from './goEast';
 import messages from './messages'
 
 export default class Map extends React.Component {
@@ -35,24 +35,15 @@ export default class Map extends React.Component {
     }
 
     if (this.props.map.locationY <= 6) {
-      toRender.unshift(<GoEast {...this.props} switchPage={this.switchPage.bind(this)}/>)
+      toRender.push(<GoEast {...this.props} switchPage={this.switchPage.bind(this)}/>)
     }
-    console.log(this.props.map)
+    console.log(toRender)
     if (this.props.map.prevlocationY >= this.props.map.locationY) {
       this.state.message = messages.descriptionForward[10 - this.props.map.locationY]
     } else {
       this.state.message = messages.descriptionBackward[10 - this.props.map.locationY]
     }
-    // } else if (this.state.currentMap === 'souther'){
-    //   toRender = <Souther {...this.props} switchPage={this.switchPage.bind(this)}/>
-    // } else if (this.state.currentMap === 'southerer'){
-    //   toRender = <Southerer {...this.props} switchPage={this.switchPage.bind(this)}/>
-    // } else if (this.state.currentMap === 'evenMoreSouth'){
-    //   toRender = <EvenMoreSouth {...this.props} switchPage={this.switchPage.bind(this)}/>
-    // } else if (this.state.currentMap === 'southest'){
-    //   toRender = <Southest {...this.props} switchPage={this.switchPage.bind(this)}/>
-    // }
-    console.log(this.state.message)
+
     return(
       <div>
         MAP <br/>
