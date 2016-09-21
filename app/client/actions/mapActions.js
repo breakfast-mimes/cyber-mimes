@@ -9,3 +9,9 @@ export function goNorth() {
     type: 'GO_NORTH',
   }
 }
+
+export function goEast() {
+  return {
+    type: 'GO_EAST',
+  }
+}

@@ -7,7 +7,6 @@ import App from './components/App';
 import CreationForm from './components/creationForm/CreationForm';
 import Battle from './components/battle/Battle.js';
 import Map from './components/map/Map.js';
-import NewMap from './components/newMap/Map.js';
 
 const router = (
   <Provider store={store}>
@@ -16,7 +15,6 @@ const router = (
         <IndexRoute component={CreationForm}></IndexRoute>
         <Route path="/battle" component={Battle}></Route>
         <Route path="/map" component={Map}></Route>
-        <Route path="/newMap" component={NewMap}></Route>
       </Route>
     </Router>
   </Provider>
