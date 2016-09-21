@@ -53,7 +53,7 @@ function callback(err, results) {
         var node = result['p'];
         console.log('NODE!!!',node.properties.title);
     }
-};
+}
 
 // db.cypher({
 //     queries: [{
