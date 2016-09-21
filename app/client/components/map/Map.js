@@ -1,55 +1,64 @@
 import React from 'react';
 import { Link } from 'react-router';
-import South from './South';
-import Start from './Start';
-import Souther from './Souther';
-import Southerer from './Southerer';
-import EvenMoreSouth from './EvenMoreSouth';
-import Southest from './Southest';
+import GoSouth from './goSouth';
+import GoNorth from './goNorth';
+// import GoEast from './goEast';
+import messages from './messages'
 
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMap:'start',
-      message:"Alex:Welcome to our game! It isn't much yet (we're still coding it as you play:D ) but we hope you enjoy it so far"
+      currentMap:'Start',
+      message:"Alex:Welcome to our game! It isn't much yet (we're still coding it as you play:D ) but we hope you enjoy it so far",
+
     }
 
   }
 
-  switchPage(page, message) {
-
-    this.state.currentMap = page;
+  switchPage(currentMap, message) {
+    // if (direction === 'south') {
+    //   break;
+    // }
+    this.state.currentMap = currentMap;
     this.state.message = message
   }
 
   render(){
-    let toRender;
-    if (this.state.currentMap === 'start'){
-      toRender = <Start {...this.props} switchPage={this.switchPage.bind(this)}/>
-    } else if (this.state.currentMap === 'south'){
-      toRender = <South {...this.props} switchPage={this.switchPage.bind(this)}/>
-    } else if (this.state.currentMap === 'souther'){
-      toRender = <Souther {...this.props} switchPage={this.switchPage.bind(this)}/>
-    } else if (this.state.currentMap === 'southerer'){
-      toRender = <Southerer {...this.props} switchPage={this.switchPage.bind(this)}/>
-    } else if (this.state.currentMap === 'evenMoreSouth'){
-      toRender = <EvenMoreSouth {...this.props} switchPage={this.switchPage.bind(this)}/>
-    } else if (this.state.currentMap === 'southest'){
-      toRender = <Southest {...this.props} switchPage={this.switchPage.bind(this)}/>
+    let toRender = [];
+
+    if (this.props.map.locationY <= 10){
+      toRender.push(<GoSouth {...this.props} switchPage={this.switchPage.bind(this)}/>)
+    }
+    if (this.props.map.locationY <= 9){
+      toRender.unshift(<GoNorth {...this.props} switchPage={this.switchPage.bind(this)}/>)
     }
 
-    let imgs = [
-      "//placebacon.net/200/150",
-      "//placebacon.net/300/300",
-      "//placebacon.net/400/400",
-      "//placebacon.net/800/800"
-    ]
+    if (this.props.map.locationY <= 6) {
+      toRender.unshift(<GoEast {...this.props} switchPage={this.switchPage.bind(this)}/>)
+    }
+    console.log(this.props.map)
+    if (this.props.map.prevlocationY >= this.props.map.locationY) {
+      this.state.message = messages.descriptionForward[10 - this.props.map.locationY]
+    } else {
+      this.state.message = messages.descriptionBackward[10 - this.props.map.locationY]
+    }
+    // } else if (this.state.currentMap === 'souther'){
+    //   toRender = <Souther {...this.props} switchPage={this.switchPage.bind(this)}/>
+    // } else if (this.state.currentMap === 'southerer'){
+    //   toRender = <Southerer {...this.props} switchPage={this.switchPage.bind(this)}/>
+    // } else if (this.state.currentMap === 'evenMoreSouth'){
+    //   toRender = <EvenMoreSouth {...this.props} switchPage={this.switchPage.bind(this)}/>
+    // } else if (this.state.currentMap === 'southest'){
+    //   toRender = <Southest {...this.props} switchPage={this.switchPage.bind(this)}/>
+    // }
+    console.log(this.state.message)
     return(
       <div>
         MAP <br/>
         {this.state.message}
         <br/> <br/>
+        {this.state.currentMap}
         {toRender}
       </div>
     )
