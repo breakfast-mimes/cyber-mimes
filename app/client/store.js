@@ -7,11 +7,13 @@ import rootReducer from './reducers/rootReducer';
 import hero from './data/hero';
 import enemy from './data/enemy';
 import game from './data/game'
+import map from './data/map'
 
 const defaultState = {
   hero,
   enemy,
-  game
+  game,
+  map
 }
 
 const store = createStore(rootReducer, defaultState);
