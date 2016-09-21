@@ -21,9 +21,10 @@ export function changeMap(location) {
   }
 }
 
-export function changeEnemy(id) {
+export function changeEnemy(enemies, id) {
   return {
     type: 'CHANGE_ENEMY',
-    id
+    id,
+    message: "You are fighting " + enemies[id].name
   }
 }

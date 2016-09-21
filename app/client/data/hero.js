@@ -13,10 +13,10 @@ const hero = {
     magic: 0,
     healing: 0
   },
-
   status: {
     health:100,
-    mana:100
+    mana:100,
+    defending: 0
   },
   performAction: null
 }

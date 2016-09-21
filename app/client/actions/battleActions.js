@@ -1,5 +1,5 @@
 export function attack(hero, enemy, id) {
-  let amount = hero.stats.str
+  let amount = Math.floor(hero.stats.str / 2, hero.skills.fighting / 5);
   return {
     type: 'ATTACK',
     amount: amount,
@@ -11,7 +11,7 @@ export function attack(hero, enemy, id) {
 export function defend(hero, enemy, id) {
   return {
     type: 'DEFEND',
-    message: "you defend"
+    message: "you prepare to defend"
   }
 }
 

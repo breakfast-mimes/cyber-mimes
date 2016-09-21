@@ -13,7 +13,7 @@ export default class Battle extends React.Component {
 
   componentWillUpdate() {
     if(this.props.game.enemyTurn)
-      this.props.enemyAttack(this.props.enemy[this.props.game.enemyId]);
+      this.props.enemyAttack(this.props.hero, this.props.enemy, this.props.game.enemyId);
   }
 
   render(){
@@ -24,12 +24,13 @@ export default class Battle extends React.Component {
       <div className="battleScreen" onClick = {scroll}>
 
         {this.props.enemy.map((k, i) =>
-          <button type="button" key={i} onClick={changeEnemy.bind(this,i)}>{"Click Me to fight a " + enemy[i].name + " enemy!"}</button>
+          <button type="button" key={i} onClick={changeEnemy.bind(this, enemy, i)}>{"Click Me to fight a " + enemy[i].name}</button>
         )}
 
         <HealthBar health={currentEnemy.status.health}/>
         <Log log={game.log}/>
         <HealthBar health={hero.status.health}/>
+        <HealthBar health={hero.status.mana}/>
 
         <div className="actionsContainer">
           <ActionGroup {...this.props} actions={battleActions} name="Actions" id={enemyId}/>
