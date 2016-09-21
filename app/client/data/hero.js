@@ -21,4 +21,5 @@ const hero = {
   performAction: null
 }
 
-export default hero;
+// export default hero;
+module.exports = hero;
