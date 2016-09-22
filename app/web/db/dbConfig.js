@@ -1,20 +1,5 @@
 
 
-var Hero = require('../../client/data/hero.js')
-var neo4j = require('neo4j');
-console.log('HERO',Hero)
-
-<<<<<<< 2e2bcf888f5d36c42a04e0e92806181f9c3a5619
-
-
-    query: 'CREATE (p:CHARACTER { name: "Harp",strength:10, fighting:20}) RETURN p',
-    // params: {
-    //     email: 'alice@example.com',
-    // },
-    
-
-=======
-
 
 // //database instance
 // var db = new neo4j.GraphDatabase({
@@ -31,94 +16,6 @@ console.log('HERO',Hero)
 //     //     email: 'alice@example.com',
 //     // },
 // }, callback);
->>>>>>> db testing queries
-
-db.cypher({
->>>>>>> query fetches for db working
-    query: 'MATCH (p:CHARACTER {name: {name}}) RETURN p',
-    params: {
-        name: 'Harp',
-    },
-<<<<<<< 2e2bcf888f5d36c42a04e0e92806181f9c3a5619
-<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
-=======
->>>>>>> db testing queries
-}, callback1)
-
-function queryDb() {
-  return new Promise(function(reject, resolve){
-    db.cypher({
-      query: 'CREATE (p:CHARACTER { name: "Mark",strength:10, fighting:20}) RETURN p',
-    } , function(err, result) {
-     if(err) reject(err)
-     resolve(result)
-        //console.log('RESULT OR ERROR', result);
-    })
-  })
-}
-<<<<<<< 2e2bcf888f5d36c42a04e0e92806181f9c3a5619
-
-queryDb().then(callback)
-=======
-    
-}, callback1);
-
->>>>>>> query fetches for db working
-=======
-
-queryDb().then(callback)
->>>>>>> db testing queries
-
-//console.log('DB CYPHER',db.cypher)
-
-
-function callback(err, results) {
-  //console.log('RESULT_first!!!',results)
-    if (err) throw err;
-    var result = results[0];
-    if (!result) {
-       // console.log('No result.');
-    } else {
-        var node = result['p'];
-       // console.log('NODE!!!',node.properties);
-    }
-}
-
-
-function callback1(err, results) {
-<<<<<<< 2e2bcf888f5d36c42a04e0e92806181f9c3a5619
-<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
-  //console.log('MATCH RESULT',results)
-=======
-  console.log('MATCH RESULT',results)
->>>>>>> query fetches for db working
-=======
-  //console.log('MATCH RESULT',results)
->>>>>>> db testing queries
-    if (err) throw err;
-    var result = results[0];
-    if (!result) {
-       // console.log('No result.');
-    } else {
-        var node = result['p'];
-<<<<<<< 2e2bcf888f5d36c42a04e0e92806181f9c3a5619
-<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
-       // console.log('MATCH RESULT!!!',node.properties);
-=======
-        console.log('MATCH RESULT!!!',node.properties);
->>>>>>> query fetches for db working
-=======
-       // console.log('MATCH RESULT!!!',node.properties);
->>>>>>> db testing queries
-    }
-}
-
-
-
-
-
-
-
 
 // db.cypher({
 //     queries: [{

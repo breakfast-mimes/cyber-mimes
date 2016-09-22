@@ -1,7 +1,12 @@
+
+
 // var db = require('./db/dbConfig.js');
+
+var db = require('./db/dbConfig.js');
+
 var router = require('express').Router();
 var neo4j = require('neo4j');
-
+var Hero = require('../../client/data/hero.js')
 
 //database instance
 var db = new neo4j.GraphDatabase({
@@ -75,4 +80,7 @@ function createCharacter(err, results) {
         var node = result['p'];
         console.log('NODE!!!',node.properties);
     }
+
 }
+
+
