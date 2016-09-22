@@ -39,7 +39,7 @@ function hero(state = [], action) {
 
     case "SUBMIT_CHARACTER":
       state.name = action.name;
-      state.level.level++;
+      state.level.level += 1;
       state.status.maxHealth = 50 + state.stats.end * 10;
       state.status.maxMana = 50 + state.stats.int * 10;
       state.status.health = state.status.maxHealth;

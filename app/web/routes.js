@@ -6,7 +6,7 @@ var db = require('./db/dbConfig.js');
 
 var router = require('express').Router();
 var neo4j = require('neo4j');
-var Hero = require('../../client/data/hero.js')
+//var Hero = require('../../client/data/hero.js')
 
 //database instance
 var db = new neo4j.GraphDatabase({
@@ -24,7 +24,6 @@ var db = new neo4j.GraphDatabase({
 	    	},function(err, result) {
 					     if(err) reject(err)
 					     resolve(result)
-		        	console.log('RESULT for char name', result[0].p.properties.name);
 	    		})
 	  })
 	}
@@ -45,7 +44,6 @@ function queryDbMatch () {
 				function (err,result) {
 			    	if(err) reject(err)
 			    		resolve(result)
-		    		console.log('MATCHED CHARACTER IN DB',result[0].p.properties.name)
 				})
 	})
 

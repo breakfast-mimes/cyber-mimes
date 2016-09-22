@@ -11,7 +11,7 @@ const CreationForm = React.createClass({
   render() {
     return (
       <div id="creationForm">
-        <h2>Level Up!</h2>
+        <h2>Level Up! You are now Level {this.props.hero.level.level + 1}</h2>
         <CharacterForm
           {...this.props}
           stat={statAllocation}
