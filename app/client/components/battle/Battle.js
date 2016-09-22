@@ -7,28 +7,40 @@ import Log from './Log'
 
 import { battleActions, spells } from './actionNameMap'
 
-
-
 export default class Battle extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      alive: true
+    }
+  }
 
   componentWillUpdate() {
-    if(this.props.game.enemyTurn)
+    if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0 && this.state.alive)
       this.props.enemyAttack(this.props.hero, this.props.enemy, this.props.game.enemyId);
+  }
+
+  componentDidUpdate() {
+    if(this.props.enemy[this.props.game.enemyId].status.health === 0)
+      this.props.changeEnemy(this.props.enemy, (this.props.game.enemyId + 1) % this.props.enemy.length);
+    if(this.props.hero.status.health === 0 && this.state.alive) {
+      this.state.alive = false;
+      this.props.heroDeath()
+    }
   }
 
   render(){
     const { hero, game, changeEnemy, enemy} = this.props;
     const { enemyId } = game;
-    const currentEnemy = enemy[game.enemyId];
     return(
       <div className="battleScreen" onClick = {scroll}>
 
-        {this.props.enemy.map((k, i) =>
-          <button type="button" key={i} onClick={changeEnemy.bind(this, enemy, i)}>{"Click Me to fight a " + enemy[i].name}</button>
-        )}
+        <div>{"Fighting " + enemy[enemyId].name}</div>
+        <HealthBar health={enemy[enemyId].status.health}/>
 
-        <HealthBar health={currentEnemy.status.health}/>
         <Log log={game.log}/>
+
+        <div>{hero.name}</div>
         <HealthBar health={hero.status.health}/>
         <HealthBar health={hero.status.mana}/>
 

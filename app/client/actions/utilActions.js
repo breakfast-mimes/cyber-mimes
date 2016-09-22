@@ -14,6 +14,13 @@ export function submitCharacter(name) {
   }
 }
 
+export function heroDeath() {
+  return {
+    type: 'HERO_DEATH',
+    message: "You have died"
+  }
+}
+
 export function changeMap(location) {
   return {
     type: 'CHANGE_MAP',

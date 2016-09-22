@@ -4,7 +4,7 @@ function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
     state.status.defending--;
-    state.status.mana = util.clip(0, 100, state.status.mana + Math.floor(state.stats.int / 5))
+    state.status.mana = util.clip(0, 100, state.status.mana + Math.floor(state.stats.int / 4))
   }
 
   switch (action.type) {
@@ -27,10 +27,6 @@ function hero(state = [], action) {
 
     case "ENEMY_ATTACK":
       state.status.health = util.clip(0, 100, state.status.health - action.amount)
-      return state;
-
-    case "ENEMY_MURDER":
-      state.status.health = 0;
       return state;
 
     case "UPDATE_CHARACTER":

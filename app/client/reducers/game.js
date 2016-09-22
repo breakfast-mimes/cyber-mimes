@@ -3,7 +3,9 @@ import util from './util'
 function game(state = [], action) {
   state = JSON.parse(JSON.stringify(state));
   if(action.message)
-        state.log = [].concat(state.log, action.message)
+    state.log = [].concat(state.log, action.message)
+
+  console.log("here")
 
   switch (action.type) {
 

@@ -1,5 +1,8 @@
 export function heal(hero, enemy, id) {
-  let amount = Math.floor(hero.stats.int / 2 + hero.skills.magic / 6 + hero.skills.healing / 6);
+  let amount = Math.floor(hero.stats.int * Math.random() / 2
+                        + hero.skills.magic / 6
+                        + hero.skills.healing / 6
+                        + hero.stats.luck * Math.random() / 4);
   let mana = 9;
   let success = true;
 
@@ -24,7 +27,10 @@ export function heal(hero, enemy, id) {
 }
 
 export function fireball(hero, enemy, id) {
-  let amount = Math.floor(hero.stats.int / 2 + hero.skills.magic / 5) + 5;
+  let amount = Math.floor(hero.stats.int * Math.random() / 2
+                        + hero.skills.magic / 5
+                        + hero.stats.luck * Math.random() / 4)
+                        + 5;
   let mana = 12;
   let success = true;
 
