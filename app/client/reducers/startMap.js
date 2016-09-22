@@ -1,23 +1,25 @@
 import util from './util'
 
-function map(state = [], action) {
+function startMap(state = [], action) {
   state = JSON.parse(JSON.stringify(state));
+  state.prevlocationY = state.locationY;
+  state.prevlocationX = state.locationX;
   switch (action.type) {
     case "GO_SOUTH":
-      state.location.row += 1;
+      state.locationY -= 1;
       return state;
     case "GO_NORTH":
-      state.location.row -= 1;
+      state.locationY += 1;
       return state;
     case "GO_EAST":
-      state.location.col += 1;
+      state.locationX += 1;
       return state;
     case "GO_WEST":
-      state.location.col -= 1;
+      state.locationX -= 1;
       return state;
     default:
       return state;
   }
 }
 
-export default map;
+export default startMap;

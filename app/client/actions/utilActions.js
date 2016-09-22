@@ -32,12 +32,6 @@ export function enemyDeath(enemy, id) {
   }
 }
 
-export function changeMap(location) {
-  return {
-    type: 'CHANGE_MAP',
-    location
-  }
-}
 
 export function changeEnemy(enemies, id) {
   return {

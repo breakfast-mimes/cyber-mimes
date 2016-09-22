@@ -1,8 +1,5 @@
 const map = {
-  locationY:0,
-  locationX:0,
-  prevlocationY:0,
-  prevlocationX:0
+  location: {row:1,col:1}
 }
 
 export default map;

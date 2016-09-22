@@ -7,6 +7,7 @@ import * as battleActions from '../actions/battleActions';
 import * as spellActions from '../actions/spellActions';
 import * as enemyActions from '../actions/enemyActions';
 import * as mapActions from '../actions/mapActions';
+import * as startMapActions from '../actions/startMapActions';
 
 import Main from './Main';
 
@@ -15,6 +16,7 @@ function mapStateToProps(state) {
     hero: state.hero,
     enemy: state.enemy,
     game: state.game,
+    startMap: state.startMap,
     map: state.map
   }
 }
@@ -26,7 +28,8 @@ function mapDispatchToProps(dispatch) {
       ...battleActions,
       ...spellActions,
       ...enemyActions,
-      ...mapActions
+      ...mapActions,
+      ...startMapActions
     },
     dispatch
   );
