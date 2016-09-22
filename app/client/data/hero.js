@@ -4,28 +4,29 @@ const hero = {
     str: 5,
     dex: 5,
     int: 5,
-    luck: 5,
-    def: 5
+    end: 5,
+    luck: 5
   },
   skills: {
     fighting: 0,
-    shooting: 0,
     magic: 0,
     healing: 0
   },
   status: {
+    maxHealth:100,
+    maxMana: 100,
     health:100,
     mana:100,
     defending: 0
   },
   level: {
-    level: 1,
+    level: 0,
     exp: 0
   },
   battleActions: {
-    attack: "Attack!",
+    attack: "Attack",
     cry: "Cry",
-    defend: "Defend!",
+    defend: "Defend",
   },
   spells: {
     heal: "Heal",
@@ -35,4 +36,5 @@ const hero = {
   }
 }
 
-export default hero;
+// export default hero;
+module.exports = hero;

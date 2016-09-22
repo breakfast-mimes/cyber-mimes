@@ -2,6 +2,7 @@ import React from 'react';
 
 const Log = React.createClass({
   render() {
+    scroll();
     return (
       <div id="outLog">
         <div id="log">
@@ -11,5 +12,9 @@ const Log = React.createClass({
     )
   }
 })
+
+function scroll(){
+  setTimeout(() => {document.getElementById('log').scrollTop = document.getElementById('log').scrollHeight} , 100)
+}
 
 export default Log;

@@ -11,8 +11,9 @@ const enemy = [{
     magic: 0,
     healing: 0
   },
-
   status: {
+    maxHealth:100,
+    maxMana: 100,
     health:100,
     mana:100
   },
@@ -34,10 +35,11 @@ const enemy = [{
     magic: 0,
     healing: 0
   },
-
   status: {
-    health:100,
-    mana:100
+    maxHealth:150,
+    maxMana: 150,
+    health:150,
+    mana:150
   },
   id:1,
   exp: 1500
@@ -56,8 +58,10 @@ const enemy = [{
     healing: 0
   },
   status: {
-    health:100,
-    mana:100
+    maxHealth:200,
+    maxMana: 200,
+    health:200,
+    mana:200
   },
   id:2,
   exp: 5000

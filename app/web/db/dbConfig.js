@@ -1,59 +1,21 @@
-// //Require the Neo4J module
-// var neo4j = require('node-neo4j');
 
-// //Create a db object. We will using this object to work on the DB.
-// db = new neo4j('http://localhost:7474');
-// console.log('DATABASE',db);
 
-// //Let’s create a node
-// db.insertNode({
 
-//   name: 'Ghuffran',
-//   company: 'Modulus',
-//   age: ~~(Math.random() * 100)
-// }, function (err, resp) {
-//   console.log('response', res);
-//   if (err) {
-//     return console.log('ERROR!!',err);
-//   }
-
-//   // Output node data.
-//   console.log('NODE',resp);
+// //database instance
+// var db = new neo4j.GraphDatabase({
+//     url: 'http://localhost:7474',
+//     auth: {username: 'neo4j', password: 'cybermimes'},
+//     // ...
 // });
+// console.log('DB',db)
 
-
-var neo4j = require('neo4j');
-
-//database instance
-var db = new neo4j.GraphDatabase({
-    url: 'http://localhost:7474',
-    auth: {username: 'neo4j', password: 'cybermimes'},
-    // ...
-});
-console.log('DB',db)
-
-//cypher query language
-db.cypher({
-    query: 'CREATE (p:TEST { title: "MKS",released:2016}) RETURN p',
-    // params: {
-    //     email: 'alice@example.com',
-    // },
-    
-}, callback);
-//console.log('DB CYPHER',db.cypher)
-
-
-function callback(err, results) {
-  console.log('RESULT!!!',results)
-    if (err) throw err;
-    var result = results[0];
-    if (!result) {
-        console.log('No result.');
-    } else {
-        var node = result['p'];
-        console.log('NODE!!!',node.properties.title);
-    }
-};
+// cypher query language
+// db.cypher({
+//     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',
+//     // params: {
+//     //     email: 'alice@example.com',
+//     // },
+// }, callback);
 
 // db.cypher({
 //     queries: [{
@@ -101,6 +63,10 @@ function callback(err, results) {
 //     // Delete results (shouldn’t have returned any):
 //     //assert.equal(deleteResults.length, 0);
 // };
+
+
+
+
 
 
 

@@ -4,29 +4,29 @@ function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
     state.status.defending--;
-    state.status.mana = util.clip(0, 100, state.status.mana + Math.floor(state.stats.int / 4))
+    state.status.mana = util.clip(0, state.status.maxMana, state.status.mana + Math.floor(state.stats.int / 4))
   }
 
   switch (action.type) {
 
     case "HEAL":
       if(action.success)
-        state.status.health = util.clip(0, 100, state.status.health + action.amount);
-      state.status.mana = util.clip(0, 100, state.status.mana - action.mana)
+        state.status.health = util.clip(0, state.status.maxHealth, state.status.health + action.amount);
+      state.status.mana = util.clip(0, state.status.maxMana, state.status.mana - action.mana)
       return state;
 
     case "FIREBALL":
-      state.status.mana = util.clip(0, 100, state.status.mana - action.mana)
+      state.status.mana = util.clip(0, state.status.maxMana, state.status.mana - action.mana)
       if(!action.success)
-        state.status.health = util.clip(0, 100, state.status.health - action.amount)
+        state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount)
       return state;
 
     case "DEFEND":
-      state.status.defending = state.stats.def;
+      state.status.defending = state.stats.end;
       return state;
 
     case "ENEMY_ATTACK":
-      state.status.health = util.clip(0, 100, state.status.health - action.amount)
+      state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount)
       return state;
 
     case "ENEMY_DEATH":
@@ -39,6 +39,11 @@ function hero(state = [], action) {
 
     case "SUBMIT_CHARACTER":
       state.name = action.name;
+      state.level.level += 1;
+      state.status.maxHealth = 50 + state.stats.end * 10;
+      state.status.maxMana = 50 + state.stats.int * 10;
+      state.status.health = state.status.maxHealth;
+      state.status.mana = state.status.maxMana;
       return state;
 
     default:
