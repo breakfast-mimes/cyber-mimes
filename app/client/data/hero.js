@@ -22,7 +22,17 @@ const hero = {
     level: 1,
     exp: 0
   },
-  performAction: null
+  battleActions: {
+    attack: "Attack!",
+    cry: "Cry",
+    defend: "Defend!",
+  },
+  spells: {
+    heal: "Heal",
+    fireball: "Fireball"
+  },
+  items: {
+  }
 }
 
 export default hero;

@@ -4,8 +4,7 @@ import { render } from 'react-dom';
 import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
 import Log from './Log'
-
-import { battleActions, spells } from './actionNameMap'
+import HeroStatus from './HeroStatus'
 
 export default class Battle extends React.Component {
   constructor(props) {
@@ -38,18 +37,16 @@ export default class Battle extends React.Component {
       <div className="battleScreen" onClick = {scroll}>
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
-        <HealthBar health={enemy[enemyId].status.health}/>
+        <HealthBar health={enemy[enemyId].status.health} color="darkred"/>
 
         <Log log={game.log}/>
 
-        <div>{hero.name + " " + hero.level.exp}</div>
-        <HealthBar health={hero.status.health}/>
-        <HealthBar health={hero.status.mana}/>
+        <HeroStatus hero={hero}/>
 
         <div className="actionsContainer">
-          <ActionGroup {...this.props} actions={battleActions} name="Actions" id={enemyId}/>
-          <ActionGroup {...this.props} actions={spells} name="Spells" id={enemyId}/>
-          <ActionGroup {...this.props} actions={[]} name="Items" id={enemyId}/>
+          <ActionGroup {...this.props} actions={hero.battleActions} name="Actions" id={enemyId}/>
+          <ActionGroup {...this.props} actions={hero.spells} name="Spells" id={enemyId}/>
+          <ActionGroup {...this.props} actions={hero.items} name="Items" id={enemyId}/>
         </div>
 
     </div>
