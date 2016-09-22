@@ -37,7 +37,7 @@ export default class Battle extends React.Component {
       <div className="battleScreen" onClick = {scroll}>
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
-        <HealthBar health={enemy[enemyId].status.health} color="darkred"/>
+        <HealthBar health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
 
         <Log log={game.log}/>
 
