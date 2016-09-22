@@ -68,12 +68,14 @@ title {
 }
 
 .actionsContainer {
-    height: 100px;
-    width: 400px;
+  margin: 5px;
+  height: 100px;
+  width: 400px;
 }
 .actionGroup {
   margin: 0px 0px 0px 2px;
   display: inline-block;
+  float: left;
   width: 60px;
   height: 100px;
   cursor: pointer;

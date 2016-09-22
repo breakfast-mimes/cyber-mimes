@@ -7,7 +7,7 @@ export function enemyAttack(hero, enemy, id) {
   }
 
   if(hero.status.defending > 0) {
-    amount = Math.floor(amount - hero.stats.end / 3);
+    amount = Math.floor(amount - hero.stats.end / 2);
     amount = amount < 0 ? 0 : amount;
   }
   return {

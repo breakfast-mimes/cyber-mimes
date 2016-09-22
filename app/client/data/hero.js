@@ -20,7 +20,7 @@ const hero = {
     defending: 0
   },
   level: {
-    level: 1,
+    level: 0,
     exp: 0
   },
   battleActions: {

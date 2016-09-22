@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { browserHistory } from 'react-router';
 
 import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
@@ -23,10 +24,12 @@ export default class Battle extends React.Component {
     if(this.props.enemy[this.props.game.enemyId].status.health === 0) {
       this.props.enemyDeath(this.props.enemy, this.props.game.enemyId);
       this.props.changeEnemy(this.props.enemy, (this.props.game.enemyId + 1) % this.props.enemy.length);
+      if(this.props.hero.level.level * this.props.hero.level.level * 500 >= this.props.hero.level.exp)
+        browserHistory.push('/levelup');
     }
     if(this.props.hero.status.health === 0 && this.state.alive) {
       this.state.alive = false;
-      this.props.heroDeath()
+      this.props.heroDeath();
     }
   }
 
@@ -34,7 +37,7 @@ export default class Battle extends React.Component {
     const { hero, game, changeEnemy, enemy} = this.props;
     const { enemyId } = game;
     return(
-      <div className="battleScreen" onClick = {scroll}>
+      <div className="battleScreen">
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
         <HealthBar health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
@@ -52,8 +55,4 @@ export default class Battle extends React.Component {
     </div>
     )
   }
-}
-
-function scroll(){
-  setTimeout(() => {document.getElementById('log').scrollTop = document.getElementById('log').scrollHeight} , 100)
 }
