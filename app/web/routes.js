@@ -1,6 +1,11 @@
+
 // var db = require('./db/dbConfig.js');
+
+var db = require('./db/dbConfig.js');
+
 var router = require('express').Router();
 var neo4j = require('neo4j');
+
 
 
 //database instance
@@ -76,3 +81,15 @@ function createCharacter(err, results) {
         console.log('NODE!!!',node.properties);
     }
 }
+=======
+router.post('/character', function (req, res) {
+  Projects.create({
+    name: req.body.projectName,
+    timeConstraint: req.body.timeConstraint,
+    wanted: req.body.wanted,
+    description: req.body.description
+  }).then(function(project_attributes){
+    db.knex('Users').where({
+      "username": req.body.username
+    }).select('id')
+>>>>>>> 5c7e4c6f86c090d26fd397f302c5e24a05e7c626

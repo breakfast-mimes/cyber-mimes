@@ -1,3 +1,4 @@
+<<<<<<< HEAD:app/web/db/dbConfig.js
 
 
 var Hero = require('../../client/data/hero.js')
@@ -22,6 +23,32 @@ console.log('HERO',Hero)
 //     // },
 // }, callback);
 
+=======
+
+
+var Hero = require('../../client/data/hero.js')
+var neo4j = require('neo4j');
+console.log('HERO',Hero)
+
+
+
+//database instance
+var db = new neo4j.GraphDatabase({
+    url: 'http://localhost:7474',
+    auth: {username: 'neo4j', password: 'cybermimes'},
+    // ...
+});
+// console.log('DB',db)
+
+// cypher query language
+// db.cypher({
+//     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',
+//     // params: {
+//     //     email: 'alice@example.com',
+//     // },
+// }, callback);
+
+>>>>>>> 5c7e4c6f86c090d26fd397f302c5e24a05e7c626:app/web/db/dbConfig.js
 db.cypher({
     query: 'MATCH (p:CHARACTER {name: {name}}) RETURN p',
     params: {
@@ -36,7 +63,11 @@ function queryDb() {
     } , function(err, result) {
      if(err) reject(err)
      resolve(result)
+<<<<<<< HEAD:app/web/db/dbConfig.js
         //console.log('RESULT OR ERROR', result);
+=======
+        console.log('RESULT OR ERROR', result);
+>>>>>>> 5c7e4c6f86c090d26fd397f302c5e24a05e7c626:app/web/db/dbConfig.js
     })
   })
 }
@@ -47,13 +78,18 @@ queryDb().then(callback)
 
 
 function callback(err, results) {
+<<<<<<< HEAD:app/web/db/dbConfig.js
   //console.log('RESULT_first!!!',results)
+=======
+  console.log('RESULT_first!!!',results)
+>>>>>>> 5c7e4c6f86c090d26fd397f302c5e24a05e7c626:app/web/db/dbConfig.js
     if (err) throw err;
     var result = results[0];
     if (!result) {
        // console.log('No result.');
     } else {
         var node = result['p'];
+<<<<<<< HEAD:app/web/db/dbConfig.js
        // console.log('NODE!!!',node.properties);
     }
 }
@@ -77,7 +113,24 @@ function callback1(err, results) {
 
 
 
+=======
+        console.log('NODE!!!',node.properties);
+    }
+}
+>>>>>>> 5c7e4c6f86c090d26fd397f302c5e24a05e7c626:app/web/db/dbConfig.js
 
+
+function callback1(err, results) {
+  //console.log('MATCH RESULT',results)
+    if (err) throw err;
+    var result = results[0];
+    if (!result) {
+        console.log('No result.');
+    } else {
+        var node = result['p'];
+       // console.log('MATCH RESULT!!!',node.properties);
+    }
+}
 // db.cypher({
 //     queries: [{
 //         query: 'MATCH (user:User {email: {email}}) RETURN user',
