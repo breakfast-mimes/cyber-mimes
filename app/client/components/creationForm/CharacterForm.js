@@ -45,8 +45,8 @@ const CharacterForm = React.createClass({
     					stat={k}
     					updateAllocation={this.changeStat}
     					allocation={this.state.statAllocation}
-              statHighCap={statHighCap}
-              statLowCap={statLowCap}
+              highCap={statHighCap}
+              lowCap={statLowCap}
     					key={i}/>)}
 				</div>
 
@@ -61,8 +61,8 @@ const CharacterForm = React.createClass({
 				 		  stat={k}
 				 		  updateAllocation={this.changeSkill}
 				 		  allocation={this.state.skillAllocation}
-              skillHighCap={skillHighCap}
-              skillLowCap={skillLowCap}
+              highCap={skillHighCap}
+              lowCap={skillLowCap}
 				 		  key={i}/>)}
 				</div>
 

@@ -8,16 +8,13 @@ const holdRefreshRate = 100;
 const Entry = React.createClass({
   getInitialState () {
       return {
-        statLowCap: this.props.statLowCap || this.props.hero.stats[this.props.stat],
-        skillLowCap: this.props.skillLowCap || this.props.hero.skills[this.props.stat],
-        statHighCap: this.props.statHighCap,
-        skillHighCap: this.props.skillHighCap
+        lowCap: this.props.lowCap || this.props.hero[this.props.group][this.props.stat],
+        highCap: this.props.highCap,
       };
   },
 
   decrement(group, stat, amount) {
-    if((group === 'stats' && this.props.hero[group][stat] > (this.state.statLowCap))
-     ||(group === 'skills' && this.props.hero[group][stat] > (this.state.skillLowCap))) {
+    if(this.props.hero[group][stat] > (this.state.lowCap)) {
       this.props.updateAllocation(1);
       this.props.updateCharacter(group, stat, amount);
     }
@@ -25,8 +22,7 @@ const Entry = React.createClass({
 
   increment(group, stat, amount) {
     if(this.props.allocation > 0
-     && ((group === 'stats' && this.props.hero[group][stat] < this.state.statHighCap)
-     || (group === 'skills' && this.props.hero[group][stat] < this.state.skillHighCap))) {
+     && (this.props.hero[group][stat] < this.state.highCap)) {
       this.props.updateAllocation(-1);
       this.props.updateCharacter(group, stat, amount);
     }
