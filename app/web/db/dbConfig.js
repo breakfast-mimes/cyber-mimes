@@ -6,12 +6,12 @@ console.log('HERO',Hero)
 
 
 
-//database instance
-var db = new neo4j.GraphDatabase({
-    url: 'http://localhost:7474',
-    auth: {username: 'neo4j', password: 'cybermimes'},
-    // ...
-});
+// //database instance
+// var db = new neo4j.GraphDatabase({
+//     url: 'http://localhost:7474',
+//     auth: {username: 'neo4j', password: 'cybermimes'},
+//     // ...
+// });
 // console.log('DB',db)
 
 // cypher query language
@@ -36,7 +36,7 @@ function queryDb() {
     } , function(err, result) {
      if(err) reject(err)
      resolve(result)
-        console.log('RESULT OR ERROR', result);
+        //console.log('RESULT OR ERROR', result);
     })
   })
 }
@@ -47,14 +47,14 @@ queryDb().then(callback)
 
 
 function callback(err, results) {
-  console.log('RESULT_first!!!',results)
+  //console.log('RESULT_first!!!',results)
     if (err) throw err;
     var result = results[0];
     if (!result) {
-        console.log('No result.');
+       // console.log('No result.');
     } else {
         var node = result['p'];
-        console.log('NODE!!!',node.properties);
+       // console.log('NODE!!!',node.properties);
     }
 }
 
@@ -64,12 +64,20 @@ function callback1(err, results) {
     if (err) throw err;
     var result = results[0];
     if (!result) {
-        console.log('No result.');
+       // console.log('No result.');
     } else {
         var node = result['p'];
        // console.log('MATCH RESULT!!!',node.properties);
     }
 }
+
+
+
+
+
+
+
+
 // db.cypher({
 //     queries: [{
 //         query: 'MATCH (user:User {email: {email}}) RETURN user',
