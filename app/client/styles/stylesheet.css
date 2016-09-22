@@ -37,7 +37,6 @@ title {
   position: relative;
   background: #CCC;
   width: 300px;
-  height: 25px;
   display: block;
   margin: 2px;
   text-align: center;
@@ -67,9 +66,21 @@ title {
   display: none;
 }
 
-.battleActions {
-  position: relative; 
+.actionsContainer {
+    height: 100px;
+    width: 400px;
+}
+.actionGroup {
+  margin: 0px 0px 0px 2px;
+  display: inline-block;
   width: 60px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.actionGroupHeader {
+  background-color: #999;
+  cursor: default;
 }
 
 .createInput {

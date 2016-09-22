@@ -1,5 +1,4 @@
 import React from 'react';
-import spells from './spells'
 
 const Log = React.createClass({
   render() {
