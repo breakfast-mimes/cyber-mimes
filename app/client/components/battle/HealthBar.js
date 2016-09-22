@@ -2,13 +2,13 @@ import React from 'react';
 
 const HealthBar = React.createClass({
   render() {
-    const {health, color} = this.props
+    const {health, color, max} = this.props
     return (
       <div className="healthBar noSelect">
-        <span className="healthPercent">{health + "%"}</span>
+        <span className="healthPercent">{health}</span>
         <div style={
           {
-            width: health * 3 + "px",
+            width: 100 * health * 3 / max  + "px",
             background: color,
             height: 25 + "px"
           }

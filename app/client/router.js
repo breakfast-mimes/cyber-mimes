@@ -5,6 +5,7 @@ import store, { history } from './store';
 
 import App from './components/App';
 import CreationForm from './components/creationForm/CreationForm';
+import LevelUpForm from './components/creationForm/LevelUpForm';
 import Battle from './components/battle/Battle.js';
 import Map from './components/map/Map.js';
 
@@ -15,6 +16,7 @@ const router = (
         <IndexRoute component={CreationForm}></IndexRoute>
         <Route path="/battle" component={Battle}></Route>
         <Route path="/map" component={Map}></Route>
+        <Route path="/levelup" component={LevelUpForm}></Route>
       </Route>
     </Router>
   </Provider>

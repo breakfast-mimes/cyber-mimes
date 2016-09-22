@@ -3,7 +3,7 @@ export default {
   str: "Strength",
   dex: "Dexterity",
   luck: "Luck",
-  def: "Defence",
+  end: "Endurance",
   fighting: "Fighting",
   shooting: "Shooting",
   magic: "Magic",

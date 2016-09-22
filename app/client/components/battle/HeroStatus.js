@@ -7,8 +7,8 @@ const HeroStatus = React.createClass({
     return (
       <div className="heroStatus">
         <div>{"Name: " + hero.name + " Lvl: " + hero.level.level + " Exp: " + hero.level.exp}</div>
-        <HealthBar health={hero.status.health} color="darkred"/>
-        <HealthBar health={hero.status.mana} color="darkblue"/>
+        <HealthBar health={hero.status.health} max={hero.status.maxHealth} color="darkred"/>
+        <HealthBar health={hero.status.mana} max={hero.status.maxMana} color="darkblue"/>
       </div>
     )
   }

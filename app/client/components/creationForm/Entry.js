@@ -1,19 +1,20 @@
 import React from 'react';
 import statMap from './statMap'
+import _ from 'underscore'
 
 let timeoutId;
 const holdRefreshRate = 100;
 
-const statLowCap = 3;
-const statHighCap = 10;
-const skillLowCap = 0;
-const skillHighCap = 30;
-
 const Entry = React.createClass({
+  getInitialState () {
+      return {
+        lowCap: this.props.lowCap || this.props.hero[this.props.group][this.props.stat],
+        highCap: this.props.highCap,
+      };
+  },
 
   decrement(group, stat, amount) {
-    if((group === 'stats' && this.props.hero[group][stat] > statLowCap)
-     ||(group === 'skills' && this.props.hero[group][stat] > skillLowCap)) {
+    if(this.props.hero[group][stat] > (this.state.lowCap)) {
       this.props.updateAllocation(1);
       this.props.updateCharacter(group, stat, amount);
     }
@@ -21,8 +22,7 @@ const Entry = React.createClass({
 
   increment(group, stat, amount) {
     if(this.props.allocation > 0
-     && ((group === 'stats' && this.props.hero[group][stat] < statHighCap)
-     || (group === 'skills' && this.props.hero[group][stat] < skillHighCap))) {
+     && (this.props.hero[group][stat] < this.state.highCap)) {
       this.props.updateAllocation(-1);
       this.props.updateCharacter(group, stat, amount);
     }
