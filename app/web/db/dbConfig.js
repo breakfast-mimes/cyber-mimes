@@ -6,27 +6,20 @@ console.log('HERO',Hero)
 
 
 
-//database instance
-var db = new neo4j.GraphDatabase({
-    url: 'http://localhost:7474',
-    auth: {username: 'neo4j', password: 'cybermimes'},
-    // ...
-});
-// console.log('DB',db)
+    query: 'CREATE (p:CHARACTER { name: "Harp",strength:10, fighting:20}) RETURN p',
+    // params: {
+    //     email: 'alice@example.com',
+    // },
+    
 
-// cypher query language
-// db.cypher({
-//     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',
-//     // params: {
-//     //     email: 'alice@example.com',
-//     // },
-// }, callback);
 
 db.cypher({
+>>>>>>> query fetches for db working
     query: 'MATCH (p:CHARACTER {name: {name}}) RETURN p',
     params: {
         name: 'Harp',
     },
+<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
 }, callback1)
 
 function queryDb() {
@@ -42,6 +35,11 @@ function queryDb() {
 }
 
 queryDb().then(callback)
+=======
+    
+}, callback1);
+
+>>>>>>> query fetches for db working
 
 //console.log('DB CYPHER',db.cypher)
 
@@ -60,14 +58,22 @@ function callback(err, results) {
 
 
 function callback1(err, results) {
+<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
   //console.log('MATCH RESULT',results)
+=======
+  console.log('MATCH RESULT',results)
+>>>>>>> query fetches for db working
     if (err) throw err;
     var result = results[0];
     if (!result) {
         console.log('No result.');
     } else {
         var node = result['p'];
+<<<<<<< af560a32515bbc89c2f31a692a5c85ed6ef04b6a
        // console.log('MATCH RESULT!!!',node.properties);
+=======
+        console.log('MATCH RESULT!!!',node.properties);
+>>>>>>> query fetches for db working
     }
 }
 // db.cypher({
