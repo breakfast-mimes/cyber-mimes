@@ -4,6 +4,7 @@ var cors = require("cors");
 var express = require('express');
 var webpack = require('webpack');
 var config = require('../../webpack.config');
+var router = require('./routes.js');
 
 var app = express();
 
@@ -31,3 +32,10 @@ app.listen(9001, 'localhost', function(err) {
 
   console.log('Listening at http://localhost:9001');
 });
+
+
+
+//app.use(router);
+
+
+
