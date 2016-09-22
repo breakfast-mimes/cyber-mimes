@@ -8,8 +8,8 @@ const holdRefreshRate = 100;
 const Entry = React.createClass({
   getInitialState () {
       return {
-        statLowCap: this.props.statLowCap || this.props.hero.stats[this.props.stat] || 0,
-        skillLowCap: this.props.skillLowCap || this.props.hero.skills[this.props.skill] || 0,
+        statLowCap: this.props.statLowCap || this.props.hero.stats[this.props.stat],
+        skillLowCap: this.props.skillLowCap || this.props.hero.skills[this.props.stat],
         statHighCap: this.props.statHighCap,
         skillHighCap: this.props.skillHighCap
       };
