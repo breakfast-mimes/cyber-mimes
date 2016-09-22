@@ -1,7 +1,7 @@
 const map = {
-  locationY:10,
+  locationY:0,
   locationX:0,
-  prevlocationY:10,
+  prevlocationY:0,
   prevlocationX:0
 }
 

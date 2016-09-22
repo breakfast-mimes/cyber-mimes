@@ -12,10 +12,10 @@ function map(state = [], action) {
       state.locationY += 1;
       return state;
     case "GO_EAST":
-      state.locationx += 1;
+      state.locationX += 1;
       return state;
     case "GO_WEST":
-      state.locationx -= 1;
+      state.locationX -= 1;
       return state;
     default:
       return state;
