@@ -5,8 +5,6 @@ function game(state = [], action) {
   if(action.message)
     state.log = [].concat(state.log, action.message)
 
-  console.log("here")
-
   switch (action.type) {
 
     case "CHANGE_ENEMY":

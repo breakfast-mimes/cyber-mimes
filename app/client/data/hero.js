@@ -18,6 +18,10 @@ const hero = {
     mana:100,
     defending: 0
   },
+  level: {
+    level: 1,
+    exp: 0
+  },
   performAction: null
 }
 

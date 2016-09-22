@@ -29,6 +29,10 @@ function hero(state = [], action) {
       state.status.health = util.clip(0, 100, state.status.health - action.amount)
       return state;
 
+    case "ENEMY_DEATH":
+      state.level.exp += action.amount;
+      return state;
+
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
       return state;

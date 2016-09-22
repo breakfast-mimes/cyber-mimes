@@ -21,6 +21,17 @@ export function heroDeath() {
   }
 }
 
+export function enemyDeath(enemy, id) {
+  return {
+    type: 'ENEMY_DEATH',
+    amount: enemy[id].exp,
+    message: [
+      "You killed " + enemy[id].name,
+      "You gained " + enemy[id].exp + " experience."
+      ]
+  }
+}
+
 export function changeMap(location) {
   return {
     type: 'CHANGE_MAP',

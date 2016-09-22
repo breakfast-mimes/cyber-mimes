@@ -16,7 +16,8 @@ const enemy = [{
     health:100,
     mana:100
   },
-  id:0
+  id:0,
+  exp: 500
 },
 
 {
@@ -38,7 +39,8 @@ const enemy = [{
     health:100,
     mana:100
   },
-  id:1
+  id:1,
+  exp: 1500
 },
 {
   name: "super laZer enemy",
@@ -57,7 +59,8 @@ const enemy = [{
     health:100,
     mana:100
   },
-  id:2
+  id:2,
+  exp: 5000
 }
 
 ]
