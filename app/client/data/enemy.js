@@ -61,6 +61,27 @@ const enemy = [{
   },
   id:2,
   exp: 5000
+} ,
+
+{
+  name: "test enemy",
+  stats: {
+    str: 1,
+    dex: 1,
+    int: 1
+  },
+  skills: {
+    fighting: 1,
+    shooting: 0,
+    magic: 0,
+    healing: 0
+  },
+  status: {
+    health:100,
+    mana:100
+  },
+  id:3,
+  exp: 5000
 }
 
 ]

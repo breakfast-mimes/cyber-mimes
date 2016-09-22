@@ -6,6 +6,7 @@ import store, { history } from './store';
 import App from './components/App';
 import CreationForm from './components/creationForm/CreationForm';
 import Battle from './components/battle/Battle.js';
+import StartMap from './components/startMap/Map.js';
 import Map from './components/map/Map.js';
 
 const router = (
@@ -14,6 +15,7 @@ const router = (
       <Route path="/" component={App}>
         <IndexRoute component={CreationForm}></IndexRoute>
         <Route path="/battle" component={Battle}></Route>
+        <Route path="/startMap" component={StartMap}></Route>
         <Route path="/map" component={Map}></Route>
       </Route>
     </Router>
