@@ -9,6 +9,8 @@ const hero = {
   },
   skills: {
     fighting: 0,
+    rangedCombat: 0,
+    martialArts: 0,
     magic: 0,
     healing: 0
   },
@@ -26,13 +28,27 @@ const hero = {
   battleActions: {
     attack: "Attack",
     cry: "Cry",
-    defend: "Defend",
+    defend: "Defend"
   },
   spells: {
     heal: "Heal",
     fireball: "Fireball"
   },
   items: {
+  },
+  inventory: {
+    gold: 0
+  },
+  equipment: {
+    head: undefined,
+    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str"},
+    leftHand: undefined,
+    body: undefined,
+    hands: undefined,
+    legs: undefined,
+    boots: undefined,
+    ring1: undefined,
+    ring2: undefined
   }
 }
 
