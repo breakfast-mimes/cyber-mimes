@@ -63,7 +63,13 @@ const CreationForm = React.createClass({
 				</div>
 
 				<div>
-          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Create Character</Link>
+		          <Link to='/battle' 
+		          	onClick={() => {
+		          		this.props.submitCharacter(this.state.name);
+		          		this.props.makeCharacter(this.state.hero);
+		          	}}>
+		          	Create Character
+		          </Link>
 			  </div>
 		  </div>
 		)

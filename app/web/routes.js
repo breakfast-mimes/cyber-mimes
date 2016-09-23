@@ -6,7 +6,7 @@ var db = require('./db/dbConfig.js');
 
 var router = require('express').Router();
 var neo4j = require('neo4j');
-var Hero = require('../../client/data/hero.js')
+//var Hero = require('../../client/data/hero.js')
 
 //database instance
 var db = new neo4j.GraphDatabase({
@@ -16,8 +16,9 @@ var db = new neo4j.GraphDatabase({
 });
 
 
-// router.post('/character', function (req, res) {
-	function queryDb() {
+ router.post('/createCharacter', function (req, res) {
+ 	console.log('REQUEST RESPONSE',req,res);
+	function queryDb(hero) {
 	  return new Promise(function(reject, resolve){
 	    db.cypher({
 	      query: 'CREATE (p:CHARACTER { name: "Mark",strength:10, fighting:20}) RETURN p',
@@ -29,9 +30,9 @@ var db = new neo4j.GraphDatabase({
 	  })
 	}
 
-// })
-
 	queryDb().then(createCharacter)
+ })
+
 
 
 function queryDbMatch () {

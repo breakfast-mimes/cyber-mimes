@@ -7,6 +7,7 @@ import * as battleActions from '../actions/battleActions';
 import * as spellActions from '../actions/spellActions';
 import * as enemyActions from '../actions/enemyActions';
 import * as mapActions from '../actions/mapActions';
+import * as dbActions from '../actions/dbActions';
 
 import Main from './Main';
 
@@ -26,7 +27,8 @@ function mapDispatchToProps(dispatch) {
       ...battleActions,
       ...spellActions,
       ...enemyActions,
-      ...mapActions
+      ...mapActions,
+      ...dbActions
     },
     dispatch
   );
