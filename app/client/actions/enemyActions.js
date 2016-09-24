@@ -1,18 +1,15 @@
-export function enemyAttack(hero, enemy, id) {
-  let amount = Math.floor(Math.random() * enemy[id].stats.str / 2 + enemy[id].skills.fighting / 5)
-  let dodge = false;
-  if(hero.stats.dex / 100 >  Math.random()) {
-    dodge = true;
-    amount = 0;
-  }
+import { physicalDamage, defenderDodged } from './utils/battleCalcs.js';
 
-  if(hero.status.defending > 0) {
-    amount = Math.floor(amount - hero.stats.end / 2);
-    amount = amount < 0 ? 0 : amount;
-  }
+export function enemyAttack(hero, enemy, id) {
+  let amount = physicalDamage(enemy[id], hero)
+  let dodge = defenderDodged(enemy[id], hero);
+
   return {
     type: 'ENEMY_ATTACK',
-    amount,
-    message: dodge ? "You dodge the attack" : "the enemy attacks for " + amount + " damage!"
+    amount: dodge ? 0 : amount,
+    message:
+      dodge ?        "You dodge the attack" :
+      amount === 0 ? "You blocked the attack" :
+        enemy[id].name + " attacks with " + enemy[id].equipment.rightHand.name + " dealing " + amount + " damage!"
   }
 }
