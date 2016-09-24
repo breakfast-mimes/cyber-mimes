@@ -17,11 +17,11 @@ var db = new neo4j.GraphDatabase({
 			console.log('HERO!!!',hero);
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
-		    {query: 'CREATE (p:CHARACTER { name: "Mark",strength:10, fighting:20}) RETURN p'},
+		    {query: 'CREATE (p:CHARACTER { name: "yo" }) RETURN p',},
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char name', result[0].p.properties.name);
+			        	console.log('RESULT for char name', result[0].p.properties);
 		    	}
 		    )
 		  })
