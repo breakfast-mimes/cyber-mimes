@@ -1,7 +1,11 @@
-export function equip(equipment) {
+export function equip(equipment, i) {
   return {
     type: 'CHANGE_EQUIPMENT',
     equipment,
-    message: equipment.equip ? "You equip " + equipment.name : null
+    i,
+    message: equipment.equip ? equipment.e ?
+      "You remove " + equipment.name :
+      "You equip " + equipment.name :
+      "You try to use " + equipment.name + " but its useless"
   }
 }
