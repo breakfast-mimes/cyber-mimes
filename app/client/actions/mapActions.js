@@ -21,3 +21,10 @@ export function goWest() {
     type: 'GO_WEST',
   }
 }
+
+export function pickUp(item) {
+  return {
+    type: 'PICK_UP',
+    item
+  }
+}
