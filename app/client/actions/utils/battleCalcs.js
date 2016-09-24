@@ -1,5 +1,4 @@
 export const physicalDamage = function(attacker, defender) {
-  console.log(getArmor(defender) * defender.skills.armor / 80)
   let dmg = Math.floor(
       attacker.stats[attacker.equipment.rightHand.stat] * Math.random() / 2
     + (attacker.equipment.rightHand.type === "melee" ? attacker.skills.fighting / 8 : 0)
