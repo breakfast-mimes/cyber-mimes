@@ -32,7 +32,7 @@ var db = new neo4j.GraphDatabase({
 			
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
-		    {query: 'CREATE (z:DBTEST { heroCharacter: {hero} }) RETURN z',
+		    {query: 'CREATE (char:DBTEST { heroCharacter: {hero} }) RETURN char',
 		    	params: {
 		    		 hero: req.body.hero,
 		    	
@@ -41,21 +41,21 @@ var db = new neo4j.GraphDatabase({
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char', result[0].z.properties);
+			        	console.log('RESULT for char', result[0].char.labels);
 		    	}
 		    )
 		  })
 		}
 
 		queryDb(req.body).then(createCharacter)
-	}
+	},
 
 	fetch: function (req, res) {
-
-	function queryDbMatch (hero) {
+	console.log('INSIDE FETCH REQUEST!!!',req,res)
+	function queryDbMatch () {
 		return new Promise(function(reject,resolve){
 			db.cypher({
-			    query: 'MATCH (z:DBTEST {heroCharacter: {hero}}) RETURN z',
+			    query: 'MATCH (char:DBTEST {heroCharacter: {hero}}) RETURN char',
 			    params: {
 			        hero: req.body.hero,
 					},
@@ -63,19 +63,19 @@ var db = new neo4j.GraphDatabase({
 					function (err,result) {
 				    	if(err) reject(err)
 				    		resolve(result)
-			    		console.log('MATCHED CHARACTER IN DB',result[0].z.properties.name)
+			    		console.log('MATCHED CHARACTER IN DB',result[0].char.properties.name)
 					})
 		})
 
 	}
-	queryDbMatch(req.body).then(matchCharacter)
+	queryDbMatch().then(matchCharacter)
 		
 	}
 
- 
-
 
 }
+
+
 	function createCharacter(err, results) {
 	  console.log('RESULT_first!!!',results)
 	    if (err) throw err;

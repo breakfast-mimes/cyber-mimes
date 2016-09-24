@@ -43,10 +43,10 @@ export function fetchCharacter () {
 			.then(response => {
 				console.log('FETCH_CHARACTER',response);
 				//dispatch action to fetch the character
-				dispatch({type:FETCH_CHARACTER, payload: {
-					id: response.data.id
-				}})
-				dispatch({type: FETCH_CHARACTER})
+				// dispatch({type:FETCH_CHARACTER, payload: {
+				// 	id: response.data.id
+				// }})
+			
 
 			})	
 			.catch(response => {

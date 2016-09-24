@@ -66,7 +66,7 @@ const CreationForm = React.createClass({
 				<div>
 		          <div 
 		          	onClick={() => {
-		          		this.props.makeCharacter(this.props.hero);
+		          		this.props.fetchCharacter(this.props.hero);
 		          	}}>
 		          	Create Character
 		          </div>
@@ -75,6 +75,7 @@ const CreationForm = React.createClass({
 		)
 	}
 });
+		          		// this.props.makeCharacter(this.props.hero);
 
 export default CreationForm; //use connect here? no, its already connected in the parent component
 
