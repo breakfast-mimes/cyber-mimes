@@ -41,8 +41,20 @@ function hero(state = [], action) {
       return state;
 
     case "CHANGE_EQUIPMENT":
-      if(state.equipment[action.equipment.equip])
-        state.equipment[action.equipment.equip] = action.equipment;
+      if(state.equipment[action.equipment.equip]) {
+        if(state.inventory[action.i].e) {
+          state.equipment[action.equipment.equip] =
+            action.equipment.equip === 'rightHand' ?
+              {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand", e: true} : undefined;
+        } else {
+          for(let i = 0; i < state.inventory.length; i++) {
+            if(state.inventory[i].equip === action.equipment.equip)
+              state.inventory[i].e = false;
+          }
+          state.equipment[action.equipment.equip] = action.equipment;
+        }
+        state.inventory[action.i].e = !state.inventory[action.i].e;
+      }
       return state
 
     case "UPDATE_CHARACTER":

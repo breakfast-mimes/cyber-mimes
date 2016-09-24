@@ -11,6 +11,7 @@ const hero = {
     fighting: 0,
     rangedCombat: 0,
     martialArts: 0,
+    armor: 0,
     magic: 0,
     healing: 0
   },
@@ -37,13 +38,13 @@ const hero = {
   items: {
   },
   inventory: [
-    {name: "Gold", amount: 1000},
-    {name: "Board Sword", type: "meele", dmg: 3, stat: "str", equip: "rightHand"},
-    {name: "Lazer Gun", type: "ranged", dmg: 3, stat: "dex", equip: "rightHand"}
+    {name: "Gold", amount: 9001},
+    {name: "Board Sword", type: "melee", dmg: 3, stat: "str", equip: "rightHand", e: false},
+    {name: "Lazer Gun", type: "ranged", dmg: 3, stat: "dex", equip: "rightHand", e: false}
   ],
   equipment: {
     head: undefined,
-    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand"},
+    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand", e: true},
     leftHand: undefined,
     body: undefined,
     hands: undefined,

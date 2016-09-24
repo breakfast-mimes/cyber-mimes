@@ -6,6 +6,7 @@ export default {
   end: "Endurance",
   fighting: "Fighting",
   martialArts: "Martial Arts",
+  armor: "Armor",
   rangedCombat: "Ranged Combat",
   magic: "Magic",
   healing: "Healing"

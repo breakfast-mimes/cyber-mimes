@@ -38,7 +38,8 @@ export function changeEnemy(enemies, id) {
     return {
       type: 'CHANGE_ENEMY',
       id,
-      message: "You are fighting " + enemies[id].name
+      message: ["You are fighting " + enemies[id].name]
+        .concat(Object.keys(enemies[id].equipment).map(key => enemies[id].equipment[key].name))
     }
   }
 }
