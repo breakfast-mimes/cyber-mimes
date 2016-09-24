@@ -9,6 +9,8 @@ const hero = {
   },
   skills: {
     fighting: 0,
+    rangedCombat: 0,
+    martialArts: 0,
     magic: 0,
     healing: 0
   },
@@ -26,13 +28,29 @@ const hero = {
   battleActions: {
     attack: "Attack",
     cry: "Cry",
-    defend: "Defend",
+    defend: "Defend"
   },
   spells: {
     heal: "Heal",
     fireball: "Fireball"
   },
   items: {
+  },
+  inventory: [
+    {name: "Gold", amount: 0},
+    {name: "Board Sword", type: "meele", dmg: 3, stat: "str", equip: "rightHand"},
+    {name: "Lazer Gun", type: "ranged", dmg: 3, stat: "dex", equip: "rightHand"}
+  ],
+  equipment: {
+    head: undefined,
+    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand"},
+    leftHand: undefined,
+    body: undefined,
+    hands: undefined,
+    legs: undefined,
+    boots: undefined,
+    ring1: undefined,
+    ring2: undefined
   }
 }
 

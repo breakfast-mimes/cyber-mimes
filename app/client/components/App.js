@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as utilActions from '../actions/utilActions';
 import * as battleActions from '../actions/battleActions';
 import * as spellActions from '../actions/spellActions';
+import * as heroActions from '../actions/heroActions';
 import * as enemyActions from '../actions/enemyActions';
 import * as mapActions from '../actions/mapActions';
 import * as startMapActions from '../actions/startMapActions';
@@ -27,6 +28,7 @@ function mapDispatchToProps(dispatch) {
       ...utilActions,
       ...battleActions,
       ...spellActions,
+      ...heroActions,
       ...enemyActions,
       ...mapActions,
       ...startMapActions

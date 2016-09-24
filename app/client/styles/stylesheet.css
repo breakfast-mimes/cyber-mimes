@@ -104,13 +104,17 @@ title {
   height: 100px;
   width: 400px;
 }
-.actionGroup {
+.actionGroup, .inventory {
   margin: 0px 0px 0px 2px;
   display: inline-block;
   float: left;
   width: 60px;
   height: 100px;
   cursor: pointer;
+}
+
+.inventory {
+  width: 200px;
 }
 
 .actionGroupHeader {

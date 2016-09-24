@@ -5,7 +5,8 @@ export default {
   luck: "Luck",
   end: "Endurance",
   fighting: "Fighting",
-  shooting: "Shooting",
+  martialArts: "Martial Arts",
+  rangedCombat: "Ranged Combat",
   magic: "Magic",
   healing: "Healing"
 };
