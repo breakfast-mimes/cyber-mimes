@@ -37,7 +37,7 @@ const hero = {
   items: {
   },
   inventory: [
-    {name: "Gold", amount: 0},
+    {name: "Gold", amount: 1000},
     {name: "Board Sword", type: "meele", dmg: 3, stat: "str", equip: "rightHand"},
     {name: "Lazer Gun", type: "ranged", dmg: 3, stat: "dex", equip: "rightHand"}
   ],

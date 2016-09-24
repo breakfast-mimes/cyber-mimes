@@ -11,7 +11,7 @@ export default class Map extends React.Component {
     //http://i.imgur.com/ILKppDH.png , mountain
     //
     let images =[
-    [{img:"http://bit.ly/2d4k9lv",item:"GREAT item here", description:"Descriptive1" , enemy: "3"},
+    [{img:"http://bit.ly/2d4k9lv",item:{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"}, description:"Descriptive1" , enemy: "3"},
     {img:"http://bit.ly/2deaWuc", description:"Descriptive2", enemy: "2"},
     {img:"http://bit.ly/2cGimRX", description:"Descriptive3", enemy: "1"}],
     [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4", enemy: "0"},
@@ -20,7 +20,6 @@ export default class Map extends React.Component {
     [{img:"http://bit.ly/2cGiroJ", description:"Descriptive7"},
     {img:"http://bit.ly/2dkDE8A", item:"ANOTHER ITEM?!", description:"Descriptive8"},
     {img:"http://bit.ly/2dcQUM4", description:"Descriptive9"}]]
-    console.log(this.props.map)
     let map = this.props.map
 
     let row = map.location.row
@@ -33,17 +32,26 @@ export default class Map extends React.Component {
 
     let cur;
     let item;
+    let itemName;
     let description;
     let enemyId;
     let enemyName = undefined;
     if (images[row] && images[row][col]) {
       cur = images[row][col].img;
       item = images[row][col].item;
+      if (item){
+        if(this.props.hero.inventory.filter((heroItem)=> heroItem.name === item.name )[0]){
+          itemName = undefined;
+        } else{
+          itemName = item.name;
+        }
+      }
       description = images[row][col].description;
       enemyId = images[row][col].enemy;
     } else {
       cur = undefined;
       item = undefined;
+      itemName = undefined;
       description = undefined;
       enemyId = undefined;
     }
@@ -60,7 +68,7 @@ export default class Map extends React.Component {
         <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} />
         <img src={cur} width="50" height="50" />
         <div >{description} </div>
-        <div >{item} (needs onClick action to pick up and remove)</div>
+        <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
         <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
       </div>
     )
