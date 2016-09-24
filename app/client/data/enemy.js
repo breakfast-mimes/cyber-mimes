@@ -11,6 +11,7 @@ const enemy = [{
     fighting: 10,
     martialArts: 10,
     rangedCombat: 10,
+    armor: 10,
     magic: 0,
     healing: 0
   },
@@ -23,10 +24,10 @@ const enemy = [{
   },
   id:0,
   equipment: {
-    head: undefined,
-    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str"},
+    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
+    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand"},
     leftHand: undefined,
-    body: undefined,
+    body: {name: "Broken Power Armor", type: "armor", armor: 5, equip: "body"},
     hands: undefined,
     legs: undefined,
     boots: undefined,
@@ -50,6 +51,7 @@ const enemy = [{
     fighting: 30,
     martialArts: 30,
     rangedCombat: 30,
+    armor: 30,
     magic: 0,
     healing: 0
   },
@@ -62,8 +64,8 @@ const enemy = [{
   },
   id:1,
   equipment: {
-    head: undefined,
-    rightHand: {name: "board sword", type: "meele", dmg: 3, stat: "str"},
+    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
+    rightHand: {name: "Broad Sword", type: "melee", dmg: 3, stat: "str"},
     leftHand: undefined,
     body: undefined,
     hands: undefined,
@@ -87,6 +89,7 @@ const enemy = [{
     fighting: 100,
     martialArts: 100,
     rangedCombat: 100,
+    armor: 100,
     magic: 0,
     healing: 0
   },
@@ -99,8 +102,8 @@ const enemy = [{
   },
   id:2,
   equipment: {
-    head: undefined,
-    rightHand: {name: "lazer gun", type: "ranged", dmg: 10, stat: "dex"},
+    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
+    rightHand: {name: "Lazer Gun", type: "ranged", dmg: 10, stat: "dex"},
     leftHand: undefined,
     body: undefined,
     hands: undefined,
@@ -125,6 +128,7 @@ const enemy = [{
     fighting: 1,
     martialArts: 1,
     rangedCombat: 1,
+    armor: 0,
     magic: 0,
     healing: 0
   },
