@@ -21,7 +21,8 @@ const CreationForm = React.createClass({
   },
 
   handleChange(event) {
-    this.setState({name: event.target.value});
+    // this.setState({name: event.target.value});
+    this.props.submitCharacter(event.target.value);
   },
 
 	render() {
@@ -63,13 +64,12 @@ const CreationForm = React.createClass({
 				</div>
 
 				<div>
-		          <Link to='/battle' 
+		          <div 
 		          	onClick={() => {
-		          		this.props.submitCharacter(this.state.name);
-		          		this.props.makeCharacter(this.state.hero);
+		          		this.props.makeCharacter(this.props.hero);
 		          	}}>
 		          	Create Character
-		          </Link>
+		          </div>
 			  </div>
 		  </div>
 		)

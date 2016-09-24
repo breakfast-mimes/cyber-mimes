@@ -41,6 +41,10 @@ function hero(state = [], action) {
       state.name = action.name;
       return state;
 
+    case "CREATE_CHARACTER":
+      state.hero = action.hero;
+      return state;
+
     default:
     	return state;
   }

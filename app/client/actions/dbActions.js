@@ -3,25 +3,29 @@ import { browserHistory } from 'react-router';
 
 
 export function makeCharacter(hero) {
-	console.log('------------->>>>>>>>>>', hero);
+	console.log('-->>>>', hero);
 	return function(dispatch) {
-		axios.post(`${API_URL}/createCharacter`, { 
+		axios.post('/createCharacter', {
+			hero:hero
+
+			})
+
 			// headers: { authorization: localStorage.getItem('token') }
-		})
+
 			.then(response => {
 				console.log('makeCharacter response received');
 				console.log('makeCharacter response is : ',response.data);
-				// dispatch({ type: CREATE_CHARACTER, payload: response.data })
-				// // Dispatch action that signals server response has been received
+				dispatch({ type: CREATE_CHARACTER, payload: response.data })
+				// Dispatch action that signals server response has been received
 				// dispatch({ type: RESPONSE_RECEIVED });
 				// socket.emit('getOnlineUsers');
 			})
 			.catch(response => {
 				// if there is an error from the post to the server,
 				// log it
-				console.log('error in makeCharacter action creator: ',response);
+				console.error('error in makeCharacter action creator: ',response);
 				// Dispatch action that signals server response has been received
-				dispatch({ type: RESPONSE_RECEIVED });
+				// dispatch({ type: RESPONSE_RECEIVED });
 			})
 	}
 }

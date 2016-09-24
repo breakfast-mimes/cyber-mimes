@@ -35,7 +35,7 @@ app.listen(9001, 'localhost', function(err) {
 
 
 
-//app.use(router);
+app.use(router);
 
 
 
