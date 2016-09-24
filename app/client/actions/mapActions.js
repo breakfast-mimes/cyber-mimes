@@ -15,3 +15,16 @@ export function goEast() {
     type: 'GO_EAST',
   }
 }
+
+export function goWest() {
+  return {
+    type: 'GO_WEST',
+  }
+}
+
+export function pickUp(item) {
+  return {
+    type: 'PICK_UP',
+    item
+  }
+}

@@ -8,13 +8,15 @@ import rootReducer from './reducers/rootReducer';
 import hero from './data/hero';
 import enemy from './data/enemy';
 import game from './data/game'
+import startMap from './data/startMap'
 import map from './data/map'
 
 const defaultState = {
   hero,
   enemy,
   game,
-  map
+  map,
+  startMap
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));

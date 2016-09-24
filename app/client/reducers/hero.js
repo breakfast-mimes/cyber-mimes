@@ -4,34 +4,58 @@ function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
     state.status.defending--;
-    state.status.mana = util.clip(0, 100, state.status.mana + Math.floor(state.stats.int / 4))
+    state.status.mana = util.clip(0, state.status.maxMana, state.status.mana + Math.floor(state.stats.int / 4))
   }
 
   switch (action.type) {
 
+    case "PICK_UP":
+      if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
+        state.inventory.push(action.item)
+      }
+      console.log("state", state)
+      return state
+
     case "HEAL":
       if(action.success)
-        state.status.health = util.clip(0, 100, state.status.health + action.amount);
-      state.status.mana = util.clip(0, 100, state.status.mana - action.mana)
+        state.status.health = util.clip(0, state.status.maxHealth, state.status.health + action.amount);
+      state.status.mana = util.clip(0, state.status.maxMana, state.status.mana - action.mana)
       return state;
 
     case "FIREBALL":
-      state.status.mana = util.clip(0, 100, state.status.mana - action.mana)
+      state.status.mana = util.clip(0, state.status.maxMana, state.status.mana - action.mana)
       if(!action.success)
-        state.status.health = util.clip(0, 100, state.status.health - action.amount)
+        state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount)
       return state;
 
     case "DEFEND":
-      state.status.defending = state.stats.def;
+      state.status.defending = state.stats.end;
       return state;
 
     case "ENEMY_ATTACK":
-      state.status.health = util.clip(0, 100, state.status.health - action.amount)
+      state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount)
       return state;
 
     case "ENEMY_DEATH":
       state.level.exp += action.amount;
       return state;
+
+    case "CHANGE_EQUIPMENT":
+      if(state.equipment[action.equipment.equip]) {
+        if(state.inventory[action.i].e) {
+          state.equipment[action.equipment.equip] =
+            action.equipment.equip === 'rightHand' ?
+              {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand", e: true} : undefined;
+        } else {
+          for(let i = 0; i < state.inventory.length; i++) {
+            if(state.inventory[i].equip === action.equipment.equip)
+              state.inventory[i].e = false;
+          }
+          state.equipment[action.equipment.equip] = action.equipment;
+        }
+        state.inventory[action.i].e = !state.inventory[action.i].e;
+      }
+      return state
 
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
@@ -39,6 +63,12 @@ function hero(state = [], action) {
 
     case "SUBMIT_CHARACTER":
       state.name = action.name;
+      state.level.level += 1;
+      state.status.maxHealth = 50 + state.stats.end * 10;
+      state.status.maxMana = 50 + state.stats.int * 10;
+      state.status.health = state.status.maxHealth;
+      state.status.mana = state.status.maxMana;
+      
       return state;
 
     case "CREATE_CHARACTER":

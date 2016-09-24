@@ -1,50 +1,75 @@
 import React from 'react';
 import { Link } from 'react-router';
-import GoSouth from './goSouth';
-import GoNorth from './goNorth';
-import GoEast from './goEast';
-import messages from './messages'
 
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message:"Welcome to our game! It isn't much yet (we're still coding it as you play:D ) but we hope you enjoy it so far",
     }
   }
   render(){
-    let toRender = [];
-    let locationY = this.props.map.locationY;
-    let locationX = this.props.map.locationX;
-    if (locationY >= 0 && locationY < 5 && locationX < 1){
-      toRender.push(<GoNorth {...this.props} />)
-    }
+    //http://i.imgur.com/ILKppDH.png , mountain
+    //
+    let images =[
+    [{img:"http://bit.ly/2d4k9lv",item:{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"}, description:"Descriptive1" , enemy: "3"},
+    {img:"http://bit.ly/2deaWuc", description:"Descriptive2", enemy: "2"},
+    {img:"http://bit.ly/2cGimRX", description:"Descriptive3", enemy: "1"}],
+    [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4", enemy: "0"},
+    {img:"http://bit.ly/2d4jS28", description:"Descriptive5"},
+    {img:"http://bit.ly/2crqNnU", description:"Descriptive6"}],
+    [{img:"http://bit.ly/2cGiroJ", description:"Descriptive7"},
+    {img:"http://bit.ly/2dkDE8A", item:"ANOTHER ITEM?!", description:"Descriptive8"},
+    {img:"http://bit.ly/2dcQUM4", description:"Descriptive9"}]]
+    let map = this.props.map
 
-    if (locationY === 4 && locationX < 1) {
-      toRender.push(<GoEast {...this.props} />)
-    }
+    let row = map.location.row
+    let col = map.location.col
 
-    if (locationY >= 1 && locationX < 1){
-      toRender.push(<GoSouth {...this.props}/>)
-    }
-    console.log(this.props.map)
-    if (this.props.map.prevlocationY <= this.props.map.locationY) {
-      this.state.message = messages.descriptionTwoDForward[this.props.map.locationY]
+    let north = images[row - 1] ? images[row - 1][col] ? images[row - 1][col].img : undefined : undefined
+    let east = images[row] ? images[row][col + 1] ? images[row][col + 1].img : undefined : undefined
+    let south = images[row + 1] ? images[row + 1][col] ? images[row + 1][col].img : undefined : undefined
+    let west = images[row] ? images[row][col - 1] ? images[row][col - 1].img : undefined : undefined
+
+    let cur;
+    let item;
+    let itemName;
+    let description;
+    let enemyId;
+    let enemyName = undefined;
+    if (images[row] && images[row][col]) {
+      cur = images[row][col].img;
+      item = images[row][col].item;
+      if (item){
+        if(this.props.hero.inventory.filter((heroItem)=> heroItem.name === item.name )[0]){
+          itemName = undefined;
+        } else{
+          itemName = item.name;
+        }
+      }
+      description = images[row][col].description;
+      enemyId = images[row][col].enemy;
     } else {
-      this.state.message = messages.descriptionTwoDBackward[this.props.map.locationY]
+      cur = undefined;
+      item = undefined;
+      itemName = undefined;
+      description = undefined;
+      enemyId = undefined;
     }
-
-    if (locationX >= 1) {
-      this.state.message = "Ya know what? this is kinda boring, how about you create a character instead?"
-      toRender.push(<Link to='/'>Create Character</Link>)
+    if(enemyId && this.props.enemy[enemyId].status.health > 0) {
+      enemyName = this.props.enemy[enemyId].name
     }
+    // console.log(enemyId, enemyName)
 
     return(
-      <div>
-        MAP <br/>
-        {this.state.message}
-        <br/> <br/>
-        {toRender}
+      <div id="map">
+        <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} />
+        <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} />
+        <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} />
+        <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} />
+        <img src={cur} width="50" height="50" />
+        <div >{description} </div>
+        <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
+        <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
       </div>
     )
   }

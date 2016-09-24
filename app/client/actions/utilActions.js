@@ -32,17 +32,14 @@ export function enemyDeath(enemy, id) {
   }
 }
 
-export function changeMap(location) {
-  return {
-    type: 'CHANGE_MAP',
-    location
-  }
-}
 
 export function changeEnemy(enemies, id) {
-  return {
-    type: 'CHANGE_ENEMY',
-    id,
-    message: "You are fighting " + enemies[id].name
+  if (id) {
+    return {
+      type: 'CHANGE_ENEMY',
+      id,
+      message: ["You are fighting " + enemies[id].name]
+        .concat(Object.keys(enemies[id].equipment).map(key => enemies[id].equipment[key].name))
+    }
   }
 }

@@ -3,9 +3,11 @@ export default {
   str: "Strength",
   dex: "Dexterity",
   luck: "Luck",
-  def: "Defence",
+  end: "Endurance",
   fighting: "Fighting",
-  shooting: "Shooting",
+  martialArts: "Martial Arts",
+  armor: "Armor",
+  rangedCombat: "Ranged Combat",
   magic: "Magic",
   healing: "Healing"
 };
