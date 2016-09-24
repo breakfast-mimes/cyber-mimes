@@ -1,17 +1,17 @@
-export function goSouth() {
+export function goSouthStart() {
   return {
-    type: 'GO_SOUTH',
+    type: 'GO_SOUTH_START',
   }
 }
 
-export function goNorth() {
+export function goNorthStart() {
   return {
-    type: 'GO_NORTH',
+    type: 'GO_NORTH_START',
   }
 }
 
-export function goEast() {
+export function goEastStart() {
   return {
-    type: 'GO_EAST',
+    type: 'GO_EAST_START',
   }
 }

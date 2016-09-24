@@ -81,6 +81,8 @@ const enemy = [{
     healing: 0
   },
   status: {
+    maxHealth:100,
+    maxMana:100,
     health:100,
     mana:100
   },

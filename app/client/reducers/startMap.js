@@ -5,16 +5,16 @@ function startMap(state = [], action) {
   state.prevlocationY = state.locationY;
   state.prevlocationX = state.locationX;
   switch (action.type) {
-    case "GO_SOUTH":
+    case "GO_SOUTH_START":
       state.locationY -= 1;
       return state;
-    case "GO_NORTH":
+    case "GO_NORTH_START":
       state.locationY += 1;
       return state;
-    case "GO_EAST":
+    case "GO_EAST_START":
       state.locationX += 1;
       return state;
-    case "GO_WEST":
+    case "GO_WEST_START":
       state.locationX -= 1;
       return state;
     default:

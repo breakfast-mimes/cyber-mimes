@@ -5,7 +5,7 @@ import messages from './messages'
 export default class goEast extends React.Component {
   render(){
     return(
-      <div onClick={() => this.props.goEast()} >GO EAST!</div>
+      <div onClick={() => this.props.goEastStart()} >GO EAST!</div>
     )
   }
 }
