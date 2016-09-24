@@ -12,5 +12,5 @@ export const physicalDamage = function(attacker, defender) {
 }
 
 export const defenderDodged = function(attacker, defender) {
-  return (defender.stats.dex / 100 >  Math.random())
+  return (defender.stats.dex / 150 >  Math.random())
 }

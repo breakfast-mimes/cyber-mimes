@@ -33,6 +33,11 @@ function hero(state = [], action) {
       state.level.exp += action.amount;
       return state;
 
+    case "CHANGE_EQUIPMENT":
+      if(state.equipment[action.equipment.equip])
+        state.equipment[action.equipment.equip] = action.equipment;
+      return state
+
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
       return state;
