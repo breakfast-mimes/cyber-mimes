@@ -3,18 +3,19 @@ import { browserHistory } from 'react-router';
 
 
 export function makeCharacter(hero) {
-	console.log('-->>>>', hero);
+	var stringifiedHero = JSON.stringify(hero);
+	console.log('-->>>>', stringifiedHero);
 	return function(dispatch) {
 		axios.post('/createCharacter', {
-			hero:hero
+			hero:stringifiedHero
 
 			})
 
 			// headers: { authorization: localStorage.getItem('token') }
 
 			.then(response => {
-				console.log('makeCharacter response received');
-				console.log('makeCharacter response is : ',response.data);
+				console.log('createCharacter response received');
+				console.log('createCharacter response is : ',response.data);
 				dispatch({ type: CREATE_CHARACTER, payload: response.data })
 				// Dispatch action that signals server response has been received
 				// dispatch({ type: RESPONSE_RECEIVED });
@@ -28,6 +29,42 @@ export function makeCharacter(hero) {
 				// dispatch({ type: RESPONSE_RECEIVED });
 			})
 	}
+
+}
+
+export function fetchCharacter () {
+	console.log('inside fetchCharacter get request!')
+	return function (dispatch) {
+		// dispatch({type: AWAITING_RESPONSE)}
+
+		axios.get('/fetchCharacter', {
+			// headers: {authorization: localStorage.getItem('token')}
+		})
+			.then(response => {
+				console.log('FETCH_CHARACTER',response);
+				//dispatch action to fetch the character
+				dispatch({type:FETCH_CHARACTER, payload: {
+					id: response.data.id
+				}})
+				dispatch({type: FETCH_CHARACTER})
+
+			})	
+			.catch(response => {
+				console.log('ERROR IN FETCHING CHARACTER', response);
+				// dispatch(authError(response.data));
+				// dispatch(signoutUser());
+				// browserHistory.push('/');
+			})	
+
+
+
+
+	}
+
+
+
+
+
 }
 
 

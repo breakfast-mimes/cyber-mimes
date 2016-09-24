@@ -14,6 +14,7 @@ var characterController = require('./controllers/characterController')
 // });
 
 router.post('/createCharacter', characterController.create);
+router.get('/fetchCharacter', characterController.fetch);
 
 
 

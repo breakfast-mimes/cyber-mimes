@@ -8,26 +8,68 @@ var db = new neo4j.GraphDatabase({
     auth: {username: 'neo4j', password: 'cybermimes'},
 });
 
+// db.cypher({
+// //     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',
+// //     // params: {
+// //     //     email: 'alice@example.com',
+// //     // },
+// // }, callback);
+
+// // db.cypher({
+// //     queries: [{
+// //         query: 'MATCH (user:User {email: {email}}) RETURN user',
+// //         params: {
+// //             email: 'alice@example.com',
+// //         }
+
 
  module.exports = {
 	create: function (req, res) {
-		console.log('inside characterController!!', req.body);
+
+		
 	 // 	console.log('REQUEST BODY:', req.body);
 		function queryDb(hero) {
-			console.log('HERO!!!',hero);
+			
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
-		    {query: 'CREATE (p:CHARACTER { name: "yo" }) RETURN p',},
+		    {query: 'CREATE (z:DBTEST { heroCharacter: {hero} }) RETURN z',
+		    	params: {
+		    		 hero: req.body.hero,
+		    	
+ 		    	},
+		    },
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char name', result[0].p.properties);
+			        	console.log('RESULT for char', result[0].z.properties);
 		    	}
 		    )
 		  })
 		}
 
 		queryDb(req.body).then(createCharacter)
+	}
+
+	fetch: function (req, res) {
+
+	function queryDbMatch (hero) {
+		return new Promise(function(reject,resolve){
+			db.cypher({
+			    query: 'MATCH (z:DBTEST {heroCharacter: {hero}}) RETURN z',
+			    params: {
+			        hero: req.body.hero,
+					},
+			},
+					function (err,result) {
+				    	if(err) reject(err)
+				    		resolve(result)
+			    		console.log('MATCHED CHARACTER IN DB',result[0].z.properties.name)
+					})
+		})
+
+	}
+	queryDbMatch(req.body).then(matchCharacter)
+		
 	}
 
  
@@ -39,49 +81,25 @@ var db = new neo4j.GraphDatabase({
 	    if (err) throw err;
 	    var result = results[0];
 	    if (!result) {
-	        console.log('No result.');
+        console.log('No result.');
 	    } else {
-	        var node = result['p'];
-	        console.log('NODE!!!',node.properties);
+        var node = result['z'];
+        console.log('NODE!!!',node.properties);
 	    }
-
 	}
 
 
-	// function queryDbMatch () {
-	// 	return new Promise(function(reject,resolve){
-	// 		db.cypher({
-	// 		    query: 'MATCH (p:CHARACTER {name: {name}}) RETURN p',
-	// 		    params: {
-	// 		        name: 'Mark',
-	// 				},
-	// 		},
-	// 				function (err,result) {
-	// 			    	if(err) reject(err)
-	// 			    		resolve(result)
-	// 		    		console.log('MATCHED CHARACTER IN DB',result[0].p.properties.name)
-	// 				})
-	// 	})
-
-	// }
-
-	// queryDbMatch().then(matchCharacter)
-
-
-
-
-
-	// function matchCharacter(err, results) {
-	//   //console.log('MATCH RESULT',results)
-	//     if (err) throw err;
-	//     var result = results[0];
-	//     if (!result) {
-	//        // console.log('No result.');
-	//     } else {
-	//         var node = result['p'];
-	//        // console.log('MATCH RESULT!!!',node.properties);
-	//     }
-	// }
+	function matchCharacter(err, results) {
+	  //console.log('MATCH RESULT',results)
+	    if (err) throw err;
+	    var result = results[0];
+	    if (!result) {
+        console.log('No result.');
+	    } else {
+        var node = result['p'];
+        console.log('MATCH RESULT!!!',node.properties);
+	    }
+	}
 
 
 
