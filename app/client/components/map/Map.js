@@ -8,6 +8,8 @@ export default class Map extends React.Component {
     }
   }
   render(){
+    //http://i.imgur.com/ILKppDH.png , mountain
+    //
     let images =[
     [{img:"http://bit.ly/2d4k9lv",item:"GREAT item here", description:"Descriptive1"},
     {img:"http://bit.ly/2deaWuc", description:"Descriptive2"},
