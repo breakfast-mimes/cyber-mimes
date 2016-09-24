@@ -27,7 +27,7 @@ export default class Map extends React.Component {
     if (locationY >= 1 && locationX < 1){
       toRender.push(<GoSouth {...this.props}/>)
     }
-    console.log(this.props.startMap)
+    console.log(this.props)
     if (this.props.startMap.prevlocationY <= this.props.startMap.locationY) {
       this.state.message = messages.descriptionTwoDForward[this.props.startMap.locationY]
     } else {

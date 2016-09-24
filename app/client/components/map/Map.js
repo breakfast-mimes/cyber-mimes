@@ -8,11 +8,13 @@ export default class Map extends React.Component {
     }
   }
   render(){
+    //http://i.imgur.com/ILKppDH.png , mountain
+    //
     let images =[
-    [{img:"http://bit.ly/2d4k9lv",item:"GREAT item here", description:"Descriptive1"},
-    {img:"http://bit.ly/2deaWuc", description:"Descriptive2"},
-    {img:"http://bit.ly/2cGimRX", description:"Descriptive3"}],
-    [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4"},
+    [{img:"http://bit.ly/2d4k9lv",item:"GREAT item here", description:"Descriptive1" , enemy: "3"},
+    {img:"http://bit.ly/2deaWuc", description:"Descriptive2", enemy: "2"},
+    {img:"http://bit.ly/2cGimRX", description:"Descriptive3", enemy: "1"}],
+    [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4", enemy: "0"},
     {img:"http://bit.ly/2d4jS28", description:"Descriptive5"},
     {img:"http://bit.ly/2crqNnU", description:"Descriptive6"}],
     [{img:"http://bit.ly/2cGiroJ", description:"Descriptive7"},
@@ -32,16 +34,23 @@ export default class Map extends React.Component {
     let cur;
     let item;
     let description;
-
+    let enemyId;
+    let enemyName = undefined;
     if (images[row] && images[row][col]) {
       cur = images[row][col].img;
       item = images[row][col].item;
       description = images[row][col].description;
+      enemyId = images[row][col].enemy;
     } else {
       cur = undefined;
       item = undefined;
       description = undefined;
+      enemyId = undefined;
     }
+    if(enemyId && this.props.enemy[enemyId].status.health > 0) {
+      enemyName = this.props.enemy[enemyId].name
+    }
+    // console.log(enemyId, enemyName)
 
     return(
       <div id="map">
@@ -52,7 +61,7 @@ export default class Map extends React.Component {
         <img src={cur} width="50" height="50" />
         <div >{description} </div>
         <div >{item} (needs onClick action to pick up and remove)</div>
-        <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, 3)}>to battle!</Link>
+        <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
       </div>
     )
   }
