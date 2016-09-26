@@ -1,62 +1,78 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import {Field, reduxForm } from 'redux-form';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+// import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
+// import * as actions from '../../actions';
 
-class Signin extends Component {
-	handleFormSubmit({ email, password }) {
-		this.props.signinUser({ email, password });
-	}
 
-	renderAlert() {
-		if (this.props.errorMessage) {
+
+	// handleFormSubmit({ email, password }) {
+	// 	// this.props.signinUser({email, password });
+	// }
+
+// 	renderAlert() {
+// 		if (this.props.errorMessage) {
+// 			return (
+// 				<div>
+// 					<strong>Oops!</strong> {this.props.errorMessage}
+// 				</div>
+// 			);
+// 		}
+// 	}
+// // 
+// 	render() {
+// 		 const {handleSubmit fields: {email, password}} = this.props; 
+
+// 	return (
+// 		<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+
+// 		<fieldset className = "form-group">
+// 			<TextField {...email} floatingLabelText="Email">
+// 			</TextField>
+// 		</fieldset>
+
+// 		</form>
+
+
+// 		)
+
+// 	}
+
+const signin = React.createClass({
+
+
+	handleChange(event) {
+	    this.setState({name: event.target.value});
+	    // this.props.submitCharacter.bind(null,event.target.value);
+	    // console.log('EVENT',event.target.value)
+	},
+
+		render() {
+			
 			return (
 				<div>
-					<strong>Oops!</strong> {this.props.errorMessage}
+
+					<div className='stats'>
+			      <div className='statTitle'>USER SIGNIN</div>
+						<input type="text" placeholder="USERNAME" onChange={this.handleChange} className="statTitle"/>
+					</div>
+
 				</div>
-			);
+
+			)
 		}
-	}
 
-	render() {
-		const { handleSubmit, fields: { email, password }} = this.props;
 
-		return (
-			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-				<fieldset className="form-group">
-					<TextField {...email} floatingLabelText="Email" errorText={email.touched && email.error && <div className="error">{email.error}</div>} />
-				</fieldset>
-				<fieldset className="form-group">
-					<TextField {...password} type="password" floatingLabelText="Password" errorText={password.touched && password.error && <div className="error">{password.error}</div>} />
-				</fieldset>
-				{ this.renderAlert() }
-				<RaisedButton type="submit" label="Sign in" primary={true}></RaisedButton>
-			</form>
-		);
-	}
-}
 
-function mapStateToProps(state){
-	return { errorMessage: state.auth.error };
-}
 
-function validate(formProps) {
-	const errors = {};
 
-	if (!formProps.email) {
-		errors.email = 'Please enter an email';
-	}
 
-	if (!formProps.password) {
-		errors.password = 'Please enter a password';
-	}
 
-	return errors;
-}
+});
 
-export default reduxForm({
-	form: 'signin',
-	fields: ['email','password'],
-	validate
-}, mapStateToProps, actions)(Signin);
+export default signin;
+
+
+
+
