@@ -1,5 +1,5 @@
 
-// var db = require('./db/dbConfig.js');
+// var db = require('./config/dbConfig.js');
 var neo4j = require('neo4j');
 //var Hero = require('../../client/data/hero.js')
 //database instance
