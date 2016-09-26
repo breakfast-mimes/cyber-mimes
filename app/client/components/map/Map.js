@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Sound from 'react-sound';
 import Inventory from './Inventory'
 
 export default class Map extends React.Component {
@@ -71,6 +72,13 @@ export default class Map extends React.Component {
     let hero = this.props.hero
     return(
       <div>
+        <Sound
+          url="https://a.clyp.it/eag0ozso.mp3"
+          playStatus={Sound.status.PLAYING}
+          playFromPosition={300 /* in milliseconds */}
+          onLoading={this.handleSongLoading}
+          onPlaying={this.handleSongPlaying}
+          onFinishedPlaying={this.handleSongFinishedPlaying} />
         <div id="map">
           <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} />
           <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} />
@@ -90,3 +98,4 @@ export default class Map extends React.Component {
     )
   }
 }
+

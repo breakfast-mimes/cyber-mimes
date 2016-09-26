@@ -11,7 +11,7 @@ const HealthBar = React.createClass({
       }
     }
     return (
-      <div className="buildHealthBar noSelect">
+      <div className="healthBar noSelect">
         <span className="healthPercent">{health}</span>
         <div style={style
         }></div>
