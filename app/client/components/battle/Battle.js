@@ -6,7 +6,7 @@ import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
 import Log from './Log'
 import HeroStatus from './HeroStatus'
-import InventoryEntry from './InventoryEntry'
+import Inventory from './Inventory'
 
 export default class Battle extends React.Component {
   constructor(props) {
@@ -54,11 +54,7 @@ export default class Battle extends React.Component {
           <ActionGroup {...this.props} actions={hero.battleActions} name="Actions" id={enemyId}/>
           <ActionGroup {...this.props} actions={hero.spells} name="Spells" id={enemyId}/>
           <ActionGroup {...this.props} actions={hero.items} name="Items" id={enemyId}/>
-          <div className="inventory">
-            <span className="actionGroupHeader">Inventory</span>
-            {Object.keys(hero.inventory).map((item, i) =>
-              <InventoryEntry equip={this.props.equip} dropItem={this.props.dropItem} equipment={hero.inventory[item]} key={i} i={i}/>)}
-          </div>
+          <Inventory {...this.props}/>
         </div>
 
     </div>
