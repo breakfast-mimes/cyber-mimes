@@ -21,7 +21,7 @@ const CharacterForm = React.createClass({
   },
 
   handleChange(event) {
-    this.setState({name: event.target.value});
+    this.setState({name: event.target.value})
   },
 
 	render() {
@@ -51,7 +51,7 @@ const CharacterForm = React.createClass({
 				</div>
 
 				<div className='stats'>
-				 	<div className='allocationHeader'>
+				  <div className='allocationHeader'>
 	        	<div className='statTitle noSelect'>SKILLS</div>
 	        	<div className='statTitle allocation noSelect'>{this.state.skillAllocation}</div>
 		      </div>
@@ -69,10 +69,11 @@ const CharacterForm = React.createClass({
 				<div>
           <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Continue</Link>
 			  </div>
+
 		  </div>
 		)
 	}
 });
 
-export default CharacterForm; //use connect here? no, its already connected in the parent component
+export default CharacterForm;
 
