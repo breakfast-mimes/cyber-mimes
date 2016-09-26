@@ -1,12 +1,12 @@
 
-// var db = require('./config/dbConfig.js');
+var db = require('../config/dbConfig.js');
 var neo4j = require('neo4j');
 //var Hero = require('../../client/data/hero.js')
 //database instance
-var db = new neo4j.GraphDatabase({
-    url: 'http://localhost:7474',
-    auth: {username: 'neo4j', password: 'cybermimes'},
-});
+// var db = new neo4j.GraphDatabase({
+//     url: 'http://localhost:7474',
+//     auth: {username: 'neo4j', password: 'cybermimes'},
+// });
 
 // db.cypher({
 // //     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',

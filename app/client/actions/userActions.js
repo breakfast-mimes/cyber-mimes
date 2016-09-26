@@ -5,19 +5,18 @@ import { browserHistory } from 'react-router';
 
 // signinUser action creator uses redux-thunk to return a function
 // takes object with email and password properties
-export function signinUser({ email, password }) {
+export function signinUser( email, password ) {
 	return function(dispatch) {
-		axios.post('/user/signin', { email, password })
+		axios.post('/user/signin',{
+			username:username,
+			password:password })
 			.then(response => {
 				// if signin is successful, dispatch an action
 				// of type AUTHORIZE_USER
 				dispatch({ type: AUTHORIZE_USER });
 				// -Save the JWT token
 				localStorage.setItem('token', response.data.token);
-				// dispatch action to set current users info
-				dispatch({ type: UPDATE_USER, payload: { 
-					email: response.data.email, name: response.data.name
-				}});
+
 				// if signin is successful push user
 				// to the battle page? profile page?
 				browserHistory.push('/');

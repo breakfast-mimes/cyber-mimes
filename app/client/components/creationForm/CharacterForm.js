@@ -21,9 +21,8 @@ const CharacterForm = React.createClass({
   },
 
   handleChange(event) {
-    //this.setState({name: event.target.value});
-    this.props.submitCharacter.bind(null,event.target.value);
-    // console.log('EVENT',event.target.value)
+    this.setState({name: event.target.value});
+   
   },
 
 	render() {
@@ -69,10 +68,9 @@ const CharacterForm = React.createClass({
 				</div>
 
 
-				
 
 				<div>
-          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Continue</Link>
+          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.makeCharacter)}>Continue</Link>
 			  </div>
 
 		  </div>

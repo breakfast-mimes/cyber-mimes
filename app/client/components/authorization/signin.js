@@ -1,9 +1,49 @@
 import React, { Component } from 'react';
 import {Field, reduxForm } from 'redux-form';
 import TextField from 'material-ui/TextField';
-// import RaisedButton from 'material-ui/RaisedButton';
+ // import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
 // import * as actions from '../../actions';
+
+
+
+const signin = React.createClass({
+
+
+	handleChange(event) {
+	    this.setState({name: event.target.value});
+	    // this.props.submitCharacter.bind(null,event.target.value);
+	     console.log('EVENT',event.target.value)
+	},
+
+		render() {
+			
+			return (
+				<div>
+
+					<div className='stats'>
+			      <div className='statTitle'>USER SIGNIN</div>
+						<input type="text" placeholder="USERNAME" onChange={this.handleChange} className="statTitle"/>
+						<input type="text" placeholder="PASSWORD" onChange={this.handleChange} className="statTitle"/>
+					</div>
+
+					<button type="submit" label="Sign in">submit</button>
+
+				</div>
+
+			)
+		}
+
+
+
+
+
+
+
+});
+
+export default signin;
+
 
 
 
@@ -38,41 +78,6 @@ import { Link } from 'react-router';
 // 		)
 
 // 	}
-
-const signin = React.createClass({
-
-
-	handleChange(event) {
-	    this.setState({name: event.target.value});
-	    // this.props.submitCharacter.bind(null,event.target.value);
-	    // console.log('EVENT',event.target.value)
-	},
-
-		render() {
-			
-			return (
-				<div>
-
-					<div className='stats'>
-			      <div className='statTitle'>USER SIGNIN</div>
-						<input type="text" placeholder="USERNAME" onChange={this.handleChange} className="statTitle"/>
-					</div>
-
-				</div>
-
-			)
-		}
-
-
-
-
-
-
-
-});
-
-export default signin;
-
 
 
 
