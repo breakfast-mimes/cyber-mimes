@@ -1,3 +1,5 @@
+import { weapons, head, body } from './items.js'
+
 const enemy = [{
   name: "weak laser enemy",
   stats: {
@@ -24,10 +26,10 @@ const enemy = [{
   },
   id:0,
   equipment: {
-    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
-    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand"},
+    head: head.LEATHER_CAP,
+    rightHand: weapons.FISTS,
     leftHand: undefined,
-    body: {name: "Broken Power Armor", type: "armor", armor: 5, equip: "body"},
+    body: undefined,
     hands: undefined,
     legs: undefined,
     boots: undefined,
@@ -64,8 +66,8 @@ const enemy = [{
   },
   id:1,
   equipment: {
-    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
-    rightHand: {name: "Broad Sword", type: "melee", dmg: 3, stat: "str"},
+    head: head.LEATHER_CAP,
+    rightHand: weapons.BROAD_SWORD,
     leftHand: undefined,
     body: undefined,
     hands: undefined,
@@ -102,10 +104,10 @@ const enemy = [{
   },
   id:2,
   equipment: {
-    head: {name: "Leather Cap", type: "armor", armor: 5, equip: "head"},
-    rightHand: {name: "Lazer Gun", type: "ranged", dmg: 10, stat: "dex"},
+    head: head.LEATHER_CAP,
+    rightHand: weapons.ANTIMATTER_GUN,
     leftHand: undefined,
-    body: undefined,
+    body: body.BROKEN_POWER_ARMOR,
     hands: undefined,
     legs: undefined,
     boots: undefined,
@@ -142,7 +144,7 @@ const enemy = [{
   id:3,
   equipment: {
     head: undefined,
-    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str"},
+    rightHand: weapons.FISTS,
     leftHand: undefined,
     body: undefined,
     hands: undefined,

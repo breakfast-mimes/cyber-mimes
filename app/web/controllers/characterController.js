@@ -26,22 +26,19 @@ var db = new neo4j.GraphDatabase({
  module.exports = {
 	create: function (req, res) {
 
-		
 	 // 	console.log('REQUEST BODY:', req.body);
 		function queryDb(hero) {
-			
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
 		    {query: 'CREATE (char:DBTEST { heroCharacter: {hero} }) RETURN char',
 		    	params: {
 		    		 hero: req.body.hero,
-		    	
  		    	},
 		    },
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char', result[0].char.labels);
+			        	console.log('RESULT for char', result[0].char.properties);
 		    	}
 		    )
 		  })
@@ -63,18 +60,17 @@ var db = new neo4j.GraphDatabase({
 					function (err,result) {
 				    	if(err) reject(err)
 				    		resolve(result)
-			    		console.log('MATCHED CHARACTER IN DB',result[0].char.properties.name)
+			    		console.log('MATCHED CHARACTER IN DB',result[0].char.properties)
 					})
 		})
 
 	}
 	queryDbMatch().then(matchCharacter)
-		
+
 	}
 
 
 }
-
 
 	function createCharacter(err, results) {
 	  console.log('RESULT_first!!!',results)
@@ -87,7 +83,6 @@ var db = new neo4j.GraphDatabase({
         console.log('NODE!!!',node.properties);
 	    }
 	}
-
 
 	function matchCharacter(err, results) {
 	  //console.log('MATCH RESULT',results)
