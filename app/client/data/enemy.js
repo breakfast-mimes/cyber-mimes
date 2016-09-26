@@ -36,6 +36,7 @@ const enemy = [{
     ring1: undefined,
     ring2: undefined
   },
+  loot: [head.LEATHER_CAP],
   exp: 500
 },
 
@@ -76,6 +77,7 @@ const enemy = [{
     ring1: undefined,
     ring2: undefined
   },
+  loot: [],
   exp: 1500
 },
 {
@@ -114,6 +116,7 @@ const enemy = [{
     ring1: undefined,
     ring2: undefined
   },
+  loot: [weapons.ANTIMATTER_GUN, body.BROKEN_POWER_ARMOR],
   exp: 5000
 } ,
 
@@ -153,6 +156,7 @@ const enemy = [{
     ring1: undefined,
     ring2: undefined
   },
+  loot: [],
   exp: 5000
 }
 
