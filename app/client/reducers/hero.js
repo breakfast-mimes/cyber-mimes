@@ -59,6 +59,11 @@ function hero(state = [], action) {
       }
       return state
 
+    case "DROP_ITEM":
+      console.log(state.inventory, action.i)
+      state.inventory = state.inventory.slice(0, action.i).concat(state.inventory.slice(action.i + 1));
+      return state;
+
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
       return state;

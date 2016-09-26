@@ -57,7 +57,7 @@ export default class Battle extends React.Component {
           <div className="inventory">
             <span className="actionGroupHeader">Inventory</span>
             {Object.keys(hero.inventory).map((item, i) =>
-              <InventoryEntry equip={this.props.equip} equipment={hero.inventory[item]} key={i} i={i}/>)}
+              <InventoryEntry equip={this.props.equip} dropItem={this.props.dropItem} equipment={hero.inventory[item]} key={i} i={i}/>)}
           </div>
         </div>
 
