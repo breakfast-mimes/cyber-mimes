@@ -9,7 +9,7 @@ export function attack(hero, enemy, id) {
     amount: dodge ? 0 : amount,
     message:
       dodge ?        [enemy[id].name + " dodges the attack."] :
-      amount === 0 ? [enemy[id].name + " blocked the damage."] :
+      amount === 0 ? [enemy[id].name + " blocked the attack."] :
         ["You attack with your " + hero.equipment.rightHand.name + " for " + amount + " damage."]
      ,
     id
