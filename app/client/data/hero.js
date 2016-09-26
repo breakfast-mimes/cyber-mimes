@@ -22,7 +22,8 @@ const hero = {
     maxMana: 100,
     health:100,
     mana:100,
-    defending: 0
+    defending: 0,
+    gold: 9001
   },
   level: {
     level: 0,
@@ -40,7 +41,6 @@ const hero = {
   items: {
   },
   inventory: [
-    {name: "Gold", amount: 9001},
     weapons.BROAD_SWORD,
     weapons.LAZER_GUN
   ],

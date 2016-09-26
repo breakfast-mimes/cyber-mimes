@@ -9,7 +9,6 @@ import * as heroActions from '../actions/heroActions';
 import * as enemyActions from '../actions/enemyActions';
 import * as mapActions from '../actions/mapActions';
 import * as dbActions from '../actions/dbActions';
-
 import * as startMapActions from '../actions/startMapActions';
 
 
