@@ -11,10 +11,7 @@ export default class Inventory extends React.Component {
     console.log(this.props)
     return(
       <div className="invItem">
-          <span>name:{item.name} </span>
-          <span>damage:{item.dmg} </span>
-          <span>stat:{item.stat} </span>
-          <span>type:{item.type} </span>
+          |name:{item.name}|damage:{item.dmg}|stat:{item.stat}|type:{item.type}
       </div>
     )
   }
