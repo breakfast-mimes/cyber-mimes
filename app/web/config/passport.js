@@ -10,26 +10,68 @@ var JwtStrategy = require('passport-jwt').Strategy;
 
 //this uses MONGODB EXAMPLE - CHANGE TO NEO4J
 
-passport.use(new LocalStrategy({
-    usernameField: 'email'
-  },
-  function(username, password, done) {
-    User.findOne({ email: username }, function (err, user) {
-      if (err) { return done(err); }
-      // Return if user not found in database
-      if (!user) {
-        return done(null, false, {
-          message: 'User not found'
-        });
+// Create local strategy
+var localOptions = { usernameField: 'email' };
+var localLogin = new LocalStrategy(localOptions, function(email, password, done) {
+  console.log('localLogin strategy used');
+  // Verify this username and password, call done with the user
+  // if it is the correct email and password
+  // otherwise, call done with false
+  new User({ email: email }).fetch().then(function(user,error) {
+    if (error) { 
+      console.log('error in localLogin');
+      return done(err); 
+    }
+    if (!user) { 
+      console.log('user does not exist');
+      return done(null, false); 
+    }
+
+    // compare passwords - is 'password' equal to user.password?
+    user.comparePassword(password, function(err, isMatch) {
+      if (err) { 
+        console.log('err inside localLogin comparePassword');
+        return done(err); 
       }
-      // Return if password is wrong
-      if (!user.validPassword(password)) {
-        return done(null, false, {
-          message: 'Password is wrong'
-        });
+      if (!isMatch) { 
+        console.log('localLogin, comparePassword not a match!');
+        return done(null, false); 
       }
-      // If credentials are correct, return the user object
+      console.log('inside localLogin comparePassword user info is : ', user);
       return done(null, user);
     });
-  }
-));
+  });
+});
+
+// Setup options for JWT Strategy
+var jwtOptions = {
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  secretOrKey: EnvConfig.secret
+};
+
+// Create JWT strategy
+var jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+  // See if the user ID in the payload exists in our database
+  // If it does, call 'done' with that other
+  // otherwise, call 'done' without a user object
+  new User({ id: payload.sub }).fetch().then( function(user, error) {
+    // If there is an error in fetching the user
+    if (error) { 
+      // Return the error in done
+      return done(err, false); 
+    }
+
+    // If the user exists
+    if (user) {
+      // Return the user object in done
+      done(null, user);
+    } else {
+      // Otherwise return false in done
+      done(null, false);
+    }
+  });
+});
+
+// Tell passport to use this strategy
+passport.use(jwtLogin);
+passport.use(localLogin);

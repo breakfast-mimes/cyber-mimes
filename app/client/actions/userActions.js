@@ -19,7 +19,7 @@ export function signinUser({ email, password }) {
 					email: response.data.email, name: response.data.name
 				}});
 				// if signin is successful push user
-				// to their profile page
+				// to the battle page? profile page?
 				browserHistory.push('/');
 			})
 			.catch(response => {
@@ -42,8 +42,8 @@ export function signupUser({ email, name, language, skillLevel, password, github
 				// -Save the JWT token
 				localStorage.setItem('token', response.data.token);
 				// if signup is successful push user
-				// to their profile page
-				browserHistory.push('/profile');
+				// to the create character page? battle page?
+				browserHistory.push('/');
 
 				var profileUrl = profile_url.length > 0 ? profile_url : 'https://avatars3.githubusercontent.com/u/9919?v=3&s=280';
 				// dispatch action to set current users info
