@@ -17,7 +17,8 @@ const CreationForm = React.createClass({
           stat={statAllocation}
           skill={skillAllocation}
           statHighCap={statHighCap}
-          skillHighCap={skillHighCap}/>
+          skillHighCap={skillHighCap}
+          levelUp={true}/>
       </div>
     )
   }
