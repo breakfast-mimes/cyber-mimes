@@ -1,3 +1,5 @@
+import {weapons} from './items.js'
+
 const hero = {
   name: "laser hero",
   stats: {
@@ -39,12 +41,12 @@ const hero = {
   },
   inventory: [
     {name: "Gold", amount: 9001},
-    {name: "Board Sword", type: "melee", dmg: 3, stat: "str", equip: "rightHand", e: false},
-    {name: "Lazer Gun", type: "ranged", dmg: 3, stat: "dex", equip: "rightHand", e: false}
+    weapons.BROAD_SWORD,
+    weapons.LAZER_GUN
   ],
   equipment: {
     head: undefined,
-    rightHand: {name: "fists", type: "unarmed", dmg: 0, stat: "str", equip: "rightHand", e: true},
+    rightHand: weapons.FISTS,
     leftHand: undefined,
     body: undefined,
     hands: undefined,
