@@ -29,7 +29,7 @@ export function enemyDeath(enemy, id) {
     message: [
       "You killed " + enemy[id].name,
       "You gained " + enemy[id].exp + " experience."
-      ]
+      ].concat(enemy[id].loot.map(loot => "You have looted " + loot.name))
   }
 }
 

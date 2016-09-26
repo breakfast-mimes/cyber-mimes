@@ -38,10 +38,11 @@ function hero(state = [], action) {
 
     case "ENEMY_DEATH":
       state.level.exp += action.amount;
+      action.loot.forEach(loot => state.inventory.push(loot));
       return state;
 
     case "CHANGE_EQUIPMENT":
-      if(state.equipment[action.equipment.equip]) {
+      if(action.equipment.equip) {
         if(state.inventory[action.i].e) {
           state.equipment[action.equipment.equip] =
             action.equipment.equip === 'rightHand' ?
@@ -68,7 +69,6 @@ function hero(state = [], action) {
       state.status.maxMana = 50 + state.stats.int * 10;
       state.status.health = state.status.maxHealth;
       state.status.mana = state.status.maxMana;
-      
       return state;
 
     case "CREATE_CHARACTER":
