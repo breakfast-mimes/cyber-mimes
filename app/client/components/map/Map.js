@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Inventory from './Inventory'
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -59,17 +60,23 @@ export default class Map extends React.Component {
       enemyName = this.props.enemy[enemyId].name
     }
     // console.log(enemyId, enemyName)
-
+    let hero = this.props.hero
     return(
-      <div id="map">
-        <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} />
-        <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} />
-        <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} />
-        <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} />
-        <img src={cur} width="50" height="50" />
-        <div >{description} </div>
-        <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
-        <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+      <div>
+        <div id="map">
+          <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} />
+          <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} />
+          <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} />
+          <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} />
+          <img src={cur} width="50" height="50" />
+          <div >{description} </div>
+          <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
+          <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+        </div>
+        <div className='inv'>
+          {(hero.inventory).map((item, i) =>
+                <Inventory item={item} key={i} i={i}/>)}
+        </div>
       </div>
     )
   }
