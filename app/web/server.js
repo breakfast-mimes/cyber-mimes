@@ -20,6 +20,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(router);
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
@@ -35,7 +36,7 @@ app.listen(9001, 'localhost', function(err) {
 
 
 
-//app.use(router);
+
 
 
 

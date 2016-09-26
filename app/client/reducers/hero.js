@@ -68,6 +68,15 @@ function hero(state = [], action) {
       state.status.maxMana = 50 + state.stats.int * 10;
       state.status.health = state.status.maxHealth;
       state.status.mana = state.status.maxMana;
+      
+      return state;
+
+    case "CREATE_CHARACTER":
+      state.hero = action.hero;
+      return state;
+
+    case "FETCH_CHARACTER":
+      state.hero = action.hero;
       return state;
 
     default:

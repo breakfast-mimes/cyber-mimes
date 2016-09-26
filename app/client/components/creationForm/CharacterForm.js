@@ -21,7 +21,9 @@ const CharacterForm = React.createClass({
   },
 
   handleChange(event) {
-    this.setState({name: event.target.value});
+    //this.setState({name: event.target.value});
+    this.props.submitCharacter.bind(null,event.target.value);
+    // console.log('EVENT',event.target.value)
   },
 
 	render() {
@@ -51,24 +53,28 @@ const CharacterForm = React.createClass({
 				</div>
 
 				<div className='stats'>
-				 	<div className='allocationHeader'>
+				<div className='allocationHeader'>
 	        	<div className='statTitle noSelect'>SKILLS</div>
 	        	<div className='statTitle allocation noSelect'>{this.state.skillAllocation}</div>
-		      </div>
+		        </div>
 				 	{Object.keys(hero.skills).map((k, i) =>
 				 		<Entry {...this.props}
 				 		  group='skills'
 				 		  stat={k}
 				 		  updateAllocation={this.changeSkill}
 				 		  allocation={this.state.skillAllocation}
-              highCap={skillHighCap}
-              lowCap={skillLowCap}
+              			  highCap={skillHighCap}
+              			  lowCap={skillLowCap}
 				 		  key={i}/>)}
 				</div>
+
+
+				
 
 				<div>
           <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Continue</Link>
 			  </div>
+
 		  </div>
 		)
 	}
