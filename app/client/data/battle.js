@@ -1,7 +1,12 @@
 const battle = {
-  log: [],
-  enemyTurn: true,
-  enemyId: 0
+  healthBar:false,
+  manaBar:false,
+  log:false,
+  actions:false,
+  spells:false,
+  items:false,
+  inventory:false
+
 }
 
 export default battle;

@@ -8,7 +8,6 @@ export default class Inventory extends React.Component {
   }
   render(){
     const {item} = this.props
-    console.log(this.props)
     return(
       <div className="invItem">
           |name:{item.name}|damage:{item.dmg}|stat:{item.stat}|type:{item.type}
