@@ -37,7 +37,8 @@ const enemy = [{
     ring2: undefined
   },
   loot: [head.LEATHER_CAP],
-  exp: 500
+  exp: 500,
+  gold: 10
 },
 
 {
@@ -78,7 +79,8 @@ const enemy = [{
     ring2: undefined
   },
   loot: [],
-  exp: 1500
+  exp: 1500,
+  gold: 100
 },
 {
   name: "super laZer enemy",
@@ -117,7 +119,8 @@ const enemy = [{
     ring2: undefined
   },
   loot: [weapons.ANTIMATTER_GUN, body.BROKEN_POWER_ARMOR],
-  exp: 5000
+  exp: 5000,
+  gold: 1000
 } ,
 
 {
@@ -157,7 +160,8 @@ const enemy = [{
     ring2: undefined
   },
   loot: [],
-  exp: 5000
+  exp: 5000,
+  gold: 10
 }
 
 ]
