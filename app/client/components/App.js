@@ -20,7 +20,8 @@ function mapStateToProps(state) {
     enemy: state.enemy,
     game: state.game,
     startMap: state.startMap,
-    map: state.map
+    map: state.map,
+    battle: state.battle
   }
 }
 

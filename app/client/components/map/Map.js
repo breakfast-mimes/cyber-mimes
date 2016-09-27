@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Sound from 'react-sound';
 import Inventory from './Inventory'
 
 export default class Map extends React.Component {
@@ -11,12 +12,13 @@ export default class Map extends React.Component {
   render(){
     //http://i.imgur.com/ILKppDH.png , mountain
     //
+
     let images =[
-    [{img:"http://bit.ly/2d4k9lv",item:{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"}, description:"Descriptive1" , enemy: "3"},
-    {img:"http://bit.ly/2deaWuc", description:"Descriptive2", enemy: "2"},
-    {img:"http://bit.ly/2cGimRX", description:"Descriptive3", enemy: "1"}],
-    [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4", enemy: "0"},
-    {img:"http://bit.ly/2d4jS28", description:"Descriptive5"},
+    [{img:"http://bit.ly/2d4k9lv",item:{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"}, description:"Descriptive1" , enemy: "3", feature:"healthBar"},
+    {img:"http://bit.ly/2deaWuc", description:"Descriptive2", enemy: "2",feature:"inventory"},
+    {img:"http://bit.ly/2cGimRX", description:"Descriptive3", enemy: "1",feature:"items"}],
+    [{img:"http://bit.ly/2cUn5lV", description:"Descriptive4", enemy: "0",feature:"spells"},
+    {img:"http://bit.ly/2d4jS28", description:"Descriptive5",feature:"actions"},
     {img:"http://bit.ly/2crqNnU", description:"Descriptive6"}],
     [{img:"http://bit.ly/2cGiroJ", description:"Descriptive7"},
     {img:"http://bit.ly/2dkDE8A", item:"ANOTHER ITEM?!", description:"Descriptive8"},
@@ -37,6 +39,7 @@ export default class Map extends React.Component {
     let description;
     let enemyId;
     let enemyName = undefined;
+    let feature;
     if (images[row] && images[row][col]) {
       cur = images[row][col].img;
       item = images[row][col].item;
@@ -49,29 +52,43 @@ export default class Map extends React.Component {
       }
       description = images[row][col].description;
       enemyId = images[row][col].enemy;
+      feature = images[row][col].feature;
     } else {
       cur = undefined;
       item = undefined;
       itemName = undefined;
       description = undefined;
       enemyId = undefined;
+      feature = undefined;
     }
     if(enemyId && this.props.enemy[enemyId].status.health > 0) {
       enemyName = this.props.enemy[enemyId].name
+    }
+
+    if(this.props.battle[feature]) {
+      feature = ""
     }
     // console.log(enemyId, enemyName)
     let hero = this.props.hero
     return(
       <div>
+        <Sound
+          url="https://a.clyp.it/eag0ozso.mp3"
+          playStatus={Sound.status.PLAYING}
+          playFromPosition={300 /* in milliseconds */}
+          onLoading={this.handleSongLoading}
+          onPlaying={this.handleSongPlaying}
+          onFinishedPlaying={this.handleSongFinishedPlaying} />
         <div id="map">
           <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} />
           <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} />
           <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} />
           <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} />
           <img src={cur} width="50" height="50" />
-          <div >{description} </div>
+          <div> {description} </div>
           <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
-          <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+          <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>
+          <Link to='/buildbattle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
@@ -81,3 +98,4 @@ export default class Map extends React.Component {
     )
   }
 }
+
