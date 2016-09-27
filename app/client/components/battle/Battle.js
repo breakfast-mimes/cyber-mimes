@@ -34,23 +34,43 @@ export default class Battle extends React.Component {
   }
 
   render(){
-    const { hero, game, changeEnemy, enemy} = this.props;
+    const { hero, game, changeEnemy, enemy, battle} = this.props;
     const { enemyId } = game;
+    let healthStyle, logStyle, actionsStyle, spellsStyle,itemsStyle,inventoryStyle
+    healthStyle=logStyle=actionsStyle=spellsStyle=itemsStyle=inventoryStyle={display:'none'}
+    if (battle.log) {
+      logStyle = {};
+    }
+    if (battle.healthBar) {
+      healthStyle = {};
+    }
+    if (battle.actions) {
+      actionsStyle = {};
+    }
+    if (battle.spells) {
+      spellsStyle = {};
+    }
+    if (battle.items) {
+      itemsStyle = {};
+    }
+    if (battle.inventory) {
+      inventoryStyle = {};
+    }
     return(
       <div className="battleScreen">
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
-        <HealthBar health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
+        <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
 
-        <Log log={game.log}/>
+        <Log style={logStyle} log={game.log}/>
 
-        <HeroStatus hero={hero}/>
+        <HeroStatus style={healthStyle} hero={hero}/>
 
         <div className="actionsContainer">
-          <ActionGroup {...this.props} actions={hero.battleActions} name="Actions" id={enemyId}/>
-          <ActionGroup {...this.props} actions={hero.spells} name="Spells" id={enemyId}/>
-          <ActionGroup {...this.props} actions={hero.items} name="Items" id={enemyId}/>
-          <Inventory {...this.props}/>
+          <ActionGroup {...this.props} style={actionsStyle} actions={hero.battleActions} name="Actions" id={enemyId}/>
+          <ActionGroup {...this.props} style={spellsStyle} actions={hero.spells} name="Spells" id={enemyId}/>
+          <ActionGroup {...this.props} style={itemsStyle} actions={hero.items} name="Items" id={enemyId}/>
+          <Inventory {...this.props} style={inventoryStyle} />
         </div>
 
     </div>
