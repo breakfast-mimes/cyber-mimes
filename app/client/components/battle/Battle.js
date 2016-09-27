@@ -6,18 +6,15 @@ import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
 import Log from './Log'
 import HeroStatus from './HeroStatus'
-import InventoryEntry from './InventoryEntry'
+import Inventory from './Inventory'
 
 export default class Battle extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      alive: true
-    }
   }
 
   componentWillUpdate() {
-    if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0 && this.state.alive)
+    if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0)
       this.props.enemyAttack(this.props.hero, this.props.enemy, this.props.game.enemyId);
   }
 
@@ -31,8 +28,7 @@ export default class Battle extends React.Component {
         browserHistory.push('/map');
       }
     }
-    if(this.props.hero.status.health === 0 && this.state.alive) {
-      this.state.alive = false;
+    if(this.props.hero.status.health === 0) {
       this.props.heroDeath();
     }
   }
@@ -54,11 +50,7 @@ export default class Battle extends React.Component {
           <ActionGroup {...this.props} actions={hero.battleActions} name="Actions" id={enemyId}/>
           <ActionGroup {...this.props} actions={hero.spells} name="Spells" id={enemyId}/>
           <ActionGroup {...this.props} actions={hero.items} name="Items" id={enemyId}/>
-          <div className="inventory">
-            <span className="actionGroupHeader">Inventory</span>
-            {Object.keys(hero.inventory).map((item, i) =>
-              <InventoryEntry equip={this.props.equip} equipment={hero.inventory[item]} key={i} i={i}/>)}
-          </div>
+          <Inventory {...this.props}/>
         </div>
 
     </div>

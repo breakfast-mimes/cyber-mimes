@@ -8,7 +8,7 @@ const CharacterForm = React.createClass({
     return {
       statAllocation: this.props.stat,
       skillAllocation: this.props.skill,
-      name: ''
+      name: this.props.levelUp ? this.props.hero.name : ''
     };
   },
 
@@ -31,10 +31,12 @@ const CharacterForm = React.createClass({
 		return (
 			<div>
 
-				<div className='stats'>
+				{( this.props.levelUp ? null :
+        <div className='stats'>
 		      <div className='statTitle'>Character Name</div>
 					<input type="text" placeholder="Character Name" onChange={this.handleChange} className="statTitle"/>
 				</div>
+        )}
 
 				<div className='stats'>
 	        <div className='allocationHeader'>

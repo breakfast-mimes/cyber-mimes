@@ -42,6 +42,12 @@ function hero(state = [], action) {
       action.loot.forEach(loot => state.inventory.push(loot));
       return state;
 
+    case "HERO_DEATH":
+      state.level.exp = (state.level.level) * (state.level.level) * 500;
+      state.status.gold = 0;
+      state.status.health = state.status.maxHealth;
+      return state;
+
     case "CHANGE_EQUIPMENT":
       if(action.equipment.equip) {
         if(state.inventory[action.i].e) {
@@ -58,6 +64,11 @@ function hero(state = [], action) {
         state.inventory[action.i].e = !state.inventory[action.i].e;
       }
       return state
+
+    case "DROP_ITEM":
+      console.log(state.inventory, action.i)
+      state.inventory = state.inventory.slice(0, action.i).concat(state.inventory.slice(action.i + 1));
+      return state;
 
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
