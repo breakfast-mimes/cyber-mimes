@@ -10,6 +10,7 @@ import * as enemyActions from '../actions/enemyActions';
 import * as mapActions from '../actions/mapActions';
 import * as dbActions from '../actions/dbActions';
 import * as startMapActions from '../actions/startMapActions';
+import * as userActions from '../actions/userActions';
 
 
 import Main from './Main';
@@ -35,7 +36,8 @@ function mapDispatchToProps(dispatch) {
       ...enemyActions,
       ...mapActions,
       ...dbActions,
-      ...startMapActions
+      ...startMapActions,
+      ...userActions
 
     },
     dispatch

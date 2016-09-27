@@ -21,7 +21,9 @@ const CharacterForm = React.createClass({
   },
 
   handleChange(event) {
-    this.setState({name: event.target.value})
+
+    this.setState({name: event.target.value});
+
   },
 
 	render() {
@@ -66,10 +68,14 @@ const CharacterForm = React.createClass({
 				 		  key={i}/>)}
 				</div>
 
-				<div>
-          <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name)}>Continue</Link>
-			  </div>
 
+
+				<div>
+          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.makeCharacter)}>Continue</Link>
+
+
+
+		  </div>
 		  </div>
 		)
 	}
