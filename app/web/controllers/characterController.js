@@ -26,7 +26,7 @@ var neo4j = require('neo4j');
  module.exports = {
 	create: function (req, res) {
 
-	 // 	console.log('REQUEST BODY:', req.body);
+	  	console.log('REQUEST BODY:', req.body);
 		function queryDb(hero) {
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
