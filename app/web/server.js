@@ -5,6 +5,8 @@ var express = require('express');
 var webpack = require('webpack');
 var config = require('../../webpack.config');
 var router = require('./routes.js');
+var passport = require('passport');
+
 
 var app = express();
 
@@ -20,7 +22,11 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.use(cors());
 app.use(bodyParser.json());
 
+// Initialise Passport before using the route middleware
+app.use(passport.initialize());
+
 app.use(router);
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });

@@ -16,7 +16,7 @@ export function makeCharacter(hero) {
 			.then(response => {
 				console.log('createCharacter response received');
 				console.log('createCharacter response is : ',response.data);
-				// dispatch({ type: CREATE_CHARACTER, payload: response.data })
+				//dispatch({ type: CREATE_CHARACTER, payload: response.data })
 				// Dispatch action that signals server response has been received
 				// dispatch({ type: RESPONSE_RECEIVED });
 				// socket.emit('getOnlineUsers');
