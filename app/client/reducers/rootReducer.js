@@ -5,6 +5,7 @@ import hero from './hero'
 import enemy from './enemy'
 import game from './game'
 import map from './map'
+import battle from './battle'
 import startMap from './startMap'
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   game,
   map,
   startMap,
+  battle,
   routing: routerReducer
 });
 

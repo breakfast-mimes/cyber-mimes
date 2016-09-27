@@ -22,7 +22,8 @@ const hero = {
     maxMana: 100,
     health:100,
     mana:100,
-    defending: 0
+    defending: 0,
+    gold: 9001
   },
   level: {
     level: 0,
@@ -33,6 +34,13 @@ const hero = {
     cry: "Cry",
     defend: "Defend"
   },
+  battleActionSounds: {
+    attack:"https://a.clyp.it/tvqmc3wf.mp3",
+    cry:"https://a.clyp.it/aqmxzqiu.mp3",
+    defend:"https://a.clyp.it/3egqydrk.mp3",
+    heal:"https://a.clyp.it/0c4vycta.mp3",
+    fireball:"https://a.clyp.it/lkegks1m.mp3"
+  },
   spells: {
     heal: "Heal",
     fireball: "Fireball"
@@ -40,7 +48,6 @@ const hero = {
   items: {
   },
   inventory: [
-    {name: "Gold", amount: 9001},
     weapons.BROAD_SWORD,
     weapons.LAZER_GUN
   ],

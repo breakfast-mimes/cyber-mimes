@@ -3,7 +3,7 @@ import util from './util';
 function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
-    state.status.defending--;
+    state.status.defending = state.status.defending < 0 ? 0 : state.status.defending - 1;
     state.status.mana = util.clip(0, state.status.maxMana, state.status.mana + Math.floor(state.stats.int / 4))
   }
 
@@ -37,11 +37,13 @@ function hero(state = [], action) {
       return state;
 
     case "ENEMY_DEATH":
-      state.level.exp += action.amount;
+      state.level.exp += action.exp;
+      state.status.gold += action.gold;
+      action.loot.forEach(loot => state.inventory.push(loot));
       return state;
 
     case "CHANGE_EQUIPMENT":
-      if(state.equipment[action.equipment.equip]) {
+      if(action.equipment.equip) {
         if(state.inventory[action.i].e) {
           state.equipment[action.equipment.equip] =
             action.equipment.equip === 'rightHand' ?
@@ -68,7 +70,6 @@ function hero(state = [], action) {
       state.status.maxMana = 50 + state.stats.int * 10;
       state.status.health = state.status.maxHealth;
       state.status.mana = state.status.maxMana;
-      
       return state;
 
     case "CREATE_CHARACTER":

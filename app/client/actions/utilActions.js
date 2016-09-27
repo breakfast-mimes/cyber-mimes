@@ -22,13 +22,17 @@ export function heroDeath() {
 }
 
 export function enemyDeath(enemy, id) {
+  let gold = Math.floor(enemy[id].gold * (Math.random() + 0.5))
   return {
     type: 'ENEMY_DEATH',
-    amount: enemy[id].exp,
+    exp: enemy[id].exp,
+    loot: enemy[id].loot,
+    gold,
     message: [
       "You killed " + enemy[id].name,
-      "You gained " + enemy[id].exp + " experience."
-      ]
+      "You gained " + enemy[id].exp + " experience.",
+      "You found " + gold + " gold."
+      ].concat(enemy[id].loot.map(loot => "You have looted " + loot.name))
   }
 }
 
@@ -39,7 +43,10 @@ export function changeEnemy(enemies, id) {
       type: 'CHANGE_ENEMY',
       id,
       message: ["You are fighting " + enemies[id].name]
-        .concat(Object.keys(enemies[id].equipment).map(key => enemies[id].equipment[key].name))
+        .concat(Object.keys(enemies[id].equipment)
+          .map(key => enemies[id].equipment[key].equip === 'rightHand' ?
+            enemies[id].name + " is wielding " + enemies[id].equipment[key].name :
+            enemies[id].name + " is wearing " + enemies[id].equipment[key].name))
     }
   }
 }
