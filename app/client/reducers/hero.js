@@ -42,6 +42,12 @@ function hero(state = [], action) {
       action.loot.forEach(loot => state.inventory.push(loot));
       return state;
 
+    case "HERO_DEATH":
+      state.level.exp = (state.level.level) * (state.level.level) * 500;
+      state.status.gold = 0;
+      state.status.health = state.status.maxHealth;
+      return state;
+
     case "CHANGE_EQUIPMENT":
       if(action.equipment.equip) {
         if(state.inventory[action.i].e) {

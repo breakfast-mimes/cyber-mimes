@@ -11,13 +11,10 @@ import Inventory from './Inventory'
 export default class Battle extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      alive: true
-    }
   }
 
   componentWillUpdate() {
-    if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0 && this.state.alive)
+    if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0)
       this.props.enemyAttack(this.props.hero, this.props.enemy, this.props.game.enemyId);
   }
 
@@ -31,8 +28,7 @@ export default class Battle extends React.Component {
         browserHistory.push('/map');
       }
     }
-    if(this.props.hero.status.health === 0 && this.state.alive) {
-      this.state.alive = false;
+    if(this.props.hero.status.health === 0) {
       this.props.heroDeath();
     }
   }

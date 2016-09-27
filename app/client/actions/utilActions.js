@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 export function updateCharacter(group, prop, amount) {
   return {
     type: 'UPDATE_CHARACTER',
@@ -16,9 +18,13 @@ export function submitCharacter(name, makeCharacter) {
 }
 
 export function heroDeath() {
+  browserHistory.push('/map');
   return {
     type: 'HERO_DEATH',
-    message: "You have died"
+    message: [
+      "You have died",
+      "You lost all your gold and experience"
+    ]
   }
 }
 
