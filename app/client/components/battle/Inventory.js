@@ -4,9 +4,9 @@ import InventoryEntry from './InventoryEntry'
 
 const Inventory = React.createClass({
   render() {
-    const {equip, dropItem, hero} = this.props
+    const {equip, dropItem, hero, style} = this.props
     return (
-      <div className="inventory">
+      <div style={style} className="inventory">
         <span className="actionGroupHeader">Inventory</span>
         {Object.keys(hero.inventory).map((item, i) =>
           <InventoryEntry equip={equip} dropItem={dropItem} equipment={hero.inventory[item]} key={i} i={i}/>)}

@@ -88,7 +88,7 @@ export default class Map extends React.Component {
           <div> {description} </div>
           <div onClick ={this.props.pickUp.bind(null, item)}>{itemName} </div>
           <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>
-          <Link to='/buildbattle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+          <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
