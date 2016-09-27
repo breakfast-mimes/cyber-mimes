@@ -28,3 +28,10 @@ export function pickUp(item) {
     item
   }
 }
+
+export function pickUpFeature(feature){
+  return{
+    type:'PICK_UP_FEATURE',
+    feature
+  }
+}
