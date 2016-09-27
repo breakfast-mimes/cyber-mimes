@@ -34,6 +34,13 @@ const hero = {
     cry: "Cry",
     defend: "Defend"
   },
+  battleActionSounds: {
+    attack:"https://a.clyp.it/tvqmc3wf.mp3",
+    cry:"https://a.clyp.it/aqmxzqiu.mp3",
+    defend:"https://a.clyp.it/3egqydrk.mp3",
+    heal:"https://a.clyp.it/0c4vycta.mp3",
+    fireball:"https://a.clyp.it/lkegks1m.mp3"
+  },
   spells: {
     heal: "Heal",
     fireball: "Fireball"

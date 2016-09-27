@@ -73,7 +73,7 @@ export default class Map extends React.Component {
     return(
       <div>
         <Sound
-          url="https://a.clyp.it/eag0ozso.mp3"
+          url="https://a.clyp.it/tvqmc3wf.mp33"//take off last 3 for a sound effect
           playStatus={Sound.status.PLAYING}
           playFromPosition={300 /* in milliseconds */}
           onLoading={this.handleSongLoading}
