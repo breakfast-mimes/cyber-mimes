@@ -23,7 +23,7 @@ const LogIn = React.createClass({
         <div className='stats'>
           <div className='statTitle'>USER LOGIN</div>
           <input type="text" placeholder="username" onChange={this.updateName} className="statTitle"/>
-          <input type="text" placeholder="password" onChange={this.updatePass} className="statTitle"/>
+          <input type="password" placeholder="password" onChange={this.updatePass} className="statTitle"/>
         </div>
         <button type="submit" onClick={this.props.login.bind(null, this.state.name, this.state.pass)}>submit</button>
       </div>

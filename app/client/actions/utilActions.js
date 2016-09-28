@@ -57,3 +57,10 @@ export function changeEnemy(enemies, id) {
     }
   }
 }
+
+export function changeLogin(isLogin) {
+  return {
+    type: 'TOGGLE_LOGIN',
+    isLogin
+  }
+}

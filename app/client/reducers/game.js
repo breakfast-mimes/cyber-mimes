@@ -6,6 +6,18 @@ function game(state = [], action) {
     state.log = [].concat(state.log, action.message)
 
   switch (action.type) {
+    case "USER_LOGIN":
+      console.log("here")
+      state.logged = true;
+      return state;
+
+    case "USER_LOGOUT":
+      state.logged = false;
+      return state;
+
+    case "TOGGLE_LOGIN":
+      state.login = action.isLogin;
+      return state;
 
     case "CHANGE_ENEMY":
       state.enemyId = action.id;

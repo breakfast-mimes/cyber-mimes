@@ -9,8 +9,8 @@ export function login(name, pass) {
 			password: pass
 		})
 		.then(response => {
+			dispatch({type: "USER_LOGIN"});
 			browserHistory.push('/map');
-			console.log("success login")
 		})
 		.catch(response => {
 			console.log('error in signinUser action creator: ',response);
@@ -26,12 +26,24 @@ export function signup(name, pass) {
 			password: pass
 		})
 		.then(function(response) {
+			dispatch({type: "USER_LOGIN"});
 			browserHistory.push('/map');
-			console.log("success")
 		})
 		.catch(function(response) {
 			console.log('error in signupUser action creator: ', response);
 		});
-		console.log("signup after")
+	}
+}
+
+export function logout() {
+	return function(dispatch) {
+		axios.post('/logout', {})
+		.then(function(response) {
+			dispatch({type: "USER_LOGOUT"});
+			browserHistory.push('/');
+		})
+		.catch(function(response) {
+			console.log('error in signupUser action creator: ', response);
+		});
 	}
 }
