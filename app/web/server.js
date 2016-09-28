@@ -34,6 +34,7 @@ app.use("/api", auth.checkUser, router);
 app.post("/login", auth.checkPassword);
 app.post("/logout", auth.destroySession);
 app.post("/signup", auth.createUser);
+app.post("/isauth", auth.checkUser, (req, res) => res.sendStatus(200));
 
 app.listen(port, function(err) {
   if (err) console.log(err);

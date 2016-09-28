@@ -47,3 +47,16 @@ export function logout() {
 		});
 	}
 }
+
+export function isUserAuth() {
+	return function(dispatch) {
+		axios.post('/isauth', {})
+		.then(function(response) {
+			dispatch({type: "USER_AUTH", isAuth: true});
+		})
+		.catch(function(response) {
+			browserHistory.push('/')
+			dispatch({type: "USER_AUTH", isAuth: false});
+		});
+	}
+}

@@ -15,6 +15,10 @@ function game(state = [], action) {
       state.logged = false;
       return state;
 
+    case "USER_AUTH":
+      state.logged = action.isAuth;
+      return state;
+
     case "TOGGLE_LOGIN":
       state.login = action.isLogin;
       return state;

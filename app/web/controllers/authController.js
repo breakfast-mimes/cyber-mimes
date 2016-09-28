@@ -26,7 +26,8 @@ exports.createUser = function(req, res){
 }
 
 exports.checkUser = function(req, res, next) {
-  if (!(req.session ? !!req.session.user : false)) res.send(401);
+  console.log("checking user", req.session)
+  if (!(req.session ? !!req.session.user : false)) res.sendStatus(401);
   else next();
 };
 
