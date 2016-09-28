@@ -9,7 +9,8 @@ export function login(name, pass) {
 			password: pass
 		})
 		.then(response => {
-			browserHistory.push('/startermap');
+			browserHistory.push('/map');
+			console.log("success login")
 		})
 		.catch(response => {
 			console.log('error in signinUser action creator: ',response);
@@ -25,8 +26,8 @@ export function signup(name, pass) {
 			password: pass
 		})
 		.then(function(response) {
+			browserHistory.push('/map');
 			console.log("success")
-			browserHistory.push('/startmap');
 		})
 		.catch(function(response) {
 			console.log('error in signupUser action creator: ', response);
