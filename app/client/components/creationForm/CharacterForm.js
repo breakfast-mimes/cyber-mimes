@@ -73,7 +73,7 @@ const CharacterForm = React.createClass({
 
 
 				<div>
-          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.makeCharacter)}>Continue</Link>
+          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
 
 
 

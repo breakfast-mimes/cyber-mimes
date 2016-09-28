@@ -18,7 +18,7 @@ const Main = React.createClass({
       <div>
         <AuthBar changeLogin={this.props.changeLogin} logout={this.props.logout} game={this.props.game}/>
         <h1 className ='title'>
-          <Link to='#'>Cyber Mimes</Link>
+          <Link to='/map'>Cyber Mimes</Link>
         </h1>
         {React.cloneElement(this.props.children, this.props)}
       </div>

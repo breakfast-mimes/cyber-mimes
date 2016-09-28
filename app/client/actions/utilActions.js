@@ -9,11 +9,11 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
-export function submitCharacter(name, makeCharacter) {
+export function submitCharacter(name, submitCb) {
   return {
     type: 'SUBMIT_CHARACTER',
     name,
-    makeCharacter
+    submitCb
   }
 }
 
