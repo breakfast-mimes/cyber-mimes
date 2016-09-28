@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-
+//creates a character node in the database
 export function makeCharacter(hero) {
 	var stringifiedHero = JSON.stringify(hero);
 	// console.log('-->>>>', stringifiedHero);
@@ -25,7 +25,7 @@ export function makeCharacter(hero) {
 	}
 
 }
-
+//fetches a character node from the database
 export function fetchCharacter () {
 	console.log('inside fetchCharacter get request!')
 	return function (dispatch) {

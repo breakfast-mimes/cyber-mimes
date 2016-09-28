@@ -22,7 +22,6 @@ function enemy(state = [], action) {
 
       case "DANCE":
       state[action.id].status.health = util.clip(0, state[action.id].status.maxHealth, state[action.id].status.health - action.amount);
-     console.log('ATTACK STATE',state)
       return state;
 
     default:

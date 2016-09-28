@@ -39,9 +39,9 @@ export function dance (hero, enemy, id) {
   let dodge = defenderDodged(hero, enemy[id]);
   return {
     type: 'DANCE',
-   amount: dodge ? 0 : amount,
-    message:  dodge ?        [enemy[id].name + " dodges your jab attack."] :
-      amount === 0 ? [enemy[id].name + " blocked the damage from your jab."] :
+    amount: dodge ? 0 : amount,
+    message:  dodge ? ["You did the Carlton dance " + enemy[id].name + "isn't impressed" ] :
+    amount === 0 ? [" You did the Carlton dance, " + enemy[id].name + " isn't impressed" ] :
         ["You do the Muhammed Ali shuffle and get in a jab for " + amount + " damage."],
     id
 
