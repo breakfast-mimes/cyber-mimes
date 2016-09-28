@@ -10,7 +10,8 @@ import Battle from './components/battle/Battle.js';
 
 import StartMap from './components/startMap/Map.js';
 import Map from './components/map/Map.js';
-import signin from './components/authorization/signin.js';
+import LogIn from './components/authorization/LogIn.js';
+import SignUp from './components/authorization/SignUp.js';
 
 const router = (
   <Provider store={store}>
@@ -21,8 +22,8 @@ const router = (
         <Route path="/startMap" component={StartMap}></Route>
         <Route path="/map" component={Map}></Route>
         <Route path="/levelup" component={LevelUpForm}></Route>
-      </Route>
-      <Route path="/signin" component={signin}>
+        <Route path="/login" component={LogIn}></Route>
+        <Route path="/signup" component={SignUp}></Route>
       </Route>
     </Router>
   </Provider>

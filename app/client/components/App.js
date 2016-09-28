@@ -38,7 +38,6 @@ function mapDispatchToProps(dispatch) {
       ...dbActions,
       ...startMapActions,
       ...userActions
-
     },
     dispatch
   );
