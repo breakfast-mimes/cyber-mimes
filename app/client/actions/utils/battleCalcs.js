@@ -1,4 +1,7 @@
+
+//formula for amount of physical damage taken by hero and enemy
 export const physicalDamage = function(attacker, defender) {
+  
   let dmg = Math.floor(
       attacker.stats[attacker.equipment.rightHand.stat] * Math.random() / 2
     + (attacker.equipment.rightHand.type === "melee" ? attacker.skills.fighting / 8 : 0)

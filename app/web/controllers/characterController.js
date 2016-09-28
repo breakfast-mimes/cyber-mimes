@@ -1,12 +1,12 @@
 
-var db = require('../config/dbConfig.js');
+// var db = require('../config/dbConfig.js');
 var neo4j = require('neo4j');
 //var Hero = require('../../client/data/hero.js')
 //database instance
-// var db = new neo4j.GraphDatabase({
-//     url: 'http://localhost:7474',
-//     auth: {username: 'neo4j', password: 'cybermimes'},
-// });
+var db = new neo4j.GraphDatabase({
+    url: 'http://localhost:7474',
+    auth: {username: 'neo4j', password: 'cybermimes'},
+});
 
 // db.cypher({
 // //     query: 'CREATE (p:CHARACTER { name: 'Steve',strength:10, fighting:20}) RETURN p',
@@ -28,9 +28,10 @@ var neo4j = require('neo4j');
 
 	  	console.log('REQUEST BODY:', req.body);
 		function queryDb(hero) {
+			console.log('---------->',hero)
 		  return new Promise(function(reject, resolve){
 		    db.cypher(
-		    {query: 'CREATE (char:DBTEST { heroCharacter: {hero} }) RETURN char',
+		    {query: 'CREATE (char:NEWTESTDB { heroCharacter: {hero} }) RETURN char',
 		    	params: {
 		    		 hero: req.body.hero,
  		    	},
@@ -38,7 +39,7 @@ var neo4j = require('neo4j');
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char', result[0].char.properties);
+			        	console.log('RESULT for char', result);
 		    	}
 		    )
 		  })
