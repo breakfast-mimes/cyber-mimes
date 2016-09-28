@@ -1,5 +1,8 @@
 import { physicalDamage, defenderDodged } from './utils/battleCalcs.js';
 
+//if you dodged attack, you take no physical damage, otherwise physical damage taken.
+//dodge is based on dexterity property and randomized formula
+//amount - returns health after physical damage is determined.
 export function attack(hero, enemy, id) {
   let amount = physicalDamage(hero, enemy[id]);
   let dodge = defenderDodged(hero, enemy[id]);
@@ -28,4 +31,21 @@ export function cry(hero, enemy, id) {
     type: 'CRY',
     message: "you cry and cower in the corner as you beg whatever god that exists to smite the demon creature"
   }
+}
+
+export function dance (hero, enemy, id) {
+  let amount = physicalDamage(hero, enemy[id]);
+  console.log('AMOUNT',amount)
+  let dodge = defenderDodged(hero, enemy[id]);
+  return {
+    type: 'DANCE',
+   amount: dodge ? 0 : amount,
+    message:  dodge ?        [enemy[id].name + " dodges your jab attack."] :
+      amount === 0 ? [enemy[id].name + " blocked the damage from your jab."] :
+        ["You do the Muhammed Ali shuffle and get in a jab for " + amount + " damage."],
+    id
+
+
+  }
+
 }

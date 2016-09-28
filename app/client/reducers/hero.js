@@ -9,6 +9,12 @@ function hero(state = [], action) {
 
   switch (action.type) {
 
+    // case "DANCE":
+    // state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount);
+    //   console.log('DANCE ACTION',action)
+    //   console.log('DANCE STATE',state)
+    //   return state;
+
     case "PICK_UP":
       if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
         state.inventory.push(action.item)
@@ -30,7 +36,9 @@ function hero(state = [], action) {
 
     case "DEFEND":
       state.status.defending = state.stats.end;
+      console.log('DEFEND STATE',state);
       return state;
+
 
     case "ENEMY_ATTACK":
       state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount)
@@ -57,7 +65,7 @@ function hero(state = [], action) {
         }
         state.inventory[action.i].e = !state.inventory[action.i].e;
       }
-      return state
+      return state;
 
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;

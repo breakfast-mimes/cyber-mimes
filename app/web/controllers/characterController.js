@@ -39,7 +39,7 @@ var db = new neo4j.GraphDatabase({
 		    	function(err, result) {
 						if(err) reject(err)
 						   resolve(result)
-			        	console.log('RESULT for char', result[0].char.properties);
+			        	console.log('RESULT for char', result);
 		    	}
 		    )
 		  })
