@@ -33,16 +33,17 @@ export function getCharacter () {
 	}
 }
 
-export function putCharacter () {
-	console.log('inside fetchCharacter get request!')
+export function putCharacter (hero) {
+	console.log('updating character')
 	return function (dispatch) {
-		axios.get('/api/character', {
+		axios.put('/api/character', {
+			hero: JSON.stringify(hero)
 		})
 		.then(response => {
-			console.log('FETCH_CHARACTER',response);
+			console.log('PUT CHARACTER',response);
 		})
 		.catch(response => {
-			console.log('ERROR IN FETCHING CHARACTER', response);
+			console.log('ERROR IN PUT CHARACTER', response);
 		})
 	}
 }
