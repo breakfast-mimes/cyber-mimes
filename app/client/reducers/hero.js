@@ -3,7 +3,7 @@ import util from './util';
 function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
-    state.status.defending = state.status.defending < 0 ? 0 : state.status.defending - 1;
+    state.status.defending = state.status.defending < 1 ? 0 : state.status.defending - 1;
     state.status.mana = util.clip(0, state.status.maxMana, state.status.mana + Math.floor(state.stats.int / 4))
   }
 

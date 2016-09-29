@@ -41,6 +41,23 @@ exports.get = function(req, res) {
   });
 }
 
+exports.update = function(req, res) {
+  db.cypher({
+    query:'MATCH (a:User {username: {username}})-[:HAS_CHARACTER]-(char) SET char.character = {char} RETURN char',
+    params: {
+      username: req.session.user,
+      char: req.body.hero
+    }
+  }, function(err, results) {
+    if(err) {
+      console.log("err fetching character", err)
+      res.sendStatus(400);
+    }
+    console.log(results);
+    res.sendStatus(200);
+  });
+}
+
 exports.getAll = function(req, res) {
   console.log("all good")
 }
