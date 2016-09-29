@@ -1,5 +1,19 @@
 import { browserHistory } from 'react-router';
 
+export function sellItem(item) {
+  return {
+    type: 'SELL_ITEM',
+    item
+  }
+}
+
+export function buyItem(item) {
+  return {
+    type: 'BUY_ITEM',
+    item
+  }
+}
+
 export function updateCharacter(group, prop, amount) {
   return {
     type: 'UPDATE_CHARACTER',
@@ -55,5 +69,11 @@ export function changeEnemy(enemies, id) {
             enemies[id].name + " is wielding " + enemies[id].equipment[key].name :
             enemies[id].name + " is wearing " + enemies[id].equipment[key].name))
     }
+  }
+}
+
+export function soundEffect() {
+  return{
+    type:"SOUND_EFFECT"
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
@@ -58,6 +59,7 @@ export default class Battle extends React.Component {
     }
     return(
       <div className="battleScreen">
+        <Link to='/map'>Map</Link>
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
         <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
