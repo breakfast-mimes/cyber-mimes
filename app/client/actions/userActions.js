@@ -10,7 +10,20 @@ export function login(name, pass) {
 		})
 		.then(response => {
 			dispatch({type: "USER_LOGIN"});
-			browserHistory.push('/map');
+			console.log("character request")
+			axios.get('/api/character', {})
+			.then(res => {
+				if(res.data === '[]') {
+					browserHistory.push('/creationform')
+				} else {
+					dispatch({
+						type: "GET_CHARACTER",
+						hero: JSON.parse(res.data)
+					})
+					browserHistory.push('/map');
+				}
+			})
+			.catch(res => console.log('err in getting user character', res));
 		})
 		.catch(response => {
 			console.log('error in signinUser action creator: ',response);

@@ -28,8 +28,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use("*", express.static(__dirname + "/../client/"));
 app.use("/api", auth.checkUser, router);
+app.use("*", express.static(__dirname + "/../client/"));
 
 app.post("/login", auth.checkPassword);
 app.post("/logout", auth.destroySession);
