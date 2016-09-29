@@ -2,6 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
+import { putCharacter } from './actions/dbActions';
 
 import rootReducer from './reducers/rootReducer';
 
@@ -25,6 +26,20 @@ const defaultState = {
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
 export const history = syncHistoryWithStore(browserHistory, store);
+
+let currentState;
+store.subscribe(() => {
+  let logged = store.getState().game.logged;
+  let location = store.getState().routing.locationBeforeTransitions.pathname;
+  let previousState = currentState;
+  currentState = JSON.stringify(store.getState().hero);
+  if(currentState !== previousState && logged && location !== '/' && location !== '/creationform') {
+    console.log("store update", location);
+    store.dispatch(putCharacter(JSON.parse(currentState)));
+  } else {
+    console.log("hero state didnt change");
+  }
+});
 
 if(module.hot) {
   module.hot.accept('./reducers/rootReducer.js', () => {

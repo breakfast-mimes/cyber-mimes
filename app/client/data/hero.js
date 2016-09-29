@@ -32,7 +32,8 @@ const hero = {
   battleActions: {
     attack: "Attack",
     cry: "Cry",
-    defend: "Defend"
+    defend: "Defend",
+    dance: "Dance"
   },
   battleActionSounds: {
     attack:"https://a.clyp.it/tvqmc3wf.mp3",

@@ -73,6 +73,7 @@ export default class Map extends React.Component {
         onLoading={this.handleSongLoading}
         onPlaying={this.handleSongPlaying}
         onFinishedPlaying={this.handleSongFinishedPlaying} />
+
         <div id="map">
           <img id="north" src={north} width="150" height="150" onClick={north ? this.props.goNorth : null} />
           <img id="east" src={east} width="150" height="150" onClick={east ? this.props.goEast: null} />

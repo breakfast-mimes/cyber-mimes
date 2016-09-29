@@ -23,11 +23,11 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
-export function submitCharacter(name, makeCharacter) {
+export function submitCharacter(name, submitCb) {
   return {
     type: 'SUBMIT_CHARACTER',
     name,
-    makeCharacter
+    submitCb
   }
 }
 
@@ -75,5 +75,11 @@ export function changeEnemy(enemies, id) {
 export function soundEffect() {
   return{
     type:"SOUND_EFFECT"
+  }
+}
+export function changeLogin(isLogin) {
+  return {
+    type: 'TOGGLE_LOGIN',
+    isLogin
   }
 }

@@ -1,5 +1,6 @@
 import { physicalDamage, defenderDodged } from './utils/battleCalcs.js';
 
+//this enemy attack is called before battle component renders
 export function enemyAttack(hero, enemy, id) {
   let amount = physicalDamage(enemy[id], hero)
   let dodge = defenderDodged(enemy[id], hero);

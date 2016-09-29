@@ -1,61 +1,75 @@
-// Actions will go here
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-
-// signinUser action creator uses redux-thunk to return a function
-// takes object with email and password properties
-export function signinUser( email, password ) {
+export function login(name, pass) {
+	console.log("login", name, pass)
 	return function(dispatch) {
-		axios.post('/user/signin',{
-			username:username,
-			password:password })
-			.then(response => {
-				// if signin is successful, dispatch an action
-				// of type AUTHORIZE_USER
-				dispatch({ type: AUTHORIZE_USER });
-				// -Save the JWT token
-				localStorage.setItem('token', response.data.token);
-
-				// if signin is successful push user
-				// to the battle page? profile page?
-				browserHistory.push('/');
+		axios.post('/login', {
+			username: name,
+			password: pass
+		})
+		.then(response => {
+			dispatch({type: "USER_LOGIN"});
+			console.log("character request")
+			axios.get('/api/character', {})
+			.then(res => {
+				if(res.data === '[]') {
+					browserHistory.push('/creationform')
+				} else {
+					dispatch({
+						type: "GET_CHARACTER",
+						hero: JSON.parse(res.data)
+					})
+					browserHistory.push('/map');
+				}
 			})
-			.catch(response => {
-				// if there is an error from the post to the server,
-				// log it
-				console.log('error in signinUser action creator: ',response);
-				// -Show an error to the user
-				dispatch(authError('Bad Signin Info'));
-			});
+			.catch(res => console.log('err in getting user character', res));
+		})
+		.catch(response => {
+			console.log('error in signinUser action creator: ',response);
+		});
 	}
 }
 
-export function signupUser({ email, name, language, skillLevel, password, github_handle, profile_url }) {
+export function signup(name, pass) {
+	console.log("signup", name, pass)
 	return function(dispatch) {
-		axios.post('/user/signup', { email, name})
-			.then(response => {
-				// if signup is successful, dispatch an action
-				// of type AUTHORIZE_USER
-				dispatch({ type: AUTHORIZE_USER });
-				// -Save the JWT token
-				localStorage.setItem('token', response.data.token);
-				// if signup is successful push user
-				// to the create character page? battle page?
-				browserHistory.push('/');
+		axios.post('/signup', {
+			username: name,
+			password: pass
+		})
+		.then(function(response) {
+			dispatch({type: "USER_LOGIN"});
+			browserHistory.push('/map');
+		})
+		.catch(function(response) {
+			console.log('error in signupUser action creator: ', response);
+		});
+	}
+}
 
-				var profileUrl = profile_url.length > 0 ? profile_url : 'https://avatars3.githubusercontent.com/u/9919?v=3&s=280';
-				// dispatch action to set current users info
-				dispatch({ type: UPDATE_USER, payload: { 
-					id: id, email: email, name: name
-				}});
-			})
-			.catch(response => {
-				// if there is an error from the post to the server,
-				// log it
-				console.log('error in signupUser action creator: ',response);
-				// -Show an error to the user
-				dispatch(authError(response));
-			});
+export function logout() {
+	return function(dispatch) {
+		axios.post('/logout', {})
+		.then(function(response) {
+			dispatch({type: "USER_LOGOUT"});
+			browserHistory.push('/');
+		})
+		.catch(function(response) {
+			console.log('error in signupUser action creator: ', response);
+		});
+	}
+}
+
+export function isUserAuth() {
+	return function(dispatch) {
+		axios.post('/isauth', {})
+		.then(function(response) {
+			dispatch({type: "USER_AUTH", isAuth: true});
+		})
+		.catch(function(response) {
+			browserHistory.push('/')
+			dispatch({type: "USER_AUTH", isAuth: false});
+		});
 	}
 }

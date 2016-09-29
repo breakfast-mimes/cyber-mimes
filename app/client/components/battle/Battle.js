@@ -13,22 +13,27 @@ export default class Battle extends React.Component {
   constructor(props) {
     super(props)
   }
+  //this calls the enemy to attack each time before component renders. Creating an enemy attack after every battle action
 
   componentWillUpdate() {
     if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0)
       this.props.enemyAttack(this.props.hero, this.props.enemy, this.props.game.enemyId);
   }
-
+  //if the enemy health is 0, this changes to a new enemy and increases your game level
   componentDidUpdate() {
     if(this.props.enemy[this.props.game.enemyId].status.health === 0) {
       this.props.enemyDeath(this.props.enemy, this.props.game.enemyId);
       this.props.changeEnemy(this.props.enemy, (this.props.game.enemyId + 1) % this.props.enemy.length);
       if(this.props.hero.level.level * this.props.hero.level.level * 500 >= this.props.hero.level.exp){
+        if (this.props.enemy[this.props.game.enemyId].mapSend){
+          this.props.mapSend(this.props.enemy[this.props.game.enemyId].mapSend)
+        }
         browserHistory.push('/levelup');
       } else {
         browserHistory.push('/map');
       }
     }
+    // if your health is 0 this kills your character and redirects you to the map
     if(this.props.hero.status.health === 0) {
       this.props.heroDeath();
     }

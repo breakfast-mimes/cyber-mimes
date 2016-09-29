@@ -11,20 +11,19 @@ import Battle from './components/battle/Battle.js';
 import StartMap from './components/startMap/Map.js';
 import Map from './components/map/Map.js';
 import Store from './components/store/Store.js';
-import signin from './components/authorization/signin.js';
+import Auth from './components/authorization/Auth.js';
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={CreationForm}></IndexRoute>
+        <IndexRoute component={Auth}></IndexRoute>
         <Route path="/battle" component={Battle}></Route>
-        <Route path="/startMap" component={StartMap}></Route>
+        <Route path="/creationform" component={CreationForm}></Route>
+        <Route path="/startmap" component={StartMap}></Route>
         <Route path="/map" component={Map}></Route>
         <Route path="/store" component={Store}></Route>
         <Route path="/levelup" component={LevelUpForm}></Route>
-      </Route>
-      <Route path="/signin" component={signin}>
       </Route>
     </Router>
   </Provider>

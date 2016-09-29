@@ -21,7 +21,8 @@ const CreationForm = React.createClass({
           statLowCap={statLowCap}
           statHighCap={statHighCap}
           skillLowCap={skillLowCap}
-          skillHighCap={skillHighCap}/>
+          skillHighCap={skillHighCap}
+          submit={this.props.postCharacter}/>
       </div>
     )
   }
