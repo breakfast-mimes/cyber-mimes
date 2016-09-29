@@ -34,7 +34,7 @@ export function getCharacter () {
 }
 
 export function putCharacter (hero) {
-	console.log('updating character')
+	console.log('updating character', hero.name)
 	return function (dispatch) {
 		axios.put('/api/character', {
 			hero: JSON.stringify(hero)
