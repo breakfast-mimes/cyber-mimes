@@ -22,7 +22,7 @@ export function postCharacter(hero) {
 export function getCharacter () {
 	console.log('inside fetchCharacter get request!')
 	return function (dispatch) {
-		axios.get('/api/character', {
+		axios.get('/api/character/', {
 		})
 		.then(response => {
 			console.log('FETCH_CHARACTER',response);

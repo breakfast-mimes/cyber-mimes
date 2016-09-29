@@ -23,5 +23,26 @@ exports.post = function(req, res) {
 }
 
 exports.get = function(req, res) {
-
+  console.log("GETTING CHARACTER", req.body);
+  db.cypher({
+    query: 'MATCH (a:User { username: {username} })-[:HAS_CHARACTER]-(char) RETURN char',
+    params: {username: req.session.user}
+  }, function(err, results) {
+    if(err) {
+      console.log("err fetching character", err)
+      res.sendStatus(400);
+    }
+    if(results[0]) {
+      console.log("got char", results[0].char.properties.character)
+      res.json(results[0].char.properties.character);
+    } else {
+      res.json('[]');
+    }
+  });
 }
+
+exports.getAll = function(req, res) {
+  console.log("all good")
+}
+
+

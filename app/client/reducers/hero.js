@@ -86,12 +86,8 @@ function hero(state = [], action) {
       action.submitCb(state);
       return state;
 
-    case "CREATE_CHARACTER":
-      state.hero = action.hero;
-      return state;
-
-    case "FETCH_CHARACTER":
-      state.hero = action.hero;
+    case "GET_CHARACTER":
+      state = action.hero;
       return state;
 
     default:

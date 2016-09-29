@@ -7,7 +7,6 @@ function game(state = [], action) {
 
   switch (action.type) {
     case "USER_LOGIN":
-      console.log("here")
       state.logged = true;
       return state;
 
