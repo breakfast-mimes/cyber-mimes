@@ -9,12 +9,6 @@ function hero(state = [], action) {
 
   switch (action.type) {
 
-    // case "DANCE":
-    // state.status.health = util.clip(0, state.status.maxHealth, state.status.health - action.amount);
-    //   console.log('DANCE ACTION',action)
-    //   console.log('DANCE STATE',state)
-    //   return state;
-
     case "PICK_UP":
       if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
         state.inventory.push(action.item)
