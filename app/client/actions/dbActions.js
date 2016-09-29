@@ -46,3 +46,20 @@ export function putCharacter () {
 		})
 	}
 }
+
+export function getAllCharacters () {
+	console.log('INSIDE GETALLCHARACTERS')
+	return function (dispatch) {
+		axios.get('/api/characters', {
+
+		})
+		.then(response=> {
+			console.log('RESPONSE FOR GET ALL CHARACTERS',response)
+		})
+		.catch (response => {
+			console.log('ERROR WHILE GETTING CHARACTERS',response)
+		})
+
+	}
+
+}

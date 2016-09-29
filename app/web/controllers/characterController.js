@@ -22,6 +22,20 @@ exports.post = function(req, res) {
   });
 }
 
-exports.get = function(req, res) {
+//leaderboard query
+exports.getAll = function(req, res) {
+  db.cypher({
+    query: 'MATCH (n:Character) RETURN n'
+  }, function (err,result) {
+      if(err) {
+        console.log('error fetching all characters',err)
+        res.sendStatus(400);
+
+      }
+        res.sendStatus(200);
+    }
+
+  )
 
 }
+
