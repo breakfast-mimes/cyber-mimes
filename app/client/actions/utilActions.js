@@ -9,11 +9,11 @@ export function updateCharacter(group, prop, amount) {
   }
 }
 
-export function submitCharacter(name, makeCharacter) {
+export function submitCharacter(name, submitCb) {
   return {
     type: 'SUBMIT_CHARACTER',
     name,
-    makeCharacter
+    submitCb
   }
 }
 
@@ -55,5 +55,12 @@ export function changeEnemy(enemies, id) {
             enemies[id].name + " is wielding " + enemies[id].equipment[key].name :
             enemies[id].name + " is wearing " + enemies[id].equipment[key].name))
     }
+  }
+}
+
+export function changeLogin(isLogin) {
+  return {
+    type: 'TOGGLE_LOGIN',
+    isLogin
   }
 }

@@ -18,7 +18,8 @@ const CreationForm = React.createClass({
           skill={skillAllocation}
           statHighCap={statHighCap}
           skillHighCap={skillHighCap}
-          levelUp={true}/>
+          levelUp={true}
+          submit={this.props.putCharacter}/>
       </div>
     )
   }
