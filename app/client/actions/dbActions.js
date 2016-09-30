@@ -54,6 +54,7 @@ export function getAllCharacters () {
 
 		})
 		.then(response=> {
+			dispatch({type: "LEADERBOARD"});
 			console.log('RESPONSE FOR GET ALL CHARACTERS',response)
 		})
 		.catch (response => {
