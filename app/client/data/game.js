@@ -3,7 +3,8 @@ const game = {
   enemyTurn: true,
   enemyId: 0,
   logged: false,
-  login: true
+  login: true,
+  allChars: []
 }
 
 export default game;

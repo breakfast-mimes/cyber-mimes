@@ -3,7 +3,7 @@ const map = {
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   images:[[ "http://bit.ly/2deaWuc","http://bit.ly/2d4k9lv", "http://bit.ly/2cGimRX",],
   ["http://bit.ly/2cUn5lV","http://bit.ly/2crqNnU", "http://bit.ly/2cGiroJ"],
-  ["http://bit.ly/2dkDE8A", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
+  ["http://bit.ly/2dxWrl2", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg","http://bit.ly/2dcQUM4"]
   ],
 

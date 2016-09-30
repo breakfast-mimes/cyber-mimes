@@ -26,6 +26,11 @@ function game(state = [], action) {
       state.enemyId = action.id;
       return state;
 
+    case "LEADERBOARD":
+      state.leaderBoardArr = action.allChars;
+      console.log('state',state)
+      return state;
+
     default:
       state.enemyTurn = !state.enemyTurn;
       return state;

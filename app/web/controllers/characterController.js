@@ -1,6 +1,7 @@
 var db = require('../config/dbConfig.js');
 
 exports.post = function(req, res) {
+  console.log('REQUEST IN POST****',req.body)
 	db.cypher({
     query: 'CREATE (n:Character { character: {char} }) RETURN n',
     params: {char: req.body.hero}
@@ -22,6 +23,7 @@ exports.post = function(req, res) {
   });
 }
 
+
 exports.get = function(req, res) {
   console.log("GETTING CHARACTER", req.body);
   db.cypher({
@@ -41,6 +43,26 @@ exports.get = function(req, res) {
   });
 }
 
+//leaderboard query
+exports.getAll = function(req, res) {
+  console.log('REQUEST------>>>>>>',req)
+  console.log('INSIDE GET ALL!')
+  db.cypher({
+    query: 'MATCH (n:Character) RETURN n LIMIT 25',
+  }, function (err,result) {
+      if(err) {
+        console.log('error fetching all characters',err)
+        res.sendStatus(400);
+
+      }
+      // consol.log('SUCCESS!!',JSON.parse(result[0].n.properties.character));
+        
+         res.send(200,result);
+  }
+
+  )
+
+
 exports.update = function(req, res) {
   db.cypher({
     query:'MATCH (a:User {username: {username}})-[:HAS_CHARACTER]-(char) SET char.character = {char} RETURN char',
@@ -58,8 +80,10 @@ exports.update = function(req, res) {
   });
 }
 
+
 exports.getAll = function(req, res) {
   console.log("all good")
 }
+
 
 
