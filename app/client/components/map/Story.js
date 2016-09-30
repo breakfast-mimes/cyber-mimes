@@ -11,7 +11,7 @@ export default class Story extends React.Component {
     const { row, col, messages} = this.props;
     return(
       <div>
-        {messages[row][col]}
+        {messages[row] ? messages[row][col] : "No Messages"}
       </div>
     )
   }

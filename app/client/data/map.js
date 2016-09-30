@@ -35,7 +35,7 @@ const map = {
 
 ["Skip this page, possibly in the map, so that they cant move forward to it, but it sets them on the page after this after they battle on the previous page",
 "Welcome! I'm fondly known as the Talking Mime! Pleased to you meet you. Do you like riddles? You better! Cause in order to finish the lazy programmers jobs, you need to solve riddles to get the features for the battle screen :D",
-"Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?[easter egg, picutre of gun that has yueh saying 'BANG BANG]'"]
+"Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?[easter egg, picutre of gun that has yueh saying 'BANG BANG]'"],
 
 ["[Selim]: Hm, maybe we should add more features to battle? [Alex] THAT WAS YOUR JOB MAN! You can't just put all your work on the user... [Selim] Welp, too late, there in the map somewhere :D",
 "[Alex]: I needed an outlet for my bad jokes, I'm gonna add in a Jester character! [Harp]: Oh dear god, please no [Alex]: Too late (add Jester sound effect, alex talking)",

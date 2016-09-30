@@ -70,7 +70,7 @@ export default class Map extends React.Component {
       <Sound
         url={soundEffect}
         playStatus={playStatus}
-        playFromPosition={300 /* in milliseconds */}
+        playFromPosition={300}
         onLoading={this.handleSongLoading}
         onPlaying={this.handleSongPlaying}
         onFinishedPlaying={this.handleSongFinishedPlaying} />
@@ -92,11 +92,12 @@ export default class Map extends React.Component {
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
-                <Inventory item={item} equip={this.props.equip} i={i}/>)}
+                <Inventory item={item} equip={this.props.equip} key={i} i={i}/>)}
         </div>
         <div className='story'>
           <Story row={row} col={col} messages={map.messages}/>
         </div>
+        
       </div>
     )
   }
