@@ -69,6 +69,7 @@ function hero(state = [], action) {
 
     case "CHANGE_EQUIPMENT":
       if(action.equipment.equip) {
+        console.log(state.inventory,action.i)
         if(state.inventory[action.i].e) {
           state.equipment[action.equipment.equip] =
             action.equipment.equip === 'rightHand' ?

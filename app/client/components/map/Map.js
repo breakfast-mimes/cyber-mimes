@@ -4,6 +4,7 @@ import Sound from 'react-sound';
 import Inventory from './Inventory'
 import Story from './Story'
 
+
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -63,6 +64,7 @@ export default class Map extends React.Component {
       setTimeout( ()=> this.state.playing = false,0)
 
     }
+
     return(
       <div >
       <Sound
@@ -90,7 +92,7 @@ export default class Map extends React.Component {
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
-                <Inventory item={item} key={i} i={i}/>)}
+                <Inventory item={item} equip={this.props.equip} i={i}/>)}
         </div>
         <div className='story'>
           <Story row={row} col={col} messages={map.messages}/>
