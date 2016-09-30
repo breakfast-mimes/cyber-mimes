@@ -1,5 +1,19 @@
 import { browserHistory } from 'react-router';
 
+export function sellItem(item) {
+  return {
+    type: 'SELL_ITEM',
+    item
+  }
+}
+
+export function buyItem(item) {
+  return {
+    type: 'BUY_ITEM',
+    item
+  }
+}
+
 export function updateCharacter(group, prop, amount) {
   return {
     type: 'UPDATE_CHARACTER',
@@ -58,6 +72,11 @@ export function changeEnemy(enemies, id) {
   }
 }
 
+export function soundEffect() {
+  return{
+    type:"SOUND_EFFECT"
+  }
+}
 export function changeLogin(isLogin) {
   return {
     type: 'TOGGLE_LOGIN',
