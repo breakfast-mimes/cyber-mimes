@@ -1,4 +1,5 @@
 import util from './util';
+import defaultHero from '../data/hero';
 
 function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
@@ -104,6 +105,10 @@ function hero(state = [], action) {
 
     case "GET_CHARACTER":
       state = action.hero;
+      return state;
+
+    case "USER_LOGOUT":
+      state = defaultHero;
       return state;
 
     default:
