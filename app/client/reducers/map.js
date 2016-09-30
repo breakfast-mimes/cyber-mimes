@@ -6,6 +6,7 @@ function map(state = [], action) {
     case "MAP_SEND":
       state.location.row = action.coordinates[0]
       state.location.col = action.coordinates[1]
+      return state
     case "GO_SOUTH":
       state.location.row += 1;
       return state;

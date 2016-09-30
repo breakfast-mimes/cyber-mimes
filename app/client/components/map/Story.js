@@ -9,7 +9,6 @@ export default class Story extends React.Component {
 
   render(){
     const { row, col, messages} = this.props;
-    console.log(this.props)
     return(
       <div>
         {messages[row][col]}

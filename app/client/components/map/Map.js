@@ -13,7 +13,6 @@ export default class Map extends React.Component {
   }
   render(){
     const {map, hero}  = this.props;
-    console.log(map)
     const {images, items, descriptions, enemyIds, features, soundEffects } = map
 
     let row = map.location.row
@@ -79,7 +78,6 @@ export default class Map extends React.Component {
           <img id="east" src={east} width="150" height="150" onClick={east ? this.props.goEast: null} />
           <img id="south" src={south} width="150" height="150" onClick={south ? this.props.goSouth: null} />
           <img id="west" src={west} width="150" height="150" onClick={west ? this.props.goWest: null} />
-          <img src={image} width="50" height="50" />
           <div> {description} </div>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName} </div>
           <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>

@@ -12,7 +12,6 @@ export default class Store extends React.Component {
     }
   }
   render(){
-    console.log(this.state.weapons)
     let hero = this.props.hero
     return(
       <div>
