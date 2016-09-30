@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import { putCharacter } from './actions/dbActions';
+import { init } from './actions/dbActions';
 
 import rootReducer from './reducers/rootReducer';
 
@@ -24,7 +25,9 @@ const defaultState = {
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
+store.dispatch(init());
 export const history = syncHistoryWithStore(browserHistory, store);
+
 
 let currentState;
 store.subscribe(() => {
