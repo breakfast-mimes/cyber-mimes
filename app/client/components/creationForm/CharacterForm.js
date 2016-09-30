@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Entry from './Entry';
-import Leaderboard from './Leaderboard';
 
 const CharacterForm = React.createClass({
   getInitialState () {

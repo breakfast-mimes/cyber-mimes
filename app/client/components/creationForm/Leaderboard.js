@@ -7,26 +7,29 @@ import { Link } from 'react-router';
 
 const Leaderboard = React.createClass({
 
+					// {results.map((char,index)=>
+					// <li>{char}</li>)}
 
+	componentsWillMount() {
+		this.props.getAllCharacters();
+	},
 
 	render() {
-	console.log('props',this.props)
-
-	function leaderboard () {
-		console.log('hello')
-		this.props.getAllCharacters()
-	}
+		var results = this.props.game.allChars;
+		console.log('RESULT',results);
+		// console.log('props',this.props)
+	// console.log('props',this.props)
 
 			return (
 				<div>
 
+<div onClick={this.props.getAllCharacters}>Continue</div>
 
 	        <div className='leaderboard'>
 			      <h1>Leaderboard</h1>
 						<ul>
-							<div onClick={this.props.getAllCharacters}>test</div>
-							<li></li>
-							<li></li>
+							
+							
 
 						</ul>
 
@@ -42,4 +45,7 @@ const Leaderboard = React.createClass({
 })
 
 export default Leaderboard;
-							// <div onClick={this.props.getAllCharacters()}>Continue</div>
+
+
+
+         
