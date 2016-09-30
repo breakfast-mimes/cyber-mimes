@@ -34,7 +34,7 @@ export function getCharacter () {
 }
 
 export function putCharacter (hero) {
-	console.log('updating character')
+	console.log('updating character', hero.name)
 	return function (dispatch) {
 		axios.put('/api/character', {
 			hero: JSON.stringify(hero)
@@ -45,5 +45,23 @@ export function putCharacter (hero) {
 		.catch(response => {
 			console.log('ERROR IN PUT CHARACTER', response);
 		})
+	}
+}
+
+export function init() {
+	console.log('INITIALIZING character')
+	return function (dispatch) {
+		axios.get('/api/character', {})
+		.then(res => {
+			if(res.data === '[]') {
+				browserHistory.push('/creationform')
+			} else {
+				dispatch({
+					type: "GET_CHARACTER",
+					hero: JSON.parse(res.data)
+				})
+			}
+		})
+		.catch(res => console.log('err in getting user character', res));
 	}
 }

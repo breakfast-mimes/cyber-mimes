@@ -40,7 +40,7 @@ export function signup(name, pass) {
 		})
 		.then(function(response) {
 			dispatch({type: "USER_LOGIN"});
-			browserHistory.push('/map');
+			browserHistory.push('/creationform');
 		})
 		.catch(function(response) {
 			console.log('error in signupUser action creator: ', response);

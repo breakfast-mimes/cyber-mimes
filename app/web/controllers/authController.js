@@ -18,7 +18,10 @@ exports.createUser = function(req, res){
           params: { username, hash }
         }, function(err, result) {
           if(err) console.log('err', err);
-          res.sendStatus(201);
+          req.session.regenerate(function(){
+            req.session.user = req.body.username;
+            res.sendStatus(201);
+          });
         });
       })
     } else res.sendStatus(409);
