@@ -23,7 +23,7 @@ const hero = {
     health:100,
     mana:100,
     defending: 0,
-    gold: 9001
+    gold: 9002
   },
   level: {
     level: 0,

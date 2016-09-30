@@ -26,6 +26,13 @@ export function defend(hero, enemy, id) {
   }
 }
 
+export function mapSend(coordinates) {
+  return {
+    type: 'MAP_SEND',
+    coordinates
+  }
+}
+
 export function cry(hero, enemy, id) {
   return {
     type: 'CRY',

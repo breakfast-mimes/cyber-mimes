@@ -9,7 +9,23 @@ function hero(state = [], action) {
   }
 
   switch (action.type) {
-
+    case "SELL_ITEM":
+      state.status.gold += action.item.value;
+      for(var i in state.inventory){
+        if(state.inventory[i].name === action.item.name){
+          console.log("removeD?",state.inventory.splice(i,1), state.inventory[i])
+          state.inventory.splice(i,1)
+          break;
+        }
+      }
+      console.log(state.inventory,"dfg" ,action.item)
+      return state
+    case "BUY_ITEM":
+      if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
+        state.inventory.push(action.item);
+        state.status.gold -= action.item.value;
+      }
+      return state
     case "PICK_UP":
       if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
         state.inventory.push(action.item)
@@ -53,6 +69,7 @@ function hero(state = [], action) {
 
     case "CHANGE_EQUIPMENT":
       if(action.equipment.equip) {
+        console.log(state.inventory,action.i)
         if(state.inventory[action.i].e) {
           state.equipment[action.equipment.equip] =
             action.equipment.equip === 'rightHand' ?

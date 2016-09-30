@@ -19,11 +19,10 @@ const ActionEntry = React.createClass({
     } else {
       // playStatus = Sound.status.STOPPED
     }
-    console.log(action)
     return (
       <div className="actionEntry noSelect">
        <Sound
-          url={hero.battleActionSounds[action]}//take off last 3 for a sound effect
+          url={hero.battleActionSounds[action]}
           playStatus={playStatus}
           playFromPosition={300 /* in milliseconds */}
           onLoading={this.handleSongLoading}

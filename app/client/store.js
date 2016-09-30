@@ -11,9 +11,11 @@ import rootReducer from './reducers/rootReducer';
 import hero from './data/hero';
 import enemy from './data/enemy';
 import game from './data/game';
-import startMap from './data/startMap';
 import map from './data/map';
+import startMap from './data/startMap';
 import battle from './data/battle';
+
+
 
 const defaultState = {
   hero,
