@@ -3,11 +3,7 @@ import { Link } from 'react-router';
 
 
 
-
-
 const Leaderboard = React.createClass({
-
-
 
 	componentWillMount() {
 	this.props.getAllCharacters();
@@ -15,33 +11,25 @@ const Leaderboard = React.createClass({
 
 	render() {
 		var results = this.props.game.allChars;
-		console.log('RESULT',results);
-		console.log('props',this.props)
+		// console.log('RESULT',results);
+		// console.log('props',this.props)
 	
-
 			return (
 				<div>
 
-	<div>Continue</div>
-
-	        <div className='leaderboard'>
+	        	<div className='leaderboard'>
 			      <h1>Leaderboard</h1>
 						<ul>
 						{results.map((char,i)=>
 						<li>{char}</li>)}
 
-
 						</ul>
-
-					</div>
-
 				</div>
 
+				</div>
 			)
 	}
-
-
-
+	
 })
 
 export default Leaderboard;
