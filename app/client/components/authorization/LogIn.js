@@ -6,7 +6,8 @@ const LogIn = React.createClass({
   getInitialState() {
     return {
       name: '',
-      pass: ''
+      pass: '',
+      wrong: false
     }
   },
 
@@ -30,6 +31,11 @@ const LogIn = React.createClass({
     if (length > 0) return 'success';
     else if (length > 20) return 'warning';
     else if (length <= 0) return 'error';
+  },
+
+  allValid() {
+    return !(this.getValidationUsername() === 'success'
+      && this.getValidationPassword() === 'success');
   },
 
   handleSubmit(e) {
@@ -62,9 +68,12 @@ const LogIn = React.createClass({
               onChange={this.updateName} />
             <FormControl.Feedback />
           </Col>
+          {this.getValidationUsername() !== 'success' ?
           <Col sm={2}>
             <HelpBlock>Please enter a username.</HelpBlock>
           </Col>
+          : null
+          }
         </FormGroup>
 
         <FormGroup
@@ -81,14 +90,17 @@ const LogIn = React.createClass({
               onChange={this.updatePass} />
             <FormControl.Feedback />
           </Col>
+          {this.getValidationPassword() !== 'success' ?
           <Col sm={2}>
             <HelpBlock>Please enter a password.</HelpBlock>
           </Col>
+          : null
+          }
         </FormGroup>
 
         <FormGroup>
           <Col smOffset={2} sm={10}>
-            <Button type="submit" onClick={this.handleSubmit}>
+            <Button disabled={this.allValid()} type="submit" onClick={this.handleSubmit}>
               Login
             </Button>
           </Col>

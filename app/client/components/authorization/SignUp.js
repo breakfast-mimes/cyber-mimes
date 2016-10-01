@@ -41,6 +41,12 @@ const SignUp = React.createClass({
     return (this.state.pass !== '' && this.state.pass === this.state.pass2) ? 'success' : 'error';
   },
 
+  allValid() {
+    return !(this.getValidationUsername() === 'success'
+      && this.getValidationPassword() === 'success'
+      && this.getValidationPassword2() === 'success');
+  },
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state.name, this.state.pass);
@@ -71,9 +77,11 @@ const SignUp = React.createClass({
               onChange={this.updateName} />
             <FormControl.Feedback />
           </Col>
+          {this.getValidationUsername() !== 'success' ?
           <Col sm={2}>
             <HelpBlock>Please enter a username.</HelpBlock>
           </Col>
+          : null}
         </FormGroup>
 
         <FormGroup
@@ -90,9 +98,11 @@ const SignUp = React.createClass({
               onChange={this.updatePass} />
             <FormControl.Feedback />
           </Col>
+          {this.getValidationPassword() !== 'success' ?
           <Col sm={2}>
             <HelpBlock>Please enter a password.</HelpBlock>
           </Col>
+          : null}
         </FormGroup>
 
         <FormGroup
@@ -109,15 +119,17 @@ const SignUp = React.createClass({
               onChange={this.updatePass2} />
             <FormControl.Feedback />
           </Col>
+          {this.getValidationPassword2() !== 'success' ?
           <Col sm={2}>
             <HelpBlock>Passwords must match.</HelpBlock>
           </Col>
+          : null}
         </FormGroup>
 
         <FormGroup>
           <Col smOffset={2} sm={10}>
-            <Button type="submit" onClick={this.handleSubmit}>
-              Login
+            <Button disabled={this.allValid()} type="submit" onClick={this.handleSubmit}>
+              Sign Up
             </Button>
           </Col>
         </FormGroup>
