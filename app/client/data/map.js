@@ -1,9 +1,10 @@
 const map = {
   location: {row:1,col:1},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
-  images:[[ "http://bit.ly/2deaWuc","http://bit.ly/2d4k9lv", "http://bit.ly/2cGimRX",],
+  //http://wallpapercave.com/sci-fi-background
+  images:[[ "http://wallpapercave.com/wp/565sgAQ.jpg","http://bit.ly/2d4k9lv", "http://bit.ly/2cGimRX",],
   ["http://bit.ly/2cUn5lV","http://bit.ly/2crqNnU", "http://bit.ly/2cGiroJ"],
-  ["http://bit.ly/2dkDE8A", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
+  ["http://bit.ly/2dxWrl2", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg","http://bit.ly/2dcQUM4"]
   ],
 
@@ -24,8 +25,8 @@ const map = {
   ["spells", "inventory", "items"],
   []],
 
-  soundEffects:[["","https://a.clyp.it/cn4un2pr.mp3"],
-  [],
+  easterEggs:[[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},""],
+  [{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}],
   [],
   []],
 

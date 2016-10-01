@@ -106,7 +106,12 @@ function hero(state = [], action) {
 
     case "GET_CHARACTER":
       state = action.hero;
-      return state;
+
+    case "CREATE_CHARACTER":
+      state.hero = action.hero;
+
+    case "GET_CHARACTER":
+      state = action.hero;
 
     case "USER_LOGOUT":
       state = defaultHero;

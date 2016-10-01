@@ -14,7 +14,7 @@ export default class Map extends React.Component {
   }
   render(){
     const {map, hero}  = this.props;
-    const {images, items, descriptions, enemyIds, features, soundEffects } = map
+    const {images, items, descriptions, enemyIds, features, easterEggs } = map
 
     let row = map.location.row
     let col = map.location.col
@@ -29,8 +29,8 @@ export default class Map extends React.Component {
     let south = images[row + 1] ? images[row + 1][col] ? arrowDown : undefined : undefined
     let west = images[row] ? images[row][col - 1] ? arrowLeft : undefined : undefined
 
-    let image, item, itemName, description, enemyId, enemyName, feature, soundEffect;
-    image = item = itemName = description = enemyId = enemyName = feature = soundEffect = undefined;
+    let image, item, itemName, description, enemyId, enemyName, feature, easterEgg, eggSound,eggImage;
+    image = item = itemName = description = enemyId = enemyName = feature = easterEgg = eggSound = eggImage = undefined;
 
     if (images[row] && images[row][col]) {
       image = images[row][col];
@@ -50,7 +50,12 @@ export default class Map extends React.Component {
       } else {
         feature = features[row][col];
       }
-      soundEffect = soundEffects[row][col];
+      easterEgg = easterEggs[row][col];
+      if(easterEgg) {
+        eggSound = easterEgg["sound"]
+        eggImage = easterEgg["image"]
+
+      }
     }
 
     if(enemyId && this.props.enemy[enemyId].status.health > 0) {
@@ -58,7 +63,6 @@ export default class Map extends React.Component {
     }
 
     let playStatus;
-
     if (this.state.playing) {
       playStatus = Sound.status.PLAYING
       setTimeout( ()=> this.state.playing = false,0)
@@ -68,7 +72,7 @@ export default class Map extends React.Component {
     return(
       <div >
       <Sound
-        url={soundEffect}
+        url={eggSound}
         playStatus={playStatus}
         playFromPosition={300}
         onLoading={this.handleSongLoading}
@@ -83,10 +87,10 @@ export default class Map extends React.Component {
           <div> {description} </div>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName} </div>
           <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>
-          <div onClick={()=>{
+          <img src={eggImage} onClick={()=>{
             this.props.soundEffect();
             this.state.playing = true
-          }}>{soundEffect} </div>
+          }}/>
           <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
           <img id="background" src={image}/>
         </div>
