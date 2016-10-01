@@ -1,5 +1,6 @@
 var db = require('../config/dbConfig.js');
 
+//creating our hero character in db
 exports.post = function(req, res) {
   console.log('REQUEST IN POST****',req.body)
 	db.cypher({
@@ -23,7 +24,7 @@ exports.post = function(req, res) {
   });
 }
 
-
+//returning a single character from db that is connected to a user
 exports.get = function(req, res) {
   console.log("GETTING CHARACTER", req.body);
   db.cypher({
@@ -43,26 +44,6 @@ exports.get = function(req, res) {
   });
 }
 
-//leaderboard query
-exports.getAll = function(req, res) {
-  console.log('REQUEST------>>>>>>',req)
-  console.log('INSIDE GET ALL!')
-  db.cypher({
-    query: 'MATCH (n:Character) RETURN n LIMIT 25',
-  }, function (err,result) {
-      if(err) {
-        console.log('error fetching all characters',err)
-        res.sendStatus(400);
-
-      }
-      // consol.log('SUCCESS!!',JSON.parse(result[0].n.properties.character));
-        
-         res.send(200,result);
-  }
-
-  )
-
-
 exports.update = function(req, res) {
   db.cypher({
     query:'MATCH (a:User {username: {username}})-[:HAS_CHARACTER]-(char) SET char.character = {char} RETURN char',
@@ -80,10 +61,28 @@ exports.update = function(req, res) {
   });
 }
 
-
+//leaderboard query that fetches all characters
 exports.getAll = function(req, res) {
-  console.log("all good")
+  
+  console.log('INSIDE GET ALL!')
+  db.cypher({
+    query: 'MATCH (n:Character) RETURN n LIMIT 25'
+  }, function (err,result) {
+      if(err) {
+        console.log('error fetching all characters',err)
+        res.sendStatus(400);
+
+      }
+      // consol.log('SUCCESS!!',JSON.parse(result[0].n.properties.character));
+
+         res.send(200,result);
+  }
+
+  )
 }
 
+// exports.getAll = function(req, res) {
+//   console.log("all good")
+// }
 
 

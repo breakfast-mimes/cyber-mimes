@@ -104,17 +104,14 @@ function hero(state = [], action) {
       action.submitCb(state);
       return state;
 
-
     case "GET_CHARACTER":
       state = action.hero;
 
-    case "LEADERBOARD":
-    state.hero = action.hero;
-
-
     case "CREATE_CHARACTER":
       state.hero = action.hero;
-      return state;
+
+    case "GET_CHARACTER":
+      state = action.hero;
 
     case "USER_LOGOUT":
       state = defaultHero;
