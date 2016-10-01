@@ -83,10 +83,10 @@ export default class Map extends React.Component {
           <div> {description} </div>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName} </div>
           <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>
-          <div onClick={()=>{
+          <img src="http://i.istockimg.com/file_thumbview_approve/6596231/3/stock-illustration-6596231-ray-gun.jpg" onClick={()=>{
             this.props.soundEffect();
             this.state.playing = true
-          }}>{soundEffect} </div>
+          }}/>
           <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
           <img id="background" src={image}/>
         </div>
