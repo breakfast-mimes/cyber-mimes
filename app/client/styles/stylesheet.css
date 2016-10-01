@@ -6,6 +6,10 @@ title {
 
 }
 
+#riddle{
+    z-index:1;
+}
+
 #log {
   height: 200px;
   width: 500px;
