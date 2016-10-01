@@ -20,7 +20,7 @@ const enemy = [{
   status: {
     maxHealth:100,
     maxMana: 100,
-    health:10,
+    health:100,
     mana:100,
     defending: 0
   },

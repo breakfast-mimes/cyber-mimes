@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 
 import LogIn from './LogIn'
 import SignUp from './SignUp'
 
 const Auth = React.createClass({
+
+  componentWillMount() {
+    this.props.isUserAuth(true);
+  },
 
   render() {
     return (

@@ -64,11 +64,12 @@ export function logout() {
 	}
 }
 
-export function isUserAuth() {
+export function isUserAuth(login) {
 	return function(dispatch) {
 		axios.post('/isauth', {})
 		.then(function(response) {
 			dispatch({type: "USER_AUTH", isAuth: true});
+			if(login) browserHistory.push('/map')
 		})
 		.catch(function(response) {
 			browserHistory.push('/')
