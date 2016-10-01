@@ -28,7 +28,7 @@ const map = {
   []],
 
 
-  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"}],""],
+  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3", className:"gun"}],""],
 
   [[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
   [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"}]],
