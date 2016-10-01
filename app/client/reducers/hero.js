@@ -1,14 +1,31 @@
 import util from './util';
+import defaultHero from '../data/hero';
 
 function hero(state = [], action) {
   state = JSON.parse(JSON.stringify(state)); //creating copy of state
   if(state.status) {
-    state.status.defending = state.status.defending < 0 ? 0 : state.status.defending - 1;
+    state.status.defending = state.status.defending < 1 ? 0 : state.status.defending - 1;
     state.status.mana = util.clip(0, state.status.maxMana, state.status.mana + Math.floor(state.stats.int / 4))
   }
 
   switch (action.type) {
-
+    case "SELL_ITEM":
+      state.status.gold += action.item.value;
+      for(var i in state.inventory){
+        if(state.inventory[i].name === action.item.name){
+          console.log("removeD?",state.inventory.splice(i,1), state.inventory[i])
+          state.inventory.splice(i,1)
+          break;
+        }
+      }
+      console.log(state.inventory,"dfg" ,action.item)
+      return state
+    case "BUY_ITEM":
+      if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
+        state.inventory.push(action.item);
+        state.status.gold -= action.item.value;
+      }
+      return state
     case "PICK_UP":
       if (state.inventory.filter((item)=> item.name === action.item.name )[0] === undefined) {
         state.inventory.push(action.item)
@@ -52,6 +69,7 @@ function hero(state = [], action) {
 
     case "CHANGE_EQUIPMENT":
       if(action.equipment.equip) {
+        console.log(state.inventory,action.i)
         if(state.inventory[action.i].e) {
           state.equipment[action.equipment.equip] =
             action.equipment.equip === 'rightHand' ?
@@ -86,16 +104,21 @@ function hero(state = [], action) {
       action.submitCb(state);
       return state;
 
+
     case "LEADERBOARD":
     state.hero = action.hero;
 
 
     case "CREATE_CHARACTER":
       state.hero = action.hero;
+
+    case "GET_CHARACTER":
+      state = action.hero;
+
       return state;
 
-    case "FETCH_CHARACTER":
-      state.hero = action.hero;
+    case "USER_LOGOUT":
+      state = defaultHero;
       return state;
 
     default:

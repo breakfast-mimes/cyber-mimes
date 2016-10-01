@@ -70,12 +70,8 @@ const CharacterForm = React.createClass({
 				 		  key={i}/>)}
 				</div>
 
-
 				<div>
-          <Link to='/battle' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
-
-
-
+          <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
 		  </div>
 		  </div>
 		)

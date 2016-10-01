@@ -22,7 +22,7 @@ export function postCharacter(hero) {
 export function getCharacter () {
 	console.log('inside fetchCharacter get request!')
 	return function (dispatch) {
-		axios.get('/api/character', {
+		axios.get('/api/character/', {
 		})
 		.then(response => {
 			console.log('FETCH_CHARACTER',response);
@@ -33,17 +33,36 @@ export function getCharacter () {
 	}
 }
 
-export function putCharacter () {
-	console.log('inside fetchCharacter get request!')
+export function putCharacter (hero) {
+	console.log('updating character', hero.name)
 	return function (dispatch) {
-		axios.get('/api/character', {
+		axios.put('/api/character', {
+			hero: JSON.stringify(hero)
 		})
 		.then(response => {
-			console.log('FETCH_CHARACTER',response);
+			console.log('PUT CHARACTER',response);
 		})
 		.catch(response => {
-			console.log('ERROR IN FETCHING CHARACTER', response);
+			console.log('ERROR IN PUT CHARACTER', response);
 		})
+	}
+}
+
+export function init() {
+	console.log('INITIALIZING character')
+	return function (dispatch) {
+		axios.get('/api/character', {})
+		.then(res => {
+			if(res.data === '[]') {
+				browserHistory.push('/creationform')
+			} else {
+				dispatch({
+					type: "GET_CHARACTER",
+					hero: JSON.parse(res.data)
+				})
+			}
+		})
+		.catch(res => console.log('err in getting user character', res));
 	}
 }
 

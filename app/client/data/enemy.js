@@ -3,24 +3,24 @@ import { weapons, head, body } from './items.js'
 const enemy = [{
   name: "weak laser enemy",
   stats: {
-    str: 5,
-    dex: 5,
-    int: 5,
-    end: 5,
-    luck: 5
+    str: 1,
+    dex: 1,
+    int: 1,
+    end: 1,
+    luck: 1
   },
   skills: {
-    fighting: 10,
-    martialArts: 10,
-    rangedCombat: 10,
-    armor: 10,
+    fighting: 1,
+    martialArts: 1,
+    rangedCombat: 1,
+    armor: 1,
     magic: 0,
     healing: 0
   },
   status: {
     maxHealth:100,
     maxMana: 100,
-    health:100,
+    health:10,
     mana:100,
     defending: 0
   },
@@ -38,7 +38,8 @@ const enemy = [{
   },
   loot: [head.LEATHER_CAP],
   exp: 500,
-  gold: 10
+  gold: 10,
+  mapSend:[2,0]
 },
 
 {

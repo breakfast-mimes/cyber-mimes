@@ -11,7 +11,7 @@ const Leaderboard = React.createClass({
 					// <li>{char}</li>)}
 
 	componentsWillMount() {
-		this.props.getAllCharacters();
+	this.props.getAllCharacters();
 	},
 
 	render() {
@@ -23,13 +23,12 @@ const Leaderboard = React.createClass({
 			return (
 				<div>
 
-<div onClick={this.props.getAllCharacters}>Continue</div>
+	<div onClick={this.props.getAllCharacters}>Continue</div>
 
 	        <div className='leaderboard'>
 			      <h1>Leaderboard</h1>
 						<ul>
-							
-							
+
 
 						</ul>
 

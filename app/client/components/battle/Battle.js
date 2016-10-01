@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 import HealthBar from './HealthBar';
 import ActionGroup from './ActionGroup'
@@ -24,6 +25,9 @@ export default class Battle extends React.Component {
       this.props.enemyDeath(this.props.enemy, this.props.game.enemyId);
       this.props.changeEnemy(this.props.enemy, (this.props.game.enemyId + 1) % this.props.enemy.length);
       if(this.props.hero.level.level * this.props.hero.level.level * 500 >= this.props.hero.level.exp){
+        if (this.props.enemy[this.props.game.enemyId].mapSend){
+          this.props.mapSend(this.props.enemy[this.props.game.enemyId].mapSend)
+        }
         browserHistory.push('/levelup');
       } else {
         browserHistory.push('/map');
@@ -60,6 +64,7 @@ export default class Battle extends React.Component {
     }
     return(
       <div className="battleScreen">
+        <Link to='/map'>Map</Link>
 
         <div>{"Fighting " + enemy[enemyId].name}</div>
         <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
