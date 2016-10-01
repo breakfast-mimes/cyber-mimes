@@ -11,8 +11,8 @@ const Auth = React.createClass({
       <div>
         {
           this.props.game.login ?
-          <LogIn login={this.props.login}/> :
-          <SignUp signup={this.props.signup}/>
+          <LogIn login={this.props.login} logSuccess={this.props.game.logSuccess} logReset={this.props.logReset}/> :
+          <SignUp signup={this.props.signup} logSuccess={this.props.game.usernameSuccess} userReset={this.props.userReset}/>
         }
       </div>
     )

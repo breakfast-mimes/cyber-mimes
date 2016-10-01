@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import { Button, FormGroup, ControlLabel, FormControl, Form, HelpBlock, Col, PageHeader } from 'react-bootstrap';
 
 const LogIn = React.createClass({
   getInitialState() {
     return {
       name: '',
-      pass: '',
-      wrong: false
+      pass: ''
     }
+  },
+
+  componentWillMount() {
+    this.props.logReset();
   },
 
   updateName(event) {
@@ -55,6 +59,17 @@ const LogIn = React.createClass({
         </PageHeader>
 
         <FormGroup
+          controlId="wrongPass"
+          validationState={this.props.logSuccess === 'true' ? 'success' : 'error'}>
+        {!this.props.logSuccess ?
+        <Col smOffset={2} sm={2}>
+          <HelpBlock>Wrong username or password.</HelpBlock>
+        </Col>
+        : null
+        }
+        </FormGroup>
+
+        <FormGroup
           controlId="formUsername"
           validationState={this.getValidationUsername()}>
           <Col componentClass={ControlLabel} sm={2}>
@@ -64,16 +79,10 @@ const LogIn = React.createClass({
             <FormControl
               type="text"
               value={this.state.name}
-              placeholder="Username"
+              placeholder="Enter your username"
               onChange={this.updateName} />
             <FormControl.Feedback />
           </Col>
-          {this.getValidationUsername() !== 'success' ?
-          <Col sm={2}>
-            <HelpBlock>Please enter a username.</HelpBlock>
-          </Col>
-          : null
-          }
         </FormGroup>
 
         <FormGroup
@@ -86,20 +95,14 @@ const LogIn = React.createClass({
             <FormControl
               type="password"
               value={this.state.pass}
-              placeholder="Password"
+              placeholder="Enter your password"
               onChange={this.updatePass} />
             <FormControl.Feedback />
           </Col>
-          {this.getValidationPassword() !== 'success' ?
-          <Col sm={2}>
-            <HelpBlock>Please enter a password.</HelpBlock>
-          </Col>
-          : null
-          }
         </FormGroup>
 
         <FormGroup>
-          <Col smOffset={2} sm={10}>
+          <Col smOffset={2} xs={2}>
             <Button disabled={this.allValid()} type="submit" onClick={this.handleSubmit}>
               Login
             </Button>

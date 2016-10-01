@@ -7,8 +7,14 @@ const SignUp = React.createClass({
     return {
       name: '',
       pass: '',
-      pass2: ''
+      pass2: '',
+      clicked: false
     }
+  },
+
+  componentWillMount() {
+    this.setState({clicked: false});
+    this.props.userReset();
   },
 
   updateName(event) {
@@ -64,6 +70,17 @@ const SignUp = React.createClass({
         </PageHeader>
 
         <FormGroup
+          controlId="usernameTaken"
+          validationState={this.props.usernameSuccess === 'true' ? 'success' : 'error'}>
+        {!this.props.logSuccess ?
+        <Col smOffset={2} sm={2}>
+          <HelpBlock>Username is taken.</HelpBlock>
+        </Col>
+        : null
+        }
+        </FormGroup>
+
+        <FormGroup
           controlId="formUsername"
           validationState={this.getValidationUsername()}>
           <Col componentClass={ControlLabel} sm={2}>
@@ -77,11 +94,6 @@ const SignUp = React.createClass({
               onChange={this.updateName} />
             <FormControl.Feedback />
           </Col>
-          {this.getValidationUsername() !== 'success' ?
-          <Col sm={2}>
-            <HelpBlock>Please enter a username.</HelpBlock>
-          </Col>
-          : null}
         </FormGroup>
 
         <FormGroup
@@ -98,20 +110,12 @@ const SignUp = React.createClass({
               onChange={this.updatePass} />
             <FormControl.Feedback />
           </Col>
-          {this.getValidationPassword() !== 'success' ?
-          <Col sm={2}>
-            <HelpBlock>Please enter a password.</HelpBlock>
-          </Col>
-          : null}
         </FormGroup>
 
         <FormGroup
           controlId="formPassword2"
           validationState={this.getValidationPassword2()}>
-          <Col componentClass={ControlLabel} sm={2}>
-            Password
-          </Col>
-          <Col sm={2}>
+          <Col smOffset={2} sm={2}>
             <FormControl
               type="password"
               value={this.state.pass2}
@@ -119,7 +123,7 @@ const SignUp = React.createClass({
               onChange={this.updatePass2} />
             <FormControl.Feedback />
           </Col>
-          {this.getValidationPassword2() !== 'success' ?
+          {this.getValidationPassword2() !== 'success'?
           <Col sm={2}>
             <HelpBlock>Passwords must match.</HelpBlock>
           </Col>

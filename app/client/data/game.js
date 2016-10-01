@@ -3,6 +3,8 @@ const game = {
   enemyTurn: true,
   enemyId: 0,
   logged: false,
+  logSuccess: true,
+  usernameSuccess: true,
   login: true,
   allChars: []
 }

@@ -31,6 +31,14 @@ function game(state = [], action) {
       console.log('state',state)
       return state;
 
+    case "LOG_SUCCESS":
+      state.logSuccess = action.logSuccess;
+      return state;
+
+    case "USERNAME_SUCCESS":
+      state.usernameSuccess = action.usernameSuccess;
+      return state;
+
     default:
       state.enemyTurn = !state.enemyTurn;
       return state;
