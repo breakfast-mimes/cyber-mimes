@@ -8,12 +8,14 @@ const Leaderboard = React.createClass({
 	componentWillMount() {
 	this.props.getAllCharacters();
 	},
-
+	// var sorted = results.sort(function(obj1,obj2){
+		// 			return obj2.level - obj1.level;
+	// 	// 			})
+	// console.log('****SORTED',sorted);
 	render() {
 		var results = this.props.game.allChars;
-		// console.log('RESULT',results);
+		console.log('RESULT',results);
 		// console.log('props',this.props)
-	
 			return (
 				<div>
 
@@ -21,7 +23,7 @@ const Leaderboard = React.createClass({
 			      <h1>Leaderboard</h1>
 						<ul>
 						{results.map((char,i)=>
-						<li>{char}</li>)}
+						<li key={i}>{char[0].level}</li>)}
 
 						</ul>
 				</div>
@@ -29,7 +31,7 @@ const Leaderboard = React.createClass({
 				</div>
 			)
 	}
-	
+
 })
 
 export default Leaderboard;
