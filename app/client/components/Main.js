@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import AuthBar from './authorization/AuthBar'
 
@@ -17,9 +18,6 @@ const Main = React.createClass({
     return (
       <div>
         <AuthBar changeLogin={this.props.changeLogin} logout={this.props.logout} game={this.props.game}/>
-        <h1 className ='title'>
-          <Link to='/map'>Cyber Mimes</Link>
-        </h1>
         {React.cloneElement(this.props.children, this.props)}
       </div>
     )

@@ -1,11 +1,11 @@
 const battle = {
-  healthBar:false,
-  manaBar:false,
+  healthBar:true,
+  manaBar:true,
   log:true,
-  actions:false,
-  spells:false,
-  items:false,
-  inventory:false
+  actions:true,
+  spells:true,
+  items:true,
+  inventory:true
 
 }
 
