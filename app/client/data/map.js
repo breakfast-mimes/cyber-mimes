@@ -30,7 +30,7 @@ const map = {
   [],
   []],
 
-  messages:[["",
+  messages:[["Lazers and space ships, oh my! Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", //a woman
   "My my, you don't look fancy enough to be in the steam punch genre! Take the corset, won't you?",
 "Woah! Cowboy steampunk? Will will smith smith a giant robot spider? Yes, I think Will smith will smith a giant robot spider[giant robot spider item] "],
 
