@@ -69,6 +69,7 @@ const CharacterForm = React.createClass({
               lowCap={skillLowCap}
 				 		  key={i}/>)}
 				</div>
+
 				<div>
           <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
 		  </div>

@@ -12,6 +12,7 @@ import StartMap from './components/startMap/Map.js';
 import Map from './components/map/Map.js';
 import Store from './components/store/Store.js';
 import Auth from './components/authorization/Auth.js';
+import Leaderboard from './components/creationForm/Leaderboard';
 
 const router = (
   <Provider store={store}>
@@ -24,6 +25,7 @@ const router = (
         <Route path="/map" component={Map}></Route>
         <Route path="/store" component={Store}></Route>
         <Route path="/levelup" component={LevelUpForm}></Route>
+        <Route path="/leaderboard" component = {Leaderboard}></Route>
       </Route>
     </Router>
   </Provider>
