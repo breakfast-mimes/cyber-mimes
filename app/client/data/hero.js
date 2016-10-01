@@ -49,8 +49,7 @@ const hero = {
   items: {
   },
   inventory: [
-    weapons.BROAD_SWORD,
-    weapons.LAZER_GUN
+    weapons.BROAD_SWORD
   ],
   equipment: {
     head: undefined,
