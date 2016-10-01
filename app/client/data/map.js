@@ -31,8 +31,8 @@ const map = {
   easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"}],""],
 
   [[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
-  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"}]],
-  [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif'}]]],
+  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'}]],
+  [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif'},{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"}]]],
 
   messages:[["Lazers and space ships, oh my!",
   "My my, you don't look fancy enough to be in the steam punch genre! Take the corset, won't you?",

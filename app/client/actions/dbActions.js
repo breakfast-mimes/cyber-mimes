@@ -86,7 +86,7 @@ export function getAllCharacters () {
 				for (var j = 0; j<parsedCharacters.length; j++) {
 					if(parsedCharacters[j].level !== undefined) {
 							
-							leaderBoardArr.push([{"character name": parsedCharacters[j].name, "level": parsedCharacters[j].level.level}])
+							leaderBoardArr.push([{"charactername": parsedCharacters[j].name, "level": parsedCharacters[j].level.level}])
 					}
 				}
 					console.log('leaderBoardArr',leaderBoardArr);
