@@ -65,3 +65,43 @@ export function init() {
 		.catch(res => console.log('err in getting user character', res));
 	}
 }
+
+export function getAllCharacters () {
+	console.log('INSIDE GETALLCHARACTERS')
+	return function (dispatch) {
+		axios.get('/api/characters', {
+
+		})
+		.then(response=> {
+			console.log('RESPONSE FOR GET ALL CHARACTERS')
+					//parsed data
+					var parsedCharacters = [];
+					for (var i = 0; i<response.data.length; i++) {
+						parsedCharacters.push(JSON.parse(response.data[i].n.properties.character))
+					}
+
+				console.log('parsedCharacters',parsedCharacters)
+				//characters and their levels
+				var leaderBoardArr = [];
+				for (var j = 0; j<parsedCharacters.length; j++) {
+					if(parsedCharacters[j].level !== undefined) {
+						leaderBoardArr.push("character name: " + parsedCharacters[j].name + " level: " + parsedCharacters[j].level.level)
+					}
+				}
+				console.log('leaderBoardArr',leaderBoardArr);
+				dispatch({type: "LEADERBOARD",
+								allChars: leaderBoardArr});
+				// return leaderBoardArr;
+
+		})
+
+		.catch (response => {
+			console.log('ERROR WHILE GETTING CHARACTERS',response)
+		})
+
+	}
+
+}
+
+// var points = [40, 100, 1, 5, 25, 10];
+// points.sort(function(a, b){return a-b});

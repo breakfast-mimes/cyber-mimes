@@ -39,6 +39,8 @@ store.subscribe(() => {
   currentState = JSON.stringify(store.getState().hero);
   if(currentState !== previousState && logged && location !== '/' && location !== '/creationform') {
     console.log("store update", location);
+    console.log(currentState);
+    console.log(previousState)
     store.dispatch(putCharacter(JSON.parse(currentState)));
   } else {
     console.log("hero state didnt change");
