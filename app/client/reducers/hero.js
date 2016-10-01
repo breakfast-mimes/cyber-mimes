@@ -105,10 +105,6 @@ function hero(state = [], action) {
       return state;
 
 
-    case "LEADERBOARD":
-    state.hero = action.hero;
-
-
     case "CREATE_CHARACTER":
       state.hero = action.hero;
 

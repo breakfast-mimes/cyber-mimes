@@ -27,7 +27,7 @@ function game(state = [], action) {
       return state;
 
     case "LEADERBOARD":
-      state.leaderBoardArr = action.allChars;
+      state.allChars = action.allChars;
       console.log('state',state)
       return state;
 

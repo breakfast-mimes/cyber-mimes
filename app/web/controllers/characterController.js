@@ -25,24 +25,6 @@ exports.post = function(req, res) {
 
 
 //leaderboard query
-exports.getAll = function(req, res) {
-  console.log('REQUEST------>>>>>>',req)
-  console.log('INSIDE GET ALL!')
-  db.cypher({
-    query: 'MATCH (n:Character) RETURN n LIMIT 25',
-  }, function (err,result) {
-      if(err) {
-        console.log('error fetching all characters',err)
-        res.sendStatus(400);
-
-      }
-      // consol.log('SUCCESS!!',JSON.parse(result[0].n.properties.character));
-
-         res.send(200,result);
-  }
-
-  )
-}
 
 exports.get = function(req, res) {
   console.log("GETTING CHARACTER", req.body);
@@ -81,10 +63,28 @@ exports.update = function(req, res) {
   });
 }
 
-
 exports.getAll = function(req, res) {
-  console.log("all good")
+  
+  console.log('INSIDE GET ALL!')
+  db.cypher({
+    query: 'MATCH (n:Character) RETURN n LIMIT 25'
+  }, function (err,result) {
+      if(err) {
+        console.log('error fetching all characters',err)
+        res.sendStatus(400);
+
+      }
+      // consol.log('SUCCESS!!',JSON.parse(result[0].n.properties.character));
+
+         res.send(200,result);
+  }
+
+  )
 }
+
+// exports.getAll = function(req, res) {
+//   console.log("all good")
+// }
 
 
 
