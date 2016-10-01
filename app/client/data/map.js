@@ -27,12 +27,12 @@ const map = {
   ["spells", "inventory", "items"],
   []],
 
-  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}],""],
+  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"}],""],
   [[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
   [],
   []],
 
-  messages:[["Lazers and space ships, oh my!", //a woman
+  messages:[["Lazers and space ships, oh my!",
   "My my, you don't look fancy enough to be in the steam punch genre! Take the corset, won't you?",
 "Woah! Cowboy steampunk? Will will smith smith a giant robot spider? Yes, I think Will smith will smith a giant robot spider[giant robot spider item] "],
 
