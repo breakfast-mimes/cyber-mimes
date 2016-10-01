@@ -26,6 +26,7 @@ export function login(name, pass) {
 			.catch(res => console.log('err in getting user character', res));
 		})
 		.catch(response => {
+			dispatch({type:"LOG_SUCCESS", logSuccess: false});
 			console.log('error in signinUser action creator: ',response);
 		});
 	}
@@ -43,6 +44,7 @@ export function signup(name, pass) {
 			browserHistory.push('/creationform');
 		})
 		.catch(function(response) {
+			dispatch({type: "USERNAME_SUCCESS", usernameSuccess: false});
 			console.log('error in signupUser action creator: ', response);
 		});
 	}
@@ -53,6 +55,7 @@ export function logout() {
 		axios.post('/logout', {})
 		.then(function(response) {
 			dispatch({type: "USER_LOGOUT"});
+			dispatch({type:"LOG_SUCCESS", logSuccess: true});
 			browserHistory.push('/');
 		})
 		.catch(function(response) {
@@ -73,3 +76,12 @@ export function isUserAuth() {
 		});
 	}
 }
+
+export function logReset() {
+	return {type:"LOG_SUCCESS", logSuccess: true}
+}
+
+export function userReset() {
+	return {type:"USERNAME_SUCCESS", usernameSuccess: true}
+}
+
