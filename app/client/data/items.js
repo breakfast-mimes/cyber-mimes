@@ -1,14 +1,3 @@
-export const weapons = {
-  FISTS:          {name: "fists",          type: "unarmed", dmg: 0,  stat: "str", equip: "rightHand", value:10, e: true},
-  BROAD_SWORD:    {name: "Board Sword",    type: "melee",   dmg: 3,  stat: "str", equip: "rightHand", value:10, e: false},
-  LAZER_GUN:      {name: "Lazer Gun",      type: "ranged",  dmg: 3,  stat: "dex", equip: "rightHand", value:10, e: false},
-  ANTIMATTER_GUN: {name: "Antimatter Gun", type: "ranged",  dmg: 10, stat: "dex", equip: "righthand", value:9002, e: false}
-}
-
-export const head = {
-  LEATHER_CAP: {name: "Leather Cap", type: "armor", armor: 5, equip: "head", value:10, e: false}
-}
-
-export const body = {
-  BROKEN_POWER_ARMOR: {name: "Broken Power Armor", type: "armor", armor: 5, equip: "body", value:10, e: false}
-}
+export const weapons = require('./items/weapons.json');
+export const head = require('./items/head.json')
+export const body = require('./items/body.json')
