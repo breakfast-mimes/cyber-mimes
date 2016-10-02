@@ -79,21 +79,15 @@ export function getAllCharacters () {
 					for (var i = 0; i<response.data.length; i++) {
 						parsedCharacters.push(JSON.parse(response.data[i].n.properties.character))
 					}
-
 				console.log('parsedCharacters',parsedCharacters)
 				//characters and their levels
 				var leaderBoardArr = [];
 				for (var j = 0; j<parsedCharacters.length; j++) {
 					if(parsedCharacters[j].level !== undefined) {
-							
-							leaderBoardArr.push([{"charactername": parsedCharacters[j].name, "level": parsedCharacters[j].level.level}])
+							leaderBoardArr.push({"charactername": parsedCharacters[j].name, "level": parsedCharacters[j].level.level})
 					}
 				}
 					console.log('leaderBoardArr',leaderBoardArr);
-					// leaderBoardArr.sort(function(obj1,obj2){
-					// return obj2.level - obj1.level;
-					// })
-				//console.log('sorted leaderboard',leaderBoardArr[0][0].level);
 				dispatch({type: "LEADERBOARD",allChars: leaderBoardArr});
 				// return leaderBoardArr;
 

@@ -18,7 +18,7 @@ const Leaderboard = React.createClass({
 		let results = this.props.game.allChars;
 					console.log('RESULT',results);
 					results.sort(function(obj1,obj2){
-					return obj2[0].level - obj1[0].level;})
+					return obj2.level - obj1.level;})
 
 		// console.log('SORTED',sorted);
 		// console.log('props',this.props)
@@ -29,8 +29,8 @@ const Leaderboard = React.createClass({
 			      <h1>Leaderboard</h1>
 						<ul>
 						{results.map((char,i)=>
-							
-						<li key={i}>{"character name: " + char[0].charactername +  "  level " + char[0].level}</li>)}
+
+						<li key={i}>{"character name: " + char.charactername +  "  level " + char.level}</li>)}
 
 						</ul>
 				</div>
