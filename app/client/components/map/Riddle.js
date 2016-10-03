@@ -11,9 +11,7 @@ export default class Riddle extends React.Component {
     const {riddle, pickUp} = this.props
 
     let riddlePrompt = function(riddle){
-      console.log("clicked riddle")
       if(riddle){
-        console.log(riddle.reward)
         var input = prompt(riddle.question, "?");
         if (input === riddle.answer){
           pickUp(riddle.reward)
@@ -21,11 +19,14 @@ export default class Riddle extends React.Component {
         }
       }
     }
-    return(
-      <div className="riddle" onClick={riddlePrompt.bind(null, riddle)}>
-        Riddle?
-      </div>
-    )
+    if (riddle && !riddle.solved){
+      return(
+        <div className={riddle.className} onClick={riddlePrompt.bind(null, riddle)}>
+          Riddle me this!
+        </div>
+      )
+    }else {
+      return(<div/>)
+    }
   }
 }
-

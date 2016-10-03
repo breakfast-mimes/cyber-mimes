@@ -6,7 +6,6 @@ import Riddle from './Riddle'
 import Story from './Story'
 import EasterEgg from './EasterEgg'
 
-
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -25,10 +24,10 @@ export default class Map extends React.Component {
     let arrowUp = "http://i.imgur.com/2rXcG5r.png"
     let arrowDown = "http://i.imgur.com/9gnJyue.png"
 
-    let north = images[row - 1] ? images[row - 1][col] ? arrowUp : undefined : undefined
-    let east = images[row] ? images[row][col + 1] ? arrowRight : undefined : undefined
-    let south = images[row + 1] ? images[row + 1][col] ? arrowDown : undefined : undefined
-    let west = images[row] ? images[row][col - 1] ? arrowLeft : undefined : undefined
+    let north = images[row - 1] ? images[row - 1][col] ? arrowUp : null : null
+    let east = images[row] ? images[row][col + 1] ? arrowRight : null : null
+    let south = images[row + 1] ? images[row + 1][col] ? arrowDown : null : null
+    let west = images[row] ? images[row][col - 1] ? arrowLeft : null : null
 
     let image, item, itemName, description, enemyId, enemyName, feature, easterEgg, riddle;
     image = item = itemName = description = enemyId = enemyName = feature = easterEgg = riddle = undefined;
@@ -54,7 +53,6 @@ export default class Map extends React.Component {
       easterEgg = easterEggs[row][col];
       riddle = riddles[row][col];
     }
-
 
     if(enemyId && this.props.enemy[enemyId].status.health > 0) {
       enemyName = this.props.enemy[enemyId].name

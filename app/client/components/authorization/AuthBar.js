@@ -9,7 +9,7 @@ const AuthBar = React.createClass({
       <Navbar fluid>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Cyber Mimes</a>
+            <a href="/">Cyber Mimes</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

@@ -6,8 +6,20 @@ title {
 
 }
 
-#riddle{
-    z-index:1;
+.gun{
+  position:relative;
+  left: 300px;
+  top: 500px;
+}
+
+.riddle{
+  cursor:pointer;
+}
+
+.sciRiddle {
+  content:url(https://image.freepik.com/free-icon/question-mark_318-52837.jpg);
+  width:50px;
+  height:50px;
 }
 
 #log {

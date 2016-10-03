@@ -17,6 +17,7 @@ export default class EasterEgg extends React.Component {
       playStatus = Sound.status.PLAYING
       setTimeout( ()=> this.state.playing = false,0)
     }
+
     return(
       <div className={egg.className}>
         <Sound
