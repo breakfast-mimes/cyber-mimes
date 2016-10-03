@@ -6,7 +6,6 @@ import Riddle from './Riddle'
 import Story from './Story'
 import EasterEgg from './EasterEgg'
 
-
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +53,6 @@ export default class Map extends React.Component {
       easterEgg = easterEggs[row][col];
       riddle = riddles[row][col];
     }
-
 
     if(enemyId && this.props.enemy[enemyId].status.health > 0) {
       enemyName = this.props.enemy[enemyId].name
