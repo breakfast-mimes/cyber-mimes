@@ -31,7 +31,7 @@ const CharacterForm = React.createClass({
 	render() {
 		const {hero, statLowCap, statHighCap, skillLowCap, skillHighCap} = this.props;
 		return (
-			<Form horizontal className='form'>
+			<Form horizontal className='form formBorder'>
 				{( this.props.levelUp ? null :
         <div>
           <FormGroup>
@@ -45,7 +45,8 @@ const CharacterForm = React.createClass({
                 type="text"
                 value={this.state.name}
                 placeholder="Character Name"
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                className='nameInput'/>
             </Col>
           </FormGroup>
         </div>
@@ -53,7 +54,7 @@ const CharacterForm = React.createClass({
 
         <FormGroup className='noSelect'>
         	<Col smOffset={2} sm={1} className='formTitle'>Stats</Col>
-        	<Col sm={1} className='inputContainer2'>{this.state.statAllocation}</Col>
+        	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.statAllocation}</div></Col>
         </FormGroup>
         <FormGroup>
 	    		{Object.keys(hero.stats).map((k, i) =>
@@ -71,7 +72,7 @@ const CharacterForm = React.createClass({
 
 				<FormGroup className='noSelect'>
 	        	<Col smOffset={2} sm={1} className='formTitle'>Skills</Col>
-	        	<Col sm={1} className='inputContainer2'>{this.state.skillAllocation}</Col>
+	        	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.skillAllocation}</div></Col>
         </FormGroup>
         <FormGroup>
 				 	{Object.keys(hero.skills).map((k, i) =>
@@ -92,6 +93,7 @@ const CharacterForm = React.createClass({
             <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
           </Col>
 		    </FormGroup>
+
 		  </Form>
 		)
 	}
