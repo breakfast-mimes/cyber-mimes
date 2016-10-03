@@ -84,7 +84,7 @@ export function getAllCharacters () {
 				var leaderBoardArr = [];
 				for (var j = 0; j<parsedCharacters.length; j++) {
 					if(parsedCharacters[j].level !== undefined) {
-							leaderBoardArr.push({"charactername": parsedCharacters[j].name, "level": parsedCharacters[j].level.level})
+						leaderBoardArr.push({"charactername": parsedCharacters[j].name, "level": parsedCharacters[j].level.level})
 					}
 				}
 					console.log('leaderBoardArr',leaderBoardArr);
@@ -100,6 +100,3 @@ export function getAllCharacters () {
 	}
 
 }
-
-// var points = [40, 100, 1, 5, 25, 10];
-// points.sort(function(a, b){return a-b});

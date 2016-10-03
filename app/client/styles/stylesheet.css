@@ -2,10 +2,6 @@ a {
   text-decoration: none;
 }
 
-title {
-
-}
-
 .gun{
   position:relative;
   left: 300px;
@@ -15,6 +11,15 @@ title {
 .riddle{
   cursor:pointer;
 }
+
+/*body {
+  background-color: #1d2559;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+}
+
+.loginTitle {
+  color: white;
+}*/
 
 .sciRiddle {
   content:url(https://image.freepik.com/free-icon/question-mark_318-52837.jpg);
@@ -103,7 +108,7 @@ title {
   overflow:hidden;
 }
 
-/*.logMessage {
+.logMessage {
   border: 1px solid #999;
   border-radius: 5px;
   background-color: #DDD;
@@ -111,7 +116,7 @@ title {
   vertical-align: middle;
   height: 20px;
   padding-left: 8px;
-}*/
+}
 
 .logMessage {
   padding-top: 2px;
@@ -174,6 +179,15 @@ title {
   cursor: default;
 }
 
+.inputContainer {
+  width: 80px;
+}
+
+.inputContainer2 {
+  width: 80px;
+  padding-left: 70px;
+}
+
 .createInput {
   width: 20px;
   height: 20px;
@@ -187,8 +201,6 @@ title {
 .statTitle {
   width: 140px;
   height: 20px;
-  margin: 2px;
-  padding-left: 8px;
   font-weight: bold;
   display: inline-block
 }
@@ -201,6 +213,14 @@ title {
 .allocationHeader {
   width: 230px;
   background-color: #999;
+}
+
+.formTitle {
+  width: 140px;
+  height: 20px;
+  text-align: left;
+  font-weight: bold;
+  display: inline-block
 }
 
 .creationEntry {
@@ -234,28 +254,40 @@ button {
   border: 2px solid rgb(0, 172, 237)
 }
 
-
-
-.monster { position: relative;
-    left: 300px;
-    top:100px;
-   }
-
-.dragon { position: relative;
-  left: 60px;
-  bottom: 100px;
-
-  width: 100px;
-
+.formContainer {
+  background-color: #DDD;
 }
 
-.archer {position: relative;
-left: 500px;
-bottom:403px;}
+.form {
+  background-image: url('http://img13.deviantart.net/cf69/i/2009/200/5/c/grunge_paper_texture_by_arghus.jpg');
+  background-repeat: no-repeat;
+  background-position: 130px 0px;
+}
+
+
+.monster {
+  position: relative;
+  left: 300px;
+  top:100px;
+}
+
+.dragon {
+  position: relative;
+  left: 60px;
+  bottom: 100px;
+  width: 100px;
+}
+
+.archer {
+  position: relative;
+  left: 500px;
+  bottom:403px;
+}
 
 .spaceship {position: relative;
-left: 600px;
-top:40px;}
+  left: 600px;
+  top:40px;
+}
 
 .spaceship4 {
   position: relative;
