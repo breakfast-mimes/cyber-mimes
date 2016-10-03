@@ -1,12 +1,12 @@
 export const weapons = require('./items/weapons.json');
 
 const map = {
-  location: {row:5,col:0},
+  location: {row:1,col:1},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   //http://wallpapercave.com/sci-fi-background
 
   images:[[ "http://wallpapercave.com/wp/565sgAQ.jpg","http://free.wallpaperbackgrounds.com/sci%20fi/steampunk/217481-43110.jpg", "http://bit.ly/2cGimRX"],
-  ["https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg","http://bit.ly/2crqNnU", "http://bit.ly/2cGiroJ"],
+  ["https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg","http://bit.ly/2dN8irq", "http://bit.ly/2cGiroJ"],
   ["http://bit.ly/2dxWrl2", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg","http://bit.ly/2dcQUM4"],
   [],

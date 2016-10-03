@@ -39,8 +39,8 @@ title {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
-  /*background-image: url("http://wallup.net/wp-content/uploads/2016/05/27/182229-Game_of_Thrones-map-736x459.jpg");
-    background-repeat: no-repeat;*/
+  border-radius: 20px;
+
 }
 
 
@@ -52,6 +52,13 @@ title {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
+  border-radius: 15px 50px;
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+.invItem {
+  font-size: 20px;
 }
 
 .story {
@@ -63,6 +70,9 @@ title {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
+  border-radius: 50px 15px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
 }
 
 #north {
