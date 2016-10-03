@@ -1,6 +1,6 @@
 import React from 'react';
+import { Button, FormGroup, ControlLabel, FormControl, Form, HelpBlock, Col, PageHeader } from 'react-bootstrap';
 import statMap from './statMap'
-import _ from 'underscore'
 
 let timeoutId;
 const holdRefreshRate = 100;
@@ -44,12 +44,16 @@ const Entry = React.createClass({
   render() {
     const {group, stat, updateCharacter, hero} = this.props;
     return (
-      <div className='creationEntry'>
-        <div className='statTitle noSelect'>{statMap[this.props.stat]}</div>
-        <div onMouseDown={this.holdListener.bind(this, this.decrement.bind(null, group, stat, -1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>-</div>
-        <div className='createInput noSelect'>{hero[group][stat]} </div>
-        <div onMouseDown={this.holdListener.bind(this, this.increment.bind(null, group, stat, 1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>+</div>
-      </div>
+      <FormGroup className='creationEntry'>
+        <Col smOffset={2} sm={1} className='statTitle noSelect'>{statMap[this.props.stat]}</Col>
+        <Col sm={1}>
+          <div className='inputContainer'>
+            <div onMouseDown={this.holdListener.bind(this, this.decrement.bind(null, group, stat, -1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>-</div>
+            <div className='createInput noSelect'>{hero[group][stat]} </div>
+            <div onMouseDown={this.holdListener.bind(this, this.increment.bind(null, group, stat, 1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>+</div>
+          </div>
+        </Col>
+      </FormGroup>
     )
   }
 })

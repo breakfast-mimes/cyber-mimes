@@ -30,14 +30,15 @@ const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
 store.dispatch(init());
 export const history = syncHistoryWithStore(browserHistory, store);
 
-
+let defaultHero = JSON.stringify(hero);
 let currentState;
 store.subscribe(() => {
   let logged = store.getState().game.logged;
   let location = store.getState().routing.locationBeforeTransitions.pathname;
   let previousState = currentState;
   currentState = JSON.stringify(store.getState().hero);
-  if(currentState !== previousState && logged && location !== '/' && location !== '/creationform') {
+  if(currentState!== defaultHero && currentState !== previousState &&
+     logged && location !== '/' && location !== '/creationform') {
     console.log("store update", location);
     console.log(currentState);
     console.log(previousState)
