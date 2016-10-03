@@ -48,9 +48,9 @@ const Entry = React.createClass({
         <Col smOffset={2} sm={1} className='statTitle noSelect'>{statMap[this.props.stat]}</Col>
         <Col sm={1}>
           <div className='inputContainer'>
-            <div onMouseDown={this.holdListener.bind(this, this.decrement.bind(null, group, stat, -1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>-</div>
-            <div className='createInput noSelect'>{hero[group][stat]} </div>
-            <div onMouseDown={this.holdListener.bind(this, this.increment.bind(null, group, stat, 1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput noSelect'>+</div>
+            <div onMouseDown={this.holdListener.bind(this, this.decrement.bind(null, group, stat, -1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput minButton noSelect'></div>
+            <div className='createInput number noSelect'>{hero[group][stat]} </div>
+            <div onMouseDown={this.holdListener.bind(this, this.increment.bind(null, group, stat, 1))} onMouseUp={this.mouseUpListener} onMouseLeave={this.leaveListener} className='createInput plusButton noSelect'></div>
           </div>
         </Col>
       </FormGroup>
