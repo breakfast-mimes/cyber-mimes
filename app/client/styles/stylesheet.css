@@ -2,10 +2,6 @@ a {
   text-decoration: none;
 }
 
-title {
-
-}
-
 .gun{
   position:relative;
   left: 300px;
@@ -15,6 +11,15 @@ title {
 .riddle{
   cursor:pointer;
 }
+
+body {
+  background-color: #1d2559;
+  background-image: url("../assets/gui/paper_background.png");
+}
+/*
+.loginTitle {
+  color: white;
+}*/
 
 .sciRiddle {
   content:url(https://image.freepik.com/free-icon/question-mark_318-52837.jpg);
@@ -113,7 +118,7 @@ title {
   overflow:hidden;
 }
 
-/*.logMessage {
+.logMessage {
   border: 1px solid #999;
   border-radius: 5px;
   background-color: #DDD;
@@ -121,7 +126,7 @@ title {
   vertical-align: middle;
   height: 20px;
   padding-left: 8px;
-}*/
+}
 
 .logMessage {
   padding-top: 2px;
@@ -184,21 +189,9 @@ title {
   cursor: default;
 }
 
-.createInput {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin: 2px;
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .statTitle {
   width: 140px;
   height: 20px;
-  margin: 2px;
-  padding-left: 8px;
   font-weight: bold;
   display: inline-block
 }
@@ -211,6 +204,14 @@ title {
 .allocationHeader {
   width: 230px;
   background-color: #999;
+}
+
+.formTitle {
+  width: 140px;
+  height: 20px;
+  text-align: left;
+  font-weight: bold;
+  display: inline-block
 }
 
 .creationEntry {
@@ -244,28 +245,34 @@ button {
   border: 2px solid rgb(0, 172, 237)
 }
 
-
-
-.monster { position: relative;
-    left: 300px;
-    top:100px;
-   }
-
-.dragon { position: relative;
-  left: 60px;
-  bottom: 100px;
-
-  width: 100px;
-
+.formContainer {
+  background-color: #DDD;
 }
 
-.archer {position: relative;
-left: 500px;
-bottom:403px;}
+
+.monster {
+  position: relative;
+  left: 300px;
+  top:100px;
+}
+
+.dragon {
+  position: relative;
+  left: 60px;
+  bottom: 100px;
+  width: 100px;
+}
+
+.archer {
+  position: relative;
+  left: 500px;
+  bottom:403px;
+}
 
 .spaceship {position: relative;
-left: 600px;
-top:40px;}
+  left: 600px;
+  top:40px;
+}
 
 .spaceship4 {
   position: relative;
@@ -279,3 +286,80 @@ top:40px;}
   left: 250px;
 }
 
+.inputContainer {
+  width: 120px;
+}
+
+.inputContainer2 {
+  width: 80px;
+  padding-left: 74px;
+}
+
+.createInput {
+  font-family: 'Zapf Chancery';
+  font-style: italic;
+  font-weight: bold;
+  padding-top: 10px;
+  color: gold;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 2px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.minButton, .plusButton, .number, .nameInput, .leftBorder {
+  background-image: url('../assets/gui/RPG_GUI_v1.png');
+  background-repeat: no-repeat;
+}
+
+.minButton {
+  height: 30px;
+  width: 30px;
+  background-position: -325px -120px;
+}
+
+.plusButton {
+  height: 30px;
+  width: 30px;
+  background-position: -365px -120px;
+}
+
+.number {
+  padding-top: 10px;
+  color: gold;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background-position: -40px -490px;
+}
+
+.nameInput {
+  color: gold;
+  font-weight: bold;
+  font-family: 'Zapf Chancery';
+  font-style: italic;
+  font-size: 20px;
+  background:transparent;
+  background-position: -40px -490px;
+}
+
+.leftBorder {
+  position: relative;
+  left: 225px;
+  top: -900px;
+  height: 55px;
+  width: 15px;
+  background-position: -855px -225px;
+}
+
+.formBorder {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-image: url('../assets/gui/formBorder.png');
+  background-repeat: no-repeat;
+  background-position: -45px -45px;
+}

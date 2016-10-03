@@ -1,7 +1,7 @@
 const game = {
   log: [],
   enemyTurn: true,
-  enemyId: 0,
+  enemyId: 1,
   logged: false,
   logSuccess: true,
   usernameSuccess: true,
