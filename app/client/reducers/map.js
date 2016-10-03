@@ -19,6 +19,9 @@ function map(state = [], action) {
     case "GO_WEST":
       state.location.col -= 1;
       return state;
+    case "PICK_UP":
+      state.riddles[state.location.row][state.location.col].solved = true
+      return state;
     default:
       return state;
   }

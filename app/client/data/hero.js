@@ -3,7 +3,7 @@ import {weapons} from './items.js'
 const hero = {
   name: "laser hero",
   stats: {
-    str: 5,
+    str: 50,
     dex: 5,
     int: 5,
     end: 5,

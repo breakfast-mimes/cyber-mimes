@@ -19,10 +19,10 @@ export default class Riddle extends React.Component {
         }
       }
     }
-    if (riddle){
+    if (riddle && !riddle.solved){
       return(
-        <div className="riddle" onClick={riddlePrompt.bind(null, riddle)}>
-          Riddle?
+        <div className={riddle.className} onClick={riddlePrompt.bind(null, riddle)}>
+          Riddle me this!
         </div>
       )
     }else {

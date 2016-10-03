@@ -39,7 +39,7 @@ const enemy = [{
   loot: [head.LEATHER_CAP],
   exp: 500,
   gold: 10,
-  mapSend:[2,0]
+  mapSend:[1,1]
 },
 
 {
