@@ -4,7 +4,7 @@ const map = {
   location: {row:1,col:1},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   //http://wallpapercave.com/sci-fi-background
-  images:[[ "http://wallpapercave.com/wp/565sgAQ.jpg","http://bit.ly/2d4k9lv", "http://bit.ly/2cGimRX",],
+  images:[[ "http://wallpapercave.com/wp/565sgAQ.jpg","http://free.wallpaperbackgrounds.com/sci%20fi/steampunk/217481-43110.jpg", "http://bit.ly/2cGimRX",],
   ["http://bit.ly/2cUn5lV","http://bit.ly/2crqNnU", "http://bit.ly/2cGiroJ"],
   ["http://bit.ly/2dxWrl2", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg","http://bit.ly/2dcQUM4"]
@@ -28,11 +28,11 @@ const map = {
   []],
 
 
-  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"}],""],
+  easterEggs:[[ [{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}],""],
 
   [[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
-  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'}]],
-  [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif'},{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif"}]]],
+  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon'},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:  'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}]],
+  [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif',className:'caveFight'}]]],
 
   messages:[["Lazers and space ships, oh my!",
   "My my, you don't look fancy enough to be in the steam punch genre! Take the corset, won't you?",

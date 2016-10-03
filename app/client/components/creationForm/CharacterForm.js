@@ -18,6 +18,7 @@ const CharacterForm = React.createClass({
 
   changeSkill(amount) {
   	this.state.skillAllocation += amount;
+  	console.log('this.state.skillAllocation',this.state.skillAllocation)
   },
 
   handleChange(event) {
