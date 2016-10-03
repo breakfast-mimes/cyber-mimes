@@ -92,6 +92,8 @@ function hero(state = [], action) {
 
     case "UPDATE_CHARACTER":
     	state[action.group][action.prop] += action.amount;
+      console.log('state[action.group][action.prop]',state[action.group][action.prop])
+      console.log('action.amount',action.amount);
       return state;
 
     case "SUBMIT_CHARACTER":
