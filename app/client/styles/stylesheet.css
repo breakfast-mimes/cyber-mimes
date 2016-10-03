@@ -7,7 +7,9 @@ title {
 }
 
 .gun{
-  display: none;
+  position:relative;
+  left: 300px;
+  top: 500px;
 }
 
 .riddle{
