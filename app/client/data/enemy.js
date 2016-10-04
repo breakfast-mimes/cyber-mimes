@@ -1,7 +1,7 @@
 import { weapons, head, body } from './items.js'
 
 const enemy = [{
-  name: "weak laser enemy",
+  name: "goblin",
   stats: {
     str: 1,
     dex: 1,

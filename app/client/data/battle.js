@@ -1,12 +1,11 @@
 const battle = {
-  healthBar:true,
-  manaBar:true,
-  log:true,
-  actions:true,
-  spells:true,
-  items:true,
-  inventory:true
-
+  health:false,
+  manaBar:false,
+  log:false,
+  actions:false,
+  spells:false,
+  items:false,
+  inventory:false
 }
 
 export default battle;

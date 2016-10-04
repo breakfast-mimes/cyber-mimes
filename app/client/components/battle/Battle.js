@@ -47,7 +47,7 @@ export default class Battle extends React.Component {
     if (battle.log) {
       logStyle = {};
     }
-    if (battle.healthBar) {
+    if (battle.health) {
       healthStyle = {};
     }
     if (battle.actions) {
@@ -58,10 +58,9 @@ export default class Battle extends React.Component {
     }
     if (battle.items) {
       itemsStyle = {};
-    }
-    if (battle.inventory) {
       inventoryStyle = {};
     }
+
     return(
       <div className="battleScreen">
         <Link to='/map'>Map</Link>

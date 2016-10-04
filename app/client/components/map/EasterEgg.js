@@ -10,10 +10,13 @@ export default class EasterEgg extends React.Component {
   }
 
   render(){
-    const {egg, soundEffect} = this.props
-
+    const {egg, soundEffect, mapSend} = this.props
+    console.log("mapsend",mapSend, egg.mapSend)
     let playStatus;
     if (this.state.playing) {
+      if (egg.mapSend){
+        mapSend(egg.mapSend)
+      }
       playStatus = Sound.status.PLAYING
       setTimeout( ()=> this.state.playing = false,0)
     }
