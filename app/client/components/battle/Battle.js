@@ -47,7 +47,7 @@ export default class Battle extends React.Component {
     if (battle.log) {
       logStyle = {};
     }
-    if (battle.healthBar) {
+    if (battle.health) {
       healthStyle = {};
     }
     if (battle.actions) {
@@ -55,9 +55,6 @@ export default class Battle extends React.Component {
     }
     if (battle.spells) {
       spellsStyle = {};
-    }
-    if (battle.items) {
-      itemsStyle = {};
     }
     if (battle.inventory) {
       inventoryStyle = {};

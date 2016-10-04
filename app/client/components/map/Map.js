@@ -13,7 +13,7 @@ export default class Map extends React.Component {
     }
   }
   render(){
-    const {map, hero}  = this.props;
+    const {map, hero, mapSend}  = this.props;
     const {images, items, descriptions, enemyIds, features, easterEggs, riddles } = map
 
     let row = map.location.row
@@ -26,7 +26,7 @@ export default class Map extends React.Component {
 
     let north = images[row - 1] ? images[row - 1][col] ? arrowUp : null : null
     let east = images[row] ? images[row][col + 1] ? arrowRight : null : null
-    let south = images[row + 1] ? images[row + 1][col] ? arrowDown : null : null
+    let south = images[row + 1] && row !==2 ? images[row + 1][col] ? arrowDown : null : null
     let west = images[row] ? images[row][col - 1] ? arrowLeft : null : null
 
     let image, item, itemName, description, enemyId, enemyName, feature, easterEgg, riddle;
@@ -57,7 +57,7 @@ export default class Map extends React.Component {
     if(enemyId && this.props.enemy[enemyId].status.health > 0) {
       enemyName = this.props.enemy[enemyId].name
     }
-
+    console.log(this.props.enemy,"props enemy name")
     return(
       <div>
         <div id="map">
@@ -67,13 +67,13 @@ export default class Map extends React.Component {
           <img id="west" src={west} width="150" height="150" onClick={west ? this.props.goWest: null} />
           <div> {description} </div>
           <Riddle riddle={riddle} pickUp={this.props.pickUp}/>
-          <div onClick={this.props.pickUp.bind(null, item)}>{itemName} </div>
-          <div onClick={this.props.pickUpFeature.bind(null, feature)}>{feature} </div>
+          <div onClick={this.props.pickUp.bind(null, item)}>{itemName}</div>
+          <div className={feature} onClick={this.props.pickUpFeature.bind(null, feature)}>{feature}</div>
           <div>
             {easterEgg ? (easterEgg).map((item) =>
-              <EasterEgg egg={item} soundEffect={this.props.soundEffect}/>):undefined}
+              <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}
           </div>
-          <Link to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+          <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
           <img id="background" src={image}/>
         </div>
         <div className='inv'>

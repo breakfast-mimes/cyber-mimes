@@ -2,6 +2,26 @@ a {
   text-decoration: none;
 }
 
+.health {
+  content:url(http://i.imgur.com/SnALT8M.png);
+}
+
+.actions {
+  content:url(http://i.imgur.com/H1xMYZT.png);
+}
+
+.spells {
+  content:url(http://i.imgur.com/ikxr2EA.png);
+}
+
+.inventory {
+  content:url(http://i.imgur.com/GID4gkj.png);
+}
+
+.goblin {
+  content:url(http://i.imgur.com/CxvW6T4.png)
+}
+
 .gun{
   position:relative;
   left: 300px;
@@ -41,7 +61,7 @@ body {
   height: 800px;
   width: 800px;
   padding: 10px;
-  overflow-y: auto;
+  overflow: hidden;
   position:absolute;
   border: 3px solid black;
   border-radius: 20px;
@@ -171,7 +191,7 @@ body {
   height: 100px;
   width: 400px;
 }
-.actionGroup, .inventory {
+.actionGroup, .battleInventory {
   margin: 0px 0px 0px 2px;
   display: inline-block;
   float: left;
@@ -180,7 +200,7 @@ body {
   cursor: pointer;
 }
 
-.inventory {
+.battleInventory {
   width: 200px;
 }
 
