@@ -1,4 +1,5 @@
 import React from 'react';
+import { PageHeader, Col } from 'react-bootstrap';
 
 import CharacterForm from './CharacterForm'
 
@@ -11,7 +12,11 @@ const CreationForm = React.createClass({
   render() {
     return (
       <div id="creationForm">
-        <h2>Level Up! You are now Level {this.props.hero.level.level + 1}</h2>
+        <PageHeader>
+          <Col smOffset={2}>
+            Level Up! <small>You are now Level {this.props.hero.level.level + 1}</small>
+          </Col>
+        </PageHeader>
         <CharacterForm
           {...this.props}
           stat={statAllocation}

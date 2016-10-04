@@ -53,7 +53,7 @@ const LogIn = React.createClass({
       <Form horizontal>
 
         <PageHeader>
-          <Col smOffset={2}>
+          <Col smOffset={2} className='loginTitle'>
             Login <small>wanna play right?</small>
           </Col>
         </PageHeader>

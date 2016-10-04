@@ -64,7 +64,7 @@ const SignUp = React.createClass({
       <Form horizontal>
 
         <PageHeader>
-          <Col smOffset={2}>
+          <Col smOffset={2} className='loginTitle'>
             Sign Up <small>need an account?</small>
           </Col>
         </PageHeader>
