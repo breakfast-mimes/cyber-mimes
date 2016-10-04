@@ -3,7 +3,6 @@ import React from 'react';
 const HealthBar = React.createClass({
   render() {
     let {health, color, max, style} = this.props
-    console.log(style, "STYLE HERE")
     return (
       <div style={style} className="healthBar noSelect">
         <span className="healthPercent">{health}</span>
