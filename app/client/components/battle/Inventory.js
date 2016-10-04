@@ -5,6 +5,7 @@ import InventoryEntry from './InventoryEntry'
 const Inventory = React.createClass({
   render() {
     const {equip, dropItem, hero, style} = this.props
+    console.log("style in inv", style)
     return (
       <div style={style} className="battleInventory">
         <span className="actionGroupHeader">Inventory</span>

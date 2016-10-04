@@ -4,10 +4,12 @@ const map = {
   location: {row:5,col:0},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   //http://wallpapercave.com/sci-fi-background
+  //http://bit.ly/2d4jS28
+  //http://bit.ly/2dcQUM4
 
-  images:[[ "http://free.wallpaperbackgrounds.com/sci%20fi/steampunk/217481-43110.jpg", "http://bit.ly/2crqNnU", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
+  images:[[ "http://free.wallpaperbackgrounds.com/sci%20fi/steampunk/217481-43110.jpg", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
   ["http://i.imgur.com/kocWoDf.png", "http://wallpapercave.com/wp/565sgAQ.jpg", "http://bit.ly/2cGiroJ"],
-  ["http://bit.ly/2dxWrl2", "http://bit.ly/2d4jS28", "http://bit.ly/2dcQUM4"],
+  ["http://bit.ly/2dxWrl2", "http://i.imgur.com/YhZqhgN.png", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg"],
   [],
   ["http://i.imgur.com/l2PuKhs.png", "http://i.imgur.com/cxwjt5j.png", "http://i.imgur.com/j9hi3HQ.png"]
@@ -30,9 +32,9 @@ const map = {
   ["1"],
   [],
   [],
-  ["0"]],
+  ["0","",""]],
 
-  features: [["", "", "spells"],
+  features: [["", "spells", ""],
   [],
   ["", "inventory", ""],
   [],
@@ -43,28 +45,28 @@ const map = {
   easterEggs:[["" ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
 
   [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
-  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:  'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}]],
+  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif',className: 'knights',sound:"https://a.clyp.it/sspvhmed.mp3"}]],
   [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif',className:'caveFight'}]],
   [],
-  [[]]
+  [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
   ],
 
   messages:[["Lazers and space ships, oh my!",
-  "My my, you don't look fancy enough to be in the steam punch genre! Take the corset, won't you?",
+  "[Selim]: What if we tried an old western theme instead? [Alex]: That makes no sense with magic in the game [Selim]: Oh, and steampunk does?? [Alex]: But steampunk is so coooooool!!!",
 "Woah! Cowboy steampunk? Will will smith smith a giant robot spider? Yes, I think Will smith will smith a giant robot spider[giant robot spider item] "],
 
-["Skip this page, possibly in the map, so that they cant move forward to it, but it sets them on the page after this after they battle on the previous page",
-"Welcome! I'm fondly known as the Talking Mime! Pleased to meet you. Do you like riddles? You better! Cause in order to finish the lazy programmers jobs, you need to solve riddles to get the features for the battle screen :D",
-"Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?[easter egg, picutre of gun that has yueh saying 'BANG BANG]'"],
+["[Alex]:Oooo ya Know what would be cooler than fantasy? STEAMPUNK!!! [Harp]: What?! That doesn't make any sense with magic in the game! [Alex]: Fine then, you just don't have to visit steampunk-theme then ",
+"Ya know, that map was kinda small, so we made it bigger! Also, you might wanna look around for the rest of the battle page features? We think they're lying around in the code somewhere. And we still havn't really decided on a theme, so we just made it have alot of themes :D",
+"Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?"],
 
 ["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Find the best way to escape the attack on your castle and battle the talking mime!",
-"[Alex]: I needed an outlet for my bad jokes, I'm gonna add in a Jester character! [Harp]: Oh dear god, please no [Alex]: Too late (add Jester sound effect, alex talking)",
+"[Alex]:Fantasy sucks so much man, might as well make a game that has DINOSAURS in it.  [Harp]: Please tell me your not making this game have dinosaurs in it... ",
 ""
 ],
 
 ["This is a cave!!!!"],
 [],
-["Hello! We've updated our map recently, I hope you like it. Ufortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?"]],
+["Hello! We've updated our map recently, I hope you like it. Ufortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? That ain't got nothin on sci fi! Welcome to the future!  "]],
 
   riddles:[[],
   ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false}],

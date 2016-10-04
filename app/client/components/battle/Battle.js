@@ -56,11 +56,9 @@ export default class Battle extends React.Component {
     if (battle.spells) {
       spellsStyle = {};
     }
-    if (battle.items) {
-      itemsStyle = {};
+    if (battle.inventory) {
       inventoryStyle = {};
     }
-
     return(
       <div className="battleScreen">
         <Link to='/map'>Map</Link>
