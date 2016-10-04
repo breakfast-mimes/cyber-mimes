@@ -64,8 +64,8 @@ body {
   overflow: hidden;
   position:absolute;
   border: 3px solid black;
-  /*background-image: url("http://wallup.net/wp-content/uploads/2016/05/27/182229-Game_of_Thrones-map-736x459.jpg");
-    background-repeat: no-repeat;*/
+  border-radius: 20px;
+
 }
 
 
@@ -77,6 +77,13 @@ body {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
+  border-radius: 15px 50px;
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+.invItem {
+  font-size: 20px;
 }
 
 .story {
@@ -88,6 +95,9 @@ body {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
+  border-radius: 50px 15px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
 }
 
 #north {
@@ -372,4 +382,37 @@ button {
   background-image: url('../assets/gui/formBorder.png');
   background-repeat: no-repeat;
   background-position: -45px -45px;
+}
+
+.table {
+  border: 3px solid black;
+  width: 450px;
+  font-family:'Raleway';
+  font-size:24px;
+
+}
+
+.bootstrapTable {
+  margin-left: 50px;
+}
+
+.leaderBoard {
+  margin-left: 50px;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.search {
+  margin-left: 970px;
+  margin-top: 20px;
+  font-size:24px;
+
+}
+
+.tableRow {
+  background-color: #8c8c8c;
+}
+
+.header {
+  background-color:#8c8c8c; 
 }

@@ -1,41 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
 
 
 
 const Leaderboard = React.createClass({
+// {results.map((char,i)=>
+// <li key={i}>{"character name: " + char.charactername +  "  level " + char.level}</li>)}
 
 	componentWillMount() {
 	this.props.getAllCharacters();
 	},
-	// var sorted = results.sort(function(obj1,obj2){
-		// 			return obj2.level - obj1.level;
-	// 	// 			})
-	// console.log('****SORTED',sorted);
-	render() {
-	console.log('hello');
 
-		let results = this.props.game.allChars;
-					console.log('RESULT',results);
+
+	render() {
+
+					let results = this.props.game.allChars;
 					results.sort(function(obj1,obj2){
 					return obj2.level - obj1.level;})
+						console.log('RESULTS',results);
 
-		// console.log('SORTED',sorted);
-		// console.log('props',this.props)
+
 			return (
 				<div>
 
-	        	<div className='leaderboard'>
-			      <h1>Leaderboard</h1>
-						<ul>
-						{results.map((char,i)=>
 
-						<li key={i}>{"character name: " + char.charactername +  "  level " + char.level}</li>)}
+			 <h1 className='leaderBoard'>Leaderboard</h1>
+			 <h2 className='search'>Search</h2>
 
-						</ul>
+
+		<div className='bootstrapTable'>
+			<BootstrapTable className='table' trClassName= 'tableRow' data={results}
+
+					search={true}
+					striped={true}
+					hover={true}
+					searchPlaceholder="Character Name"
+					>
+		      <TableHeaderColumn className='header' dataField="charactername" isKey={true} dataAlign='center' width='100'>Character Name</TableHeaderColumn>
+		      <TableHeaderColumn className='header' dataField="level" dataSort={true} >Level</TableHeaderColumn>
+  		</BootstrapTable>
+		</div> 
 				</div>
 
-				</div>
 			)
 	}
 
