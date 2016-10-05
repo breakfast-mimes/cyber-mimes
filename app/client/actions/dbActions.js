@@ -58,7 +58,7 @@ export function init() {
 			} else {
 				dispatch({
 					type: "GET_CHARACTER",
-					hero: JSON.parse(res.data)
+					hero: JSON.parse(window.localStorage.getItem('hero'))
 				})
 			}
 		})
