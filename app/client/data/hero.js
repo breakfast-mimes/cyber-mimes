@@ -1,7 +1,7 @@
 import {weapons} from './items.js'
 
 const hero = {
-  name: "laser hero",
+  name: "lazer hero",
   stats: {
     str: 100,
     dex: 5,
@@ -28,6 +28,15 @@ const hero = {
   level: {
     level: 0,
     exp: 0
+  },
+  battleFeatures: {
+    health:false,
+    manaBar:false,
+    log:false,
+    actions:false,
+    spells:false,
+    items:false,
+    inventory:false
   },
   battleActions: {
     attack: "Attack",

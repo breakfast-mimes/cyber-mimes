@@ -30,6 +30,7 @@ export function pickUp(item) {
 }
 
 export function pickUpFeature(feature){
+  console.log("picking up feature")
   return{
     type:'PICK_UP_FEATURE',
     feature
