@@ -32,25 +32,28 @@ const CharacterForm = React.createClass({
 		const {hero, statLowCap, statHighCap, skillLowCap, skillHighCap} = this.props;
 		return (
 			<Form horizontal className='form formBorder'>
-				{( this.props.levelUp ? null :
-        <div>
-          <FormGroup>
-  		      <Col smOffset={2} sm={2}>
-              <ControlLabel>Character Name</ControlLabel>
-            </Col>
-  				</FormGroup>
-          <FormGroup>
-            <Col smOffset={2} sm={2} style={{width: '230px'}}>
-              <FormControl
-                type="text"
-                value={this.state.name}
-                placeholder="Character Name"
-                onChange={this.handleChange}
-                className='nameInput'/>
-            </Col>
-          </FormGroup>
-        </div>
-        )}
+        <FormGroup >
+		      <Col smOffset={2} sm={4}>
+            <ControlLabel>Character Name</ControlLabel>
+          </Col>
+				</FormGroup>
+        <FormGroup>
+          <Col smOffset={2} sm={2} style={{width: '230px'}}>
+            <div className='nameBorder'>
+            {
+              this.props.levelUp ?
+                <div className='heroName'>{this.state.name}</div>
+              :
+                <FormControl
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  className='nameInput'
+                  style={{border: 'none', 'boxShadow':'none', 'WebkitBoxShadow': 'none', 'outline': 'none' }}/>
+            }
+            </div>
+          </Col>
+        </FormGroup>
 
         <FormGroup className='noSelect'>
         	<Col smOffset={2} sm={1} className='formTitle'>Stats</Col>
@@ -58,7 +61,7 @@ const CharacterForm = React.createClass({
         </FormGroup>
         <FormGroup>
 	    		{Object.keys(hero.stats).map((k, i) =>
-            <Col smOffset={2}>
+            <Col smOffset={2} key={i}>
   	    			<Entry {...this.props}
       					group='stats'
       					stat={k}
@@ -76,7 +79,7 @@ const CharacterForm = React.createClass({
         </FormGroup>
         <FormGroup>
 				 	{Object.keys(hero.skills).map((k, i) =>
-            <Col smOffset={2}>
+            <Col smOffset={2} key={i}>
   				 		<Entry {...this.props}
   				 		  group='skills'
   				 		  stat={k}
