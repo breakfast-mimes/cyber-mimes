@@ -68,10 +68,10 @@ export default class Map extends React.Component {
     return(
       <div>
         <div id="map">
-          <img id="north" src={north} width="150" height="150" onClick={north ? this.props.goNorth : null} />
-          <img id="east" src={east} width="150" height="150" onClick={east ? this.props.goEast: null} />
-          <img id="south" src={south} width="150" height="150" onClick={south ? this.props.goSouth: null} />
-          <img id="west" src={west} width="150" height="150" onClick={west ? this.props.goWest: null} />
+          {north ? <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} /> : null }
+          {east ? <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} /> : null }
+          {south ? <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} /> : null}
+          {west ? <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} /> : null}
           <div> {description} </div>
           <Riddle riddle={riddle} pickUp={this.props.pickUp}/>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName}</div>

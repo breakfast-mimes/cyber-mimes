@@ -36,7 +36,7 @@ export default class Map extends React.Component {
 
     if (locationX >= 1) {
       this.state.message = "Whoa, we made it! And check out that font for the 'create character' button. Looks like we are making some progress. Click it and lets see if we have our 'Create Character' screen complete"
-      toRender.push(<Link to='/'>Create Character</Link>)
+      toRender.push(<Link to='/creationform'>Create Character</Link>)
     }
 
     return(
