@@ -70,7 +70,7 @@ const map = {
 
 ["This is a cave!!!!"],
 [],
-["Hello! We've updated our map recently, I hope you like it. Ufortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? That ain't got nothin on sci fi! Welcome to the future!  "]],
+["Hello! We've updated our map recently, I hope you like it. Ufortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! "]],
 
   riddles:[[],
   ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false}],
