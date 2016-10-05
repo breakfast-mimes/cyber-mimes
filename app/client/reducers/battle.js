@@ -10,9 +10,6 @@ function battle(state = [], action) {
       state.enemyId = action.id;
       return state;
 
-    case "PICK_UP_FEATURE":
-      state[action.feature] = !state[action.feature]
-
     default:
       state.enemyTurn = !state.enemyTurn;
       return state;

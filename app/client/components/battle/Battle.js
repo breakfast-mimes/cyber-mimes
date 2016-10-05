@@ -44,19 +44,19 @@ export default class Battle extends React.Component {
     const { enemyId } = game;
     let healthStyle, logStyle, actionsStyle, spellsStyle,itemsStyle,inventoryStyle
     healthStyle=logStyle=actionsStyle=spellsStyle=itemsStyle=inventoryStyle={display:'none'}
-    if (battle.log) {
+    if (hero.battleFeatures.log) {
       logStyle = {};
     }
-    if (battle.health) {
+    if (hero.battleFeatures.health) {
       healthStyle = {};
     }
-    if (battle.actions) {
+    if (hero.battleFeatures.actions) {
       actionsStyle = {};
     }
-    if (battle.spells) {
+    if (hero.battleFeatures.spells) {
       spellsStyle = {};
     }
-    if (battle.inventory) {
+    if (hero.battleFeatures.inventory) {
       inventoryStyle = {};
     }
     return(
