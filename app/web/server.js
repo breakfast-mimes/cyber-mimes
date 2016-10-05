@@ -25,7 +25,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(session({
-  secret: "very very secret",
+  secret: require('./config/config.js').secret,
   resave: false,
   saveUninitialized: true
 }));
