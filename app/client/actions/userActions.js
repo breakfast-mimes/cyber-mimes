@@ -14,7 +14,7 @@ export function login(name, pass) {
 			axios.get('/api/character', {})
 			.then(res => {
 				if(res.data === '[]') {
-					browserHistory.push('/creationform')
+					browserHistory.push('/startmap')
 				} else {
 					dispatch({
 						type: "GET_CHARACTER",
@@ -41,7 +41,7 @@ export function signup(name, pass) {
 		})
 		.then(function(response) {
 			dispatch({type: "USER_LOGIN"});
-			browserHistory.push('/creationform');
+			browserHistory.push('/startmap');
 		})
 		.catch(function(response) {
 			dispatch({type: "USERNAME_SUCCESS", usernameSuccess: false});
@@ -69,7 +69,7 @@ export function isUserAuth(login) {
 		axios.post('/isauth', {})
 		.then(function(response) {
 			dispatch({type: "USER_AUTH", isAuth: true});
-			if(login) browserHistory.push('/map')
+			//if(login) browserHistory.push('/map')
 		})
 		.catch(function(response) {
 			browserHistory.push('/')

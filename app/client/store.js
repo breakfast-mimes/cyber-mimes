@@ -40,12 +40,9 @@ store.subscribe(() => {
     window.localStorage.setItem('hero', currentState);
   if(currentState !== defaultHero && currentState !== previousState &&
      logged && location !== '/' && location !== '/creationform') {
-    console.log("store update", location);
-    console.log(currentState);
-    console.log(previousState)
     store.dispatch(putCharacter(JSON.parse(window.localStorage.getItem('hero'))));
   } else {
-    console.log("hero state didnt change");
+    //console.log("hero state didnt change");
   }
 });
 
