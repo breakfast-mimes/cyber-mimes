@@ -97,6 +97,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Zapf Chancery', sans-serif;
   font-size: 20px;
+  padding:15px;
 }
 
 #north {
@@ -316,9 +317,16 @@ body {
   left: 50px;
 }
 
-.spaceship {position: relative;
+.spaceship {
+  position: relative;
   left: 600px;
   top:40px;
+}
+
+.clippy {
+  position: relative;
+  left: 200px;
+  top: 200px;
 }
 
 .spaceship4 {

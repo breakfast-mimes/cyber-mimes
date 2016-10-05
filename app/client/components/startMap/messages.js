@@ -19,5 +19,5 @@ export default {
     "Listen to the instructions Mr or Mrs User, we're hard at work, nothing to see here",
     "Trust me, nothing back here",
     "I sincerely do apologize, I honestly thought you would listen to instructions and not click on the thing you were told not to click. Please travel North and then East!",
-    "You don't know what you've just done, do you?"]
+    "Thank you, now please head East"]
 };
