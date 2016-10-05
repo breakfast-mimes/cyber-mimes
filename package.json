@@ -5,7 +5,7 @@
   "main": "app/web/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "babel-node server.js",
+    "server": "babel-node app/web/server.js",
     "start": "node app/web/server.js",
     "commit": "git-cz"
   },
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.14.0",
     "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.5",
     "babel-preset-react": "^6.16.0",
