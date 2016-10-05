@@ -255,6 +255,41 @@ body {
   background-color: #DDD;
 }
 
+.rawr {
+  position: relative;
+  left: 300px;
+  top: 100px;
+}
+
+.thriller {
+  position: relative;
+  left: 10px;
+  top: 20px;
+}
+
+.pew {
+  position: relative;
+  top: 550px;
+  left: 100px;
+}
+
+.bang {
+  position: relative;
+  top: 440px;
+  left: 200px;
+}
+
+.flappy {
+  position: relative;
+  left: 500px;
+  top:100px;
+}
+
+.trice {
+  position: relative;
+  top:100px;
+}
+
 
 .monster {
   position: relative;
