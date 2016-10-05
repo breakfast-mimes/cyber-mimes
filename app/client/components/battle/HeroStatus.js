@@ -6,7 +6,7 @@ const HeroStatus = React.createClass({
     const {hero, style} = this.props
     return (
       <div className="heroStatus">
-        <div>
+        <div className='heroStats'>
           { " Name: " + hero.name
           + " Lvl: " + hero.level.level
           + " Exp: " + hero.level.exp

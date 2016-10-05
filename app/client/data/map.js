@@ -44,23 +44,23 @@ const map = {
   ["","health","actions"]],
 
 
-  easterEggs:[["" ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3", className:"bang"}]],
+  easterEggs:[["" ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3"}]],
 
+  [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
 
-  [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3", className:"pew"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
-  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: "http://bestanimations.com/Fantasy/Monsters/animated-balrog-gif.gif", className: 'monster'},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{className:"flappy",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{sound:"https://a.clyp.it/o2x1rwjo.mp3", className:"thriller", image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-8.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif',className: 'rawr',sound:"https://a.clyp.it/sspvhmed.mp3"},{className:"trice",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-1.gif"}]],
+  [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif', className: 'knights', sound:"https://a.clyp.it/sspvhmed.mp3"}]],
 
   [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif',className:'caveFight'}]],
   [],
   [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
   ],
 
-  messages:[["Lazers and space ships, oh my!",
+  messages:[["The year is 3058 according to a select few record keepers. New age hipsters and Talking Mimes have taken over the world and declared time as relative, banning the recording of time and erasing history as we know it. Use your time travel ability to click around our map to different era's and prove that history did happen!",
   "[Selim]: What if we tried an old western theme instead? [Alex]: That makes no sense with magic in the game [Selim]: Oh, and steampunk does?? [Alex]: But steampunk is so coooooool!!!",
 "Woah! Cowboy steampunk? Will will smith smith a giant robot spider? Yes, I think Will smith will smith a giant robot spider[giant robot spider item] "],
 
 ["[Alex]:Oooo ya Know what would be cooler than fantasy? STEAMPUNK!!! [Harp]: What?! That doesn't make any sense with magic in the game! [Alex]: Fine then, you just don't have to visit steampunk-theme then ",
-"Ya know, that map was kinda small, so we made it bigger! Also, you might wanna look around for the rest of the battle page features? We think they're lying around in the code somewhere. And we still havn't really decided on a theme, so we just made it have alot of themes :D",
+"[Alex]Hmm, so we made progress on our maps, but our game features aren't done.. Quick, we need a storyline to cover this up! [Harp] I got it!...The year is 3058 according to a select few record keepers. New age hipsters and Talking Mimes have taken over the world and declared time as relative, banning the recording of time and erasing history as we know it. Use your time travel ability to click around our map to different era's to prove history happened, and collect items to battle the Talking Mime and his henchmen.",
 "Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?"],
 
 ["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Find the best way to escape the attack on your castle and battle the talking mime!",
