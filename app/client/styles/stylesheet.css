@@ -79,7 +79,6 @@ body {
   border: 3px solid black;
   border-radius: 15px 50px;
   font-family: 'Raleway', sans-serif;
-  
 }
 
 .invItem {
@@ -144,7 +143,6 @@ body {
   background-color: #DDD;
   margin-bottom: 1px;
   vertical-align: middle;
-  height: 20px;
   padding-left: 8px;
 }
 
@@ -253,18 +251,6 @@ body {
   -o-user-select: none
 }
 
-
-
-button {
-  font-size: 12px;
-  font-family: 'Play', cursive;
-  size: 10px;
-  padding: 10px 30px;
-  border-radius: 8px;
-  background-color: white;
-  border: 2px solid rgb(0, 172, 237)
-}
-
 .formContainer {
   background-color: #DDD;
 }
@@ -304,6 +290,19 @@ button {
   position: relative;
   top: 500px;
   left: 250px;
+}
+
+.heroName {
+  color: gold;
+  font-family: 'Zapf Chancery';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 25px;
+  background: linear-gradient(#FFF65C 0%, #9A8000 100%);
+  text-shadow: -0.02em -0.03em 0.005em rgba(255, 223, 0, 0.70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 .inputContainer {
@@ -367,21 +366,21 @@ button {
   background-position: -40px -490px;
 }
 
-.leftBorder {
-  position: relative;
-  left: 225px;
-  top: -900px;
-  height: 55px;
-  width: 15px;
-  background-position: -855px -225px;
-}
-
 .formBorder {
+  width: 450px;
+  margin-left: 230px;
   padding-top: 25px;
   padding-bottom: 25px;
   background-image: url('../assets/gui/formBorder.png');
   background-repeat: no-repeat;
-  background-position: -45px -45px;
+  background-position: -265px -45px;
+}
+
+.nameBorder {
+  padding: 5px 14px;
+  background-image: url('../assets/gui/nameBorder.png');
+  background-repeat: no-repeat;
+  background-position: -170px -224px;
 }
 
 .table {
@@ -414,5 +413,5 @@ button {
 }
 
 .header {
-  background-color:#8c8c8c; 
+  background-color:#8c8c8c;
 }
