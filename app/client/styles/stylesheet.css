@@ -286,7 +286,13 @@ button {
 .archer {
   position: relative;
   left: 500px;
-  bottom:403px;
+  bottom:173px;
+}
+
+.knights {
+  position: relative;
+  top: 150px;
+  left: 50px;
 }
 
 .spaceship {position: relative;
