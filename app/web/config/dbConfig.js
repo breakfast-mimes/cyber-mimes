@@ -1,7 +1,9 @@
 var neo4j = require('neo4j');
+var config = require('./config');
+
 var connection = new neo4j.GraphDatabase({
-    url: 'http://hobby-jimnaomjfhocgbkegmbfaenl.dbs.graphenedb.com:24789/db/data/',
-    auth: {username: 'cyber_mimes', password: 'YYVFm2sWEmj8u6UCQX40'},
+    url: config.DB_URL,
+    auth: {username: config.DB_USERNAME, password: config.DB_PASSWORD},
 });
 
 module.exports = connection;
