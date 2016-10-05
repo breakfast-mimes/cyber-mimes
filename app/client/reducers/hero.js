@@ -108,15 +108,15 @@ function hero(state = [], action) {
 
     case "GET_CHARACTER":
       state = action.hero;
+      return state;
 
     case "CREATE_CHARACTER":
       state.hero = action.hero;
-
-    case "GET_CHARACTER":
-      state = action.hero;
+      return state;
 
     case "USER_LOGOUT":
       state = defaultHero;
+      window.localStorage.setItem('hero', null)
       return state;
 
     default:
