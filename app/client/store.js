@@ -16,9 +16,8 @@ import startMap from './data/startMap';
 import battle from './data/battle';
 window.localStorage.setItem('defaultHero', JSON.stringify(hero))
 
-console.log("gettin hero from localStorage", JSON.parse(window.localStorage.getItem('hero')))
 const defaultState = {
-  hero: JSON.parse(window.localStorage.getItem('hero')) === null ? JSON.parse(window.localStorage.getItem('defaultHero')) : JSON.parse(window.localStorage.getItem('hero')),
+  hero: JSON.parse(window.localStorage.getItem('hero')) === null ? hero : JSON.parse(window.localStorage.getItem('hero')),
   enemy,
   game,
   map,
