@@ -14,11 +14,10 @@ import game from './data/game';
 import map from './data/map';
 import startMap from './data/startMap';
 import battle from './data/battle';
-
-
+window.localStorage.setItem('defaultHero', JSON.stringify(hero))
 
 const defaultState = {
-  hero,
+  hero: JSON.parse(window.localStorage.getItem('hero')) === null ? hero : JSON.parse(window.localStorage.getItem('hero')),
   enemy,
   game,
   map,
@@ -37,12 +36,14 @@ store.subscribe(() => {
   let location = store.getState().routing.locationBeforeTransitions.pathname;
   let previousState = currentState;
   currentState = JSON.stringify(store.getState().hero);
-  if(currentState!== defaultHero && currentState !== previousState &&
+  if(currentState !== defaultHero)
+    window.localStorage.setItem('hero', currentState);
+  if(currentState !== defaultHero && currentState !== previousState &&
      logged && location !== '/' && location !== '/creationform') {
     console.log("store update", location);
     console.log(currentState);
     console.log(previousState)
-    store.dispatch(putCharacter(JSON.parse(currentState)));
+    store.dispatch(putCharacter(JSON.parse(window.localStorage.getItem('hero'))));
   } else {
     console.log("hero state didnt change");
   }
