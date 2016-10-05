@@ -32,70 +32,74 @@ const CharacterForm = React.createClass({
 		const {hero, statLowCap, statHighCap, skillLowCap, skillHighCap} = this.props;
 		return (
 			<Form horizontal className='form formBorder'>
-        <FormGroup >
-		      <Col smOffset={2} sm={4}>
-            <ControlLabel>Character Name</ControlLabel>
-          </Col>
-				</FormGroup>
-        <FormGroup>
-          <Col smOffset={2} sm={2} style={{width: '230px'}}>
-            <div className='nameBorder'>
-            {
-              this.props.levelUp ?
-                <div className='heroName'>{this.state.name}</div>
-              :
-                <FormControl
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  className='nameInput'
-                  style={{border: 'none', 'boxShadow':'none', 'WebkitBoxShadow': 'none', 'outline': 'none' }}/>
-            }
-            </div>
-          </Col>
-        </FormGroup>
+        <div className='formColumn1'>
+          <FormGroup>
+  		      <Col smOffset={2} sm={4}>
+              <ControlLabel>Character Name</ControlLabel>
+            </Col>
+  				</FormGroup>
+          <FormGroup>
+            <Col smOffset={2} sm={2} style={{width: '230px'}}>
+              <div className='nameBorder'>
+              {
+                this.props.levelUp ?
+                  <div className='heroName'>{this.state.name}</div>
+                :
+                  <FormControl
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                    className='nameInput'
+                    style={{border: 'none', 'boxShadow':'none', 'WebkitBoxShadow': 'none', 'outline': 'none' }}/>
+              }
+              </div>
+            </Col>
+          </FormGroup>
 
-        <FormGroup className='noSelect'>
-        	<Col smOffset={2} sm={1} className='formTitle'>Stats</Col>
-        	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.statAllocation}</div></Col>
-        </FormGroup>
-        <FormGroup>
-	    		{Object.keys(hero.stats).map((k, i) =>
-            <Col smOffset={2} key={i}>
-  	    			<Entry {...this.props}
-      					group='stats'
-      					stat={k}
-      					updateAllocation={this.changeStat}
-      					allocation={this.state.statAllocation}
-                highCap={statHighCap}
-                lowCap={statLowCap}
-      					key={i}/>
-            </Col>)}
-				</FormGroup>
+          <FormGroup className='noSelect'>
+          	<Col smOffset={2} sm={1} className='formTitle'>Stats</Col>
+          	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.statAllocation}</div></Col>
+          </FormGroup>
+          <FormGroup>
+  	    		{Object.keys(hero.stats).map((k, i) =>
+              <Col smOffset={2} key={i}>
+    	    			<Entry {...this.props}
+        					group='stats'
+        					stat={k}
+        					updateAllocation={this.changeStat}
+        					allocation={this.state.statAllocation}
+                  highCap={statHighCap}
+                  lowCap={statLowCap}
+        					key={i}/>
+              </Col>)}
+  				</FormGroup>
+        </div>
 
-				<FormGroup className='noSelect'>
-	        	<Col smOffset={2} sm={1} className='formTitle'>Skills</Col>
-	        	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.skillAllocation}</div></Col>
-        </FormGroup>
-        <FormGroup>
-				 	{Object.keys(hero.skills).map((k, i) =>
-            <Col smOffset={2} key={i}>
-  				 		<Entry {...this.props}
-  				 		  group='skills'
-  				 		  stat={k}
-  				 		  updateAllocation={this.changeSkill}
-  				 		  allocation={this.state.skillAllocation}
-                highCap={skillHighCap}
-                lowCap={skillLowCap}
-  				 		  key={i}/>
-            </Col>)}
-				</FormGroup>
+        <div className='formColumn2'>
+  				<FormGroup className='noSelect'>
+  	        	<Col smOffset={2} sm={1} className='formTitle'>Skills</Col>
+  	        	<Col sm={1} className='inputContainer2'><div className='number'>{this.state.skillAllocation}</div></Col>
+          </FormGroup>
+          <FormGroup>
+  				 	{Object.keys(hero.skills).map((k, i) =>
+              <Col smOffset={2} key={i}>
+    				 		<Entry {...this.props}
+    				 		  group='skills'
+    				 		  stat={k}
+    				 		  updateAllocation={this.changeSkill}
+    				 		  allocation={this.state.skillAllocation}
+                  highCap={skillHighCap}
+                  lowCap={skillLowCap}
+    				 		  key={i}/>
+              </Col>)}
+  				</FormGroup>
 
-				<FormGroup>
-          <Col smOffset={3}>
-            <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
-          </Col>
-		    </FormGroup>
+  				<FormGroup className='createButton'>
+            <Col smOffset={7}>
+              <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
+            </Col>
+  		    </FormGroup>
+        </div>
 
 		  </Form>
 		)
