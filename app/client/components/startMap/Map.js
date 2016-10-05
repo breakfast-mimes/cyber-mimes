@@ -35,12 +35,12 @@ export default class Map extends React.Component {
     }
 
     if (locationX >= 1) {
-      this.state.message = "Ya know what? this is kinda boring, how about you create a character instead?"
+      this.state.message = "Whoa, we made it! And check out that font for the 'create character' button. Looks like we are making some progress. Click it and lets see if we have our 'Create Character' screen complete"
       toRender.push(<Link to='/'>Create Character</Link>)
     }
 
     return(
-      <div>
+      <div className='startMap'>
         MAP <br/>
         {this.state.message}
         <br/> <br/>

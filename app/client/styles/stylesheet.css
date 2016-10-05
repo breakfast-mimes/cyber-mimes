@@ -78,7 +78,7 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 15px 50px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Zapf Chancery', sans-serif;
 }
 
 .invItem {
@@ -95,7 +95,7 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Zapf Chancery', sans-serif;
   font-size: 20px;
 }
 
@@ -255,6 +255,41 @@ body {
   background-color: #DDD;
 }
 
+.rawr {
+  position: relative;
+  left: 300px;
+  top: 100px;
+}
+
+.thriller {
+  position: relative;
+  left: 10px;
+  top: 20px;
+}
+
+.pew {
+  position: relative;
+  top: 550px;
+  left: 100px;
+}
+
+.bang {
+  position: relative;
+  top: 440px;
+  left: 200px;
+}
+
+.flappy {
+  position: relative;
+  left: 500px;
+  top:100px;
+}
+
+.trice {
+  position: relative;
+  top:100px;
+}
+
 
 .monster {
   position: relative;
@@ -272,7 +307,13 @@ body {
 .archer {
   position: relative;
   left: 500px;
-  bottom:403px;
+  bottom:173px;
+}
+
+.knights {
+  position: relative;
+  top: 150px;
+  left: 50px;
 }
 
 .spaceship {position: relative;
@@ -386,7 +427,7 @@ body {
 .table {
   border: 3px solid black;
   width: 450px;
-  font-family:'Raleway';
+  font-family:'Zapf Chancery';
   font-size:24px;
 
 }
@@ -414,4 +455,17 @@ body {
 
 .header {
   background-color:#8c8c8c;
+}
+
+.startMap {
+  color: gold;
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 25px;
+  /*background: linear-gradient(#FFF65C 0%, #9A8000 100%);*/
+  text-shadow: -0.02em -0.03em 0.005em rgba(255, 223, 0, 0.70);
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+
 }

@@ -13,7 +13,7 @@ export default class Map extends React.Component {
     }
   }
   render(){
-    const {map, hero, mapSend}  = this.props;
+    const {map, hero, mapSend, enemy}  = this.props;
     const {images, items, descriptions, enemyIds, features, easterEggs, riddles } = map
 
     let row = map.location.row
@@ -54,10 +54,17 @@ export default class Map extends React.Component {
       riddle = riddles[row][col];
     }
 
-    if(enemyId && this.props.enemy[enemyId].status.health > 0) {
-      enemyName = this.props.enemy[enemyId].name
+    if(enemyId && enemy[enemyId].status.health > 0) {
+      enemyName = enemy[enemyId].name
+    } else if(row === 3 && col === 0){//infinite battle room
+      for (var i in enemy) {
+        if (enemy[i].status.health > 0){
+          enemyId = i;
+          enemyName = enemy[i].name;
+        }
+      }
     }
-    console.log(this.props.enemy,"props enemy name")
+    console.log(enemy,"props enemy name")
     return(
       <div>
         <div id="map">
@@ -73,7 +80,7 @@ export default class Map extends React.Component {
             {easterEgg ? (easterEgg).map((item) =>
               <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}
           </div>
-          <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, this.props.enemy, enemyId)}>{enemyName}</Link>
+          <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, enemy, enemyId)}>{enemyName}</Link>
           <img id="background" src={image}/>
         </div>
         <div className='inv'>
