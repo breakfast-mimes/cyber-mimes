@@ -8,7 +8,7 @@ const map = {
   //http://bit.ly/2dcQUM4
 
 
-  images:[[ "https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
+  images:[[ 'artHere'/*"https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg"*/, "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
   ["http://i.imgur.com/kocWoDf.png", "http://wallpapercave.com/wp/565sgAQ.jpg", "http://bit.ly/2cGiroJ"],
   ["https://images5.alphacoders.com/374/374820.jpg", "http://i.imgur.com/YhZqhgN.png", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg"],
