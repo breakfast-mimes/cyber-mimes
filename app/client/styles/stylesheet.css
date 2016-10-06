@@ -323,9 +323,16 @@ body {
   left: 50px;
 }
 
-.spaceship {position: relative;
+.spaceship {
+  position: relative;
   left: 600px;
   top:40px;
+}
+
+.clippy {
+  position: relative;
+  left: 200px;
+  top: 200px;
 }
 
 .spaceship4 {
