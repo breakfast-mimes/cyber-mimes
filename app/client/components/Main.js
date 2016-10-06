@@ -11,6 +11,13 @@ const Main = React.createClass({
     if(loc.pathname !== '/' && !this.props.game.logged) {
       this.props.isUserAuth();
     }
+    if(loc.pathname == '/' && this.props.game.logged) {
+      browserHistory.push('/map')
+    }
+  },
+
+  componentWillUnmount() {
+    window.localStorage.setItem('hero', null);
   },
 
   render() {
