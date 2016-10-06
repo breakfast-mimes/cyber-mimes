@@ -5,7 +5,10 @@ import Inventory from './Inventory'
 import Riddle from './Riddle'
 import Story from './Story'
 import Stats from './Stats'
-import EasterEgg from './EasterEgg'
+import EasterEgg from './EasterEgg';
+
+var backgroundImages = {};
+backgroundImages.artHere = require('./photos/artHere.png')
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -82,7 +85,7 @@ export default class Map extends React.Component {
               <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}
           </div>
           <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, enemy, enemyId)}>{enemyName}</Link>
-          <img id="background" src={image}/>
+          <img id="background" src={backgroundImages[image]}/>
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
