@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { Link } from 'react-router';
 import Sound from 'react-sound';
 import Inventory from './Inventory'

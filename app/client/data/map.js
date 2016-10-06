@@ -1,22 +1,28 @@
 export const weapons = require('./items/weapons.json');
 
 const map = {
-  location: {row:1,col:1},
+  location: {row:5,col:0},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   //http://wallpapercave.com/sci-fi-background
   //http://bit.ly/2d4jS28
   //http://bit.ly/2dcQUM4
+//https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg
 
+  // images:[[ "photos/artHere.png", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
 
-  images:[[ "https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
-  ["http://i.imgur.com/kocWoDf.png", "http://wallpapercave.com/wp/565sgAQ.jpg", "https://media.giphy.com/media/12gpW8LFqujYlO/giphy.gif"],
-  ["https://images5.alphacoders.com/374/374820.jpg", "http://i.imgur.com/YhZqhgN.png", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
-  ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg"],
+  //BACKGROUND IMAGES
+  images:[[ 'office', "code1", "wildWest"],
+  ["code2", "sciFi", "https://media.giphy.com/media/12gpW8LFqujYlO/giphy.gif"],
+  ["fantasy", "code3", "dinosaurs"],
+  ["cave"],
+
 
   [],
-  ["http://i.imgur.com/l2PuKhs.png", "http://i.imgur.com/cxwjt5j.png", "http://i.imgur.com/j9hi3HQ.png"]
+  ['start', "artHere", "findArtOnline"]
   ],
 
+
+  //ITEMS
   items: [[{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"},{},{},{},{},{},{},{},{}],
   [],
   [],
@@ -29,6 +35,8 @@ const map = {
   [],
   [],
   []],
+
+  //LINKS TO BATTLE SCREEN TO FIGHT ENEMY
   enemyIds: [["3", "2", "1"],
   ["0","2","2"],
   ["1"],
@@ -44,12 +52,16 @@ const map = {
   ["","health","actions"]],
 
 
-
+  //EASTEREGGS
   easterEggs:[[[{className:"clippy", image:"https://media.giphy.com/media/XbPoIsyy9xqjS/200.gif"}] ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3", className:"bang"}]],
 
 
-  [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
 
+
+
+  //IMAGES INSIDE MAPS
+
+  [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3", className:"pew"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
 
   [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{className:"flappy",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{sound:"https://a.clyp.it/o2x1rwjo.mp3", className:"thriller", image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-8.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif',className: 'rawr',sound:"https://a.clyp.it/sspvhmed.mp3"},{className:"trice",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-1.gif", sound:"https://a.clyp.it/hblpp0cn.mp3"}]],
 
@@ -59,6 +71,7 @@ const map = {
   [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
   ],
 
+//STORYLINE MESSAGES
   messages:[["FILL THIS OUT",
   "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User, click around our code for some extra health and battle one of the Talking Mime's henchmen.",
 "[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],
@@ -76,6 +89,7 @@ const map = {
 [],
 ["Hello! We've updated our map recently, I hope you like it. Unfortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! "]],
 
+//RIDDLES
   riddles:[["","",{question: "How many horse puns are used in the story line for this map?", answer: "four", reward: weapons["ANTIMATTER_GUN"],className:"sciRiddle",solved:false}],
   ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint",className: 'sciRiddle',solved: false}],
   [],
