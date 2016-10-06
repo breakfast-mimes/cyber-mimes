@@ -19,6 +19,7 @@ backgroundImages["fantasy"] = require('./photos/fantasy.jpg')
 backgroundImages["wildWest"] = require('./photos/wildWest.jpg')
 backgroundImages["dinosaurs"] = require('./photos/dinosaurs.jpg')
 backgroundImages["cave"] = require('./photos/cave.png')
+backgroundImages["trippy"] = require('./photos/trippy.gif')
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -95,7 +96,7 @@ export default class Map extends React.Component {
               <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}
           </div>
           <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, enemy, enemyId)}>{enemyName}</Link>
-          <img id="background" src={image}/>
+          <img id="background" src={backgroundImages[image]}/>
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>

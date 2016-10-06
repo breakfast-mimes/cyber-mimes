@@ -12,7 +12,7 @@ const map = {
 
   //BACKGROUND IMAGES
   images:[[ 'office', "code1", "wildWest"],
-  ["code2", "sciFi", "https://media.giphy.com/media/12gpW8LFqujYlO/giphy.gif"],
+  ["code2", "sciFi", "trippy"],
   ["fantasy", "code3", "dinosaurs"],
   ["cave"],
 
@@ -54,10 +54,6 @@ const map = {
 
   //EASTEREGGS
   easterEggs:[[[{className:"clippy", image:"https://media.giphy.com/media/XbPoIsyy9xqjS/200.gif"}] ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3", className:"bang"}]],
-
-
-
-
 
   //IMAGES INSIDE MAPS
 
