@@ -10,16 +10,19 @@ const map = {
 
   // images:[[ "photos/artHere.png", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
 
-
+  //BACKGROUND IMAGES
   images:[[ 'office', "code1", "wildWest"],
-  ["code2", "sciFi", "http://bit.ly/2cGiroJ"],
+  ["code2", "sciFi", "https://media.giphy.com/media/12gpW8LFqujYlO/giphy.gif"],
   ["fantasy", "code3", "dinosaurs"],
   ["cave"],
+
 
   [],
   ['start', "artHere", "findArtOnline"]
   ],
 
+
+  //ITEMS
   items: [[{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"},{},{},{},{},{},{},{},{}],
   [],
   [],
@@ -32,8 +35,10 @@ const map = {
   [],
   [],
   []],
+
+  //LINKS TO BATTLE SCREEN TO FIGHT ENEMY
   enemyIds: [["3", "2", "1"],
-  ["0","2"],
+  ["0","2","2"],
   ["1"],
   [],
   [],
@@ -47,10 +52,17 @@ const map = {
   ["","health","actions"]],
 
 
-
+  //EASTEREGGS
   easterEggs:[[[{className:"clippy", image:"https://media.giphy.com/media/XbPoIsyy9xqjS/200.gif"}] ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3", className:"bang"}]],
 
+
+
+
+
+  //IMAGES INSIDE MAPS
+
   [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3", className:"pew"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
+
   [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{className:"flappy",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{sound:"https://a.clyp.it/o2x1rwjo.mp3", className:"thriller", image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-8.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif',className: 'rawr',sound:"https://a.clyp.it/sspvhmed.mp3"},{className:"trice",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-1.gif", sound:"https://a.clyp.it/hblpp0cn.mp3"}]],
 
 
@@ -59,25 +71,27 @@ const map = {
   [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
   ],
 
-  messages:[["The year is 3058 according to a select few record keepers. New age hipsters and Talking Mimes have taken over the world and declared time as relative, banning the recording of time and erasing history as we know it. Use your time travel ability to click around our map to different era's and prove that history did happen!",
-  "[Selim]: What if we tried an old western theme instead? [Alex]: That makes no sense with magic in the game [Selim]: Oh, and steampunk does?? [Alex]: But steampunk is so coooooool!!!",
-"Woah! Cowboy steampunk? Will will smith smith a giant robot spider? Yes, I think Will smith will smith a giant robot spider[giant robot spider item] "],
+//STORYLINE MESSAGES
+  messages:[["FILL THIS OUT",
+  "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User, click around our code for some extra health and battle one of the Talking Mime's henchmen.",
+"[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],
 
-["[Alex]:Oooo ya Know what would be cooler than fantasy? STEAMPUNK!!! [Harp]: What?! That doesn't make any sense with magic in the game! [Alex]: Fine then, you just don't have to visit steampunk-theme then ",
+["[Talking Mime]: Talking Mime here, I'm busy working on a monologue for my next show, but I have sent one of my henchman to wreak havoc on your pathetic game. Try to stop him if you can. [Instructions] Click on the Talking Mime's henchman to battle him!",
 "[Alex]Hmm, so we made progress on our maps, but our game features aren't done.. Quick, we need a storyline to cover this up! [Harp] I got it!...The year is 3058 according to a select few record keepers. New age hipsters and Talking Mimes have taken over the world and declared time as relative, banning the recording of time and erasing history as we know it. Use your time travel ability to click around our map to different era's to prove history happened, and collect items to battle the Talking Mime and his henchmen.",
-"Howdy pardner, them high-fulutin software developers don't know how to decide on a theme! Why don't you click on that gun over there?"],
+"OH NO! Your time travelling has got you caught up in a time warp. Answer the riddle to escape and to stop your head from spinning. If the time warp causes you any type of medical distress, read the fine print on our sign up page, we are not liable for any damages :D "],
 
-["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Find the best way to escape the attack on your castle and battle the talking mime!",
-"[Alex]:Fantasy sucks so much man, might as well make a game that has DINOSAURS in it.  [Harp]: Please tell me your not making this game have dinosaurs in it... ",
-""
+["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Click around the map to find the best way to escape the attack on your castle and battle the Talking Mime!",
+"[Alex]: I feel like we're missing something. Executive decision - travel West for Dinosaurs! [Selim]: Oh dearlord, is this what we've come too..",
+"Watch out!! You travelled to an era full of dinosaurs. Remember all the tips you have learned from dinosaur movies over the years. Raptors are smart, T-rex's are the top of the food chain, giant electric cages cannot hold dinosaurs, and always say something quirky before and after a near death experience. Looks like the Talking Mime's henchman followed you through time, they are lurking at every corner. Don't be a coward, go to battle! [Click on the dinosaurs to see what they do!]"
 ],
 
 ["This is a cave!!!!"],
 [],
-["Hello! We've updated our map recently, I hope you like it. Ufortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! "]],
+["Hello! We've updated our map recently, I hope you like it. Unfortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! "]],
 
-  riddles:[[],
-  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false}],
+//RIDDLES
+  riddles:[["","",{question: "How many horse puns are used in the story line for this map?", answer: "four", reward: weapons["ANTIMATTER_GUN"],className:"sciRiddle",solved:false}],
+  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint",className: 'sciRiddle',solved: false}],
   [],
   [],
   [],
