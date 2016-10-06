@@ -1,29 +1,10 @@
-import React from 'react';
+  import React from 'react';
 import { Link } from 'react-router';
 import Sound from 'react-sound';
 import Inventory from './Inventory'
 import Riddle from './Riddle'
 import Story from './Story'
-import Stats from './Stats'
-import EasterEgg from './EasterEgg';
-
-var backgroundImages = {};
-backgroundImages["artHere"] = require('./photos/artHere.png')
-backgroundImages["start"] = require('./photos/start.png')
-backgroundImages["findArtOnline"] = require('./photos/findArtOnline.png')
-backgroundImages["office"] = require('./photos/office.jpg')
-backgroundImages["code1"] = require('./photos/code1.png')
-backgroundImages["code2"] = require('./photos/code2.png')
-backgroundImages["sciFi"] = require('./photos/sciFi.jpg')
-backgroundImages["code3"] = require('./photos/code3.png')
-backgroundImages["fantasy"] = require('./photos/fantasy.jpg')
-backgroundImages["wildWest"] = require('./photos/wildWest.jpg')
-backgroundImages["dinosaurs"] = require('./photos/dinosaurs.jpg')
-backgroundImages["cave"] = require('./photos/cave.png')
-
-
-
-
+import EasterEgg from './EasterEgg'
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -32,7 +13,6 @@ export default class Map extends React.Component {
     }
   }
   render(){
-    console.log("BROUND", backgroundImages)
     const {map, hero, mapSend, enemy}  = this.props;
     const {images, items, descriptions, enemyIds, features, easterEggs, riddles } = map
 
@@ -101,7 +81,7 @@ export default class Map extends React.Component {
               <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}
           </div>
           <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, enemy, enemyId)}>{enemyName}</Link>
-          <img id="background" src={backgroundImages[image]}/>
+          <img id="background" src={image}/>
         </div>
         <div className='inv'>
           {(hero.inventory).map((item, i) =>
@@ -110,9 +90,6 @@ export default class Map extends React.Component {
 
         <div className='story'>
           <Story row={row} col={col} messages={map.messages}/>
-        </div>
-        <div className='mapStats'>
-          <Stats hero={hero}/>
         </div>
       </div>
     )
