@@ -81,6 +81,13 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 15px 50px;
+  font-family: 'Zapf Chancery', sans-serif;
+  background-image: url('../assets/gui/wood_background.png');
+  color: gold;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
   padding: 20px;
   margin-left: -50px
 }
@@ -99,7 +106,13 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
+  font-family: 'Zapf Chancery', sans-serif;
+  background-image: url('../assets/gui/wood_background.png');
+  color: gold;
+  font-style: italic;
+  font-weight: bold;
   font-size: 20px;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
   padding:20px;
   margin-left: -50px;
 }
@@ -353,11 +366,8 @@ body {
   font-style: italic;
   font-weight: bold;
   font-size: 25px;
-  background: linear-gradient(#FFF65C 0%, #9A8000 100%);
-  text-shadow: -0.02em -0.03em 0.005em rgba(255, 223, 0, 0.70);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+  color:gold;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
 .inputContainer {
@@ -421,21 +431,40 @@ body {
   background-position: -40px -490px;
 }
 
-.formBorder {
-  width: 450px;
-  margin-left: 230px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-image: url('../assets/gui/formBorder.png');
-  background-repeat: no-repeat;
-  background-position: -265px -45px;
-}
-
 .nameBorder {
   padding: 5px 14px;
   background-image: url('../assets/gui/nameBorder.png');
   background-repeat: no-repeat;
   background-position: -170px -224px;
+}
+
+.formBorder {
+  width: 1000px;
+  height: 750px;
+  margin-left: 230px;
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-bottom: 25px;
+  background-image: url('../assets/gui/formBorder.png');
+  background-repeat: no-repeat;
+  background-position: 40px -30px;
+}
+
+.formColumn1, .formColumn2 {
+  width: 450px;
+  display: inline-block;
+  float: left;
+  background: transparent;
+  margin-left: 50px;
+}
+
+.formColumn2 {
+  margin-top: 42px;
+  margin-left: 30px;
+}
+
+.createButton {
+  margin-top: 30px;
 }
 
 .table {
