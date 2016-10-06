@@ -48,12 +48,14 @@ body {
 }
 
 #log {
-  height: 200px;
+  height: 400px;
   width: 500px;
   overflow-y: auto;
   border: 3px solid black;
   padding: 8px;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: helvetica;
+  margin-left: 20px;
 }
 
 #map {
@@ -65,6 +67,7 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 20px;
+  margin-left: 20px
 
 }
 
@@ -78,7 +81,8 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 15px 50px;
-  font-family: 'Zapf Chancery', sans-serif;
+  padding: 20px;
+  margin-left: -50px
 }
 
 .invItem {
@@ -89,15 +93,15 @@ body {
   float:right;
   top:500px;
   left:900px;
-  height: 200px;
+  height: 400px;
   width: 800px;
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
-  font-family: 'Zapf Chancery', sans-serif;
   font-size: 20px;
-  padding:15px;
+  padding:20px;
+  margin-left: -50px;
 }
 
 #north {
@@ -145,6 +149,8 @@ body {
   margin-bottom: 1px;
   vertical-align: middle;
   padding-left: 8px;
+  font-family: 'Zapf Chancery';
+  font-size: 
 }
 
 .logMessage {
@@ -300,14 +306,14 @@ body {
 
 .dragon {
   position: relative;
-  left: 60px;
-  bottom: 100px;
+  left: 350px;
+  bottom: -80px;
   width: 100px;
 }
 
 .archer {
   position: relative;
-  left: 500px;
+  left: 230px;
   bottom:173px;
 }
 
@@ -406,7 +412,7 @@ body {
 }
 
 .nameInput {
-  color: gold;
+  color: #ffe44d;
   font-weight: bold;
   font-family: 'Zapf Chancery';
   font-style: italic;
@@ -466,8 +472,8 @@ body {
 }
 
 .startMap {
-  color: gold;
-  font-family: 'Raleway';
+  color: #ffe44d;
+  font-family: 'Zapf Chancery';
   font-style: italic;
   font-weight: bold;
   font-size: 25px;
@@ -475,5 +481,13 @@ body {
   text-shadow: -0.02em -0.03em 0.005em rgba(255, 223, 0, 0.70);
   /*-webkit-background-clip: text;*/
   /*-webkit-text-fill-color: transparent;*/
+
+}
+
+.heroStats {
+font-size:30px;
+font-family: 'Zapf Chancery';
+color: #ffdd1a;
+font-weight: bold;
 
 }
