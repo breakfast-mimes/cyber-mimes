@@ -1,20 +1,23 @@
 export const weapons = require('./items/weapons.json');
 
 const map = {
-  location: {row:1,col:1},
+  location: {row:5,col:0},
   // "http://bit.ly/2d4jS28"  http://bit.ly/2dcQUM4
   //http://wallpapercave.com/sci-fi-background
   //http://bit.ly/2d4jS28
   //http://bit.ly/2dcQUM4
+//https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg
+
+  // images:[[ "photos/artHere.png", "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
 
 
-  images:[[ 'artHere'/*"https://s-media-cache-ak0.pinimg.com/originals/e8/15/87/e81587a6b72b12019e3f65450070a6c4.jpg"*/, "http://i.imgur.com/gOqnUMH.png", "https://wallpaperscraft.com/image/canyon_desert_horseback_rider_wild_west_cowboy_45538_2048x2048.jpg"],
-  ["http://i.imgur.com/kocWoDf.png", "http://wallpapercave.com/wp/565sgAQ.jpg", "http://bit.ly/2cGiroJ"],
-  ["https://images5.alphacoders.com/374/374820.jpg", "http://i.imgur.com/YhZqhgN.png", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
+  images:[[ 'office', "code1", "wildWest"],
+  ["code2", "http://wallpapercave.com/wp/565sgAQ.jpg", "http://bit.ly/2cGiroJ"],
+  ["fantasy", "code3", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
   ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg"],
 
   [],
-  ["http://i.imgur.com/l2PuKhs.png", "http://i.imgur.com/cxwjt5j.png", "http://i.imgur.com/j9hi3HQ.png"]
+  ['start', "artHere", "findArtOnline"]
   ],
 
   items: [[{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"},{},{},{},{},{},{},{},{}],
@@ -46,10 +49,6 @@ const map = {
 
 
   easterEggs:[[[{className:"clippy", image:"https://media.giphy.com/media/XbPoIsyy9xqjS/200.gif"}] ,"",[{image:"http://i.imgur.com/f2rt3Zy.png", sound:"https://a.clyp.it/mq5rd1d1.mp3", className:"bang"}]],
-
-
-  [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
-
 
   [[],[{image:"http://i.imgur.com/5kyJyll.png", sound:"https://a.clyp.it/cn4un2pr.mp3", className:"pew"},{image:'http://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-14.gif', className: 'spaceship'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-12-june.gif', className: 'spaceship2'},{image: 'http://bestanimations.com/Sci-Fi/UFOs/UFO-08-june.gif',className: 'spaceship3'}]],
   [[{image: "http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-40.gif",className: 'dragon', mapSend:[3,0]},{image: 'http://bestanimations.com/Fantasy/bow-warrior-medieval-animation.gif', className: 'archer'},{image:'http://bestanimations.com/Fantasy/knights-fighting-medieval-animation.gif',className: 'knights'}],[],[{className:"flappy",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-10-june.gif"},{sound:"https://a.clyp.it/o2x1rwjo.mp3", className:"thriller", image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-8.gif"},{image:'http://bestanimations.com/Animals/Reptiles/Dinosaurs/Dinosaur-01-june.gif',className: 'rawr',sound:"https://a.clyp.it/sspvhmed.mp3"},{className:"trice",image:"http://bestanimations.com/Animals/Reptiles/Dinosaurs/dinosaur-animated-gif-1.gif", sound:"https://a.clyp.it/hblpp0cn.mp3"}]],

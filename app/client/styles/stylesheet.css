@@ -71,6 +71,9 @@ body {
 
 }
 
+.invItem {
+  font-size: 20px;
+}
 
 .inv {
   float:right;
@@ -80,7 +83,7 @@ body {
   overflow-y: auto;
   position:absolute;
   border: 3px solid black;
-  border-radius: 15px 50px;
+  border-radius: 50px 15px;
   font-family: 'Zapf Chancery', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
   color: gold;
@@ -92,15 +95,11 @@ body {
   margin-left: -50px
 }
 
-.invItem {
-  font-size: 20px;
-}
-
 .story {
   float:right;
   top:500px;
   left:900px;
-  height: 400px;
+  height: 372px;
   width: 800px;
   overflow-y: auto;
   position:absolute;
@@ -116,6 +115,28 @@ body {
   padding:20px;
   margin-left: -50px;
 }
+
+.mapStats {
+  float:right;
+  top:285px;
+  left:900px;
+  height: 200px;
+  width: 800px;
+  overflow-y: auto;
+  position:absolute;
+  border: 3px solid black;
+  border-radius: 50px 15px;
+  font-family: 'Zapf Chancery', sans-serif;
+  background-image: url('../assets/gui/wood_background.png');
+  color: gold;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
+  padding:20px;
+  margin-left: -50px;
+}
+
 
 #north {
   border: none !important;
