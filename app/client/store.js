@@ -13,6 +13,7 @@ import enemy from './data/enemy';
 import game from './data/game';
 import map from './data/map';
 import startMap from './data/startMap';
+
 window.localStorage.setItem('defaultHero', JSON.stringify(hero))
 
 const defaultState = {
