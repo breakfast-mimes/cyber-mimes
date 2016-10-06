@@ -4,6 +4,7 @@ import Sound from 'react-sound';
 import Inventory from './Inventory'
 import Riddle from './Riddle'
 import Story from './Story'
+import Stats from './Stats'
 import EasterEgg from './EasterEgg'
 
 export default class Map extends React.Component {
@@ -90,6 +91,9 @@ export default class Map extends React.Component {
 
         <div className='story'>
           <Story row={row} col={col} messages={map.messages}/>
+        </div>
+        <div className='mapStats'>
+          <Stats hero={hero}/>
         </div>
       </div>
     )

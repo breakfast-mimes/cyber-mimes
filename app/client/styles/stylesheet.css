@@ -100,6 +100,22 @@ body {
   padding:15px;
 }
 
+.mapStats {
+  float:right;
+  top:290px;
+  left:900px;
+  height: 200px;
+  width: 800px;
+  overflow-y: auto;
+  position:absolute;
+  border: 3px solid black;
+  border-radius: 50px 15px;
+  font-family: 'Zapf Chancery', sans-serif;
+  font-size: 20px;
+  padding:15px;
+}
+
+
 #north {
   border: none !important;
   position:absolute;
