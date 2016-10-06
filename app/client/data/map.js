@@ -12,9 +12,9 @@ const map = {
 
 
   images:[[ 'office', "code1", "wildWest"],
-  ["code2", "http://wallpapercave.com/wp/565sgAQ.jpg", "http://bit.ly/2cGiroJ"],
-  ["fantasy", "code3", "http://cdn.wallpapersafari.com/16/58/qDXKtC.jpg"],
-  ["https://hikemtshasta.files.wordpress.com/2013/04/cascades-plutos-cave-feb2013-047-copy-custom.jpg"],
+  ["code2", "sciFi", "http://bit.ly/2cGiroJ"],
+  ["fantasy", "code3", "dinosaurs"],
+  ["cave"],
 
   [],
   ['start', "artHere", "findArtOnline"]
