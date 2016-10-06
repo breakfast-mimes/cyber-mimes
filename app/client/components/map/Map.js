@@ -44,8 +44,8 @@ export default class Map extends React.Component {
       }
       description = descriptions[row][col];
       enemyId = enemyIds[row][col];
-
-      if(this.props.battle[features[row][col]]) {
+      console.log("hero",hero)
+      if(hero.battleFeatures[features[row][col]]) {
         feature = ""
       } else {
         feature = features[row][col];

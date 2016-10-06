@@ -13,7 +13,7 @@ import enemy from './data/enemy';
 import game from './data/game';
 import map from './data/map';
 import startMap from './data/startMap';
-import battle from './data/battle';
+
 window.localStorage.setItem('defaultHero', JSON.stringify(hero))
 
 const defaultState = {
@@ -21,8 +21,7 @@ const defaultState = {
   enemy,
   game,
   map,
-  startMap,
-  battle
+  startMap
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
