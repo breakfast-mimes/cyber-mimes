@@ -21,12 +21,10 @@ export default class Battle extends React.Component {
   }
   //this calls the enemy to attack each time before component renders. Creating an enemy attack after every battle action
   setShowModalTrue() {
-    return () => {
-      if (!this.state.called) {
-        this.setState({called: true});
-        this.setState({showModal: true});
-      }
-    };
+    if (!this.state.called) {
+      this.setState({called: true});
+      this.setState({showModal: true});
+    }
   };
 
   componentWillUpdate() {
@@ -49,7 +47,7 @@ export default class Battle extends React.Component {
     }
     // if your health is 0 this kills your character and redirects you to the map
     if(this.props.hero.status.health === 0) {
-      this.setShowModalTrue()();
+      this.setShowModalTrue();
     }
   }
 
