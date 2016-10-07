@@ -9,3 +9,6 @@ export default class goSouth extends React.Component {
     )
   }
 }
+
+
+//style={{cursor:pointer}}

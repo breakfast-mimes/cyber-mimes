@@ -44,7 +44,7 @@ const enemy = [{
 
 {
 
-  name: "laser enemy",
+  name: "talkingMime",
   stats: {
     str: 10,
     dex: 10,
@@ -84,7 +84,7 @@ const enemy = [{
   gold: 100
 },
 {
-  name: "super laZer enemy",
+  name: "mime",
   stats: {
     str: 15,
     dex: 15,
