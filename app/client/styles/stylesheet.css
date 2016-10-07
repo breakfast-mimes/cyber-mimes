@@ -539,6 +539,10 @@ body {
   margin-top: 30px;
 }
 
+.button {
+
+}
+
 .table {
   border: 3px solid black;
   width: 450px;
@@ -586,9 +590,8 @@ body {
 }
 
 .heroStats {
-font-size:30px;
-font-family: 'Zapf Chancery';
-color: #ffdd1a;
-font-weight: bold;
-
+  font-size:30px;
+  font-family: 'Zapf Chancery';
+  color: #ffdd1a;
+  font-weight: bold;
 }

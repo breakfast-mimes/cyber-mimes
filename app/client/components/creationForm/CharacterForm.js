@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Button, FormGroup, ControlLabel, FormControl, Form, HelpBlock, Col, PageHeader } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 import Entry from './Entry';
 
@@ -26,6 +27,15 @@ const CharacterForm = React.createClass({
 
     this.setState({name: event.target.value});
 
+  },
+
+  handleClick() {
+    this.props.submitCharacter(this.state.name, this.props.submit);
+    browserHistory.push('/map');
+  },
+
+  allValid() {
+    return (this.state.name.length === 0 || this.state.skillAllocation !== 0 || this.state.statAllocation !== 0);
   },
 
 	render() {
@@ -96,7 +106,9 @@ const CharacterForm = React.createClass({
 
   				<FormGroup className='createButton'>
             <Col smOffset={7}>
-              <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
+              <Button disabled={this.allValid()} onClick={this.handleClick} className='button'>
+                  Continue
+              </Button>
             </Col>
   		    </FormGroup>
         </div>
