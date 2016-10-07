@@ -541,3 +541,14 @@ color: #ffdd1a;
 font-weight: bold;
 
 }
+
+.landingPage {
+  background-image: url('http://www.alexpberg.com/wp-content/uploads/2013/10/Sci-Fi-vs-Fantasy.jpg');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+height: 550px;
+
+background-position: 0 58px
+}
+  /*background-size: 100% 100%;
+  height: 300px;*/

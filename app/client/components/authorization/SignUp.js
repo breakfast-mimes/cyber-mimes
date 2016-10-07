@@ -58,9 +58,12 @@ const SignUp = React.createClass({
     this.props.signup(this.state.name, this.state.pass);
   },
 
+    // <h1 className='mainTitle'>PIECE BY PIECE</h1>
+    // <span className='titleBlurb'>The Sci Fi, Fantasy, Western themed game that you
 
   render() {
     return (
+  <div className='landingPage'>
       <Form horizontal>
 
         <PageHeader>
@@ -139,6 +142,7 @@ const SignUp = React.createClass({
         </FormGroup>
 
       </Form>
+  </div>
     )
   }
 });
