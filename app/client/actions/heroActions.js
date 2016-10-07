@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 export function equip(equipment, i) {
   return {
     type: 'CHANGE_EQUIPMENT',
@@ -15,5 +17,16 @@ export function dropItem(equipment, i) {
     type: 'DROP_ITEM',
     i,
     message: "You drop " + equipment.name
+  }
+}
+
+export function heroDeath() {
+  browserHistory.push('/map');
+  return {
+    type: 'HERO_DEATH',
+    message: [
+      "You have died",
+      "You lost all your gold and experience"
+    ]
   }
 }

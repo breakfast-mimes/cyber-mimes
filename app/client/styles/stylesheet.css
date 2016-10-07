@@ -151,6 +151,16 @@ body {
   margin-left: -50px;
 }
 
+.heroDeathModal {
+  font-family: 'Zapf Chancery', sans-serif;
+  background-image: url('../assets/gui/wood_background.png');
+  color: gold;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
+}
+
 
 #north {
   border: none !important;
