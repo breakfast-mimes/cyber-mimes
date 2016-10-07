@@ -8,12 +8,24 @@ import ActionGroup from './ActionGroup'
 import Log from './Log'
 import HeroStatus from './HeroStatus'
 import Inventory from './Inventory'
+import HeroDeathModal from './HeroDeathModal'
 
 export default class Battle extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      showModal: false,
+      called: false
+    }
+
   }
   //this calls the enemy to attack each time before component renders. Creating an enemy attack after every battle action
+  setShowModalTrue() {
+    if (!this.state.called) {
+      this.setState({called: true});
+      this.setState({showModal: true});
+    }
+  };
 
   componentWillUpdate() {
     if(this.props.game.enemyTurn && this.props.enemy[this.props.game.enemyId].status.health > 0)
@@ -35,11 +47,12 @@ export default class Battle extends React.Component {
     }
     // if your health is 0 this kills your character and redirects you to the map
     if(this.props.hero.status.health === 0) {
-      this.props.heroDeath();
+      this.setShowModalTrue();
     }
   }
 
   render(){
+    let closeModal = () => {this.setState({showModal: false}); this.props.heroDeath()};
     const { hero, game, changeEnemy, enemy, battle} = this.props;
     const { enemyId } = game;
     let healthStyle, logStyle, actionsStyle, spellsStyle,itemsStyle,inventoryStyle
@@ -77,7 +90,9 @@ export default class Battle extends React.Component {
           <Inventory {...this.props} style={inventoryStyle} />
         </div>
 
+        <HeroDeathModal show={this.state.showModal} onHide={closeModal}/>
     </div>
     )
   }
 }
+

@@ -18,9 +18,37 @@ a {
   content:url(http://i.imgur.com/GID4gkj.png);
 }
 
-.goblin {
-  content:url(http://i.imgur.com/CxvW6T4.png)
+.Basic_Mime {
+  content:url(http://i.imgur.com/Sjpy4fT.png)
 }
+
+.Blue_Mime {
+  content:url(http://i.imgur.com/DhWbZmZ.png)
+}
+
+.Red_Mime {
+  content:url(http://i.imgur.com/hJN1fvP.png)
+}
+
+.Cowboy_Mime {
+  content:url(http://i.imgur.com/KU3YQUT.png)
+}
+
+.Dinosaur_Mime{
+  content:url(http://i.imgur.com/8GHaku7.png)
+}
+
+.Disguise_Mime{
+  content:url(http://i.imgur.com/0ZhH4tb.png)
+}
+
+.Talking_Mime {
+  content:url(http://i.imgur.com/aOsYHVT.png)
+}
+
+
+
+
 
 .gun{
   position:relative;
@@ -30,6 +58,8 @@ a {
 
 .riddle{
   cursor:pointer;
+  top:200;
+  left:200;
 }
 
 body {
@@ -135,6 +165,16 @@ body {
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
   padding:20px;
   margin-left: -50px;
+}
+
+.heroDeathModal {
+  font-family: 'Zapf Chancery', sans-serif;
+  background-image: url('../assets/gui/wood_background.png');
+  color: gold;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
 
@@ -310,7 +350,7 @@ body {
 
 .pew {
   position: relative;
-  top: 550px;
+  top: 500px;
   left: 100px;
 }
 
@@ -366,7 +406,18 @@ body {
 .clippy {
   position: relative;
   left: 200px;
-  top: 200px;
+  top: 100px;
+}
+
+.wiz {
+  position: relative;
+  left: 200px;
+}
+
+.castle {
+  position: relative;
+  left: 100px;
+  top: 50px;
 }
 
 .spaceship4 {

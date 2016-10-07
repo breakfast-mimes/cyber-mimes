@@ -31,17 +31,6 @@ export function submitCharacter(name, submitCb) {
   }
 }
 
-export function heroDeath() {
-  browserHistory.push('/map');
-  return {
-    type: 'HERO_DEATH',
-    message: [
-      "You have died",
-      "You lost all your gold and experience"
-    ]
-  }
-}
-
 export function enemyDeath(enemy, id) {
   let gold = Math.floor(enemy[id].gold * (Math.random() + 0.5))
   return {

@@ -5,6 +5,7 @@ import Inventory from './Inventory'
 import Riddle from './Riddle'
 import Story from './Story'
 import EasterEgg from './EasterEgg'
+import Stats from './Stats'
 
 var backgroundImages = {};
 backgroundImages["artHere"] = require('./photos/artHere.png')
@@ -19,7 +20,7 @@ backgroundImages["fantasy"] = require('./photos/fantasy.jpg')
 backgroundImages["wildWest"] = require('./photos/wildWest.jpg')
 backgroundImages["dinosaurs"] = require('./photos/dinosaurs.jpg')
 backgroundImages["cave"] = require('./photos/cave.png')
-backgroundImages["trippy"] = require('./photos/trippy.gif')
+backgroundImages["trippy"] = require('./photos/trippy.jpg')
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class Map extends React.Component {
   }
   render(){
     const {map, hero, mapSend, enemy}  = this.props;
-    const {images, items, descriptions, enemyIds, features, easterEggs, riddles } = map
+    const {images, items, enemyIds, features, easterEggs, riddles } = map
 
     let row = map.location.row
     let col = map.location.col
@@ -44,8 +45,8 @@ export default class Map extends React.Component {
     let south = images[row + 1] && row !==2 ? images[row + 1][col] ? arrowDown : null : null
     let west = images[row] ? images[row][col - 1] ? arrowLeft : null : null
 
-    let image, item, itemName, description, enemyId, enemyName, feature, easterEgg, riddle;
-    image = item = itemName = description = enemyId = enemyName = feature = easterEgg = riddle = undefined;
+    let image, item, itemName, enemyId, enemyName, feature, easterEgg, riddle;
+    image = item = itemName = enemyId = enemyName = feature = easterEgg = riddle = undefined;
 
     if (images[row] && images[row][col]) {
       image = images[row][col];
@@ -57,7 +58,6 @@ export default class Map extends React.Component {
           itemName = item.name;
         }
       }
-      description = descriptions[row][col];
       enemyId = enemyIds[row][col];
       console.log("hero",hero)
       if(hero.battleFeatures[features[row][col]]) {
@@ -76,6 +76,7 @@ export default class Map extends React.Component {
         if (enemy[i].status.health > 0){
           enemyId = i;
           enemyName = enemy[i].name;
+          break;
         }
       }
     }
@@ -87,7 +88,6 @@ export default class Map extends React.Component {
           {east ? <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} /> : null }
           {south ? <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} /> : null}
           {west ? <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} /> : null}
-          <div> {description} </div>
           <Riddle riddle={riddle} pickUp={this.props.pickUp}/>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName}</div>
           <div className={feature} onClick={this.props.pickUpFeature.bind(null, feature)}>{feature}</div>
@@ -102,7 +102,9 @@ export default class Map extends React.Component {
           {(hero.inventory).map((item, i) =>
                 <Inventory item={item} equip={this.props.equip} key={i} i={i}/>)}
         </div>
-
+        <div className='mapStats'>
+          <Stats hero={hero}/>
+        </div>
         <div className='story'>
           <Story row={row} col={col} messages={map.messages}/>
         </div>

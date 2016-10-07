@@ -118,6 +118,7 @@ function hero(state = [], action) {
       state = defaultHero;
       window.localStorage.setItem('hero', null)
       return state;
+
     case "PICK_UP_FEATURE":
       state.battleFeatures[action.feature] = !state.battleFeatures[action.feature]
       return state;

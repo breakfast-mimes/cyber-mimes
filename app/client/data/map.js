@@ -37,9 +37,9 @@ const map = {
   []],
 
   //LINKS TO BATTLE SCREEN TO FIGHT ENEMY
-  enemyIds: [["3", "2", "1"],
-  ["0","2","2"],
-  ["1"],
+  enemyIds: [["", "1", "3"],
+  ["2","","5"],
+  ["","","4"],
   [],
   [],
   ["0","",""]],
@@ -64,11 +64,12 @@ const map = {
 
   [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif',className:'caveFight'}]],
   [],
-  [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
+  [[],[{image:"http://i.imgur.com/A2DDh3m.png", className:"wiz"},{image:"http://i.imgur.com/xrOJYnr.png", className:"castle"}],[{image:"http://i.imgur.com/PBaKOvT.png", className:"spaceship"}]]
   ],
 
 //STORYLINE MESSAGES
   messages:[["FILL THIS OUT",
+
   "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User. Let me offer you a free 'Spell Book' for your troubles. [Instructions] Click around our code to get a 'Spell Book', and then battle one of the Talking Mime's henchmen.",
 "[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],
 
@@ -77,9 +78,10 @@ const map = {
 "OH NO! Your time travelling has got you caught up in a time warp. Answer the riddle to escape and to stop your head from spinning. If the time warp causes you any type of medical distress, read the fine print on our sign up page, we are not liable for any damages :D "],
 
 ["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Click around the map to find the best way to escape the attack on your castle and battle the Talking Mime!",
-"[Alex]: I feel like we're missing something. Executive decision - travel West for Dinosaurs! [Selim]: Oh dearlord, is this what we've come too..",
+"[Alex]: I feel like we're missing something. Executive decision - travel East for Dinosaurs! [Selim]: Oh dearlord, is this what we've come too..",
 "Watch out!! You travelled to an era full of dinosaurs. Remember all the tips you have learned from dinosaur movies over the years. Raptors are smart, T-rex's are the top of the food chain, giant electric cages cannot hold dinosaurs, and always say something quirky before and after a near death experience. Looks like the Talking Mime's henchman followed you through time, they are lurking at every corner. Don't be a coward, go to battle! [Click on the dinosaurs to see what they do!]"
 ],
+
 
 ["Your dragon has led you to the layer of the Talking Mime. It is time for an ultimate battle! [Instructions] Select the link to battle the Talking Mime."],
 [],
@@ -87,7 +89,7 @@ const map = {
 
 //RIDDLES
   riddles:[["","",{question: "How many horse puns are used in the story line for this map?", answer: 4, reward: weapons["ANTIMATTER_GUN"],className:"sciRiddle",solved:false}],
-  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint",className: 'sciRiddle',solved: false}],
+  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint", reward:weapons["LAZER_GUN"], className: 'sciRiddle',solved: false}],
   [],
   [],
   [],

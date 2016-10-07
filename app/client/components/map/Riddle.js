@@ -15,7 +15,9 @@ export default class Riddle extends React.Component {
         var input = prompt(riddle.question, "?");
         if (input === riddle.answer){
           pickUp(riddle.reward)
-          alert("correct!")
+          alert("Correct!")
+        } else {
+          alert("Wrong!")
         }
       }
     }
