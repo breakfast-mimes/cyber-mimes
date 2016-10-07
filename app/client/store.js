@@ -18,9 +18,9 @@ window.localStorage.setItem('defaultHero', JSON.stringify(hero))
 
 const defaultState = {
   hero: JSON.parse(window.localStorage.getItem('hero')) === null ? hero : JSON.parse(window.localStorage.getItem('hero')),
+  map: JSON.parse(window.localStorage.getItem('map')) === null ? map : JSON.parse(window.localStorage.getItem('map')),
   enemy,
   game,
-  map,
   startMap
 }
 
@@ -40,9 +40,17 @@ store.subscribe(() => {
   if(currentState !== defaultHero && currentState !== previousState &&
      logged && location !== '/' && location !== '/creationform') {
     store.dispatch(putCharacter(JSON.parse(window.localStorage.getItem('hero'))));
-  } else {
-    //console.log("hero state didnt change");
   }
+});
+
+let currentMapState;
+store.subscribe(() => {
+  let logged = store.getState().game.logged;
+  let location = store.getState().routing.locationBeforeTransitions.pathname;
+  let previousState = currentMapState;
+  currentMapState = JSON.stringify(store.getState().map);
+  if(currentMapState !== previousState)
+    window.localStorage.setItem('map', currentMapState);
 });
 
 if(module.hot) {

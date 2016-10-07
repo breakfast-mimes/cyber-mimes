@@ -1,4 +1,5 @@
 import util from './util'
+import defaultGame from '../data/game';
 
 function game(state = [], action) {
   state = JSON.parse(JSON.stringify(state));
@@ -37,6 +38,10 @@ function game(state = [], action) {
 
     case "USERNAME_SUCCESS":
       state.usernameSuccess = action.usernameSuccess;
+      return state;
+
+    case "USER_LOGOUT":
+      state = defaultGame;
       return state;
 
     default:
