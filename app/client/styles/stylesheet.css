@@ -18,15 +18,31 @@ a {
   content:url(http://i.imgur.com/GID4gkj.png);
 }
 
-.goblin {
-  content:url(http://i.imgur.com/CxvW6T4.png)
-}
-
-.mime {
+.Basic_Mime {
   content:url(http://i.imgur.com/Sjpy4fT.png)
 }
 
-.talkingMime {
+.Blue_Mime {
+  content:url(http://i.imgur.com/DhWbZmZ.png)
+}
+
+.Red_Mime {
+  content:url(http://i.imgur.com/hJN1fvP.png)
+}
+
+.Cowboy_Mime {
+  content:url(http://i.imgur.com/KU3YQUT.png)
+}
+
+.Dinosaur_Mime{
+  content:url(http://i.imgur.com/8GHaku7.png)
+}
+
+.Disguise_Mime{
+  content:url(http://i.imgur.com/0ZhH4tb.png)
+}
+
+.Talking_Mime {
   content:url(http://i.imgur.com/aOsYHVT.png)
 }
 

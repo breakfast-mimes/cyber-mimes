@@ -20,7 +20,7 @@ backgroundImages["fantasy"] = require('./photos/fantasy.jpg')
 backgroundImages["wildWest"] = require('./photos/wildWest.jpg')
 backgroundImages["dinosaurs"] = require('./photos/dinosaurs.jpg')
 backgroundImages["cave"] = require('./photos/cave.png')
-backgroundImages["trippy"] = require('./photos/trippy.gif')
+backgroundImages["trippy"] = require('./photos/trippy.jpg')
 
 export default class Map extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import { weapons, head, body } from './items.js'
 
 const enemy = [{
-  name: "goblin",
+  name: "Basic_Mime",
   stats: {
     str: 1,
     dex: 1,
@@ -14,15 +14,15 @@ const enemy = [{
     martialArts: 1,
     rangedCombat: 1,
     armor: 1,
-    magic: 0,
-    healing: 0
+    magic: 1,
+    healing: 1
   },
   status: {
     maxHealth:100,
     maxMana: 100,
     health:100,
     mana:100,
-    defending: 0
+    defending: 1
   },
   id:0,
   equipment: {
@@ -44,21 +44,21 @@ const enemy = [{
 
 {
 
-  name: "talkingMime",
+  name: "Blue_Mime",
   stats: {
-    str: 10,
-    dex: 10,
-    int: 10,
-    end: 10,
-    luck: 10
+    str: 3,
+    dex: 3,
+    int: 3,
+    end: 3,
+    luck: 3
   },
   skills: {
-    fighting: 30,
-    martialArts: 30,
-    rangedCombat: 30,
-    armor: 30,
-    magic: 0,
-    healing: 0
+    fighting: 10,
+    martialArts: 10,
+    rangedCombat: 10,
+    armor: 10,
+    magic: 10,
+    healing: 10
   },
   status: {
     maxHealth:150,
@@ -84,19 +84,19 @@ const enemy = [{
   gold: 100
 },
 {
-  name: "mime",
+  name: "Red_Mime",
   stats: {
-    str: 15,
-    dex: 15,
-    int: 15,
-    end: 15,
-    luck: 15
+    str: 5,
+    dex: 5,
+    int: 5,
+    end: 5,
+    luck: 5
   },
   skills: {
-    fighting: 100,
-    martialArts: 100,
-    rangedCombat: 100,
-    armor: 100,
+    fighting: 30,
+    martialArts: 30,
+    rangedCombat: 30,
+    armor: 30,
     magic: 0,
     healing: 0
   },
@@ -125,7 +125,7 @@ const enemy = [{
 } ,
 
 {
-  name: "test enemy",
+  name: "Cowboy_Mime",
   stats: {
     str: 1,
     dex: 1,
@@ -163,9 +163,135 @@ const enemy = [{
   loot: [],
   exp: 5000,
   gold: 10
+},
+
+{
+  name: "Dinosaur_Mime",
+  stats: {
+    str: 1,
+    dex: 1,
+    int: 1,
+    end: 1,
+    luck: 1
+  },
+  skills: {
+    fighting: 1,
+    martialArts: 1,
+    rangedCombat: 1,
+    armor: 0,
+    magic: 0,
+    healing: 0
+  },
+  status: {
+    maxHealth:100,
+    maxMana:100,
+    health:100,
+    mana:100,
+    defending: 0
+  },
+  id:4,
+  equipment: {
+    head: undefined,
+    rightHand: weapons.FISTS,
+    leftHand: undefined,
+    body: undefined,
+    hands: undefined,
+    legs: undefined,
+    boots: undefined,
+    ring1: undefined,
+    ring2: undefined
+  },
+  loot: [],
+  exp: 5000,
+  gold: 10
+},
+
+
+{
+  name: "Disguise_Mime",
+  stats: {
+    str: 1,
+    dex: 1,
+    int: 1,
+    end: 1,
+    luck: 1
+  },
+  skills: {
+    fighting: 1,
+    martialArts: 1,
+    rangedCombat: 1,
+    armor: 0,
+    magic: 0,
+    healing: 0
+  },
+  status: {
+    maxHealth:100,
+    maxMana:100,
+    health:100,
+    mana:100,
+    defending: 0
+  },
+  id:5,
+  equipment: {
+    head: undefined,
+    rightHand: weapons.FISTS,
+    leftHand: undefined,
+    body: undefined,
+    hands: undefined,
+    legs: undefined,
+    boots: undefined,
+    ring1: undefined,
+    ring2: undefined
+  },
+  loot: [],
+  exp: 5000,
+  gold: 10
+},
+
+{
+  name: "Talking_Mime",
+  stats: {
+    str: 1,
+    dex: 1,
+    int: 1,
+    end: 1,
+    luck: 1
+  },
+  skills: {
+    fighting: 1,
+    martialArts: 1,
+    rangedCombat: 1,
+    armor: 0,
+    magic: 0,
+    healing: 0
+  },
+  status: {
+    maxHealth:100,
+    maxMana:100,
+    health:100,
+    mana:100,
+    defending: 0
+  },
+  id:6,
+  equipment: {
+    head: undefined,
+    rightHand: weapons.FISTS,
+    leftHand: undefined,
+    body: undefined,
+    hands: undefined,
+    legs: undefined,
+    boots: undefined,
+    ring1: undefined,
+    ring2: undefined
+  },
+  loot: [],
+  exp: 5000,
+  gold: 10
 }
 
 ]
+
+
 
 
 export default enemy;

@@ -37,9 +37,9 @@ const map = {
   []],
 
   //LINKS TO BATTLE SCREEN TO FIGHT ENEMY
-  enemyIds: [["3", "2", "1"],
-  ["","",""],
-  [""],
+  enemyIds: [["", "1", "3"],
+  ["2","","5"],
+  ["","","4"],
   [],
   [],
   ["0","",""]],
@@ -89,7 +89,7 @@ const map = {
 
 //RIDDLES
   riddles:[["","",{question: "How many horse puns are used in the story line for this map?", answer: 4, reward: weapons["ANTIMATTER_GUN"],className:"sciRiddle",solved:false}],
-  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint",className: 'sciRiddle',solved: false}],
+  ["",{question:" Solve this riddle and get that fancy space gun: the last man on the earth is locked in a room, he hears a knock on the door, who could it be?", answer:"woman", reward:weapons["LAZER_GUN"], className:"sciRiddle", solved:false},{question: "What is blue and smells like red paint?", answer: "blue paint", reward:weapons["LAZER_GUN"], className: 'sciRiddle',solved: false}],
   [],
   [],
   [],
