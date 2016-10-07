@@ -10,3 +10,5 @@ export default class goEast extends React.Component {
     )
   }
 }
+
+//style={{cursor:pointer}}

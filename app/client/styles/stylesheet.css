@@ -22,6 +22,18 @@ a {
   content:url(http://i.imgur.com/CxvW6T4.png)
 }
 
+.mime {
+  content:url(http://i.imgur.com/Sjpy4fT.png)
+}
+
+.talkingMime {
+  content:url(http://i.imgur.com/aOsYHVT.png)
+}
+
+
+
+
+
 .gun{
   position:relative;
   left: 300px;
@@ -30,6 +42,8 @@ a {
 
 .riddle{
   cursor:pointer;
+  top:200;
+  left:200;
 }
 
 body {
@@ -310,7 +324,7 @@ body {
 
 .pew {
   position: relative;
-  top: 550px;
+  top: 500px;
   left: 100px;
 }
 
@@ -366,7 +380,18 @@ body {
 .clippy {
   position: relative;
   left: 200px;
-  top: 200px;
+  top: 100px;
+}
+
+.wiz {
+  position: relative;
+  left: 200px;
+}
+
+.castle {
+  position: relative;
+  left: 100px;
+  top: 50px;
 }
 
 .spaceship4 {

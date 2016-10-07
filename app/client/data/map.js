@@ -38,8 +38,8 @@ const map = {
 
   //LINKS TO BATTLE SCREEN TO FIGHT ENEMY
   enemyIds: [["3", "2", "1"],
-  ["0","2","2"],
-  ["1"],
+  ["","",""],
+  [""],
   [],
   [],
   ["0","",""]],
@@ -64,12 +64,12 @@ const map = {
 
   [[{image:'http://bestanimations.com/Fantasy/knight-fighting-diablo-deamon-animation.gif',className:'caveFight'}]],
   [],
-  [[],[{image:"http://i.imgur.com/A2DDh3m.png"},{image:"http://i.imgur.com/xrOJYnr.png"}],[{image:"http://i.imgur.com/PBaKOvT.png"}]]
+  [[],[{image:"http://i.imgur.com/A2DDh3m.png", className:"wiz"},{image:"http://i.imgur.com/xrOJYnr.png", className:"castle"}],[{image:"http://i.imgur.com/PBaKOvT.png", className:"spaceship"}]]
   ],
 
 //STORYLINE MESSAGES
   messages:[["FILL THIS OUT",
-  "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User, click around our code for some extra health and battle one of the Talking Mime's henchmen.",
+  "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User, click around our code if you want to battle one of the Talking Mime's henchmen.",
 "[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],
 
 ["[Talking Mime]: Talking Mime here, I'm busy working on a monologue for my next show, but I have sent one of my henchman to wreak havoc on your pathetic game. Try to stop him if you can. [Instructions] Click on the Talking Mime's henchman to battle him!",
@@ -77,11 +77,11 @@ const map = {
 "OH NO! Your time travelling has got you caught up in a time warp. Answer the riddle to escape and to stop your head from spinning. If the time warp causes you any type of medical distress, read the fine print on our sign up page, we are not liable for any damages :D "],
 
 ["[Talking Mime] My army of Talking Mime's has set upon your castle! We all watched a Charlie Chaplin flick to drive us into a rage!! We are the voice for the voiceless!! I dare you to stop my attack. [Instruction] Click around the map to find the best way to escape the attack on your castle and battle the Talking Mime!",
-"[Alex]: I feel like we're missing something. Executive decision - travel West for Dinosaurs! [Selim]: Oh dearlord, is this what we've come too..",
+"[Alex]: I feel like we're missing something. Executive decision - travel East for Dinosaurs! [Selim]: Oh dearlord, is this what we've come too..",
 "Watch out!! You travelled to an era full of dinosaurs. Remember all the tips you have learned from dinosaur movies over the years. Raptors are smart, T-rex's are the top of the food chain, giant electric cages cannot hold dinosaurs, and always say something quirky before and after a near death experience. Looks like the Talking Mime's henchman followed you through time, they are lurking at every corner. Don't be a coward, go to battle! [Click on the dinosaurs to see what they do!]"
 ],
 
-["This is a cave!!!!"],
+["This is a cave!!! The mimes have congregated and will defeat you!"],
 [],
 ["Hello! We've updated our map recently, I hope you like it. Unfortunately, we forgot to finish the battle page, maybe you could find the missing pieces in here?","Harp: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter!", "Alex: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! "]],
 
