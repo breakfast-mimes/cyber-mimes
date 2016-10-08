@@ -121,11 +121,11 @@ const CharacterForm = React.createClass({
               </Col>)}
   				</FormGroup>
 
-  				<FormGroup className='createButton'>
+  				<FormGroup>
             <Col smOffset={7}>
               <OverlayTrigger placement="left" trigger={['hover', 'focus']} overlay={this.tooltip()}>
-                <div style={{display: 'inline-block', cursor: 'not-allowed'}}>
-                  <Button style={this.allValid() ? {pointerEvents : 'none'} : {}} disabled={this.allValid()} onClick={this.handleClick} className='button'>
+                <div style={{display: 'inline-block', cursor: 'not-allowed'}} className='createButton'>
+                  <Button bsStyle={{opacity: '0'}} style={this.allValid() ? {pointerEvents : 'none'} : {}} disabled={this.allValid()} onClick={this.handleClick} className='hiddenButton'>
                       Continue
                   </Button>
                 </div>
