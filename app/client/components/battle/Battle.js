@@ -75,6 +75,7 @@ export default class Battle extends React.Component {
     return(
       <div className="battleScreen">
         <Link to='/map'>Map</Link>
+        <div className='fightLog2'>
       <div className='fightLog'>
         <div>{"Fighting " + enemy[enemyId].name}</div>
         <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
@@ -84,12 +85,14 @@ export default class Battle extends React.Component {
         <HeroStatus style={healthStyle} hero={hero}/>
       </div>
 
+
         <div className="actionsContainer">
           <ActionGroup {...this.props} style={actionsStyle} actions={hero.battleActions} name="Actions" id={enemyId}/>
           <ActionGroup {...this.props} style={spellsStyle} actions={hero.spells} name="Spells" id={enemyId}/>
           <ActionGroup {...this.props} style={itemsStyle} actions={hero.items} name="Items" id={enemyId}/>
           <Inventory {...this.props} style={inventoryStyle} />
         </div>
+      </div>
 
         <div className='instructions'> <span className='battleInstructions'>Battle Instructions</span>
           <p className='intstructionText'>

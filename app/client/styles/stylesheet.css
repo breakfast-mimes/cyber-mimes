@@ -613,12 +613,20 @@ background-position: 0 58px
    position: absolute;
    float: right;
    font-size: 20px;
-   size:50%;
+   size:49%;
 
     /*width: 150px;
     height: 75px;*/
     /*margin: 10px;
     border: 3px solid #73AD21; */
+
+}
+
+.fightLog2 {
+
+
+float:left;
+size: 49%;
 
 }
 
