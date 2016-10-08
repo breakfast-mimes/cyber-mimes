@@ -80,6 +80,7 @@ body {
 #log {
   height: 500px;
   width: 700px;
+  margin-left: 50px;
   overflow-y: auto;
   border: 3px solid black;
   border-radius: 15px;
@@ -121,11 +122,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-<<<<<<< HEAD
   color: white;
-=======
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -145,11 +142,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-<<<<<<< HEAD
   color: white;
-=======
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -169,11 +162,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-<<<<<<< HEAD
   color: white;
-=======
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -184,11 +173,7 @@ body {
 .heroDeathModal {
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-<<<<<<< HEAD
   color: white;
-=======
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -253,7 +238,9 @@ body {
   background: #777;
   width: 300px;
   display: block;
-  margin: 2px;
+  margin: 3px;
+  margin-bottom: 10px;
+  margin-left: 240px;
   color:white;
   text-align: center;
   vertical-align: middle;
@@ -284,11 +271,11 @@ body {
 
 .actionsContainer {
   margin: 15px;
-  margin-left: -10px;
+  margin-left: 125px;
   background-image: url('../assets/gui/wood_background.png');
   background-color: #999;
   height: 250px;
-  width: 600px;
+  width: 520px;
   font-size: 22px;
   color: white;
   font-family: 'Raleway';
@@ -296,18 +283,17 @@ body {
 
 }
 .actionGroup, .battleInventory {
-  margin: 2px 6px 6px 12px;
+  margin: 2px 12px 6px 12px;
   display: inline-block;
   float: left;
   width: 100px;
   height:120px;
   cursor: pointer;
   color: white;
-  
 }
 
 .battleInventory {
-  width: 150px;
+  width: 230px;
   margin-left: -10px;
 }
 
@@ -466,19 +452,11 @@ body {
 }
 
 .heroName {
-<<<<<<< HEAD
   color: white;
   font-family: 'Raleway';
   font-weight: bold;
   font-size: 25px;
   color:white;
-=======
-  color: #bda724;
-  font-family: 'Zapf Chancery';
-  font-weight: bold;
-  font-size: 25px;
-  color:#bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
@@ -492,17 +470,10 @@ body {
 }
 
 .createInput {
-<<<<<<< HEAD
   font-family: 'Raleway';
   font-weight: bold;
   padding-top: 10px;
   color: white;
-=======
-  font-family: 'Zapf Chancery';
-  font-weight: bold;
-  padding-top: 10px;
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -531,11 +502,7 @@ body {
 
 .number {
   padding-top: 10px;
-<<<<<<< HEAD
   color: white;
-=======
-  color: #bda724;
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   height: 40px;
   width: 40px;
   text-align: center;
@@ -546,11 +513,7 @@ body {
 .nameInput {
   color: #ffe44d;
   font-weight: bold;
-<<<<<<< HEAD
   font-family: 'Raleway';
-=======
-  font-family: 'Zapf Chancery';
->>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-size: 20px;
   background:transparent;
   background-position: -40px -490px;
@@ -589,13 +552,12 @@ body {
 }
 
 .createButton {
+  color: white;
   padding:12px;
   font-weight: bold;
   background-image: url('../assets/gui/buttonBorder.png');
   background-repeat: no-repeat;
   font-family: 'Zapf Chancery';
-  font-weight: bold;
-  color: #bda724;
   font-size: 20px;
 }
 
@@ -652,11 +614,11 @@ body {
 }
 
 .heroStats {
-
-font-size:30px;
-font-family: 'Raleway';
-color: white;
-font-weight: bold;
+  margin-left: 100px;
+  font-size:30px;
+  font-family: 'Raleway';
+  color: white;
+  font-weight: bold;
 }
 
 
@@ -690,12 +652,14 @@ background-position: 0 58px
 
 }
 
+.fightLog{
+  margin: auto;
+}
+
 .fightLog2 {
-
-float:left;
-width: 48%;
-margin-left: 40px;
-
+  float:left;
+  width: 48%;
+  margin-left: 40px;
 }
 
 .battleInstructions {
@@ -715,6 +679,7 @@ margin-left: 40px;
   font-family: helvetica;
   font-size: 26px;
   font-weight: bold;
+  margin-left: 270px;
 
 }
 
@@ -730,10 +695,3 @@ margin-left: 40px;
   font-size: 26px;
   color: yellow;
 }
-
-
-
-
-
-
-

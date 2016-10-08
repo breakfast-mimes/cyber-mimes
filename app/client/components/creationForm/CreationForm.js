@@ -14,7 +14,7 @@ const CreationForm = React.createClass({
   render() {
     return (
       <div id="creationForm">
-        <PageHeader>
+        <PageHeader className='noSelect'>
           <Col smOffset={2}>
             Character Creation
           </Col>
