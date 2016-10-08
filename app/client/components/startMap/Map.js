@@ -40,7 +40,7 @@ export default class Map extends React.Component {
     }
 
     return(
-      <div className='startMap'>
+      <div className='startMap noSelect'>
         MAP <br/>
         {this.state.message}
         <br/> <br/>

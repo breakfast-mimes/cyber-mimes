@@ -10,7 +10,7 @@ export default class Inventory extends React.Component {
     const {item, equip, i} = this.props
 
     return(
-      <div className="invItem" onClick={equip.bind(null, item, i)}>
+      <div className="invItem noSelect" onClick={equip.bind(null, item, i)}>
           |name:{item.name}|damage:{item.dmg}|stat:{item.stat}|type:{item.type}
           <span>{item.e ? " (E)" : ""}</span>
       </div>
