@@ -12,7 +12,7 @@ const Auth = React.createClass({
 
   render() {
     return (
-      <div className='auth'>
+      <div className='auth noSelect'>
         {
           this.props.game.login ?
           <LogIn login={this.props.login} logSuccess={this.props.game.logSuccess} logReset={this.props.logReset}/> :

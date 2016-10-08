@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Button, FormGroup, ControlLabel, FormControl, Form, HelpBlock, Col, PageHeader } from 'react-bootstrap';
+import { Button, FormGroup, ControlLabel, FormControl, Form, HelpBlock, Col, PageHeader, ButtonToolbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 import Entry from './Entry';
 
@@ -28,10 +29,36 @@ const CharacterForm = React.createClass({
 
   },
 
+  handleClick() {
+    this.props.submitCharacter(this.state.name, this.props.submit);
+    browserHistory.push('/map');
+  },
+
+  allValid() {
+    return (this.state.name.length === 0 || this.state.skillAllocation !== 0 || this.state.statAllocation !== 0);
+  },
+
+  tooltip() {
+    console.log(this.allValid())
+    return this.allValid() ? (
+    <Tooltip id="tooltip">
+      {
+        this.state.name.length === 0 ?
+        <strong style={{'color':'red'}}>Please enter character name</strong> :
+        <strong style={{'color':'red'}}>Please allocate all points</strong>
+      }
+    </Tooltip>
+  ) : (
+    <Tooltip id="tooltip">
+      <strong style={{'color':'green'}}>All good!</strong>
+    </Tooltip>
+  )
+  },
+
 	render() {
 		const {hero, statLowCap, statHighCap, skillLowCap, skillHighCap} = this.props;
 		return (
-			<Form horizontal className='form formBorder'>
+			<Form horizontal className='form formBorder noSelect'>
         <div className='formColumn1'>
           <FormGroup>
   		      <Col smOffset={2} sm={4}>
@@ -94,9 +121,15 @@ const CharacterForm = React.createClass({
               </Col>)}
   				</FormGroup>
 
-  				<FormGroup className='createButton'>
+  				<FormGroup>
             <Col smOffset={7}>
-              <Link to='/map' onClick={this.props.submitCharacter.bind(null, this.state.name, this.props.submit)}>Continue</Link>
+              <OverlayTrigger placement="left" trigger={['hover', 'focus']} overlay={this.tooltip()}>
+                <div style={{display: 'inline-block', cursor: 'not-allowed'}} className='createButton'>
+                  <Button bsStyle={{opacity: '0'}} style={this.allValid() ? {pointerEvents : 'none'} : {}} disabled={this.allValid()} onClick={this.handleClick} className='hiddenButton'>
+                      Continue
+                  </Button>
+                </div>
+              </OverlayTrigger>
             </Col>
   		    </FormGroup>
         </div>
@@ -107,4 +140,3 @@ const CharacterForm = React.createClass({
 });
 
 export default CharacterForm;
-

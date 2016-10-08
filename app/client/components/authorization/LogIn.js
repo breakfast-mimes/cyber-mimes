@@ -50,6 +50,7 @@ const LogIn = React.createClass({
 
   render() {
     return (
+    <div className='landingPage'>
       <Form horizontal>
 
         <PageHeader>
@@ -110,6 +111,7 @@ const LogIn = React.createClass({
         </FormGroup>
 
       </Form>
+    </div>
     )
   }
 });

@@ -5,7 +5,7 @@ import messages from './messages'
 export default class goEast extends React.Component {
   render(){
     return(
-      <div onClick={() => this.props.goEastStart()} >I'm praying this works..our game depends on this link working...
+      <div className='pointer' onClick={() => this.props.goEastStart()} >I'm praying this works..our game depends on this link working...
       [GO EAST!]</div>
     )
   }
