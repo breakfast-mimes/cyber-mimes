@@ -332,6 +332,10 @@ body {
   -o-user-select: none
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .formContainer {
   background-color: #DDD;
 }

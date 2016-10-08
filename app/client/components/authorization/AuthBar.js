@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router'
 const AuthBar = React.createClass({
   render() {
     return (
-      <Navbar fluid inverse>
+      <Navbar fluid inverse className='noSelect'>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/">Cyber Mimes</a>

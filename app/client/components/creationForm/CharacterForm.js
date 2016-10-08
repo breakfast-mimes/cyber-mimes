@@ -58,7 +58,7 @@ const CharacterForm = React.createClass({
 	render() {
 		const {hero, statLowCap, statHighCap, skillLowCap, skillHighCap} = this.props;
 		return (
-			<Form horizontal className='form formBorder'>
+			<Form horizontal className='form formBorder noSelect'>
         <div className='formColumn1'>
           <FormGroup>
   		      <Col smOffset={2} sm={4}>
