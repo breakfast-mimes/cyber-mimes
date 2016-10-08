@@ -98,14 +98,14 @@ export default class Map extends React.Component {
           <Link className={enemyName} to='/battle' onClick={this.props.changeEnemy.bind(null, enemy, enemyId)}>{enemyName}</Link>
           <img id="background" src={backgroundImages[image]}/>
         </div>
-        <div className='inv'>
+        <div className='inv'><span className='storylineInvTitle'>Inventory</span>
           {(hero.inventory).map((item, i) =>
                 <Inventory item={item} equip={this.props.equip} key={i} i={i}/>)}
         </div>
-        <div className='mapStats'>
+        <div className='mapStats'><span className='storylineInvTitle'>Stats</span>
           <Stats hero={hero}/>
         </div>
-        <div className='story'>
+        <div className='story'><span className='storylineInvTitle'>Story</span>
           <Story row={row} col={col} messages={map.messages}/>
         </div>
       </div>

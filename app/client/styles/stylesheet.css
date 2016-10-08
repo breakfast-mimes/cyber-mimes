@@ -79,14 +79,13 @@ body {
 
 #log {
   height: 500px;
-  width: 550px;
+  width: 700px;
   overflow-y: auto;
   border: 3px solid black;
   border-radius: 15px;
   padding: 8px;
   font-size: 20px;
-  font-family: helvetica;
-  margin-left: 8px;
+  font-family: 'Raleway';
  /* display: inline-block;*/
   background-image: url('../assets/gui/wood_background.png');
   float: left;
@@ -120,10 +119,9 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
-  font-family: 'Zapf Chancery', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -141,10 +139,9 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
-  font-family: 'Zapf Chancery', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -162,10 +159,9 @@ body {
   position:absolute;
   border: 3px solid black;
   border-radius: 50px 15px;
-  font-family: 'Zapf Chancery', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -174,10 +170,9 @@ body {
 }
 
 .heroDeathModal {
-  font-family: 'Zapf Chancery', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -229,8 +224,8 @@ body {
   margin-bottom: 1px;
   vertical-align: middle;
   padding-left: 8px;
-  font-family: 'Zapf Chancery';
-  font-size: 
+  font-family: 'Raleway';
+  font-size: 21px
 }
 
 .logMessage {
@@ -272,26 +267,38 @@ body {
 }
 
 .actionsContainer {
-  margin: 5px;
-  height: 100px;
-  width: 400px;
+  margin: 15px;
+  margin-left: -10px;
+  background-image: url('../assets/gui/wood_background.png');
+  background-color: #999;
+  height: 250px;
+  width: 600px;
+  font-size: 22px;
+  color: white;
+  font-family: 'Raleway';
+  border: black solid 3px;
+
 }
 .actionGroup, .battleInventory {
-  margin: 0px 0px 0px 2px;
+  margin: 2px 6px 6px 12px;
   display: inline-block;
   float: left;
-  width: 60px;
-  height: 100px;
+  width: 100px;
+  height:120px;
   cursor: pointer;
+  color: white;
+  
 }
 
 .battleInventory {
-  width: 200px;
+  width: 150px;
+  margin-left: -10px;
 }
 
 .actionGroupHeader {
   background-color: #999;
   cursor: default;
+  font-size:26px;
 }
 
 .statTitle {
@@ -439,12 +446,11 @@ body {
 }
 
 .heroName {
-  color: gold;
-  font-family: 'Zapf Chancery';
-  font-style: italic;
+  color: white;
+  font-family: 'Raleway';
   font-weight: bold;
   font-size: 25px;
-  color:gold;
+  color:white;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
@@ -458,11 +464,10 @@ body {
 }
 
 .createInput {
-  font-family: 'Zapf Chancery';
-  font-style: italic;
+  font-family: 'Raleway';
   font-weight: bold;
   padding-top: 10px;
-  color: gold;
+  color: white;
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -491,7 +496,7 @@ body {
 
 .number {
   padding-top: 10px;
-  color: gold;
+  color: white;
   height: 40px;
   width: 40px;
   text-align: center;
@@ -502,8 +507,7 @@ body {
 .nameInput {
   color: #ffe44d;
   font-weight: bold;
-  font-family: 'Zapf Chancery';
-  font-style: italic;
+  font-family: 'Raleway';
   font-size: 20px;
   background:transparent;
   background-position: -40px -490px;
@@ -548,7 +552,7 @@ body {
 .table {
   border: 3px solid black;
   width: 450px;
-  font-family:'Zapf Chancery';
+  font-family:'Raleway';
   font-size:24px;
 
 }
@@ -579,9 +583,8 @@ body {
 }
 
 .startMap {
-  color: #ffe44d;
-  font-family: 'Zapf Chancery';
-  font-style: italic;
+  color: black;
+  font-family: 'Raleway';
   font-weight: bold;
   font-size: 25px;
   /*background: linear-gradient(#FFF65C 0%, #9A8000 100%);*/
@@ -593,8 +596,8 @@ body {
 
 .heroStats {
 font-size:30px;
-font-family: 'Zapf Chancery';
-color: #ffdd1a;
+font-family: 'Raleway';
+color: white;
 font-weight: bold;
 
 }
@@ -610,25 +613,63 @@ background-position: 0 58px
 
 .instructions {
   /* display: inline-block;*/
-   position: absolute;
+   position: static;
    float: right;
+   font-family: "Raleway";
    font-size: 20px;
-   size:49%;
-
-    /*width: 150px;
-    height: 75px;*/
-    /*margin: 10px;
-    border: 3px solid #73AD21; */
+   color: white;
+/*   font-weight: 200;*/
+   width:40%;
+   margin-right: 50px;
+   margin-top: 50px;
+   border: black solid 3px;
+   border-radius: 20px;
+   background-image: url('../assets/gui/wood_background.png');
+   padding: 10px;
 
 }
 
 .fightLog2 {
 
-
 float:left;
-size: 49%;
+width: 48%;
+margin-left: 40px;
 
 }
+
+.battleInstructions {
+  font-size: 28px;
+  font-family: helvetica;
+  font-weight: bold;
+
+}
+
+.instructionTitles {
+  font-family: helvetica;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.fightingEnemy {
+  font-family: helvetica;
+  font-size: 26px;
+  font-weight: bold;
+
+}
+
+.mapLink {
+  font-family: helvetica;
+  font-size: 22px;
+  font-weight: bold;
+
+}
+
+.storylineInvTitle {
+  font-family: helvetica;
+  font-size: 26px;
+  color: yellow;
+}
+
 
 
 
