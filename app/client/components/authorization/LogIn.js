@@ -55,7 +55,7 @@ const LogIn = React.createClass({
 
         <PageHeader>
           <Col smOffset={2} className='loginTitle'>
-            Login <small>wanna play right?</small>
+            Cyber-Mimes, a time-traveling thriller that you help us build! <small>Sign In</small>
           </Col>
         </PageHeader>
 
