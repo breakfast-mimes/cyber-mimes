@@ -121,7 +121,11 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
+<<<<<<< HEAD
   color: white;
+=======
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -141,7 +145,11 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
+<<<<<<< HEAD
   color: white;
+=======
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -161,7 +169,11 @@ body {
   border-radius: 50px 15px;
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
+<<<<<<< HEAD
   color: white;
+=======
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -172,7 +184,11 @@ body {
 .heroDeathModal {
   font-family: 'Raleway', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
+<<<<<<< HEAD
   color: white;
+=======
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -345,6 +361,10 @@ body {
   -o-user-select: none
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .formContainer {
   background-color: #DDD;
 }
@@ -446,11 +466,19 @@ body {
 }
 
 .heroName {
+<<<<<<< HEAD
   color: white;
   font-family: 'Raleway';
   font-weight: bold;
   font-size: 25px;
   color:white;
+=======
+  color: #bda724;
+  font-family: 'Zapf Chancery';
+  font-weight: bold;
+  font-size: 25px;
+  color:#bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
@@ -464,10 +492,17 @@ body {
 }
 
 .createInput {
+<<<<<<< HEAD
   font-family: 'Raleway';
   font-weight: bold;
   padding-top: 10px;
   color: white;
+=======
+  font-family: 'Zapf Chancery';
+  font-weight: bold;
+  padding-top: 10px;
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -496,7 +531,11 @@ body {
 
 .number {
   padding-top: 10px;
+<<<<<<< HEAD
   color: white;
+=======
+  color: #bda724;
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   height: 40px;
   width: 40px;
   text-align: center;
@@ -507,7 +546,11 @@ body {
 .nameInput {
   color: #ffe44d;
   font-weight: bold;
+<<<<<<< HEAD
   font-family: 'Raleway';
+=======
+  font-family: 'Zapf Chancery';
+>>>>>>> 60ba68c42f241cef92ef595f5b9ded598712401f
   font-size: 20px;
   background:transparent;
   background-position: -40px -490px;
@@ -546,7 +589,19 @@ body {
 }
 
 .createButton {
-  margin-top: 30px;
+  padding:12px;
+  font-weight: bold;
+  background-image: url('../assets/gui/buttonBorder.png');
+  background-repeat: no-repeat;
+  font-family: 'Zapf Chancery';
+  font-weight: bold;
+  color: #bda724;
+  font-size: 20px;
+}
+
+.hiddenButton {
+  opacity: 0px;
+  background-color: rgba(0, 0, 0, 0)
 }
 
 .table {
@@ -583,8 +638,10 @@ body {
 }
 
 .startMap {
-  color: black;
-  font-family: 'Raleway';
+
+  color: #ffe44d;
+  font-family: 'Zapf Chancery';
+
   font-weight: bold;
   font-size: 25px;
   /*background: linear-gradient(#FFF65C 0%, #9A8000 100%);*/
@@ -595,12 +652,15 @@ body {
 }
 
 .heroStats {
+
 font-size:30px;
 font-family: 'Raleway';
 color: white;
 font-weight: bold;
-
 }
+
+
+
 
 .landingPage {
   background-image: url('http://www.alexpberg.com/wp-content/uploads/2013/10/Sci-Fi-vs-Fantasy.jpg');
@@ -609,6 +669,7 @@ background-repeat: no-repeat;
 height: 550px;
 
 background-position: 0 58px
+
 }
 
 .instructions {
@@ -669,6 +730,7 @@ margin-left: 40px;
   font-size: 26px;
   color: yellow;
 }
+
 
 
 

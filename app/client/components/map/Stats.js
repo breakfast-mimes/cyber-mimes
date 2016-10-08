@@ -10,7 +10,7 @@ export default class Stats extends React.Component {
     const {hero} = this.props
 
     return(
-      <div>
+      <div className='noSelect'>
         <span>
             Stats: STR:{hero.stats.str} DEX:{hero.stats.dex} INT:{hero.stats.int} END:{hero.stats.end} LUCK:{hero.stats.luck}
         </span>

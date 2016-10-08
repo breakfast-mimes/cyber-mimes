@@ -83,14 +83,14 @@ export default class Map extends React.Component {
     console.log(enemy,"props enemy name")
     return(
       <div>
-        <div id="map">
-          {north ? <img id="north" src={north} width="150" height="150" onClick={this.props.goNorth} /> : null }
-          {east ? <img id="east" src={east} width="150" height="150" onClick={this.props.goEast} /> : null }
-          {south ? <img id="south" src={south} width="150" height="150" onClick={this.props.goSouth} /> : null}
-          {west ? <img id="west" src={west} width="150" height="150" onClick={this.props.goWest} /> : null}
-          <Riddle riddle={riddle} pickUp={this.props.pickUp}/>
+        <div id="map" className='noSelect'>
+          {north ? <img id="north" className='pointer' draggable="false" src={north} width="150" height="150" onClick={this.props.goNorth} /> : null }
+          {east ? <img id="east" className='pointer' draggable="false" src={east} width="150" height="150" onClick={this.props.goEast} /> : null }
+          {south ? <img id="south" className='pointer' draggable="false" src={south} width="150" height="150" onClick={this.props.goSouth} /> : null}
+          {west ? <img id="west" className='pointer' draggable="false" src={west} width="150" height="150" onClick={this.props.goWest} /> : null}
+          <Riddle className='pointer' riddle={riddle} pickUp={this.props.pickUp}/>
           <div onClick={this.props.pickUp.bind(null, item)}>{itemName}</div>
-          <div className={feature} onClick={this.props.pickUpFeature.bind(null, feature)}>{feature}</div>
+          <div className={feature + ' pointer'} onClick={this.props.pickUpFeature.bind(null, feature)}>{feature}</div>
           <div>
             {easterEgg ? (easterEgg).map((item) =>
               <EasterEgg egg={item} soundEffect={this.props.soundEffect} mapSend={mapSend}/>):undefined}

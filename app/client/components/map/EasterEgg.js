@@ -30,7 +30,7 @@ export default class EasterEgg extends React.Component {
         onLoading={this.handleSongLoading}
         onPlaying={this.handleSongPlaying}
         onFinishedPlaying={this.handleSongFinishedPlaying} />
-        <img src={egg.image} onClick={()=>{
+        <img className='pointer' draggable="false" src={egg.image} onClick={()=>{
           this.state.playing = true
           soundEffect();
         }}/>
