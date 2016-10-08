@@ -68,7 +68,7 @@ const map = {
   ],
 
 //STORYLINE MESSAGES
-  messages:[["FILL THIS OUT",
+  messages:[["This is just a boring office room, don't worry bout it",
 
   "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User. Let me offer you a free 'Spell Book' for your troubles. [Instructions] Click around our code to get a 'Spell Book', and then battle one of the Talking Mime's henchmen.",
 "[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],
@@ -85,7 +85,7 @@ const map = {
 
 ["Your dragon has led you to the layer of the Talking Mime. It is time for an ultimate battle! [Instructions] Select the link to battle the Talking Mime."],
 [],
-["Hello! We have made some progress on our map, but it's still a work in progress. Could you do us a solid and help us build our game? Follow along our maps to collect game features that need to be added. Everything you collect will help you battle this Goblin Enemy. Once you have collected the features, come back here and defeat him to move on.","[Harp]: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter! This is all I've got so far..it's a work in progress. [Instructions] I left our 'health bar' feature laying around here somewhere. Can you click around and add it to our game. Thanks a ton!", "[Alex]: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! What in the world did I do with the code for our Actions Menu? Could you help me out and look around for it? [Instructions] Click around to find that Action Menu. This should be enough to fight the Goblin Enemy. Go back on the map, and click on him for an epic battle!"]],
+["Hello! We have made some progress on our map, but it's still a work in progress. Could you do us a solid and help us build our game? Follow along our maps to collect game features that need to be added. Everything you collect will help you battle this Mime Enemy. Once you have collected the features, come back here and defeat him to move on.","[Harp]: Great news! I convinced the development team to make this a fantasy themed game. I was outnumbered, but like any hobbit knows, size doesn't matter! This is all I've got so far..it's a work in progress. [Instructions] I left our 'health bar' feature laying around here somewhere. Can you click around and add it to our game. Thanks a ton!", "[Alex]: PFT! Fantasy? Get a grip on reality man! As 'Lead Engineer' I declare this a Sci Fi game. Welcome to the future! What in the world did I do with the code for our Actions Menu? Could you help me out and look around for it? [Instructions] Click around to find that Action Menu. This should be enough to fight the Mime Enemy. Go back on the map, and click on him for an epic battle!"]],
 
 //RIDDLES
   riddles:[["","",{question: "How many horse puns are used in the story line for this map?", answer: 4, reward: weapons["ANTIMATTER_GUN"],className:"sciRiddle",solved:false}],

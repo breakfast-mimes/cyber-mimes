@@ -116,8 +116,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Zapf Chancery', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: #bda724;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -137,8 +136,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Zapf Chancery', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: #bda724;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -158,8 +156,7 @@ body {
   border-radius: 50px 15px;
   font-family: 'Zapf Chancery', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: #bda724;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -170,8 +167,7 @@ body {
 .heroDeathModal {
   font-family: 'Zapf Chancery', sans-serif;
   background-image: url('../assets/gui/wood_background.png');
-  color: gold;
-  font-style: italic;
+  color: #bda724;
   font-weight: bold;
   font-size: 20px;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
@@ -433,12 +429,11 @@ body {
 }
 
 .heroName {
-  color: gold;
+  color: #bda724;
   font-family: 'Zapf Chancery';
-  font-style: italic;
   font-weight: bold;
   font-size: 25px;
-  color:gold;
+  color:#bda724;
   text-shadow: -0.02em -0.03em 0.005em rgba(0, 0, 0, 0.90);
 }
 
@@ -453,10 +448,9 @@ body {
 
 .createInput {
   font-family: 'Zapf Chancery';
-  font-style: italic;
   font-weight: bold;
   padding-top: 10px;
-  color: gold;
+  color: #bda724;
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -485,7 +479,7 @@ body {
 
 .number {
   padding-top: 10px;
-  color: gold;
+  color: #bda724;
   height: 40px;
   width: 40px;
   text-align: center;
@@ -497,7 +491,6 @@ body {
   color: #ffe44d;
   font-weight: bold;
   font-family: 'Zapf Chancery';
-  font-style: italic;
   font-size: 20px;
   background:transparent;
   background-position: -40px -490px;
@@ -575,7 +568,6 @@ body {
 .startMap {
   color: #ffe44d;
   font-family: 'Zapf Chancery';
-  font-style: italic;
   font-weight: bold;
   font-size: 25px;
   /*background: linear-gradient(#FFF65C 0%, #9A8000 100%);*/
