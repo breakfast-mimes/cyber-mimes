@@ -23,7 +23,7 @@ const map = {
 
 
   //ITEMS
-  items: [[{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"},{},{},{},{},{},{},{},{}],
+  items: [[{},{},{},{},{},{},{},{}],
   [],
   [],
   [],
