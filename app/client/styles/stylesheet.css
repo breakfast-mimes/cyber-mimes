@@ -78,14 +78,20 @@ body {
 }
 
 #log {
-  height: 400px;
-  width: 500px;
+  height: 500px;
+  width: 550px;
   overflow-y: auto;
   border: 3px solid black;
+  border-radius: 15px;
   padding: 8px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: helvetica;
-  margin-left: 20px;
+  margin-left: 8px;
+ /* display: inline-block;*/
+  background-image: url('../assets/gui/wood_background.png');
+  float: left;
+  size: 40%;
+
 }
 
 #map {
@@ -601,5 +607,22 @@ height: 550px;
 
 background-position: 0 58px
 }
-  /*background-size: 100% 100%;
-  height: 300px;*/
+
+.instructions {
+  /* display: inline-block;*/
+   position: absolute;
+   float: right;
+   font-size: 20px;
+   size:50%;
+
+    /*width: 150px;
+    height: 75px;*/
+    /*margin: 10px;
+    border: 3px solid #73AD21; */
+
+}
+
+
+
+
+

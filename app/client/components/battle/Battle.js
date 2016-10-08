@@ -75,13 +75,14 @@ export default class Battle extends React.Component {
     return(
       <div className="battleScreen">
         <Link to='/map'>Map</Link>
-
+      <div className='fightLog'>
         <div>{"Fighting " + enemy[enemyId].name}</div>
         <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
 
         <Log style={logStyle} log={game.log}/>
 
         <HeroStatus style={healthStyle} hero={hero}/>
+      </div>
 
         <div className="actionsContainer">
           <ActionGroup {...this.props} style={actionsStyle} actions={hero.battleActions} name="Actions" id={enemyId}/>
@@ -90,6 +91,21 @@ export default class Battle extends React.Component {
           <Inventory {...this.props} style={inventoryStyle} />
         </div>
 
+        <div className='instructions'> <span className='battleInstructions'>Battle Instructions</span>
+          <p className='intstructionText'>
+          As you collect features they will show up in this battle screen under the fight log. The following is instructions for these features.
+          <span className='actionsInstruction'>Actions</span>
+          Select the different methods under 'Action' to attack your enemy and defend his/her attack. 
+
+            <span className='spellsInstruction'>Spells</span>
+            Select the different methods under 'Spells' to fight your enemy by casting spells.
+            <span className='Instruction'>Inventory</span>
+            Select items from your inventory list. If you see an (e), this indicates you can use this item.
+            <span className='fightLogInstruction'>Fight Log</span>
+            After you launch an attack the fight log will indicate how much damage you have inflicted. The enemy will attack you right after your attack.
+            Defeat an enemy to level up, and remember to check your stats in the Leaderboar
+            </p>
+        </div>
         <HeroDeathModal show={this.state.showModal} onHide={closeModal}/>
     </div>
     )
