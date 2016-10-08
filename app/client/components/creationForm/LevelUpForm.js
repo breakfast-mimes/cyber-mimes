@@ -12,7 +12,7 @@ const CreationForm = React.createClass({
   render() {
     return (
       <div id="creationForm">
-        <PageHeader>
+        <PageHeader className='noSelect'>
           <Col smOffset={2}>
             Level Up! <small>You are now Level {this.props.hero.level.level + 1}</small>
           </Col>

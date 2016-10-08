@@ -74,24 +74,24 @@ export default class Battle extends React.Component {
     return(
       <div className="battleScreen">
         <div className='fightLog2'>
-        <Link className='mapLink' to='/map'>[Map]</Link>
-      <div className='fightLog'>
-        <div className='fightingEnemy'>{"Fighting " + enemy[enemyId].name}</div>
-        <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
+          <Link className='mapLink' to='/map'>[Map]</Link>
+          <div className='fightLog'>
 
-        <Log style={logStyle} log={game.log}/>
+            <div className='fightingEnemy'>{"Fighting " + enemy[enemyId].name}</div>
+            <HealthBar style={healthStyle} health={enemy[enemyId].status.health} max={enemy[enemyId].status.maxHealth} color="darkred"/>
 
-        <HeroStatus style={healthStyle} hero={hero}/>
-      </div>
+            <Log style={logStyle} log={game.log}/>
 
+            <HeroStatus style={healthStyle} hero={hero}/>
+          </div>
 
-        <div className="actionsContainer">
-          <ActionGroup {...this.props} style={actionsStyle} actions={hero.battleActions} name="Actions" id={enemyId}/>
-          <ActionGroup {...this.props} style={spellsStyle} actions={hero.spells} name="Spells" id={enemyId}/>
-          <ActionGroup {...this.props} style={itemsStyle} actions={hero.items} name="Items" id={enemyId}/>
-          <Inventory {...this.props} style={inventoryStyle} />
+          <div className="actionsContainer">
+            <ActionGroup {...this.props} style={actionsStyle} actions={hero.battleActions} name="Actions" id={enemyId}/>
+            <ActionGroup {...this.props} style={spellsStyle} actions={hero.spells} name="Spells" id={enemyId}/>
+            <ActionGroup {...this.props} style={itemsStyle} actions={hero.items} name="Items" id={enemyId}/>
+            <Inventory {...this.props} style={inventoryStyle} />
+          </div>
         </div>
-      </div>
 
         <div className='instructions'> <span className='battleInstructions'>Battle Instructions</span>
           <p className='intstructionText'>
@@ -99,7 +99,7 @@ export default class Battle extends React.Component {
           <br/>
           <span className='instructionTitles'>Actions</span>
           <br/>
-          Select the different methods under 'Action' to attack your enemy and defend his/her attack. 
+          Select the different methods under 'Action' to attack your enemy and defend his/her attack.
           <br/>
             <span className='instructionTitles'>Spells</span>
           <br/>
@@ -114,7 +114,7 @@ export default class Battle extends React.Component {
             After you launch an attack the fight log will indicate how much damage you have inflicted. Be aware, the enemy will attack you right after your attack.
             Defeat an enemy to level up, and remember to check your stats in the Leaderboard!
             </p>
-            
+
            <span className='instructionTitles'>HealthBar</span>
             <br/>
             The bottom health bar is your health, and the top health bar is your enemies health.
