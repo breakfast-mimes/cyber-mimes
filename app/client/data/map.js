@@ -23,7 +23,7 @@ const map = {
 
 
   //ITEMS
-  items: [[{name: "god-tier Sword", type: "meele", dmg: 12, stat: "str", equip: "rightHand"},{},{},{},{},{},{},{},{}],
+  items: [[{},{},{},{},{},{},{},{}],
   [],
   [],
   [],
@@ -68,7 +68,7 @@ const map = {
   ],
 
 //STORYLINE MESSAGES
-  messages:[["This is just a boring office room, don't worry bout it",
+  messages:[["This is just a boring office room, don't worry bout ita",
 
   "[Selim]: What is the point of our stand up meetings every morning?! Developing this page was your job Alex! [Alex]: It's too early to stand up, if we had more sit down meetings maybe more would get done around here [Harp]: Guys, our users are listening to you bicker. We apologize Mr. or Mrs. User. Let me offer you a free 'Spell Book' for your troubles. [Instructions] Click around our code to get a 'Spell Book', and then battle one of the Talking Mime's henchmen.",
 "[Selim] Looks like you have travelled to our Western theme. The Talking Mime's henchmen are hot on your trail, defeating them is your mane concern, don't disturb the niegh-bors as you make spur of the moment decisions to fight them off. [Answer the riddle to get your Pistol, and click on the gun to hear our beta testers contribution to our game]"],

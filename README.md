@@ -4,7 +4,7 @@ Piece-by-Piece
 
 https://cloud.githubusercontent.com/assets/9117896/19214229/64f84596-8d4c-11e6-8dd4-178cb232e878.png
 
-![screenshot2](https://cloud.githubusercontent.com/assets/9117896/19214254/966c6350-8d4c-11e6-929f-9c5a3409b5b2.png)
+https://cloud.githubusercontent.com/assets/9117896/19214254/966c6350-8d4c-11e6-929f-9c5a3409b5b2.png
 
 =============
 Main features
