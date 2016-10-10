@@ -66,9 +66,23 @@ body {
   background-color: #1d2559;
   background-image: url("../assets/gui/paper_background.png");
 }
-/*
+
 .loginTitle {
-  color: white;
+  font-family: 'Gidugu';
+  font-size: 60px;
+  color: #404040;
+  text-shadow: white 0px 0px 10px;
+
+}
+
+.blurb {
+  font-family: 'Gidugu';
+  font-size: 50px;
+  color: #404040;
+  text-shadow: white 0px 0px 10px;
+}
+/*.pageHeader {
+  
 }*/
 
 .sciRiddle {
@@ -582,6 +596,8 @@ body {
   margin-left: 50px;
   margin-top: 30px;
   position: absolute;
+  color: black;
+  width: 200px;
 }
 
 .search {
