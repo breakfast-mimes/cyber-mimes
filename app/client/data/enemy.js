@@ -18,9 +18,9 @@ const enemy = [{
     healing: 1
   },
   status: {
-    maxHealth:100,
+    maxHealth:50,
     maxMana: 100,
-    health:100,
+    health:50,
     mana:100,
     defending: 1
   },
@@ -79,7 +79,7 @@ const enemy = [{
     ring1: undefined,
     ring2: undefined
   },
-  loot: [],
+  loot: [weapons.BROAD_SWORD],
   exp: 1500,
   gold: 100
 },
