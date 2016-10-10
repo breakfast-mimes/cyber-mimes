@@ -68,7 +68,7 @@ const SignUp = React.createClass({
 
         <PageHeader>
           <Col smOffset={2} className='loginTitle'>
-            Sign Up <small>need an account?</small>
+            Cyber-Mimes, a time-traveling thriller that you help us build! <small>Sign Up</small>
           </Col>
         </PageHeader>
 
