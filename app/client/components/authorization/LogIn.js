@@ -53,9 +53,9 @@ const LogIn = React.createClass({
     <div className='landingPage'>
       <Form horizontal>
 
-        <PageHeader>
+        <PageHeader className='PageHeader'>
           <Col smOffset={2} className='loginTitle'>
-            Cyber-Mimes, a time-traveling thriller that you help us build! <small>Sign In</small>
+            Cyber-Mimes <span className='blurb'> - A time-traveling thriller that you help us build! </span>
           </Col>
         </PageHeader>
 
