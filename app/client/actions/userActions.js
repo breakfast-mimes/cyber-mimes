@@ -14,7 +14,7 @@ export function login(name, pass) {
 			axios.get('/api/character', {})
 			.then(res => {
 				if(res.data === '[]') {
-					browserHistory.push('/startmap')
+					browserHistory.push('/creationform')
 				} else {
 					dispatch({
 						type: "GET_CHARACTER",
@@ -41,7 +41,7 @@ export function signup(name, pass) {
 		})
 		.then(function(response) {
 			dispatch({type: "USER_LOGIN"});
-			browserHistory.push('/startmap');
+			browserHistory.push('/creationform');
 		})
 		.catch(function(response) {
 			dispatch({type: "USERNAME_SUCCESS", usernameSuccess: false});
